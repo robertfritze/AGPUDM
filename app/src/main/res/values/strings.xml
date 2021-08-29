@@ -1,0 +1,24 @@
+<resources>
+
+    <string name="app_name">DM-OpenCL</string>
+    <string name="OCPLibPath">OpenCL library path: </string>
+    <string name="exitbutton">Exit</string>
+    <string name="startbuttonsubmit">Submit</string>
+    <string name="startbuttoncancel">Cancel</string>
+    <string name="searchgpubutton">Search GPU</string>
+    <string name="returnbutton">Return</string>
+    <string name="app_header">Android-Data Mining-OpenCL</string>
+    <string name="defaultlibOpenCLpath">/system/vendor/lib/libOpenCL.so</string>
+    <string name="nococldevice">No OpenCL device found  </string>
+    <string name="nocalcsubm">No calculations submitted…</string>
+    <string name="nojobinfo">Can not retrieve job information…</string>
+    <string name="startbuttonpending">Pending</string>
+    <string name="startbuttonfail">FAIL</string>
+    <string name="nococlinfo">OpenCL device found  (cannot retrieve device information)  </string>
+    <string name="submittingjobs">Submitting jobs…</string>
+    <string name="canellingjobs">Cancelling jobs…</string>
+    <string name="ocldevfound">OpenCL device found  (%1$s, OpenCL v%2$s, device type %3$s)  </string>
+    <string name="jobinfobanner">Calculating (%1$d/%2$d jobs, %3$d%% finished)…</string>
+    <string name="jobinfobanner2">Submitted… (0% finished)</string>
+
+</resources>

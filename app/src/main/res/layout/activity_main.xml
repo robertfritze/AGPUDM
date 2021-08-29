@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:noHistory="true"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/dmoclheader"
+        android:tag="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_header"
+        android:textColor="@color/colorBlack"
+        android:singleLine="true"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_margin="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/copyright"
+        />
+
+    <TextView
+        android:id="@+id/copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Author and Copyright by Robert Fritze 2021"
+        android:textColor="@color/colorBlack"
+        android:textSize="12sp"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:layout_margin="2dp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dmoclheader"
+        app:layout_constraintBottom_toTopOf="@id/GPUPath"
+        />
+
+    <TextView
+        android:id="@+id/GPUPath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/OCPLibPath"
+        android:textColor="@color/colorBlack"
+        android:textSize="13sp"
+        android:singleLine="true"
+        android:layout_margin="2dp"
+        android:paddingTop="8dp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/copyright"
+        app:layout_constraintBottom_toTopOf="@id/jobstatus"
+        />
+
+    <EditText
+        android:id="@+id/GPUpathinput"
+        android:layout_width= "wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorOrange"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textSize="13sp"
+        android:enabled="false"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@id/GPUPath"
+        app:layout_constraintBaseline_toBaselineOf="@id/GPUPath"
+         />
+
+
+    <TextView
+        android:id="@+id/jobstatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:singleLine="true"
+        android:textSize="13sp"
+        android:layout_margin="2dp"
+        android:paddingTop="8dp"
+        android:textStyle="normal"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:textColor="@color/colorRed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/GPUPath"
+        app:layout_constraintBottom_toTopOf="@id/jobchangestatus"
+        />
+
+    <TextView
+        android:id="@+id/jobchangestatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:singleLine="true"
+        android:textSize="13sp"
+        android:layout_margin="2dp"
+        android:paddingTop="8dp"
+        android:textStyle="normal"
+        android:textColor="@color/colorRed"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/jobstatus"
+        app:layout_constraintBottom_toTopOf="@id/infotext"
+        />
+
+    <TextView
+        android:id="@+id/infotext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:singleLine="true"
+        android:textSize="13sp"
+        android:textStyle="normal"
+        android:layout_margin="2dp"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/jobchangestatus"
+        app:layout_constraintBottom_toTopOf="@id/searchgpubutton"
+       />
+
+
+
+    <Button
+        android:id="@+id/searchgpubutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/searchgpubutton"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/startbutton" />
+
+    <Button
+        android:id="@+id/startbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:textColor="@color/colorBlack"
+        android:layout_marginBottom="12dp"
+        android:text=""
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/exitbutton" />
+
+    <Button
+        android:id="@+id/exitbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:textColor="@color/colorBlack"
+        android:layout_marginBottom="12dp"
+        android:text="@string/exitbutton"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
