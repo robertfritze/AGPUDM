@@ -1,0 +1,4 @@
+OpenCL-header files:
+
+Copyright (c) 2008-2020 The Khronos Group Inc.
+All files in the folder "app/src/C/include/CL" are licensed under the Apache License, Version 2.0
