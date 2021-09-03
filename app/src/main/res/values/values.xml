@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="mode">"fixed"</string>
-    <integer name="passes">10</integer>
+    <string name="mode">"dynamic"</string>
+    <integer name="passes">3</integer>
     <integer name="threads">7</integer>
 
-    <bool name="export">true</bool>
+    <bool name="export">false</bool>
     <bool name="append">true</bool>
     <string name="resultfilename">results.csv</string>
 
-    <bool name="log">true</bool>
+    <bool name="log">false</bool>
     <string name="logfilename">log.txt</string>
 
     <string name="kmeanseps">"1e-6"</string>
@@ -18,7 +18,7 @@
     <integer name="dbscanneigh">0</integer>
 
     <integer name="clusterno">6</integer>
-    <integer name="clustersize">128</integer>
-    <integer name="features">1</integer>
+    <integer name="clustersize">1024</integer>
+    <integer name="features">2</integer>
 
 </resources>

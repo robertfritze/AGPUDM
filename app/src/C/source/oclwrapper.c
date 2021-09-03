@@ -14,6 +14,26 @@
 #include <stdlib.h>
 //#include <android/log.h>
 
+#define UNKNOWN -1
+#define ARM32 0
+#define ARM64 1
+#define INTEL32 2
+#define INTEL64 3
+
+#ifdef __arm__
+#define TARGETARCH ARM32
+#elif defined(__aarch64__)
+#define TARGETARCH ARM64
+#elif defined(__i386__)
+#define TARGETARCH INTEL32
+#elif defined(__x86_64__)
+#define TARGETARCH INTEL64
+#else
+#define TARGETARCH UNKNOWN
+#endif
+
+
+
 
 JNIEXPORT jint JNICALL
 Java_com_example_dmocl_oclwrap_loadOpenCL(JNIEnv *env, jobject thiz, jstring s ) {
@@ -263,3 +283,10 @@ Java_com_example_dmocl_oclwrap_AndrCLgetDeviceName(JNIEnv *env, jobject thiz, ji
   return( obj );
 
 }
+
+
+JNIEXPORT jint JNICALL
+Java_com_example_dmocl_oclwrap_getArchitecture(JNIEnv *env, jclass clazz) {
+  return( TARGETARCH );
+}
+

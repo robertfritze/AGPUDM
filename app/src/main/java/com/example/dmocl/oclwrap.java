@@ -91,8 +91,13 @@ public final class oclwrap {
      */
     private static final Object syncobj = new Object();
 
+  /**
+   * Returns the type of architecture.
+   * @return The the architecture used (0=arm-v7, 1=arm-v8, 2=x86, 3=x86_64, -1=unknown)
+   * @multithreading fully
+   */
+    static public native int getArchitecture();
 
-    native public static long currentThreadTimeMicro();
 
     /**
      * Loads the OpenCL library on the device. The library does not have to be present at compile time.

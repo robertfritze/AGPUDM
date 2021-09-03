@@ -30,6 +30,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
 import static android.content.Context.POWER_SERVICE;
+import static android.os.Trace.beginAsyncSection;
+import static android.os.Trace.endAsyncSection;
 import static com.example.dmocl.LinkToFile.DMwriteToFile;
 import static com.example.dmocl.LinkToFile.logToFile;
 import static com.example.dmocl.dbscan.dbscanabort;
@@ -524,12 +526,19 @@ public class dataminingtask extends Worker {
 
             case 0: {
 
-              Log.i( "--->", "(" + (cnt-1) + ") KMEANS 0");
-
+              //Log.i( "--->", "(" + (cnt-1) + ") KMEANS 0");
               //wakeLock.acquire( WAKELOCKTIMEOUT );
+
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                beginAsyncSection( "KMEANS - JAVA", 0 );
+              }
               long t1 = System.nanoTime();
               short cluno = kmeans.kmeans_st(b5, rf, dmi.kmeps, dmi.clusterno, dmi.features);
               t1 = System.nanoTime() - t1;
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                endAsyncSection( "KMEANS - JAVA", 0 );
+              }
+
               //wakeLock.release();
 
               wct[0] = ((double) t1) / 1000000000;
@@ -551,12 +560,19 @@ public class dataminingtask extends Worker {
             }
 
             case 1: {
-              Log.i( "--->", "(" + (cnt-1) + ") KMEANS 1");
-
+              //Log.i( "--->", "(" + (cnt-1) + ") KMEANS 1");
               //wakeLock.acquire( WAKELOCKTIMEOUT );
+
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                beginAsyncSection( "KMEANS - C", 0 );
+              }
               long t1 = System.nanoTime();
               short cluno = kmeans.kmeans_c(b6, rf, dmi.kmeps, dmi.clusterno, dmi.features);
               t1 = System.nanoTime() - t1;
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                endAsyncSection( "KMEANS - C", 0 );
+              }
+
               //wakeLock.release();
 
               wct[1] = ((double) t1) / 1000000000;
@@ -578,14 +594,21 @@ public class dataminingtask extends Worker {
               break;
             }
             case 2: {
-              Log.i( "--->", "(" + (cnt-1) + ") KMEANS 2");
+              //Log.i( "--->", "(" + (cnt-1) + ") KMEANS 2");
+              //wakeLock.acquire( WAKELOCKTIMEOUT );
 
               long[] ej = new long[1];
 
-              //wakeLock.acquire( WAKELOCKTIMEOUT );
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                beginAsyncSection( "KMEANS - C+GPU", 0 );
+              }
               long t1 = System.nanoTime();
               short cluno = kmeans.kmeans_c_gpu(b7, rf, dmi.kmeps, dmi.clusterno, dmi.features, ej );
               t1 = System.nanoTime() - t1;
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                endAsyncSection( "KMEANS - C+GPU", 0 );
+              }
+
               //wakeLock.release();
 
               wct[2] = ((double) t1) / 1000000000;
@@ -608,52 +631,74 @@ public class dataminingtask extends Worker {
               break;
             }
             case 3: {
-              Log.i( "--->", "(" + (cnt-1) + ") KMEANS 3");
-
+              //Log.i( "--->", "(" + (cnt-1) + ") KMEANS 3");
               //wakeLock.acquire( WAKELOCKTIMEOUT );
 
+              long[] ej = new long[1];
+
+              long t1 = 0;
+              short cluno = 0;
+
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                beginAsyncSection( "KMEANS - JAVA (mt)", 0 );
+              }
+
               try {
-                long[] ej = new long[1];
 
-                long t1 = System.nanoTime();
-                short cluno = kmeans.kmeans_threads(b8, rf, dmi.kmeps, dmi.clusterno, dmi.features, cores, ej );
+                t1 = System.nanoTime();
+                cluno = kmeans.kmeans_threads(b8, rf, dmi.kmeps, dmi.clusterno, dmi.features, cores, ej );
                 t1 = System.nanoTime() - t1;
-
-                wct[3] = ((double) t1) / 1000000000;
-                wct[11] = ((double) ej[0])/ 1000000000;
-                String s1 = "";
-
-                if (cluno>=0){
-                  s1 = compileprogressoutput( fn,
-                    0, 3, cores, dmi.clusterno, b8, wct[3] );
-                }
-                else {
-                  s1 = "KMEANS_JAVA_THREADS aborted (" + cluno + ")";
-                }
-
-                if (dolog) {
-                  logToFile(logfn, s1, true);
-                }
 
               } catch (Exception e) {
                 if (dolog) {
                   logToFile(logfn, "KMEANS_JAVA_THREADS: Threads have been interrupted", true);
                 }
                 wct[3] = -1;
+                wct[11] = -1;
+                t1 = -1;
               }
+
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                endAsyncSection( "KMEANS - JAVA (mt)", 0 );
+              }
+
               //wakeLock.release();
+
+              if (t1>=0) {
+                wct[3] = ((double) t1) / 1000000000;
+                wct[11] = ((double) ej[0]) / 1000000000;
+                String s1 = "";
+
+                if (cluno >= 0) {
+                  s1 = compileprogressoutput(fn,
+                    0, 3, cores, dmi.clusterno, b8, wct[3]);
+                } else {
+                  s1 = "KMEANS_JAVA_THREADS aborted (" + cluno + ")";
+                }
+
+                if (dolog) {
+                  logToFile(logfn, s1, true);
+                }
+              }
 
               break;
             }
             case 4: {
-              Log.i( "--->", "(" + (cnt-1) + ") KMEANS 4");
+              //Log.i( "--->", "(" + (cnt-1) + ") KMEANS 4");
+              //wakeLock.acquire( WAKELOCKTIMEOUT );
 
               long[] ej = new long[1];
 
-              //wakeLock.acquire( WAKELOCKTIMEOUT );
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                beginAsyncSection( "KMEANS - C (mt)", 0 );
+              }
               long t1 = System.nanoTime();
               short cluno = kmeans.kmeans_c_phtreads(b9, rf, dmi.kmeps, dmi.clusterno, dmi.features, cores, ej );
               t1 = System.nanoTime() - t1;
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                endAsyncSection( "KMEANS - C (mt)", 0 );
+              }
+
               //wakeLock.release();
 
               wct[4] = ((double) t1) / 1000000000;
@@ -687,12 +732,19 @@ public class dataminingtask extends Worker {
           switch (meth.get(i2)) {
 
             case 0: {
-              Log.i( "--->", "(" + (cnt-1) + ") DBSCAN 0");
-
+              //Log.i( "--->", "(" + (cnt-1) + ") DBSCAN 0");
               //wakeLock.acquire( WAKELOCKTIMEOUT );
+
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                beginAsyncSection( "DBSCAN - JAVA", 0 );
+              }
               long t1 = System.nanoTime();
               short cluno = dbscan.dbscan_st( b0, rf, dmi.dbscaneps, dmi.kk, dmi.features);
               t1 = System.nanoTime() - t1;
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                endAsyncSection( "DBSCAN - JAVA", 0 );
+              }
+
               //wakeLock.release();
 
               wct[5] = ((double) t1) / 1000000000;
@@ -713,12 +765,19 @@ public class dataminingtask extends Worker {
               break;
             }
             case 1: {
-              Log.i( "--->", "(" + (cnt-1) + ") DBSCAN 1");
-
+              //Log.i( "--->", "(" + (cnt-1) + ") DBSCAN 1");
               //wakeLock.acquire( WAKELOCKTIMEOUT );
+
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                beginAsyncSection( "DBSCAN - C", 0 );
+              }
               long t1 = System.nanoTime();
               short cluno = dbscan.dbscan_c(b1, rf, dmi.dbscaneps, dmi.kk, dmi.features);
               t1 = System.nanoTime() - t1;
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                endAsyncSection( "DBSCAN - C", 0 );
+              }
+
               //wakeLock.release();
 
               wct[6] = ((double) t1) / 1000000000;
@@ -739,14 +798,21 @@ public class dataminingtask extends Worker {
               break;
             }
             case 2: {
-              Log.i( "--->", "(" + (cnt-1) + ") DBSCAN 2");
+              //Log.i( "--->", "(" + (cnt-1) + ") DBSCAN 2");
+              //wakeLock.acquire( WAKELOCKTIMEOUT );
 
               long[] ej = new long[1];
 
-              //wakeLock.acquire( WAKELOCKTIMEOUT );
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                beginAsyncSection( "DBSCAN - C+GPU", 0 );
+              }
               long t1 = System.nanoTime();
               short cluno = dbscan.dbscan_c_gpu(b2, rf, dmi.dbscaneps, dmi.kk, dmi.features, ej );
               t1 = System.nanoTime() - t1;
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                endAsyncSection( "DBSCAN - C+GPU", 0 );
+              }
+
               //wakeLock.release();
 
               wct[7] = ((double) t1) / 1000000000;
@@ -769,53 +835,74 @@ public class dataminingtask extends Worker {
 
             }
             case 3: {
-              Log.i( "--->", "(" + (cnt-1) + ") DBSCAN 3");
-
+              //Log.i( "--->", "(" + (cnt-1) + ") DBSCAN 3");
               //wakeLock.acquire( WAKELOCKTIMEOUT );
 
-              try {
-                long[] ej = new long[1];
+              long[] ej = new long[1];
 
-                long t1 = System.nanoTime();
-                short cluno = dbscan.dbscan_threads(b3, rf, dmi.dbscaneps, dmi.kk, dmi.features, cores, ej );
+              long t1 = 0;
+              short cluno = 0;
+
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                beginAsyncSection( "DBSCAN - JAVA (mt)", 0 );
+              }
+
+              try {
+                t1 = System.nanoTime();
+                cluno = dbscan.dbscan_threads(b3, rf, dmi.dbscaneps, dmi.kk, dmi.features, cores, ej );
                 t1 = System.nanoTime() - t1;
+              } catch (Exception e) {
+                if (dolog) {
+                  logToFile(logfn, "DBSCAN_JAVA_THREADS: Threads have been interrupted", true);
+                }
+                wct[8] = -1;
+                wct[14] = -1;
+                t1 = -1;
+              }
+
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                endAsyncSection( "DBSCAN - JAVA (mt)", 0 );
+              }
+
+              //wakeLock.release();
+
+              if (t1>=0) {
 
                 wct[8] = ((double) t1) / 1000000000;
-                wct[14] = ((double) ej[0])/ 1000000000;
+                wct[14] = ((double) ej[0]) / 1000000000;
                 String s1 = "";
 
-                if (cluno>=0){
-                  s1 = compileprogressoutput( fn,
-                    1, 3, cores, cluno + 1, b3, wct[8] );
-                }
-                else {
+                if (cluno >= 0) {
+                  s1 = compileprogressoutput(fn,
+                    1, 3, cores, cluno + 1, b3, wct[8]);
+                } else {
                   s1 = "DBSCAN_JAVA_THREADS aborted (" + cluno + ")";
                 }
 
                 if (dolog) {
                   logToFile(logfn, s1, true);
                 }
-
-              } catch (Exception e) {
-                if (dolog) {
-                  logToFile(logfn, "DBSCAN_JAVA_THREADS: Threads have been interrupted", true);
-                }
-                wct[8] = -1;
               }
 
-              //wakeLock.release();
               break;
 
             }
             case 4: {
-              Log.i( "--->", "(" + (cnt-1) + ") DBSCAN 4");
+              //Log.i( "--->", "(" + (cnt-1) + ") DBSCAN 4");
+              //wakeLock.acquire( WAKELOCKTIMEOUT );
 
               long[] ej = new long[1];
 
-              //wakeLock.acquire( WAKELOCKTIMEOUT );
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                beginAsyncSection( "DBSCAN - C (mt)", 0 );
+              }
               long t1 = System.nanoTime();
               short cluno = dbscan.dbscan_c_phtreads(b4, rf, dmi.dbscaneps, dmi.kk, dmi.features, cores, ej);
               t1 = System.nanoTime() - t1;
+              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                endAsyncSection( "DBSCAN - C (mt)", 0 );
+              }
+
               //wakeLock.release();
 
               wct[9] = ((double) t1) / 1000000000;
