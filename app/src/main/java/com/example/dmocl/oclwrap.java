@@ -80,6 +80,11 @@ public final class oclwrap {
     }
 
 
+    public static native int isCLang();
+    public static native int getCLmaj();
+    public static native int getCLmin();
+    public static native int getCLpatch();
+
     /**
      * A static variable that holds the instance.
      */

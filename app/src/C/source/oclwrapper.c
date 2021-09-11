@@ -1,6 +1,14 @@
 //
 // Created by robert on 30.04.20.
 //
+#ifdef __clang__
+const char isclang = 1;
+const int clmaj = __clang_major__;
+const int clmin = __clang_minor__;
+const int clpat = __clang_patchlevel__;
+#else
+const char isclang = 0;
+#endif
 
 
 #define CL_TARGET_OPENCL_VERSION 300    //! the default target OpenCL version
@@ -33,7 +41,25 @@
 #endif
 
 
+JNIEXPORT jint JNICALL
+Java_com_example_dmocl_oclwrap_isCLang(JNIEnv *env, jclass clazz) {
+  return( isclang );
+}
 
+JNIEXPORT jint JNICALL
+Java_com_example_dmocl_oclwrap_getCLmaj(JNIEnv *env, jclass clazz) {
+  return( clmaj );
+}
+
+JNIEXPORT jint JNICALL
+Java_com_example_dmocl_oclwrap_getCLmin(JNIEnv *env, jclass clazz) {
+  return( clmin );
+}
+
+JNIEXPORT jint JNICALL
+Java_com_example_dmocl_oclwrap_getCLpatch(JNIEnv *env, jclass clazz) {
+  return( clpat );
+}
 
 JNIEXPORT jint JNICALL
 Java_com_example_dmocl_oclwrap_loadOpenCL(JNIEnv *env, jobject thiz, jstring s ) {

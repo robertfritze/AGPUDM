@@ -36,6 +36,7 @@ import java.io.File;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -228,6 +229,8 @@ public class MainActivity extends AppCompatActivity {
     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
     //Log.i( "arch", Integer.toString(oclwrap.getArchitecture()) );
+    //Log.i( "clang", oclwrap.isCLang() + ";" + oclwrap.getCLmaj() + "." + oclwrap.getCLmin() +
+    //    "." + oclwrap.getCLpatch() );
 
     UiModeManager uiModeManager = (UiModeManager) getSystemService(UI_MODE_SERVICE);
     if (uiModeManager.getCurrentModeType() != Configuration.UI_MODE_TYPE_TELEVISION) {

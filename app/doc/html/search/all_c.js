@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['unloadopencl',['unloadOpenCL',['../classcom_1_1example_1_1dmocl_1_1oclwrap.html#aa98cb05829d56c9bdc773eeda8911d2c',1,'com.example.dmocl.oclwrap.unloadOpenCL()'],['../AndroidOpenCL_8h.html#aca6b9e2ffc2c41c354d0d1663a6725c8',1,'unloadOpenCL(void):&#160;OpenCL.c'],['../OpenCL_8c.html#a01db4342407f6e4abfcca3cbdc089ac5',1,'unloadOpenCL():&#160;OpenCL.c']]]
+];
