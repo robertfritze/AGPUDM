@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rwlock_5fstatic_5finitializer',['RWLOCK_STATIC_INITIALIZER',['../rwlock__wp_8h.html#a0e5677072fd09de2ad07b5ac633bde51',1,'rwlock_wp.h']]]
+  ['cl_5ftarget_5fopencl_5fversion',['CL_TARGET_OPENCL_VERSION',['../oclwrapper_8h.html#a5990dea19d4ccb046a3d81b311457add',1,'CL_TARGET_OPENCL_VERSION():&#160;oclwrapper.h'],['../OpenCL_8c.html#a5990dea19d4ccb046a3d81b311457add',1,'CL_TARGET_OPENCL_VERSION():&#160;OpenCL.c']]]
 ];

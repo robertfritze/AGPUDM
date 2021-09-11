@@ -2,7 +2,7 @@
  \file OpenCL.c
  \brief A this OpenCL wrapper for the libOpenCL.so shared library on the Android device.
  \details
- This library acts as a small wrapper for the native OpenCL library on an Android device.
+ This library acts as a small wrapper (glue) for the native OpenCL library on an Android device.
  The library on the device usually is not present at compile time and if it would, it would
  be added to the apk file at compile time. The app would run ONLY on this type of device
  (e.g., a Mali GPU) but could not be ported to other Android devices.
@@ -12,16 +12,17 @@
  rebuild this library with the version appropriate for your device or simply do not call
  methods not supported on your device. If you do so, a runtime error will occur as the necessary
  symbol will not be found in the library.
- \copyright Copyright Robert Fritze 2020
+ \copyright Copyright Robert Fritze 2021
  \version 1.0
  \author Robert Fritze
- \date 4.5.2020
+ \date 11.9.2021
  \license This program is released under the MIT License.
  */
 
 
-#include "AndroidOpenCL.h"
+#include "AndroidOpenCL.h"          // sets the used OpenCL version
 
+                             //! rescue definition of the OpenCL version
 #ifndef CL_TARGET_OPENCL_VERSION
 #define CL_TARGET_OPENCL_VERSION 120
 #endif
@@ -33,7 +34,18 @@
 #include <string.h>
 #include <pthread.h>
 
-
+                              // two complex but very important macros
+/*!
+  \def SAVECHECKER
+  \brief Macro that checks if prerequists for calling a native OpenCL function are met
+  \details This macro checks if the native library has been loaded and if the necessary
+    symbol for the method call has been resolved. If the library has been loaded, but the
+    symbol has not yet been resolved, the symbol will be resolved. Sets the
+    "weiter" variable accordingly. Uses a lock to get exclusive access.
+  \param a the method name of the native library
+  \warning The lock **lock** must have been acquired before
+  \mt fully threadsafe
+*/
 
 #define SAVECHECKER(a)                          \
       pthread_mutex_lock( &dllock );            \
@@ -53,6 +65,17 @@
       pthread_mutex_unlock( &dllock );          \
 
 
+/*!
+  \def WRAPPERCLFUNCT
+  \brief Macro that simplifys the definition of the wrapper methods.
+  \details This macro checks the native library is ready and calls the
+    method of the native library.
+  \param a OpenCL method name
+  \param b a list with all parameters of the native function
+  \param c the error code that should be returned if the library function
+    can not be called
+  \mt fully threadsafe
+*/
 
 #define WRAPPERCLFUNCT( a, b, c )               \
                                                 \
@@ -76,47 +99,37 @@
 
 
 /*!
- * @brief Holds the reference to the loaded library *libOpenCL.so*
- * @access R+W
- * @locks Use *pthread_mutex_t* **dllock** to access
+ * @brief Holds the reference to the loaded native library *libOpenCL.so*
+ * @warning Use **dllock** for read+write access
  */
 void* dlcall = NULL;
 
-/*!
- * @brief Holds the path to the OpenCL library on the device
- * @details If the path is longer than 1024 characters, the path is truncated (resulting in
- * an error most probably as the OpenCL library will not be found)
- * @access Write once and read only afterwards
- * @locks no locks required (can be written only during first call to *loadOpenCL* and
- * cannot be read before that call; after the call to *loadOpenCL* this variable is
- * read-only)
- */
-char liboclpath[1024] = "";
-
 
 /*!
- * @brief A R/W lock for the mutual exclusion of the library unload mechanism.
- * @details This lock provides the mechanism to exclude to OpenCL library unload mechanism
- * while the library is beeing loaded or some OpenCL function is executed. Arbitrary many
- * methods can acquire the reader lock (including loadOpenCL) but only *unloadOpenCL*
- * acquires the writer lock (resulting in an exclusive access to the entire library).
- * @warning If this lock AND **dllock** are acquired together, this lock has to be acquired first!
- */
-pthread_rwlock_t lock = PTHREAD_RWLOCK_INITIALIZER;
-
-/*!
- * @brief A mutex for the mechanism that loads the library and some attributes
- * @details This mutex guarantees exclusive access to the library load mechanism and
- * the attributes *loadChecker* and *dlcall*
- * @warning If this lock AND **lock** are acquired together, this lock has to be acquired first!
+ * @brief A mutex for the mechanism that loads the library
+ * @details This mutex guarantees exclusive access to the attributes *dlcall* and *cl_wrap_call*
+ * @warning For cascade lock use together with lock, acqurire first *lock*
  */
 pthread_mutex_t dllock = PTHREAD_MUTEX_INITIALIZER;
 
 
+/*!
+ * @brief A R/W lock for the mutual exclusion of the library load/unload mechanism.
+ * @details
+ * This lock provides the mechanism to exclude to OpenCL library unload mechanism
+ * while the library is beeing loaded or some OpenCL function is executed. Arbitrary many
+ * methods can acquire the reader lock (including loadOpenCL) but only *unloadOpenCL*
+ * acquires the writer lock (resulting in an exclusive access to the entire library).
+ * @warning For cascade lock use together with dllock, acqurire first **lock**
+ */
+pthread_rwlock_t lock = PTHREAD_RWLOCK_INITIALIZER;
 
+
+
+     //! A constant with all pointers set to zero
 const cl_icd_dispatch CL_WRAP_CALL_ZERO = {
 
-  /* OpenCL 1.0 */
+  /* OpenCL 1.0  */
   .clGetPlatformIDs = NULL,
   .clGetPlatformInfo = NULL,
   .clGetDeviceIDs = NULL,
@@ -296,195 +309,204 @@ const cl_icd_dispatch CL_WRAP_CALL_ZERO = {
 
 };
 
-
+/*!
+ \var cl_icd_dispatch cl_wrap_call
+ \brief  holds the function pointers to the native OpenCL library
+ \details
+ This variable is a struct that holds the function pointers to the
+ native functions of the native OpenCL-libraray. The function symbols are
+ resolved only just before they are actually needed. As long as they are
+ not needed, they hold the value NULL. This avoids a long initialization
+ overhead once the library is loaded.
+ \warning Access only with the lock *lock* (read-only access) and the lock *dllock* (write access)
+ */
 cl_icd_dispatch cl_wrap_call = {
 
-/* OpenCL 1.0 */
-.clGetPlatformIDs = NULL,
-.clGetPlatformInfo = NULL,
-.clGetDeviceIDs = NULL,
-.clGetDeviceInfo = NULL,
-.clCreateContext = NULL,
-.clCreateContextFromType = NULL,
-.clRetainContext = NULL,
-.clReleaseContext = NULL,
-.clGetContextInfo = NULL,
-.clCreateCommandQueue = NULL,
-.clRetainCommandQueue = NULL,
-.clReleaseCommandQueue = NULL,
-.clGetCommandQueueInfo = NULL,
-.clSetCommandQueueProperty = NULL,
-.clCreateBuffer = NULL,
-.clCreateImage2D = NULL,
-.clCreateImage3D = NULL,
-.clRetainMemObject = NULL,
-.clReleaseMemObject  = NULL,
-.clGetSupportedImageFormats = NULL,
-.clGetMemObjectInfo = NULL,
-.clGetImageInfo = NULL,
-.clCreateSampler = NULL,
-.clRetainSampler = NULL,
-.clReleaseSampler = NULL,
-.clGetSamplerInfo = NULL,
-.clCreateProgramWithSource = NULL,
-.clCreateProgramWithBinary = NULL,
-.clRetainProgram = NULL,
-.clReleaseProgram = NULL,
-.clBuildProgram = NULL,
-.clUnloadCompiler = NULL,
-.clGetProgramInfo = NULL,
-.clGetProgramBuildInfo = NULL,
-.clCreateKernel = NULL,
-.clCreateKernelsInProgram = NULL,
-.clRetainKernel = NULL,
-.clReleaseKernel = NULL,
-.clSetKernelArg = NULL,
-.clGetKernelInfo = NULL,
-.clGetKernelWorkGroupInfo = NULL,
-.clWaitForEvents = NULL,
-.clGetEventInfo = NULL,
-.clRetainEvent = NULL,
-.clReleaseEvent = NULL,
-.clGetEventProfilingInfo = NULL,
-.clFlush = NULL,
-.clFinish = NULL,
-.clEnqueueReadBuffer = NULL,
-.clEnqueueWriteBuffer = NULL,
-.clEnqueueCopyBuffer = NULL,
-.clEnqueueReadImage = NULL,
-.clEnqueueWriteImage = NULL,
-.clEnqueueCopyImage = NULL,
-.clEnqueueCopyImageToBuffer = NULL,
-.clEnqueueCopyBufferToImage = NULL,
-.clEnqueueMapBuffer = NULL,
-.clEnqueueMapImage = NULL,
-.clEnqueueUnmapMemObject = NULL,
-.clEnqueueNDRangeKernel = NULL,
-.clEnqueueTask = NULL,
-.clEnqueueNativeKernel = NULL,
-.clEnqueueMarker = NULL,
-.clEnqueueWaitForEvents = NULL,
-.clEnqueueBarrier = NULL,
-.clGetExtensionFunctionAddress = NULL,
-.clCreateFromGLBuffer = NULL,
-.clCreateFromGLTexture2D = NULL,
-.clCreateFromGLTexture3D = NULL,
-.clCreateFromGLRenderbuffer = NULL,
-.clGetGLObjectInfo = NULL,
-.clGetGLTextureInfo = NULL,
-.clEnqueueAcquireGLObjects = NULL,
-.clEnqueueReleaseGLObjects = NULL,
-.clGetGLContextInfoKHR = NULL,
+  // OpenCL 1.0
+  .clGetPlatformIDs = NULL,
+  .clGetPlatformInfo = NULL,
+  .clGetDeviceIDs = NULL,
+  .clGetDeviceInfo = NULL,
+  .clCreateContext = NULL,
+  .clCreateContextFromType = NULL,
+  .clRetainContext = NULL,
+  .clReleaseContext = NULL,
+  .clGetContextInfo = NULL,
+  .clCreateCommandQueue = NULL,
+  .clRetainCommandQueue = NULL,
+  .clReleaseCommandQueue = NULL,
+  .clGetCommandQueueInfo = NULL,
+  .clSetCommandQueueProperty = NULL,
+  .clCreateBuffer = NULL,
+  .clCreateImage2D = NULL,
+  .clCreateImage3D = NULL,
+  .clRetainMemObject = NULL,
+  .clReleaseMemObject  = NULL,
+  .clGetSupportedImageFormats = NULL,
+  .clGetMemObjectInfo = NULL,
+  .clGetImageInfo = NULL,
+  .clCreateSampler = NULL,
+  .clRetainSampler = NULL,
+  .clReleaseSampler = NULL,
+  .clGetSamplerInfo = NULL,
+  .clCreateProgramWithSource = NULL,
+  .clCreateProgramWithBinary = NULL,
+  .clRetainProgram = NULL,
+  .clReleaseProgram = NULL,
+  .clBuildProgram = NULL,
+  .clUnloadCompiler = NULL,
+  .clGetProgramInfo = NULL,
+  .clGetProgramBuildInfo = NULL,
+  .clCreateKernel = NULL,
+  .clCreateKernelsInProgram = NULL,
+  .clRetainKernel = NULL,
+  .clReleaseKernel = NULL,
+  .clSetKernelArg = NULL,
+  .clGetKernelInfo = NULL,
+  .clGetKernelWorkGroupInfo = NULL,
+  .clWaitForEvents = NULL,
+  .clGetEventInfo = NULL,
+  .clRetainEvent = NULL,
+  .clReleaseEvent = NULL,
+  .clGetEventProfilingInfo = NULL,
+  .clFlush = NULL,
+  .clFinish = NULL,
+  .clEnqueueReadBuffer = NULL,
+  .clEnqueueWriteBuffer = NULL,
+  .clEnqueueCopyBuffer = NULL,
+  .clEnqueueReadImage = NULL,
+  .clEnqueueWriteImage = NULL,
+  .clEnqueueCopyImage = NULL,
+  .clEnqueueCopyImageToBuffer = NULL,
+  .clEnqueueCopyBufferToImage = NULL,
+  .clEnqueueMapBuffer = NULL,
+  .clEnqueueMapImage = NULL,
+  .clEnqueueUnmapMemObject = NULL,
+  .clEnqueueNDRangeKernel = NULL,
+  .clEnqueueTask = NULL,
+  .clEnqueueNativeKernel = NULL,
+  .clEnqueueMarker = NULL,
+  .clEnqueueWaitForEvents = NULL,
+  .clEnqueueBarrier = NULL,
+  .clGetExtensionFunctionAddress = NULL,
+  .clCreateFromGLBuffer = NULL,
+  .clCreateFromGLTexture2D = NULL,
+  .clCreateFromGLTexture3D = NULL,
+  .clCreateFromGLRenderbuffer = NULL,
+  .clGetGLObjectInfo = NULL,
+  .clGetGLTextureInfo = NULL,
+  .clEnqueueAcquireGLObjects = NULL,
+  .clEnqueueReleaseGLObjects = NULL,
+  .clGetGLContextInfoKHR = NULL,
 
-/* cl_khr_d3d10_sharing */
-.clGetDeviceIDsFromD3D10KHR = NULL,
-.clCreateFromD3D10BufferKHR = NULL,
-.clCreateFromD3D10Texture2DKHR = NULL,
-.clCreateFromD3D10Texture3DKHR = NULL,
-.clEnqueueAcquireD3D10ObjectsKHR = NULL,
-.clEnqueueReleaseD3D10ObjectsKHR = NULL,
+  // cl_khr_d3d10_sharing
+  .clGetDeviceIDsFromD3D10KHR = NULL,
+  .clCreateFromD3D10BufferKHR = NULL,
+  .clCreateFromD3D10Texture2DKHR = NULL,
+  .clCreateFromD3D10Texture3DKHR = NULL,
+  .clEnqueueAcquireD3D10ObjectsKHR = NULL,
+  .clEnqueueReleaseD3D10ObjectsKHR = NULL,
 
-/* OpenCL 1.1 */
-.clSetEventCallback = NULL,
-.clCreateSubBuffer = NULL,
-.clSetMemObjectDestructorCallback = NULL,
-.clCreateUserEvent = NULL,
-.clSetUserEventStatus = NULL,
-.clEnqueueReadBufferRect = NULL,
-.clEnqueueWriteBufferRect = NULL,
-.clEnqueueCopyBufferRect = NULL,
+  // OpenCL 1.1
+  .clSetEventCallback = NULL,
+  .clCreateSubBuffer = NULL,
+  .clSetMemObjectDestructorCallback = NULL,
+  .clCreateUserEvent = NULL,
+  .clSetUserEventStatus = NULL,
+  .clEnqueueReadBufferRect = NULL,
+  .clEnqueueWriteBufferRect = NULL,
+  .clEnqueueCopyBufferRect = NULL,
 
-/* cl_ext_device_fission */
-.clCreateSubDevicesEXT = NULL,
-.clRetainDeviceEXT = NULL,
-.clReleaseDeviceEXT = NULL,
+  // cl_ext_device_fission
+  .clCreateSubDevicesEXT = NULL,
+  .clRetainDeviceEXT = NULL,
+  .clReleaseDeviceEXT = NULL,
 
-/* cl_khr_gl_event */
-.clCreateEventFromGLsyncKHR = NULL,
+  // cl_khr_gl_event
+  .clCreateEventFromGLsyncKHR = NULL,
 
-/* OpenCL 1.2 */
-.clCreateSubDevices = NULL,
-.clRetainDevice = NULL,
-.clReleaseDevice = NULL,
-.clCreateImage = NULL,
-.clCreateProgramWithBuiltInKernels = NULL,
-.clCompileProgram = NULL,
-.clLinkProgram = NULL,
-.clUnloadPlatformCompiler = NULL,
-.clGetKernelArgInfo = NULL,
-.clEnqueueFillBuffer = NULL,
-.clEnqueueFillImage = NULL,
-.clEnqueueMigrateMemObjects = NULL,
-.clEnqueueMarkerWithWaitList = NULL,
-.clEnqueueBarrierWithWaitList = NULL,
-.clGetExtensionFunctionAddressForPlatform = NULL,
-.clCreateFromGLTexture = NULL,
+  // OpenCL 1.2
+  .clCreateSubDevices = NULL,
+  .clRetainDevice = NULL,
+  .clReleaseDevice = NULL,
+  .clCreateImage = NULL,
+  .clCreateProgramWithBuiltInKernels = NULL,
+  .clCompileProgram = NULL,
+  .clLinkProgram = NULL,
+  .clUnloadPlatformCompiler = NULL,
+  .clGetKernelArgInfo = NULL,
+  .clEnqueueFillBuffer = NULL,
+  .clEnqueueFillImage = NULL,
+  .clEnqueueMigrateMemObjects = NULL,
+  .clEnqueueMarkerWithWaitList = NULL,
+  .clEnqueueBarrierWithWaitList = NULL,
+  .clGetExtensionFunctionAddressForPlatform = NULL,
+  .clCreateFromGLTexture = NULL,
 
-/* cl_khr_d3d11_sharing */
-.clGetDeviceIDsFromD3D11KHR = NULL,
-.clCreateFromD3D11BufferKHR = NULL,
-.clCreateFromD3D11Texture2DKHR = NULL,
-.clCreateFromD3D11Texture3DKHR = NULL,
-.clCreateFromDX9MediaSurfaceKHR = NULL,
-.clEnqueueAcquireD3D11ObjectsKHR = NULL,
-.clEnqueueReleaseD3D11ObjectsKHR = NULL,
+  // cl_khr_d3d11_sharing
+  .clGetDeviceIDsFromD3D11KHR = NULL,
+  .clCreateFromD3D11BufferKHR = NULL,
+  .clCreateFromD3D11Texture2DKHR = NULL,
+  .clCreateFromD3D11Texture3DKHR = NULL,
+  .clCreateFromDX9MediaSurfaceKHR = NULL,
+  .clEnqueueAcquireD3D11ObjectsKHR = NULL,
+  .clEnqueueReleaseD3D11ObjectsKHR = NULL,
 
-/* cl_khr_dx9_media_sharing */
-.clGetDeviceIDsFromDX9MediaAdapterKHR = NULL,
-.clEnqueueAcquireDX9MediaSurfacesKHR = NULL,
-.clEnqueueReleaseDX9MediaSurfacesKHR = NULL,
+  // cl_khr_dx9_media_sharing
+  .clGetDeviceIDsFromDX9MediaAdapterKHR = NULL,
+  .clEnqueueAcquireDX9MediaSurfacesKHR = NULL,
+  .clEnqueueReleaseDX9MediaSurfacesKHR = NULL,
 
-/* cl_khr_egl_image */
-.clCreateFromEGLImageKHR = NULL,
-.clEnqueueAcquireEGLObjectsKHR = NULL,
-.clEnqueueReleaseEGLObjectsKHR = NULL,
+  // cl_khr_egl_image
+  .clCreateFromEGLImageKHR = NULL,
+  .clEnqueueAcquireEGLObjectsKHR = NULL,
+  .clEnqueueReleaseEGLObjectsKHR = NULL,
 
-/* cl_khr_egl_event */
-.clCreateEventFromEGLSyncKHR = NULL,
+  // cl_khr_egl_event
+  .clCreateEventFromEGLSyncKHR = NULL,
 
-/* OpenCL 2.0 */
-.clCreateCommandQueueWithProperties = NULL,
-.clCreatePipe = NULL,
-.clGetPipeInfo = NULL,
-.clSVMAlloc = NULL,
-.clSVMFree = NULL,
-.clEnqueueSVMFree = NULL,
-.clEnqueueSVMMemcpy = NULL,
-.clEnqueueSVMMemFill = NULL,
-.clEnqueueSVMMap = NULL,
-.clEnqueueSVMUnmap = NULL,
-.clCreateSamplerWithProperties = NULL,
-.clSetKernelArgSVMPointer = NULL,
-.clSetKernelExecInfo = NULL,
+  // OpenCL 2.0
+  .clCreateCommandQueueWithProperties = NULL,
+  .clCreatePipe = NULL,
+  .clGetPipeInfo = NULL,
+  .clSVMAlloc = NULL,
+  .clSVMFree = NULL,
+  .clEnqueueSVMFree = NULL,
+  .clEnqueueSVMMemcpy = NULL,
+  .clEnqueueSVMMemFill = NULL,
+  .clEnqueueSVMMap = NULL,
+  .clEnqueueSVMUnmap = NULL,
+  .clCreateSamplerWithProperties = NULL,
+  .clSetKernelArgSVMPointer = NULL,
+  .clSetKernelExecInfo = NULL,
 
-/* cl_khr_sub_groups */
-.clGetKernelSubGroupInfoKHR = NULL,
+  // cl_khr_sub_groups
+  .clGetKernelSubGroupInfoKHR = NULL,
 
-/* OpenCL 2.1 */
-.clCloneKernel = NULL,
-.clCreateProgramWithIL = NULL,
-.clEnqueueSVMMigrateMem = NULL,
-.clGetDeviceAndHostTimer = NULL,
-.clGetHostTimer = NULL,
-.clGetKernelSubGroupInfo = NULL,
-.clSetDefaultDeviceCommandQueue = NULL,
+  // OpenCL 2.1
+  .clCloneKernel = NULL,
+  .clCreateProgramWithIL = NULL,
+  .clEnqueueSVMMigrateMem = NULL,
+  .clGetDeviceAndHostTimer = NULL,
+  .clGetHostTimer = NULL,
+  .clGetKernelSubGroupInfo = NULL,
+  .clSetDefaultDeviceCommandQueue = NULL,
 
-/* OpenCL 2.2 */
-.clSetProgramReleaseCallback = NULL,
-.clSetProgramSpecializationConstant = NULL,
+  // OpenCL 2.2
+  .clSetProgramReleaseCallback = NULL,
+  .clSetProgramSpecializationConstant = NULL,
 
-/* OpenCL 3.0 */
-.clCreateBufferWithProperties = NULL,
-.clCreateImageWithProperties = NULL
+  //* OpenCL 3.0
+  .clCreateBufferWithProperties = NULL,
+  .clCreateImageWithProperties = NULL
 
 };
 
 
 
-
-
-
-
+              // implementation of the OpenCL functions
+              // currently only a small subset of all available functions has been implemented
+              // see OpenCL documentation for details
 
 CL_API_ENTRY cl_int CL_API_CALL clGetPlatformIDs(
         cl_uint          num_entries,
@@ -1140,9 +1162,8 @@ clFinish(cl_command_queue command_queue) CL_API_SUFFIX__VERSION_1_0{
 }
 
 
+                 // still some OpenCL functions left for implementation
 /*
-
-
 
 // SVM Allocation APIs
 
@@ -1826,7 +1847,7 @@ clEnqueueTask(cl_command_queue  command_queue,
 
 
 
-
+// see header file for details
 int loadOpenCL( const char* p ){
 
     int ret = 0;                          // return value
@@ -1836,10 +1857,8 @@ int loadOpenCL( const char* p ){
 
     if (dlcall == NULL) {
 
-      strncpy(liboclpath, p, 1024);     // yes -> copy path
-
       // load library
-      dlcall = dlopen( liboclpath, RTLD_NOW );
+      dlcall = dlopen( p, RTLD_NOW );
 
       if (dlcall == NULL) {
         ret = -2;    // report error
@@ -1858,7 +1877,7 @@ int loadOpenCL( const char* p ){
 }  // loadOpenCL
 
 
-
+// see header file for details
 void unloadOpenCL(){
 
     pthread_rwlock_wrlock( &lock );        // get exclusive access to unload mechanism

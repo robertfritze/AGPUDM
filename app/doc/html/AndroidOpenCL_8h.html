@@ -114,7 +114,7 @@ Functions</h2></td></tr>
 <p>Loads the OpenCL library of the Android device dynamically. </p>
 <p>Loads the OpenCL library dynamically. This function <b>MUST</b> be called exactly once before any other call to an OpenCL function. The function stores the path of the library. If the library has already been loaded, a call to this method will have no effect. Any call to an OpenCL function without prior call to this method will result in an error. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td>The path and name of the OpenCL-library on the device (is copied, maximum length 1024 characters) </td></tr>
+    <tr><td class="paramname">c</td><td>(in) Pointer to the path and name of the OpenCL-library on the device (can be reused after the call) </td></tr>
   </table>
   </dd>
 </dl>

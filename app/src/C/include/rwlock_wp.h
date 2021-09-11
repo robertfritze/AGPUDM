@@ -18,12 +18,16 @@
 
                               //! A struct thats holds all necessary components for the lock
 struct rwlockwp {
-
-  pthread_mutex_t g;          //! A mutex for the reader/writer lock
-  pthread_cond_t c;           //! A condition variable for the reader/writer lock
-  int num_writers_waiting;    //! Number of writers waiting
-  int num_reader_active;      //! Number of readers active
-  int writer_active;          //! Number of writers active
+                              //! A mutex for the reader/writer lock
+  pthread_mutex_t g;
+                              //! A condition variable for the reader/writer lock
+  pthread_cond_t c;
+                              //! Number of writers waiting
+  int num_writers_waiting;
+                              //! Number of readers active
+  int num_reader_active;
+                              //! Number of writers active
+  int writer_active;
 
 };
 
@@ -32,7 +36,6 @@ struct rwlockwp {
 
 
 /*!
- \fn void rwlockwp_reader_acquire( volatile struct rwlockwp* );
  \brief Acquires the reader lock
  \details
  Acquires the reader lock. Multiple readers can acquire the lock at the same time.
@@ -44,7 +47,6 @@ struct rwlockwp {
 void rwlockwp_reader_acquire( volatile struct rwlockwp* );
 
 /*!
- \fn void rwlockwp_reader_release( volatile struct rwlockwp* );
  \brief Releases the reader lock
  \details
  Releases the reader lock. If no more other readers are holding a reader lock and a writer is
@@ -55,7 +57,6 @@ void rwlockwp_reader_acquire( volatile struct rwlockwp* );
 void rwlockwp_reader_release( volatile struct rwlockwp* );
 
 /*!
- \fn void rwlockwp_writer_acquire( volatile struct rwlockwp* );
  \brief Acquires the writer lock
  \details
  Acquires the writer lock. All new readers have to queue up. The writer is blocked until all
@@ -66,7 +67,6 @@ void rwlockwp_reader_release( volatile struct rwlockwp* );
 void rwlockwp_writer_acquire( volatile struct rwlockwp* );
 
 /*!
- \fn void rwlockwp_writer_release( volatile struct rwlockwp* );
  \brief Releases the writer lock
  \details
  Releases the writer lock. All waiting readers will wake up.

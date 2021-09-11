@@ -87,11 +87,14 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a5990dea19d4ccb046a3d81b311457add"><td class="memItemLeft" align="right" valign="top"><a id="a5990dea19d4ccb046a3d81b311457add"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CL_TARGET_OPENCL_VERSION</b>&#160;&#160;&#160;120</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OpenCL_8c.html#a5990dea19d4ccb046a3d81b311457add">CL_TARGET_OPENCL_VERSION</a>&#160;&#160;&#160;120</td></tr>
+<tr class="memdesc:a5990dea19d4ccb046a3d81b311457add"><td class="mdescLeft">&#160;</td><td class="mdescRight">rescue definition of the OpenCL version <br /></td></tr>
 <tr class="separator:a5990dea19d4ccb046a3d81b311457add"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a709c98084a7b1aea8c4377c18ad6819d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>SAVECHECKER</b>(a)</td></tr>
+<tr class="memitem:a709c98084a7b1aea8c4377c18ad6819d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OpenCL_8c.html#a709c98084a7b1aea8c4377c18ad6819d">SAVECHECKER</a>(a)</td></tr>
+<tr class="memdesc:a709c98084a7b1aea8c4377c18ad6819d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro that checks if prerequists for calling a native OpenCL function are met.  <a href="#a709c98084a7b1aea8c4377c18ad6819d">More...</a><br /></td></tr>
 <tr class="separator:a709c98084a7b1aea8c4377c18ad6819d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea2af9767e8a0154179e5332dd5553e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>WRAPPERCLFUNCT</b>(a,  b,  c)</td></tr>
+<tr class="memitem:aea2af9767e8a0154179e5332dd5553e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OpenCL_8c.html#aea2af9767e8a0154179e5332dd5553e0">WRAPPERCLFUNCT</a>(a,  b,  c)</td></tr>
+<tr class="memdesc:aea2af9767e8a0154179e5332dd5553e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro that simplifys the definition of the wrapper methods.  <a href="#aea2af9767e8a0154179e5332dd5553e0">More...</a><br /></td></tr>
 <tr class="separator:aea2af9767e8a0154179e5332dd5553e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -195,32 +198,29 @@ CL_API_ENTRY cl_int CL_API_CALL&#160;</td><td class="memItemRight" valign="botto
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:adab429f07774a2a2d93ba79d119da229"><td class="memItemLeft" align="right" valign="top"><a id="adab429f07774a2a2d93ba79d119da229"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OpenCL_8c.html#adab429f07774a2a2d93ba79d119da229">dlcall</a> = NULL</td></tr>
-<tr class="memdesc:adab429f07774a2a2d93ba79d119da229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the reference to the loaded library <em>libOpenCL.so</em>  R+W  Use <em>pthread_mutex_t</em> <b>dllock</b> to access. <br /></td></tr>
+<tr class="memitem:adab429f07774a2a2d93ba79d119da229"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OpenCL_8c.html#adab429f07774a2a2d93ba79d119da229">dlcall</a> = NULL</td></tr>
+<tr class="memdesc:adab429f07774a2a2d93ba79d119da229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the reference to the loaded native library <em>libOpenCL.so</em>  <a href="#adab429f07774a2a2d93ba79d119da229">More...</a><br /></td></tr>
 <tr class="separator:adab429f07774a2a2d93ba79d119da229"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf23dda1879352542d23985684428ff1"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OpenCL_8c.html#abf23dda1879352542d23985684428ff1">liboclpath</a> [1024] = &quot;&quot;</td></tr>
-<tr class="memdesc:abf23dda1879352542d23985684428ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the path to the OpenCL library on the device.  <a href="#abf23dda1879352542d23985684428ff1">More...</a><br /></td></tr>
-<tr class="separator:abf23dda1879352542d23985684428ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0246195b64447ad0ba3510f410604f4"><td class="memItemLeft" align="right" valign="top">pthread_rwlock_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OpenCL_8c.html#aa0246195b64447ad0ba3510f410604f4">lock</a> = PTHREAD_RWLOCK_INITIALIZER</td></tr>
-<tr class="memdesc:aa0246195b64447ad0ba3510f410604f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A R/W lock for the mutual exclusion of the library unload mechanism.  <a href="#aa0246195b64447ad0ba3510f410604f4">More...</a><br /></td></tr>
-<tr class="separator:aa0246195b64447ad0ba3510f410604f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6862642576558f9565eaea8be8b48c58"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OpenCL_8c.html#a6862642576558f9565eaea8be8b48c58">dllock</a> = PTHREAD_MUTEX_INITIALIZER</td></tr>
-<tr class="memdesc:a6862642576558f9565eaea8be8b48c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mutex for the mechanism that loads the library and some attributes.  <a href="#a6862642576558f9565eaea8be8b48c58">More...</a><br /></td></tr>
+<tr class="memdesc:a6862642576558f9565eaea8be8b48c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mutex for the mechanism that loads the library.  <a href="#a6862642576558f9565eaea8be8b48c58">More...</a><br /></td></tr>
 <tr class="separator:a6862642576558f9565eaea8be8b48c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0246195b64447ad0ba3510f410604f4"><td class="memItemLeft" align="right" valign="top">pthread_rwlock_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OpenCL_8c.html#aa0246195b64447ad0ba3510f410604f4">lock</a> = PTHREAD_RWLOCK_INITIALIZER</td></tr>
+<tr class="memdesc:aa0246195b64447ad0ba3510f410604f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A R/W lock for the mutual exclusion of the library load/unload mechanism.  <a href="#aa0246195b64447ad0ba3510f410604f4">More...</a><br /></td></tr>
+<tr class="separator:aa0246195b64447ad0ba3510f410604f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4426606463de0d8607bac696fd6d901d"><td class="memItemLeft" align="right" valign="top"><a id="a4426606463de0d8607bac696fd6d901d"></a>
-const cl_icd_dispatch&#160;</td><td class="memItemRight" valign="bottom"><b>CL_WRAP_CALL_ZERO</b></td></tr>
+const cl_icd_dispatch&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OpenCL_8c.html#a4426606463de0d8607bac696fd6d901d">CL_WRAP_CALL_ZERO</a></td></tr>
+<tr class="memdesc:a4426606463de0d8607bac696fd6d901d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constant with all pointers set to zero. <br /></td></tr>
 <tr class="separator:a4426606463de0d8607bac696fd6d901d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1285915a31dccb44d7e55e4d7e1d7549"><td class="memItemLeft" align="right" valign="top"><a id="a1285915a31dccb44d7e55e4d7e1d7549"></a>
-cl_icd_dispatch&#160;</td><td class="memItemRight" valign="bottom"><b>cl_wrap_call</b></td></tr>
+<tr class="memitem:a1285915a31dccb44d7e55e4d7e1d7549"><td class="memItemLeft" align="right" valign="top">cl_icd_dispatch&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OpenCL_8c.html#a1285915a31dccb44d7e55e4d7e1d7549">cl_wrap_call</a></td></tr>
+<tr class="memdesc:a1285915a31dccb44d7e55e4d7e1d7549"><td class="mdescLeft">&#160;</td><td class="mdescRight">holds the function pointers to the native OpenCL library  <a href="#a1285915a31dccb44d7e55e4d7e1d7549">More...</a><br /></td></tr>
 <tr class="separator:a1285915a31dccb44d7e55e4d7e1d7549"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A this OpenCL wrapper for the libOpenCL.so shared library on the Android device. </p>
-<p>This library acts as a small wrapper for the native OpenCL library on an Android device. The library on the device usually is not present at compile time and if it would, it would be added to the apk file at compile time. The app would run ONLY on this type of device (e.g., a Mali GPU) but could not be ported to other Android devices. Therefore this wrapper loads the OpenCL library and all necessary symbols at runtime. This library supports OpenCL 3.0. If your device does not support this version, either rebuild this library with the version appropriate for your device or simply do not call methods not supported on your device. If you do so, a runtime error will occur as the necessary symbol will not be found in the library. </p><dl class="section copyright"><dt>Copyright</dt><dd>Copyright Robert Fritze 2020 </dd></dl>
+<p>This library acts as a small wrapper (glue) for the native OpenCL library on an Android device. The library on the device usually is not present at compile time and if it would, it would be added to the apk file at compile time. The app would run ONLY on this type of device (e.g., a Mali GPU) but could not be ported to other Android devices. Therefore this wrapper loads the OpenCL library and all necessary symbols at runtime. This library supports OpenCL 3.0. If your device does not support this version, either rebuild this library with the version appropriate for your device or simply do not call methods not supported on your device. If you do so, a runtime error will occur as the necessary symbol will not be found in the library. </p><dl class="section copyright"><dt>Copyright</dt><dd>Copyright Robert Fritze 2021 </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Robert Fritze </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>4.5.2020 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>11.9.2021 </dd></dl>
 <dl class="section user"><dt>License:</dt><dd>This program is released under the MIT License. </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a709c98084a7b1aea8c4377c18ad6819d"></a>
@@ -238,9 +238,20 @@ cl_icd_dispatch&#160;</td><td class="memItemRight" valign="bottom"><b>cl_wrap_ca
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">pthread_mutex_lock( &amp;<a class="code" href="OpenCL_8c.html#a6862642576558f9565eaea8be8b48c58">dllock</a> );            \</div><div class="line">                                                \</div><div class="line">      if (<a class="code" href="OpenCL_8c.html#adab429f07774a2a2d93ba79d119da229">dlcall</a> == NULL){                      \</div><div class="line">        weiter = 1;                             \</div><div class="line">      }                                         \</div><div class="line">                                                \</div><div class="line">      if ((weiter == 0) &amp;&amp; (cl_wrap_call.a==NULL)) {   \</div><div class="line">        cl_wrap_call.a = (cl_api_##a) dlsym(<a class="code" href="OpenCL_8c.html#adab429f07774a2a2d93ba79d119da229">dlcall</a>, #a ); \</div><div class="line">                                                \</div><div class="line">        if (cl_wrap_call.a == NULL) {           \</div><div class="line">          weiter = 1;                           \</div><div class="line">        }                                       \</div><div class="line">      }                                         \</div><div class="line">                                                \</div><div class="line">      pthread_mutex_unlock( &amp;<a class="code" href="OpenCL_8c.html#a6862642576558f9565eaea8be8b48c58">dllock</a> );          \</div><div class="ttc" id="OpenCL_8c_html_adab429f07774a2a2d93ba79d119da229"><div class="ttname"><a href="OpenCL_8c.html#adab429f07774a2a2d93ba79d119da229">dlcall</a></div><div class="ttdeci">void * dlcall</div><div class="ttdoc">Holds the reference to the loaded library libOpenCL.so  R+W  Use pthread_mutex_t dllock to access...</div><div class="ttdef"><b>Definition:</b> OpenCL.c:84</div></div>
-<div class="ttc" id="OpenCL_8c_html_a6862642576558f9565eaea8be8b48c58"><div class="ttname"><a href="OpenCL_8c.html#a6862642576558f9565eaea8be8b48c58">dllock</a></div><div class="ttdeci">pthread_mutex_t dllock</div><div class="ttdoc">A mutex for the mechanism that loads the library and some attributes. </div><div class="ttdef"><b>Definition:</b> OpenCL.c:114</div></div>
+<b>Value:</b><div class="fragment"><div class="line">pthread_mutex_lock( &amp;<a class="code" href="OpenCL_8c.html#a6862642576558f9565eaea8be8b48c58">dllock</a> );            \</div><div class="line">                                                \</div><div class="line">      if (<a class="code" href="OpenCL_8c.html#adab429f07774a2a2d93ba79d119da229">dlcall</a> == NULL){                      \</div><div class="line">        weiter = 1;                             \</div><div class="line">      }                                         \</div><div class="line">                                                \</div><div class="line">      if ((weiter == 0) &amp;&amp; (<a class="code" href="OpenCL_8c.html#a1285915a31dccb44d7e55e4d7e1d7549">cl_wrap_call</a>.a==NULL)) {   \</div><div class="line">        cl_wrap_call.a = (cl_api_##a) dlsym(<a class="code" href="OpenCL_8c.html#adab429f07774a2a2d93ba79d119da229">dlcall</a>, #a ); \</div><div class="line">                                                \</div><div class="line">        if (<a class="code" href="OpenCL_8c.html#a1285915a31dccb44d7e55e4d7e1d7549">cl_wrap_call</a>.a == NULL) {           \</div><div class="line">          weiter = 1;                           \</div><div class="line">        }                                       \</div><div class="line">      }                                         \</div><div class="line">                                                \</div><div class="line">      pthread_mutex_unlock( &amp;<a class="code" href="OpenCL_8c.html#a6862642576558f9565eaea8be8b48c58">dllock</a> );          \</div><div class="ttc" id="OpenCL_8c_html_adab429f07774a2a2d93ba79d119da229"><div class="ttname"><a href="OpenCL_8c.html#adab429f07774a2a2d93ba79d119da229">dlcall</a></div><div class="ttdeci">void * dlcall</div><div class="ttdoc">Holds the reference to the loaded native library libOpenCL.so </div><div class="ttdef"><b>Definition:</b> OpenCL.c:108</div></div>
+<div class="ttc" id="OpenCL_8c_html_a6862642576558f9565eaea8be8b48c58"><div class="ttname"><a href="OpenCL_8c.html#a6862642576558f9565eaea8be8b48c58">dllock</a></div><div class="ttdeci">pthread_mutex_t dllock</div><div class="ttdoc">A mutex for the mechanism that loads the library. </div><div class="ttdef"><b>Definition:</b> OpenCL.c:116</div></div>
+<div class="ttc" id="OpenCL_8c_html_a1285915a31dccb44d7e55e4d7e1d7549"><div class="ttname"><a href="OpenCL_8c.html#a1285915a31dccb44d7e55e4d7e1d7549">cl_wrap_call</a></div><div class="ttdeci">cl_icd_dispatch cl_wrap_call</div><div class="ttdoc">holds the function pointers to the native OpenCL library </div><div class="ttdef"><b>Definition:</b> OpenCL.c:326</div></div>
 </div><!-- fragment -->
+<p>Macro that checks if prerequists for calling a native OpenCL function are met. </p>
+<p>This macro checks if the native library has been loaded and if the necessary symbol for the method call has been resolved. If the library has been loaded, but the symbol has not yet been resolved, the symbol will be resolved. Sets the "weiter" variable accordingly. Uses a lock to get exclusive access. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>the method name of the native library </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>The lock <b>lock</b> must have been acquired before </dd></dl>
+<dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
+
 </div>
 </div>
 <a id="aea2af9767e8a0154179e5332dd5553e0"></a>
@@ -274,8 +285,21 @@ cl_icd_dispatch&#160;</td><td class="memItemRight" valign="bottom"><b>cl_wrap_ca
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">\</div><div class="line">    pthread_rwlock_rdlock( &amp;<a class="code" href="OpenCL_8c.html#aa0246195b64447ad0ba3510f410604f4">lock</a> );             \</div><div class="line">                                                \</div><div class="line">    int weiter = 0;                             \</div><div class="line">                                                \</div><div class="line">    SAVECHECKER( a )                            \</div><div class="line">                                                \</div><div class="line">    if (weiter == 0) {                          \</div><div class="line">      ret = cl_wrap_call.a b;                   \</div><div class="line">    }                                           \</div><div class="line">    else {                                      \</div><div class="line">      ret = c;                                  \</div><div class="line">    }                                           \</div><div class="line">                                                \</div><div class="line">    pthread_rwlock_unlock( &amp;<a class="code" href="OpenCL_8c.html#aa0246195b64447ad0ba3510f410604f4">lock</a> );             \</div><div class="line">                                                \</div><div class="line">    return( ret );                              \</div><div class="ttc" id="OpenCL_8c_html_aa0246195b64447ad0ba3510f410604f4"><div class="ttname"><a href="OpenCL_8c.html#aa0246195b64447ad0ba3510f410604f4">lock</a></div><div class="ttdeci">pthread_rwlock_t lock</div><div class="ttdoc">A R/W lock for the mutual exclusion of the library unload mechanism. </div><div class="ttdef"><b>Definition:</b> OpenCL.c:106</div></div>
+<b>Value:</b><div class="fragment"><div class="line">\</div><div class="line">    pthread_rwlock_rdlock( &amp;<a class="code" href="OpenCL_8c.html#aa0246195b64447ad0ba3510f410604f4">lock</a> );             \</div><div class="line">                                                \</div><div class="line">    int weiter = 0;                             <a class="code" href="OpenCL_8c.html#a709c98084a7b1aea8c4377c18ad6819d">\</a></div><div class="line"><a class="code" href="OpenCL_8c.html#a709c98084a7b1aea8c4377c18ad6819d">                                                \</a></div><div class="line"><a class="code" href="OpenCL_8c.html#a709c98084a7b1aea8c4377c18ad6819d">    SAVECHECKER</a>( a )                            \</div><div class="line">                                                \</div><div class="line">    if (weiter == 0) {                          \</div><div class="line">      ret = <a class="code" href="OpenCL_8c.html#a1285915a31dccb44d7e55e4d7e1d7549">cl_wrap_call</a>.a b;                   \</div><div class="line">    }                                           \</div><div class="line">    else {                                      \</div><div class="line">      ret = c;                                  \</div><div class="line">    }                                           \</div><div class="line">                                                \</div><div class="line">    pthread_rwlock_unlock( &amp;<a class="code" href="OpenCL_8c.html#aa0246195b64447ad0ba3510f410604f4">lock</a> );             \</div><div class="line">                                                \</div><div class="line">    return( ret );                              \</div><div class="ttc" id="OpenCL_8c_html_aa0246195b64447ad0ba3510f410604f4"><div class="ttname"><a href="OpenCL_8c.html#aa0246195b64447ad0ba3510f410604f4">lock</a></div><div class="ttdeci">pthread_rwlock_t lock</div><div class="ttdoc">A R/W lock for the mutual exclusion of the library load/unload mechanism. </div><div class="ttdef"><b>Definition:</b> OpenCL.c:128</div></div>
+<div class="ttc" id="OpenCL_8c_html_a709c98084a7b1aea8c4377c18ad6819d"><div class="ttname"><a href="OpenCL_8c.html#a709c98084a7b1aea8c4377c18ad6819d">SAVECHECKER</a></div><div class="ttdeci">#define SAVECHECKER(a)</div><div class="ttdoc">Macro that checks if prerequists for calling a native OpenCL function are met. </div><div class="ttdef"><b>Definition:</b> OpenCL.c:52</div></div>
+<div class="ttc" id="OpenCL_8c_html_a1285915a31dccb44d7e55e4d7e1d7549"><div class="ttname"><a href="OpenCL_8c.html#a1285915a31dccb44d7e55e4d7e1d7549">cl_wrap_call</a></div><div class="ttdeci">cl_icd_dispatch cl_wrap_call</div><div class="ttdoc">holds the function pointers to the native OpenCL library </div><div class="ttdef"><b>Definition:</b> OpenCL.c:326</div></div>
 </div><!-- fragment -->
+<p>Macro that simplifys the definition of the wrapper methods. </p>
+<p>This macro checks the native library is ready and calls the method of the native library. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>OpenCL method name </td></tr>
+    <tr><td class="paramname">b</td><td>a list with all parameters of the native function </td></tr>
+    <tr><td class="paramname">c</td><td>the error code that should be returned if the library function can not be called </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
@@ -289,7 +313,7 @@ cl_icd_dispatch&#160;</td><td class="memItemRight" valign="bottom"><b>cl_wrap_ca
           <td class="memname">int loadOpenCL </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>p</em></td><td>)</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -298,7 +322,7 @@ cl_icd_dispatch&#160;</td><td class="memItemRight" valign="bottom"><b>cl_wrap_ca
 <p>Loads the OpenCL library of the Android device dynamically. </p>
 <p>Loads the OpenCL library dynamically. This function <b>MUST</b> be called exactly once before any other call to an OpenCL function. The function stores the path of the library. If the library has already been loaded, a call to this method will have no effect. Any call to an OpenCL function without prior call to this method will result in an error. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td>The path and name of the OpenCL-library on the device (is copied, maximum length 1024 characters) </td></tr>
+    <tr><td class="paramname">c</td><td>(in) Pointer to the path and name of the OpenCL-library on the device (can be reused after the call) </td></tr>
   </table>
   </dd>
 </dl>
@@ -329,6 +353,40 @@ cl_icd_dispatch&#160;</td><td class="memItemRight" valign="bottom"><b>cl_wrap_ca
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a1285915a31dccb44d7e55e4d7e1d7549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1285915a31dccb44d7e55e4d7e1d7549">&#9670;&nbsp;</a></span>cl_wrap_call</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cl_icd_dispatch cl_wrap_call</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>holds the function pointers to the native OpenCL library </p>
+<p>This variable is a struct that holds the function pointers to the native functions of the native OpenCL-libraray. The function symbols are resolved only just before they are actually needed. As long as they are not needed, they hold the value NULL. This avoids a long initialization overhead once the library is loaded. </p><dl class="section warning"><dt>Warning</dt><dd>Access only with the lock <em>lock</em> (read-only access) and the lock <em>dllock</em> (write access) </dd></dl>
+
+</div>
+</div>
+<a id="adab429f07774a2a2d93ba79d119da229"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adab429f07774a2a2d93ba79d119da229">&#9670;&nbsp;</a></span>dlcall</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* dlcall = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Holds the reference to the loaded native library <em>libOpenCL.so</em> </p>
+<dl class="section warning"><dt>Warning</dt><dd>Use <b>dllock</b> for read+write access </dd></dl>
+
+</div>
+</div>
 <a id="a6862642576558f9565eaea8be8b48c58"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6862642576558f9565eaea8be8b48c58">&#9670;&nbsp;</a></span>dllock</h2>
 
@@ -341,25 +399,8 @@ cl_icd_dispatch&#160;</td><td class="memItemRight" valign="bottom"><b>cl_wrap_ca
       </table>
 </div><div class="memdoc">
 
-<p>A mutex for the mechanism that loads the library and some attributes. </p>
-<p>This mutex guarantees exclusive access to the library load mechanism and the attributes <em>loadChecker</em> and <em>dlcall</em> </p><dl class="section warning"><dt>Warning</dt><dd>If this lock AND <b>lock</b> are acquired together, this lock has to be acquired first! </dd></dl>
-
-</div>
-</div>
-<a id="abf23dda1879352542d23985684428ff1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf23dda1879352542d23985684428ff1">&#9670;&nbsp;</a></span>liboclpath</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char liboclpath[1024] = &quot;&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Holds the path to the OpenCL library on the device. </p>
-<p>If the path is longer than 1024 characters, the path is truncated (resulting in an error most probably as the OpenCL library will not be found)  Write once and read only afterwards  no locks required (can be written only during first call to <em>loadOpenCL</em> and cannot be read before that call; after the call to <em>loadOpenCL</em> this variable is read-only) </p>
+<p>A mutex for the mechanism that loads the library. </p>
+<p>This mutex guarantees exclusive access to the attributes <em>dlcall</em> and <em>cl_wrap_call</em> </p><dl class="section warning"><dt>Warning</dt><dd>For cascade lock use together with lock, acqurire first <em>lock</em> </dd></dl>
 
 </div>
 </div>
@@ -375,8 +416,8 @@ cl_icd_dispatch&#160;</td><td class="memItemRight" valign="bottom"><b>cl_wrap_ca
       </table>
 </div><div class="memdoc">
 
-<p>A R/W lock for the mutual exclusion of the library unload mechanism. </p>
-<p>This lock provides the mechanism to exclude to OpenCL library unload mechanism while the library is beeing loaded or some OpenCL function is executed. Arbitrary many methods can acquire the reader lock (including loadOpenCL) but only <em>unloadOpenCL</em> acquires the writer lock (resulting in an exclusive access to the entire library). </p><dl class="section warning"><dt>Warning</dt><dd>If this lock AND <b>dllock</b> are acquired together, this lock has to be acquired first! </dd></dl>
+<p>A R/W lock for the mutual exclusion of the library load/unload mechanism. </p>
+<p>This lock provides the mechanism to exclude to OpenCL library unload mechanism while the library is beeing loaded or some OpenCL function is executed. Arbitrary many methods can acquire the reader lock (including loadOpenCL) but only <em>unloadOpenCL</em> acquires the writer lock (resulting in an exclusive access to the entire library). </p><dl class="section warning"><dt>Warning</dt><dd>For cascade lock use together with dllock, acqurire first <b>lock</b> </dd></dl>
 
 </div>
 </div>
