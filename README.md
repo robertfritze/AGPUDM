@@ -7,7 +7,7 @@ Two data mining algorithms
 (DBSCAN and Kmeans) have been implemented with two different programming languages and different programming
 paradigms (single-threaded, multi-threaded, task/data parallelism (GPU)).
 
-There is a doxygen documentation available for this project (see app/doc/html/index.html). As of 9/12/2021 only the 
+There is a [doxygen documentation](app/doc/html/index.html) available for this project (see app/doc/html/index.html). As of 9/12/2021 only the 
 C part (except dbscan_c.c and kmeans_c.c) has been included in this documentation. 
 Additional documentation will be available soon.
 
@@ -15,7 +15,7 @@ The parameters for the data mining jobs have to be set in the file app/src/main/
 The following attributes can be set:
 
 * **mode** (string): 
-  * "dynamic" multiple test are made with build in values. The attributes 'clusterno', 'clustersize'
+  * "dynamic" multiple test are made with built in values. The attributes 'clusterno', 'clustersize'
      and 'features' must be set correctly but will not be used.
   * "fixed" tests are made with the attributes specified in this file
   
@@ -42,3 +42,4 @@ The following attributes can be set:
 
 In a future version an additional activity, that will allow to set the attributes on the device during runtime, 
 will be added to this project.    
+
