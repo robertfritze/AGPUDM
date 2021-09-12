@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Data Mining - Android - OpenCL: /home/robert/AndroidStudioProjects/DMGPU/app/src/C/include/oclwrapper.h File Reference</title>
+<title>Data Mining - Android - OpenCL: /home/robert/AndroidStudioProjects/DMGPU/app/src/C/source/oclwrapper.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,89 +62,81 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_382b62fd9ca97535352e87eb3043a695.html">C</a></li><li class="navelem"><a class="el" href="dir_45f8ca8c52211825ce6120a96b51c5bf.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_382b62fd9ca97535352e87eb3043a695.html">C</a></li><li class="navelem"><a class="el" href="dir_502d2e565b93165f75ee7d253f504642.html">source</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">oclwrapper.h File Reference</div>  </div>
+<div class="title">oclwrapper.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Defines the default target OpenCL version.  
+<p>Helper functions for OpenCL devices to be called directly form JAVA.  
 <a href="#details">More...</a></p>
-
-<p><a href="oclwrapper_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<div class="textblock"><code>#include &lt;jni.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="oclwrapper_8h_source.html">oclwrapper.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="AndroidOpenCL_8h_source.html">AndroidOpenCL.h</a>&quot;</code><br />
+<code>#include &quot;CL/cl.h&quot;</code><br />
+<code>#include &quot;CL/cl_platform.h&quot;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ac1ae4add974b9cfc6b5aaf8a578f01ab"><td class="memItemLeft" align="right" valign="top"><a id="ac1ae4add974b9cfc6b5aaf8a578f01ab"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8h.html#ac1ae4add974b9cfc6b5aaf8a578f01ab">UNKNOWN</a>&#160;&#160;&#160;-1</td></tr>
-<tr class="memdesc:ac1ae4add974b9cfc6b5aaf8a578f01ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">unknown architecture <br /></td></tr>
-<tr class="separator:ac1ae4add974b9cfc6b5aaf8a578f01ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab026c2caefe5237d3ff08d64bc44f031"><td class="memItemLeft" align="right" valign="top"><a id="ab026c2caefe5237d3ff08d64bc44f031"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8h.html#ab026c2caefe5237d3ff08d64bc44f031">ARM32</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memdesc:ab026c2caefe5237d3ff08d64bc44f031"><td class="mdescLeft">&#160;</td><td class="mdescRight">arm-v7 <br /></td></tr>
-<tr class="separator:ab026c2caefe5237d3ff08d64bc44f031"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad60f4509a26d03acf44e10243332242d"><td class="memItemLeft" align="right" valign="top"><a id="ad60f4509a26d03acf44e10243332242d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8h.html#ad60f4509a26d03acf44e10243332242d">ARM64</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:ad60f4509a26d03acf44e10243332242d"><td class="mdescLeft">&#160;</td><td class="mdescRight">arm-v8 <br /></td></tr>
-<tr class="separator:ad60f4509a26d03acf44e10243332242d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab45f50b8e38b9c733084c4557b34b760"><td class="memItemLeft" align="right" valign="top"><a id="ab45f50b8e38b9c733084c4557b34b760"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8h.html#ab45f50b8e38b9c733084c4557b34b760">INTEL32</a>&#160;&#160;&#160;2</td></tr>
-<tr class="memdesc:ab45f50b8e38b9c733084c4557b34b760"><td class="mdescLeft">&#160;</td><td class="mdescRight">intel x86 <br /></td></tr>
-<tr class="separator:ab45f50b8e38b9c733084c4557b34b760"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a274cff70a8ceaa329d01cd651abcf663"><td class="memItemLeft" align="right" valign="top"><a id="a274cff70a8ceaa329d01cd651abcf663"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8h.html#a274cff70a8ceaa329d01cd651abcf663">INTEL64</a>&#160;&#160;&#160;3</td></tr>
-<tr class="memdesc:a274cff70a8ceaa329d01cd651abcf663"><td class="mdescLeft">&#160;</td><td class="mdescRight">intel x86_64 <br /></td></tr>
-<tr class="separator:a274cff70a8ceaa329d01cd651abcf663"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5990dea19d4ccb046a3d81b311457add"><td class="memItemLeft" align="right" valign="top"><a id="a5990dea19d4ccb046a3d81b311457add"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8h.html#a5990dea19d4ccb046a3d81b311457add">CL_TARGET_OPENCL_VERSION</a>&#160;&#160;&#160;120</td></tr>
-<tr class="memdesc:a5990dea19d4ccb046a3d81b311457add"><td class="mdescLeft">&#160;</td><td class="mdescRight">the default target OpenCL version <br /></td></tr>
-<tr class="separator:a5990dea19d4ccb046a3d81b311457add"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73f01a073612b53c84823f2dbfe2210e"><td class="memItemLeft" align="right" valign="top"><a id="a73f01a073612b53c84823f2dbfe2210e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8c.html#a73f01a073612b53c84823f2dbfe2210e">TARGETARCH</a>&#160;&#160;&#160;<a class="el" href="oclwrapper_8h.html#ac1ae4add974b9cfc6b5aaf8a578f01ab">UNKNOWN</a></td></tr>
+<tr class="memdesc:a73f01a073612b53c84823f2dbfe2210e"><td class="mdescLeft">&#160;</td><td class="mdescRight">unknown target <br /></td></tr>
+<tr class="separator:a73f01a073612b53c84823f2dbfe2210e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a70b9cfe87ec353e0b132686b6ad633c9"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8h.html#a70b9cfe87ec353e0b132686b6ad633c9">Java_com_example_dmocl_oclwrap_isCLang</a> (JNIEnv *env, jclass clazz)</td></tr>
+<tr class="memitem:a70b9cfe87ec353e0b132686b6ad633c9"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8c.html#a70b9cfe87ec353e0b132686b6ad633c9">Java_com_example_dmocl_oclwrap_isCLang</a> (JNIEnv *env, jclass clazz)</td></tr>
 <tr class="memdesc:a70b9cfe87ec353e0b132686b6ad633c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if CLANG has been used for compilation.  <a href="#a70b9cfe87ec353e0b132686b6ad633c9">More...</a><br /></td></tr>
 <tr class="separator:a70b9cfe87ec353e0b132686b6ad633c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2604db65a63923724d541413d317a384"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8h.html#a2604db65a63923724d541413d317a384">Java_com_example_dmocl_oclwrap_getCLmaj</a> (JNIEnv *env, jclass clazz)</td></tr>
+<tr class="memitem:a2604db65a63923724d541413d317a384"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8c.html#a2604db65a63923724d541413d317a384">Java_com_example_dmocl_oclwrap_getCLmaj</a> (JNIEnv *env, jclass clazz)</td></tr>
 <tr class="memdesc:a2604db65a63923724d541413d317a384"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the CLANG major version number.  <a href="#a2604db65a63923724d541413d317a384">More...</a><br /></td></tr>
 <tr class="separator:a2604db65a63923724d541413d317a384"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adebb34bc4eae343c98f973f900126f65"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8h.html#adebb34bc4eae343c98f973f900126f65">Java_com_example_dmocl_oclwrap_getCLmin</a> (JNIEnv *env, jclass clazz)</td></tr>
+<tr class="memitem:adebb34bc4eae343c98f973f900126f65"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8c.html#adebb34bc4eae343c98f973f900126f65">Java_com_example_dmocl_oclwrap_getCLmin</a> (JNIEnv *env, jclass clazz)</td></tr>
 <tr class="memdesc:adebb34bc4eae343c98f973f900126f65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the CLANG minor version number.  <a href="#adebb34bc4eae343c98f973f900126f65">More...</a><br /></td></tr>
 <tr class="separator:adebb34bc4eae343c98f973f900126f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac363dec768880e96246e2f044a3d3d5f"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8h.html#ac363dec768880e96246e2f044a3d3d5f">Java_com_example_dmocl_oclwrap_getCLpatch</a> (JNIEnv *env, jclass clazz)</td></tr>
+<tr class="memitem:ac363dec768880e96246e2f044a3d3d5f"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8c.html#ac363dec768880e96246e2f044a3d3d5f">Java_com_example_dmocl_oclwrap_getCLpatch</a> (JNIEnv *env, jclass clazz)</td></tr>
 <tr class="memdesc:ac363dec768880e96246e2f044a3d3d5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the CLANG patch version number.  <a href="#ac363dec768880e96246e2f044a3d3d5f">More...</a><br /></td></tr>
 <tr class="separator:ac363dec768880e96246e2f044a3d3d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5fe6385046d0a1b04c33bb7d4592a90"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8h.html#ae5fe6385046d0a1b04c33bb7d4592a90">Java_com_example_dmocl_oclwrap_loadOpenCL</a> (JNIEnv *env, jobject thiz, jstring s)</td></tr>
+<tr class="memitem:ae5fe6385046d0a1b04c33bb7d4592a90"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8c.html#ae5fe6385046d0a1b04c33bb7d4592a90">Java_com_example_dmocl_oclwrap_loadOpenCL</a> (JNIEnv *env, jobject thiz, jstring s)</td></tr>
 <tr class="memdesc:ae5fe6385046d0a1b04c33bb7d4592a90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Java wrapper function to load the native OpenCL library.  <a href="#ae5fe6385046d0a1b04c33bb7d4592a90">More...</a><br /></td></tr>
 <tr class="separator:ae5fe6385046d0a1b04c33bb7d4592a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf50b121c77631f9b73d965a2f20c412"><td class="memItemLeft" align="right" valign="top">JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8h.html#adf50b121c77631f9b73d965a2f20c412">Java_com_example_dmocl_oclwrap_unloadOpenCL</a> (JNIEnv *env, jobject thiz)</td></tr>
+<tr class="memitem:adf50b121c77631f9b73d965a2f20c412"><td class="memItemLeft" align="right" valign="top">JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8c.html#adf50b121c77631f9b73d965a2f20c412">Java_com_example_dmocl_oclwrap_unloadOpenCL</a> (JNIEnv *env, jobject thiz)</td></tr>
 <tr class="memdesc:adf50b121c77631f9b73d965a2f20c412"><td class="mdescLeft">&#160;</td><td class="mdescRight">Java wrapper function to unload the native OpenCL library.  <a href="#adf50b121c77631f9b73d965a2f20c412">More...</a><br /></td></tr>
 <tr class="separator:adf50b121c77631f9b73d965a2f20c412"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7305f7bd18566b51c337006ada22a52"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8h.html#ac7305f7bd18566b51c337006ada22a52">Java_com_example_dmocl_oclwrap_AndrCLGetPlatformCnt</a> (JNIEnv *env, jobject thiz)</td></tr>
+<tr class="memitem:ac7305f7bd18566b51c337006ada22a52"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8c.html#ac7305f7bd18566b51c337006ada22a52">Java_com_example_dmocl_oclwrap_AndrCLGetPlatformCnt</a> (JNIEnv *env, jobject thiz)</td></tr>
 <tr class="memdesc:ac7305f7bd18566b51c337006ada22a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of OpenCL platforms.  <a href="#ac7305f7bd18566b51c337006ada22a52">More...</a><br /></td></tr>
 <tr class="separator:ac7305f7bd18566b51c337006ada22a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d2c9ba80285d397a5dfb04785c4a808"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8h.html#a9d2c9ba80285d397a5dfb04785c4a808">Java_com_example_dmocl_oclwrap_AndrCLGetDeviceCnt</a> (JNIEnv *env, jobject thiz, jint i)</td></tr>
+<tr class="memitem:a9d2c9ba80285d397a5dfb04785c4a808"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8c.html#a9d2c9ba80285d397a5dfb04785c4a808">Java_com_example_dmocl_oclwrap_AndrCLGetDeviceCnt</a> (JNIEnv *env, jobject thiz, jint i)</td></tr>
 <tr class="memdesc:a9d2c9ba80285d397a5dfb04785c4a808"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of OpenCL devices for a given platform.  <a href="#a9d2c9ba80285d397a5dfb04785c4a808">More...</a><br /></td></tr>
 <tr class="separator:a9d2c9ba80285d397a5dfb04785c4a808"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80c31db42eaa9b1d9630e341c47c1009"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jobject JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8h.html#a80c31db42eaa9b1d9630e341c47c1009">Java_com_example_dmocl_oclwrap_AndrCLgetDeviceName</a> (JNIEnv *env, jobject thiz, jint platf, jint dev)</td></tr>
+<tr class="memitem:a80c31db42eaa9b1d9630e341c47c1009"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jobject JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8c.html#a80c31db42eaa9b1d9630e341c47c1009">Java_com_example_dmocl_oclwrap_AndrCLgetDeviceName</a> (JNIEnv *env, jobject thiz, jint platf, jint dev)</td></tr>
 <tr class="memdesc:a80c31db42eaa9b1d9630e341c47c1009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns some info for a given OpenCL device (and platform number)  <a href="#a80c31db42eaa9b1d9630e341c47c1009">More...</a><br /></td></tr>
 <tr class="separator:a80c31db42eaa9b1d9630e341c47c1009"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f4a70158379b10c5beb9414eec0706f"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8h.html#a4f4a70158379b10c5beb9414eec0706f">Java_com_example_dmocl_oclwrap_getArchitecture</a> (JNIEnv *env, jclass clazz)</td></tr>
+<tr class="memitem:a4f4a70158379b10c5beb9414eec0706f"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8c.html#a4f4a70158379b10c5beb9414eec0706f">Java_com_example_dmocl_oclwrap_getArchitecture</a> (JNIEnv *env, jclass clazz)</td></tr>
 <tr class="memdesc:a4f4a70158379b10c5beb9414eec0706f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the CPU architecture.  <a href="#a4f4a70158379b10c5beb9414eec0706f">More...</a><br /></td></tr>
 <tr class="separator:a4f4a70158379b10c5beb9414eec0706f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:abd496cd73a0c34ff2bd1466da34d98a6"><td class="memItemLeft" align="right" valign="top"><a id="abd496cd73a0c34ff2bd1466da34d98a6"></a>
+const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oclwrapper_8c.html#abd496cd73a0c34ff2bd1466da34d98a6">isclang</a> = 0</td></tr>
+<tr class="memdesc:abd496cd73a0c34ff2bd1466da34d98a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">0=CLANG has not been used <br /></td></tr>
+<tr class="separator:abd496cd73a0c34ff2bd1466da34d98a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Defines the default target OpenCL version. </p>
-<p>Defines the default target OpenCL version </p><dl class="section copyright"><dt>Copyright</dt><dd>Copyright Robert Fritze 2021 </dd></dl>
+<div class="textblock"><p>Helper functions for OpenCL devices to be called directly form JAVA. </p>
+<p>This source file contains some helper functions that allow to read out system information and some OpenCL device information directly without the need of C. </p><dl class="section copyright"><dt>Copyright</dt><dd>Copyright Robert Fritze 2021 </dd></dl>
 <dl class="section user"><dt>License:</dt><dd>MIT </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>This header file must be included <b>BEFORE</b> any OpenCL header file </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Robert Fritze </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>11.9.2021 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>

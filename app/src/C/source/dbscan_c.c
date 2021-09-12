@@ -2,8 +2,8 @@
 // Created by robert on 11.08.21.
 //
 
-#include <jni.h>        // JNI header provided by JDK
-#include "dbscan_c.h"   // Generated
+#include <jni.h>
+#include "dbscan_c.h"
 #include <stdlib.h>
 #include <math.h>
 #include <stdio.h>

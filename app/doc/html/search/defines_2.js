@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['savechecker',['SAVECHECKER',['../OpenCL_8c.html#a709c98084a7b1aea8c4377c18ad6819d',1,'OpenCL.c']]]
+  ['intel32',['INTEL32',['../oclwrapper_8h.html#ab45f50b8e38b9c733084c4557b34b760',1,'oclwrapper.h']]],
+  ['intel64',['INTEL64',['../oclwrapper_8h.html#a274cff70a8ceaa329d01cd651abcf663',1,'oclwrapper.h']]]
 ];
