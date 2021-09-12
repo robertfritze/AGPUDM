@@ -1,0 +1,312 @@
+\hypertarget{oclwrapper_8h}{}\section{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/oclwrapper.h File Reference}
+\label{oclwrapper_8h}\index{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/oclwrapper.\+h@{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/oclwrapper.\+h}}
+
+
+Defines the default target Open\+CL version.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{oclwrapper_8h_ac1ae4add974b9cfc6b5aaf8a578f01ab}\label{oclwrapper_8h_ac1ae4add974b9cfc6b5aaf8a578f01ab}} 
+\#define \mbox{\hyperlink{oclwrapper_8h_ac1ae4add974b9cfc6b5aaf8a578f01ab}{U\+N\+K\+N\+O\+WN}}~-\/1
+\begin{DoxyCompactList}\small\item\em unknown architecture \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{oclwrapper_8h_ab026c2caefe5237d3ff08d64bc44f031}\label{oclwrapper_8h_ab026c2caefe5237d3ff08d64bc44f031}} 
+\#define \mbox{\hyperlink{oclwrapper_8h_ab026c2caefe5237d3ff08d64bc44f031}{A\+R\+M32}}~0
+\begin{DoxyCompactList}\small\item\em arm-\/v7 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{oclwrapper_8h_ad60f4509a26d03acf44e10243332242d}\label{oclwrapper_8h_ad60f4509a26d03acf44e10243332242d}} 
+\#define \mbox{\hyperlink{oclwrapper_8h_ad60f4509a26d03acf44e10243332242d}{A\+R\+M64}}~1
+\begin{DoxyCompactList}\small\item\em arm-\/v8 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{oclwrapper_8h_ab45f50b8e38b9c733084c4557b34b760}\label{oclwrapper_8h_ab45f50b8e38b9c733084c4557b34b760}} 
+\#define \mbox{\hyperlink{oclwrapper_8h_ab45f50b8e38b9c733084c4557b34b760}{I\+N\+T\+E\+L32}}~2
+\begin{DoxyCompactList}\small\item\em intel x86 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{oclwrapper_8h_a274cff70a8ceaa329d01cd651abcf663}\label{oclwrapper_8h_a274cff70a8ceaa329d01cd651abcf663}} 
+\#define \mbox{\hyperlink{oclwrapper_8h_a274cff70a8ceaa329d01cd651abcf663}{I\+N\+T\+E\+L64}}~3
+\begin{DoxyCompactList}\small\item\em intel x86\+\_\+64 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{oclwrapper_8h_a5990dea19d4ccb046a3d81b311457add}\label{oclwrapper_8h_a5990dea19d4ccb046a3d81b311457add}} 
+\#define \mbox{\hyperlink{oclwrapper_8h_a5990dea19d4ccb046a3d81b311457add}{C\+L\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+O\+P\+E\+N\+C\+L\+\_\+\+V\+E\+R\+S\+I\+ON}}~120
+\begin{DoxyCompactList}\small\item\em the default target Open\+CL version \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+J\+N\+I\+E\+X\+P\+O\+RT jint J\+N\+I\+C\+A\+LL \mbox{\hyperlink{oclwrapper_8h_a70b9cfe87ec353e0b132686b6ad633c9}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+is\+C\+Lang}} (J\+N\+I\+Env $\ast$env, jclass clazz)
+\begin{DoxyCompactList}\small\item\em Checks if C\+L\+A\+NG has been used for compilation. \end{DoxyCompactList}\item 
+J\+N\+I\+E\+X\+P\+O\+RT jint J\+N\+I\+C\+A\+LL \mbox{\hyperlink{oclwrapper_8h_a2604db65a63923724d541413d317a384}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmaj}} (J\+N\+I\+Env $\ast$env, jclass clazz)
+\begin{DoxyCompactList}\small\item\em Returns the C\+L\+A\+NG major version number. \end{DoxyCompactList}\item 
+J\+N\+I\+E\+X\+P\+O\+RT jint J\+N\+I\+C\+A\+LL \mbox{\hyperlink{oclwrapper_8h_adebb34bc4eae343c98f973f900126f65}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmin}} (J\+N\+I\+Env $\ast$env, jclass clazz)
+\begin{DoxyCompactList}\small\item\em Returns the C\+L\+A\+NG minor version number. \end{DoxyCompactList}\item 
+J\+N\+I\+E\+X\+P\+O\+RT jint J\+N\+I\+C\+A\+LL \mbox{\hyperlink{oclwrapper_8h_ac363dec768880e96246e2f044a3d3d5f}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lpatch}} (J\+N\+I\+Env $\ast$env, jclass clazz)
+\begin{DoxyCompactList}\small\item\em Returns the C\+L\+A\+NG patch version number. \end{DoxyCompactList}\item 
+J\+N\+I\+E\+X\+P\+O\+RT jint J\+N\+I\+C\+A\+LL \mbox{\hyperlink{oclwrapper_8h_ae5fe6385046d0a1b04c33bb7d4592a90}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+load\+Open\+CL}} (J\+N\+I\+Env $\ast$env, jobject thiz, jstring s)
+\begin{DoxyCompactList}\small\item\em Java wrapper function to load the native Open\+CL library. \end{DoxyCompactList}\item 
+J\+N\+I\+E\+X\+P\+O\+RT void J\+N\+I\+C\+A\+LL \mbox{\hyperlink{oclwrapper_8h_adf50b121c77631f9b73d965a2f20c412}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+unload\+Open\+CL}} (J\+N\+I\+Env $\ast$env, jobject thiz)
+\begin{DoxyCompactList}\small\item\em Java wrapper function to unload the native Open\+CL library. \end{DoxyCompactList}\item 
+J\+N\+I\+E\+X\+P\+O\+RT jint J\+N\+I\+C\+A\+LL \mbox{\hyperlink{oclwrapper_8h_ac7305f7bd18566b51c337006ada22a52}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Platform\+Cnt}} (J\+N\+I\+Env $\ast$env, jobject thiz)
+\begin{DoxyCompactList}\small\item\em Returns the number of Open\+CL platforms. \end{DoxyCompactList}\item 
+J\+N\+I\+E\+X\+P\+O\+RT jint J\+N\+I\+C\+A\+LL \mbox{\hyperlink{oclwrapper_8h_a9d2c9ba80285d397a5dfb04785c4a808}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Device\+Cnt}} (J\+N\+I\+Env $\ast$env, jobject thiz, jint i)
+\begin{DoxyCompactList}\small\item\em Returns the number of Open\+CL devices for a given platform. \end{DoxyCompactList}\item 
+J\+N\+I\+E\+X\+P\+O\+RT jobject J\+N\+I\+C\+A\+LL \mbox{\hyperlink{oclwrapper_8h_a80c31db42eaa9b1d9630e341c47c1009}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+Lget\+Device\+Name}} (J\+N\+I\+Env $\ast$env, jobject thiz, jint platf, jint dev)
+\begin{DoxyCompactList}\small\item\em Returns some info for a given Open\+CL device (and platform number) \end{DoxyCompactList}\item 
+J\+N\+I\+E\+X\+P\+O\+RT jint J\+N\+I\+C\+A\+LL \mbox{\hyperlink{oclwrapper_8h_a4f4a70158379b10c5beb9414eec0706f}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+Architecture}} (J\+N\+I\+Env $\ast$env, jclass clazz)
+\begin{DoxyCompactList}\small\item\em Returns the C\+PU architecture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines the default target Open\+CL version. 
+
+Defines the default target Open\+CL version \begin{DoxyCopyright}{Copyright}
+Copyright Robert Fritze 2021 
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License\+:}
+M\+IT 
+\end{DoxyParagraph}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyWarning}{Warning}
+This header file must be included {\bfseries B\+E\+F\+O\+RE} any Open\+CL header file 
+\end{DoxyWarning}
+\begin{DoxyAuthor}{Author}
+Robert Fritze 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11.\+9.\+2021 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{oclwrapper_8h_a9d2c9ba80285d397a5dfb04785c4a808}\label{oclwrapper_8h_a9d2c9ba80285d397a5dfb04785c4a808}} 
+\index{oclwrapper.\+h@{oclwrapper.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Device\+Cnt@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Device\+Cnt}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Device\+Cnt@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Device\+Cnt}!oclwrapper.\+h@{oclwrapper.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Device\+Cnt()}{Java\_com\_example\_dmocl\_oclwrap\_AndrCLGetDeviceCnt()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jint J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Device\+Cnt (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jobject}]{thiz,  }\item[{jint}]{i }\end{DoxyParamCaption})}
+
+
+
+Returns the number of Open\+CL devices for a given platform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & pointer to J\+NI environment \\
+\hline
+{\em thiz} & reference to J\+NI class \\
+\hline
+{\em i} & platform number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$>$=0 number of devices, $<$0 error occurred 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe (if native Open\+CL function is threadsafe) 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{oclwrapper_8h_a80c31db42eaa9b1d9630e341c47c1009}\label{oclwrapper_8h_a80c31db42eaa9b1d9630e341c47c1009}} 
+\index{oclwrapper.\+h@{oclwrapper.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+Lget\+Device\+Name@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+Lget\+Device\+Name}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+Lget\+Device\+Name@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+Lget\+Device\+Name}!oclwrapper.\+h@{oclwrapper.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+Lget\+Device\+Name()}{Java\_com\_example\_dmocl\_oclwrap\_AndrCLgetDeviceName()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jobject J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+Lget\+Device\+Name (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jobject}]{thiz,  }\item[{jint}]{platf,  }\item[{jint}]{dev }\end{DoxyParamCaption})}
+
+
+
+Returns some info for a given Open\+CL device (and platform number) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & pointer to J\+NI environment \\
+\hline
+{\em thiz} & reference to J\+NI class \\
+\hline
+{\em platf} & platform number \\
+\hline
+{\em dev} & device number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an instance of the class {\itshape oclinforet} with the information filled in 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe (if native Open\+CL function is threadsafe) 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{oclwrapper_8h_ac7305f7bd18566b51c337006ada22a52}\label{oclwrapper_8h_ac7305f7bd18566b51c337006ada22a52}} 
+\index{oclwrapper.\+h@{oclwrapper.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Platform\+Cnt@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Platform\+Cnt}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Platform\+Cnt@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Platform\+Cnt}!oclwrapper.\+h@{oclwrapper.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Platform\+Cnt()}{Java\_com\_example\_dmocl\_oclwrap\_AndrCLGetPlatformCnt()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jint J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Platform\+Cnt (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jobject}]{thiz }\end{DoxyParamCaption})}
+
+
+
+Returns the number of Open\+CL platforms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & pointer to J\+NI environment \\
+\hline
+{\em thiz} & reference to J\+NI class \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$>$=0 number of platfroms, $<$0 error occurred 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe (if native Open\+CL function is threadsafe) 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{oclwrapper_8h_a4f4a70158379b10c5beb9414eec0706f}\label{oclwrapper_8h_a4f4a70158379b10c5beb9414eec0706f}} 
+\index{oclwrapper.\+h@{oclwrapper.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+Architecture@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+Architecture}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+Architecture@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+Architecture}!oclwrapper.\+h@{oclwrapper.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+Architecture()}{Java\_com\_example\_dmocl\_oclwrap\_getArchitecture()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jint J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+Architecture (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+
+
+
+Returns the C\+PU architecture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & pointer to J\+NI environment \\
+\hline
+{\em clazz} & reference to J\+NI class \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+One of the constants A\+R\+M32, A\+R\+M64, I\+N\+T\+E\+L32, I\+N\+T\+E\+L64, U\+N\+K\+N\+O\+WN 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{oclwrapper_8h_a2604db65a63923724d541413d317a384}\label{oclwrapper_8h_a2604db65a63923724d541413d317a384}} 
+\index{oclwrapper.\+h@{oclwrapper.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmaj@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmaj}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmaj@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmaj}!oclwrapper.\+h@{oclwrapper.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmaj()}{Java\_com\_example\_dmocl\_oclwrap\_getCLmaj()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jint J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmaj (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+
+
+
+Returns the C\+L\+A\+NG major version number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & pointer to J\+NI environment \\
+\hline
+{\em clazz} & reference to J\+NI class \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+version number or -\/1 if not compiled with C\+L\+A\+NG 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{oclwrapper_8h_adebb34bc4eae343c98f973f900126f65}\label{oclwrapper_8h_adebb34bc4eae343c98f973f900126f65}} 
+\index{oclwrapper.\+h@{oclwrapper.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmin@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmin}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmin@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmin}!oclwrapper.\+h@{oclwrapper.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmin()}{Java\_com\_example\_dmocl\_oclwrap\_getCLmin()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jint J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmin (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+
+
+
+Returns the C\+L\+A\+NG minor version number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & pointer to J\+NI environment \\
+\hline
+{\em clazz} & reference to J\+NI class \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+version number or -\/1 if not compiled with C\+L\+A\+NG 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{oclwrapper_8h_ac363dec768880e96246e2f044a3d3d5f}\label{oclwrapper_8h_ac363dec768880e96246e2f044a3d3d5f}} 
+\index{oclwrapper.\+h@{oclwrapper.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lpatch@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lpatch}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lpatch@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lpatch}!oclwrapper.\+h@{oclwrapper.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lpatch()}{Java\_com\_example\_dmocl\_oclwrap\_getCLpatch()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jint J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lpatch (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+
+
+
+Returns the C\+L\+A\+NG patch version number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & pointer to J\+NI environment \\
+\hline
+{\em clazz} & reference to J\+NI class \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+version number or -\/1 if not compiled with C\+L\+A\+NG 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{oclwrapper_8h_a70b9cfe87ec353e0b132686b6ad633c9}\label{oclwrapper_8h_a70b9cfe87ec353e0b132686b6ad633c9}} 
+\index{oclwrapper.\+h@{oclwrapper.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+is\+C\+Lang@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+is\+C\+Lang}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+is\+C\+Lang@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+is\+C\+Lang}!oclwrapper.\+h@{oclwrapper.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+is\+C\+Lang()}{Java\_com\_example\_dmocl\_oclwrap\_isCLang()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jint J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+is\+C\+Lang (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+
+
+
+Checks if C\+L\+A\+NG has been used for compilation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & pointer to J\+NI environment \\
+\hline
+{\em clazz} & reference to J\+NI class \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 compiled by C\+L\+A\+NG, 0 compiled with other compiler 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{oclwrapper_8h_ae5fe6385046d0a1b04c33bb7d4592a90}\label{oclwrapper_8h_ae5fe6385046d0a1b04c33bb7d4592a90}} 
+\index{oclwrapper.\+h@{oclwrapper.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+load\+Open\+CL@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+load\+Open\+CL}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+load\+Open\+CL@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+load\+Open\+CL}!oclwrapper.\+h@{oclwrapper.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+load\+Open\+C\+L()}{Java\_com\_example\_dmocl\_oclwrap\_loadOpenCL()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jint J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+load\+Open\+CL (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jobject}]{thiz,  }\item[{jstring}]{s }\end{DoxyParamCaption})}
+
+
+
+Java wrapper function to load the native Open\+CL library. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & pointer to J\+NI environment \\
+\hline
+{\em thiz} & reference to J\+NI class \\
+\hline
+{\em s} & path and name of the Open\+CL library on the device \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK\+: 0, library has already been loaded\+: -\/1, unable to load library\+: -\/2 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{oclwrapper_8h_adf50b121c77631f9b73d965a2f20c412}\label{oclwrapper_8h_adf50b121c77631f9b73d965a2f20c412}} 
+\index{oclwrapper.\+h@{oclwrapper.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+unload\+Open\+CL@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+unload\+Open\+CL}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+unload\+Open\+CL@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+unload\+Open\+CL}!oclwrapper.\+h@{oclwrapper.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+unload\+Open\+C\+L()}{Java\_com\_example\_dmocl\_oclwrap\_unloadOpenCL()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT void J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+unload\+Open\+CL (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jobject}]{thiz }\end{DoxyParamCaption})}
+
+
+
+Java wrapper function to unload the native Open\+CL library. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em env} & pointer to J\+NI environment \\
+\hline
+{\em thiz} & reference to J\+NI class \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}

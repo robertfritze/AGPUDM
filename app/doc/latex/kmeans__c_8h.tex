@@ -1,0 +1,136 @@
+\hypertarget{kmeans__c_8h}{}\section{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/kmeans\+\_\+c.h File Reference}
+\label{kmeans__c_8h}\index{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/kmeans\+\_\+c.\+h@{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/kmeans\+\_\+c.\+h}}
+
+
+Header file for the C/\+C+\+G\+PU implementations of the Kmeans algorithm.  
+
+
+{\ttfamily \#include $<$jni.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL \mbox{\hyperlink{kmeans__c_8h_a8d358801f2beeb2c15237e2a1a98500f}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c}} (J\+N\+I\+Env $\ast$env, jclass jc, jshort\+Array b, jfloat\+Array rf, jfloat eps, jint kk, jint features)
+\item 
+J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL \mbox{\hyperlink{kmeans__c_8h_adcd1210c788d0762e4f4362dc32dba4e}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1gpu}} (J\+N\+I\+Env $\ast$env, jclass jc, jshort\+Array b, jfloat\+Array rf, jfloat eps, jint cluno, jint features, jlong\+Array e)
+\item 
+J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL \mbox{\hyperlink{kmeans__c_8h_a226636af0647863759dce78b63c717f1}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1phtreads}} (J\+N\+I\+Env $\ast$env, jclass jc, jshort\+Array b, jfloat\+Array rf, jfloat eps, jint cluno, jint features, jint cores, jlong\+Array e)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file for the C/\+C+\+G\+PU implementations of the Kmeans algorithm. 
+
+This header file contains three method prototypes, that allow to perform single-\/ or multithreaded C\+PU or G\+PU based Kmeans cluster searches. \begin{DoxyCopyright}{Copyright}
+Copyright Robert Fritze 2021 
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License\+:}
+M\+IT 
+\end{DoxyParagraph}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Robert Fritze 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+This file is machine generated 
+\end{DoxyWarning}
+\begin{DoxyDate}{Date}
+11.\+9.\+2021 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{kmeans__c_8h_a8d358801f2beeb2c15237e2a1a98500f}\label{kmeans__c_8h_a8d358801f2beeb2c15237e2a1a98500f}} 
+\index{kmeans\+\_\+c.\+h@{kmeans\+\_\+c.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c}!kmeans\+\_\+c.\+h@{kmeans\+\_\+c.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c()}{Java\_com\_example\_dmocl\_kmeans\_kmeans\_1c()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{jc,  }\item[{jshort\+Array}]{b,  }\item[{jfloat\+Array}]{rf,  }\item[{jfloat}]{eps,  }\item[{jint}]{kk,  }\item[{jint}]{features }\end{DoxyParamCaption})}
+
+Performs a Kmeans cluster search on the C\+PU (one thread). 
+\begin{DoxyParams}{Parameters}
+{\em env} & J\+NI environment variable \\
+\hline
+{\em jc} & J\+NI class variable \\
+\hline
+{\em b} & (out) Array of cluster numbers (0=noise point) \\
+\hline
+{\em rf} & (in) Array of data points \\
+\hline
+{\em eps} & search radius \\
+\hline
+{\em kk} & number of clusters to search for \\
+\hline
+{\em features} & number of features per data item contained in the data array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 = no error, $<$0 = error number 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{kmeans__c_8h_adcd1210c788d0762e4f4362dc32dba4e}\label{kmeans__c_8h_adcd1210c788d0762e4f4362dc32dba4e}} 
+\index{kmeans\+\_\+c.\+h@{kmeans\+\_\+c.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1gpu@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1gpu}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1gpu@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1gpu}!kmeans\+\_\+c.\+h@{kmeans\+\_\+c.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1gpu()}{Java\_com\_example\_dmocl\_kmeans\_kmeans\_1c\_1gpu()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1gpu (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{jc,  }\item[{jshort\+Array}]{b,  }\item[{jfloat\+Array}]{rf,  }\item[{jfloat}]{eps,  }\item[{jint}]{cluno,  }\item[{jint}]{features,  }\item[{jlong\+Array}]{e }\end{DoxyParamCaption})}
+
+Performs a Kmeans cluster search on the G\+PU. 
+\begin{DoxyParams}{Parameters}
+{\em env} & J\+NI environment variable \\
+\hline
+{\em jc} & J\+NI class variable \\
+\hline
+{\em b} & (out) Array of cluster numbers (0=noise point) \\
+\hline
+{\em rf} & (in) Array of data points \\
+\hline
+{\em eps} & search radius \\
+\hline
+{\em cluno} & number of clusters to search for \\
+\hline
+{\em features} & number of features per data item contained in the data array \\
+\hline
+{\em e} & (out) Array of exactly one long value, contains the exclusive time needed (in ns) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 = no error, $<$0 = error number 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{kmeans__c_8h_a226636af0647863759dce78b63c717f1}\label{kmeans__c_8h_a226636af0647863759dce78b63c717f1}} 
+\index{kmeans\+\_\+c.\+h@{kmeans\+\_\+c.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1phtreads@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1phtreads}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1phtreads@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1phtreads}!kmeans\+\_\+c.\+h@{kmeans\+\_\+c.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1phtreads()}{Java\_com\_example\_dmocl\_kmeans\_kmeans\_1c\_1phtreads()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1phtreads (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{jc,  }\item[{jshort\+Array}]{b,  }\item[{jfloat\+Array}]{rf,  }\item[{jfloat}]{eps,  }\item[{jint}]{cluno,  }\item[{jint}]{features,  }\item[{jint}]{cores,  }\item[{jlong\+Array}]{e }\end{DoxyParamCaption})}
+
+Performs a Kmeans cluster search on the C\+PU (multiple threads). 
+\begin{DoxyParams}{Parameters}
+{\em env} & J\+NI environment variable \\
+\hline
+{\em jc} & J\+NI class variable \\
+\hline
+{\em b} & (out) Array of cluster numbers \\
+\hline
+{\em rf} & (in) Array of data points \\
+\hline
+{\em eps} & search radius \\
+\hline
+{\em cluno} & numbers of clusters that should be found \\
+\hline
+{\em features} & number of features per data item contained in the data array \\
+\hline
+{\em cores} & number of cores that should be used \\
+\hline
+{\em e} & (out) Array of exactly one long value, contains the exclusive time needed (in ns) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 = no error, $<$0 = error number 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}

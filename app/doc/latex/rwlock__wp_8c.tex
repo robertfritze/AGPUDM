@@ -1,0 +1,114 @@
+\hypertarget{rwlock__wp_8c}{}\section{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/source/rwlock\+\_\+wp.c File Reference}
+\label{rwlock__wp_8c}\index{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/source/rwlock\+\_\+wp.\+c@{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/source/rwlock\+\_\+wp.\+c}}
+
+
+A writer preferred reader/writer lock.  
+
+
+{\ttfamily \#include \char`\"{}rwlock\+\_\+wp.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{rwlock__wp_8c_a71043ddab2b277f2d1ecc7a154162c1a}{rwlockwp\+\_\+reader\+\_\+acquire}} (volatile struct \mbox{\hyperlink{structrwlockwp}{rwlockwp}} $\ast$rwl)
+\begin{DoxyCompactList}\small\item\em Acquires the reader lock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{rwlock__wp_8c_ac49f80e4cbc20cd463a57564a19f0b8b}{rwlockwp\+\_\+reader\+\_\+release}} (volatile struct \mbox{\hyperlink{structrwlockwp}{rwlockwp}} $\ast$rwl)
+\begin{DoxyCompactList}\small\item\em Releases the reader lock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{rwlock__wp_8c_aa705d03f6bd3b884c25acebcd16a6ef6}{rwlockwp\+\_\+writer\+\_\+acquire}} (volatile struct \mbox{\hyperlink{structrwlockwp}{rwlockwp}} $\ast$rwl)
+\begin{DoxyCompactList}\small\item\em Acquires the writer lock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{rwlock__wp_8c_a679cee391cae858a53210f2099b60a24}{rwlockwp\+\_\+writer\+\_\+release}} (volatile struct \mbox{\hyperlink{structrwlockwp}{rwlockwp}} $\ast$rwl)
+\begin{DoxyCompactList}\small\item\em Releases the writer lock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A writer preferred reader/writer lock. 
+
+This file implements a writer preferred reader/writer lock. The lock is reentrant for the readers and exclusive for the writers. Once a writer is waiting all readers that have acquired a reader lock are allowed to finish but new readers have to queue up until the writer has finished. \begin{DoxyCopyright}{Copyright}
+Copyright Robert Fritze 2021 
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License\+:}
+M\+IT 
+\end{DoxyParagraph}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Robert Fritze 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11.\+9.\+2021 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{rwlock__wp_8c_a71043ddab2b277f2d1ecc7a154162c1a}\label{rwlock__wp_8c_a71043ddab2b277f2d1ecc7a154162c1a}} 
+\index{rwlock\+\_\+wp.\+c@{rwlock\+\_\+wp.\+c}!rwlockwp\+\_\+reader\+\_\+acquire@{rwlockwp\+\_\+reader\+\_\+acquire}}
+\index{rwlockwp\+\_\+reader\+\_\+acquire@{rwlockwp\+\_\+reader\+\_\+acquire}!rwlock\+\_\+wp.\+c@{rwlock\+\_\+wp.\+c}}
+\subsubsection{\texorpdfstring{rwlockwp\+\_\+reader\+\_\+acquire()}{rwlockwp\_reader\_acquire()}}
+{\footnotesize\ttfamily void rwlockwp\+\_\+reader\+\_\+acquire (\begin{DoxyParamCaption}\item[{volatile struct \mbox{\hyperlink{structrwlockwp}{rwlockwp}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+Acquires the reader lock. 
+
+Acquires the reader lock. Multiple readers can acquire the lock at the same time. If a writer has acquired the writer lock, all new readers are blocked until the writer has finished. 
+\begin{DoxyParams}{Parameters}
+{\em rwlockwp} & Pointer to the reader/writer lock \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{rwlock__wp_8c_ac49f80e4cbc20cd463a57564a19f0b8b}\label{rwlock__wp_8c_ac49f80e4cbc20cd463a57564a19f0b8b}} 
+\index{rwlock\+\_\+wp.\+c@{rwlock\+\_\+wp.\+c}!rwlockwp\+\_\+reader\+\_\+release@{rwlockwp\+\_\+reader\+\_\+release}}
+\index{rwlockwp\+\_\+reader\+\_\+release@{rwlockwp\+\_\+reader\+\_\+release}!rwlock\+\_\+wp.\+c@{rwlock\+\_\+wp.\+c}}
+\subsubsection{\texorpdfstring{rwlockwp\+\_\+reader\+\_\+release()}{rwlockwp\_reader\_release()}}
+{\footnotesize\ttfamily void rwlockwp\+\_\+reader\+\_\+release (\begin{DoxyParamCaption}\item[{volatile struct \mbox{\hyperlink{structrwlockwp}{rwlockwp}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+Releases the reader lock. 
+
+Releases the reader lock. If no more other readers are holding a reader lock and a writer is waiting, the writer will get exclusive access. 
+\begin{DoxyParams}{Parameters}
+{\em rwlockwp} & Pointer to the reader/writer lock \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{rwlock__wp_8c_aa705d03f6bd3b884c25acebcd16a6ef6}\label{rwlock__wp_8c_aa705d03f6bd3b884c25acebcd16a6ef6}} 
+\index{rwlock\+\_\+wp.\+c@{rwlock\+\_\+wp.\+c}!rwlockwp\+\_\+writer\+\_\+acquire@{rwlockwp\+\_\+writer\+\_\+acquire}}
+\index{rwlockwp\+\_\+writer\+\_\+acquire@{rwlockwp\+\_\+writer\+\_\+acquire}!rwlock\+\_\+wp.\+c@{rwlock\+\_\+wp.\+c}}
+\subsubsection{\texorpdfstring{rwlockwp\+\_\+writer\+\_\+acquire()}{rwlockwp\_writer\_acquire()}}
+{\footnotesize\ttfamily void rwlockwp\+\_\+writer\+\_\+acquire (\begin{DoxyParamCaption}\item[{volatile struct \mbox{\hyperlink{structrwlockwp}{rwlockwp}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+Acquires the writer lock. 
+
+Acquires the writer lock. All new readers have to queue up. The writer is blocked until all reader that already hold a reader lock have finished. 
+\begin{DoxyParams}{Parameters}
+{\em rwlockwp} & Pointer to the reader/writer lock \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{rwlock__wp_8c_a679cee391cae858a53210f2099b60a24}\label{rwlock__wp_8c_a679cee391cae858a53210f2099b60a24}} 
+\index{rwlock\+\_\+wp.\+c@{rwlock\+\_\+wp.\+c}!rwlockwp\+\_\+writer\+\_\+release@{rwlockwp\+\_\+writer\+\_\+release}}
+\index{rwlockwp\+\_\+writer\+\_\+release@{rwlockwp\+\_\+writer\+\_\+release}!rwlock\+\_\+wp.\+c@{rwlock\+\_\+wp.\+c}}
+\subsubsection{\texorpdfstring{rwlockwp\+\_\+writer\+\_\+release()}{rwlockwp\_writer\_release()}}
+{\footnotesize\ttfamily void rwlockwp\+\_\+writer\+\_\+release (\begin{DoxyParamCaption}\item[{volatile struct \mbox{\hyperlink{structrwlockwp}{rwlockwp}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+Releases the writer lock. 
+
+Releases the writer lock. All waiting readers will wake up. 
+\begin{DoxyParams}{Parameters}
+{\em rwlockwp} & Pointer to the reader/writer lock \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}

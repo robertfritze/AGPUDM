@@ -1,0 +1,330 @@
+\hypertarget{OpenCL_8c}{}\section{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/source/\+Open\+CL.c File Reference}
+\label{OpenCL_8c}\index{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/source/\+Open\+C\+L.\+c@{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/source/\+Open\+C\+L.\+c}}
+
+
+A this Open\+CL wrapper for the lib\+Open\+C\+L.\+so shared library on the Android device.  
+
+
+{\ttfamily \#include \char`\"{}Android\+Open\+C\+L.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$C\+L/opencl.\+h$>$}\newline
+{\ttfamily \#include $<$C\+L/cl\+\_\+icd.\+h$>$}\newline
+{\ttfamily \#include $<$dlfcn.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a5990dea19d4ccb046a3d81b311457add}\label{OpenCL_8c_a5990dea19d4ccb046a3d81b311457add}} 
+\#define \mbox{\hyperlink{OpenCL_8c_a5990dea19d4ccb046a3d81b311457add}{C\+L\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+O\+P\+E\+N\+C\+L\+\_\+\+V\+E\+R\+S\+I\+ON}}~120
+\begin{DoxyCompactList}\small\item\em rescue definition of the Open\+CL version \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{OpenCL_8c_a709c98084a7b1aea8c4377c18ad6819d}{S\+A\+V\+E\+C\+H\+E\+C\+K\+ER}}(a)
+\begin{DoxyCompactList}\small\item\em Macro that checks if prerequists for calling a native Open\+CL function are met. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{OpenCL_8c_aea2af9767e8a0154179e5332dd5553e0}{W\+R\+A\+P\+P\+E\+R\+C\+L\+F\+U\+N\+CT}}(a,  b,  c)
+\begin{DoxyCompactList}\small\item\em Macro that simplifys the definition of the wrapper methods. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a72fd787cc7c3397527c1ddeca979ec48}\label{OpenCL_8c_a72fd787cc7c3397527c1ddeca979ec48}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Get\+Platform\+I\+Ds} (cl\+\_\+uint num\+\_\+entries, cl\+\_\+platform\+\_\+id $\ast$platforms, cl\+\_\+uint $\ast$num\+\_\+platforms) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a3e91e9600323f4cc7e2065a36eab1230}\label{OpenCL_8c_a3e91e9600323f4cc7e2065a36eab1230}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Get\+Platform\+Info} (cl\+\_\+platform\+\_\+id platform, cl\+\_\+platform\+\_\+info param\+\_\+name, size\+\_\+t param\+\_\+value\+\_\+size, void $\ast$param\+\_\+value, size\+\_\+t $\ast$param\+\_\+value\+\_\+size\+\_\+ret) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a4e58dd3dae9970b7a26bf09feb2f0877}\label{OpenCL_8c_a4e58dd3dae9970b7a26bf09feb2f0877}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Get\+Device\+I\+Ds} (cl\+\_\+platform\+\_\+id platform, cl\+\_\+device\+\_\+type device\+\_\+type, cl\+\_\+uint num\+\_\+entries, cl\+\_\+device\+\_\+id $\ast$devices, cl\+\_\+uint $\ast$num\+\_\+devices) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a70aeb5d8a9c7c4635aa3c161d5266947}\label{OpenCL_8c_a70aeb5d8a9c7c4635aa3c161d5266947}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Get\+Device\+Info} (cl\+\_\+device\+\_\+id device, cl\+\_\+device\+\_\+info param\+\_\+name, size\+\_\+t param\+\_\+value\+\_\+size, void $\ast$param\+\_\+value, size\+\_\+t $\ast$param\+\_\+value\+\_\+size\+\_\+ret) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a5074f236d2a3fe92816accaa3b6d5f26}\label{OpenCL_8c_a5074f236d2a3fe92816accaa3b6d5f26}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+context C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Create\+Context} (const cl\+\_\+context\+\_\+properties $\ast$properties, cl\+\_\+uint num\+\_\+devices, const cl\+\_\+device\+\_\+id $\ast$devices, void(C\+L\+\_\+\+C\+A\+L\+L\+B\+A\+CK $\ast$pfn\+\_\+notify)(const char $\ast$errinfo, const void $\ast$private\+\_\+info, size\+\_\+t cb, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data, cl\+\_\+int $\ast$errcode\+\_\+ret) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a1a44ca3e664fd7b48b51587ee8701cfa}\label{OpenCL_8c_a1a44ca3e664fd7b48b51587ee8701cfa}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+context C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Create\+Context\+From\+Type} (const cl\+\_\+context\+\_\+properties $\ast$properties, cl\+\_\+device\+\_\+type device\+\_\+type, void(C\+L\+\_\+\+C\+A\+L\+L\+B\+A\+CK $\ast$pfn\+\_\+notify)(const char $\ast$errinfo, const void $\ast$private\+\_\+info, size\+\_\+t cb, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data, cl\+\_\+int $\ast$errcode\+\_\+ret) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_aa4dd0ff0bd1fb493ee5a18d08c477171}\label{OpenCL_8c_aa4dd0ff0bd1fb493ee5a18d08c477171}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Retain\+Context} (cl\+\_\+context context) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a7a7e8d0b69ffa3c83f4a17d0ed5a8c99}\label{OpenCL_8c_a7a7e8d0b69ffa3c83f4a17d0ed5a8c99}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Release\+Context} (cl\+\_\+context context) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a8adeb18103f752f54e4a7f8d4d97e3e5}\label{OpenCL_8c_a8adeb18103f752f54e4a7f8d4d97e3e5}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Get\+Context\+Info} (cl\+\_\+context context, cl\+\_\+context\+\_\+info param\+\_\+name, size\+\_\+t param\+\_\+value\+\_\+size, void $\ast$param\+\_\+value, size\+\_\+t $\ast$param\+\_\+value\+\_\+size\+\_\+ret) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a39c67e21cae1a262a9e8d0fb667d8820}\label{OpenCL_8c_a39c67e21cae1a262a9e8d0fb667d8820}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Retain\+Command\+Queue} (cl\+\_\+command\+\_\+queue command\+\_\+queue) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a7eba6d04f90a558d3cc893c5dcb68911}\label{OpenCL_8c_a7eba6d04f90a558d3cc893c5dcb68911}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Release\+Command\+Queue} (cl\+\_\+command\+\_\+queue command\+\_\+queue) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_add6f115c49cf3d1cf2f4e5c7280679ee}\label{OpenCL_8c_add6f115c49cf3d1cf2f4e5c7280679ee}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Get\+Command\+Queue\+Info} (cl\+\_\+command\+\_\+queue command\+\_\+queue, cl\+\_\+command\+\_\+queue\+\_\+info param\+\_\+name, size\+\_\+t param\+\_\+value\+\_\+size, void $\ast$param\+\_\+value, size\+\_\+t $\ast$param\+\_\+value\+\_\+size\+\_\+ret) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_aac38e81744dfa0006b4e44f844dac219}\label{OpenCL_8c_aac38e81744dfa0006b4e44f844dac219}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+mem C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Create\+Buffer} (cl\+\_\+context context, cl\+\_\+mem\+\_\+flags flags, size\+\_\+t size, void $\ast$host\+\_\+ptr, cl\+\_\+int $\ast$errcode\+\_\+ret) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a1b49a09b623124d082abf79793b5e3ac}\label{OpenCL_8c_a1b49a09b623124d082abf79793b5e3ac}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Retain\+Mem\+Object} (cl\+\_\+mem memobj) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_af23fdadb35d3f708dd23122ac268bce5}\label{OpenCL_8c_af23fdadb35d3f708dd23122ac268bce5}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Release\+Mem\+Object} (cl\+\_\+mem memobj) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_aacb18cfb5657ec9da0fb9480dc2e4d18}\label{OpenCL_8c_aacb18cfb5657ec9da0fb9480dc2e4d18}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Get\+Supported\+Image\+Formats} (cl\+\_\+context context, cl\+\_\+mem\+\_\+flags flags, cl\+\_\+mem\+\_\+object\+\_\+type image\+\_\+type, cl\+\_\+uint num\+\_\+entries, cl\+\_\+image\+\_\+format $\ast$image\+\_\+formats, cl\+\_\+uint $\ast$num\+\_\+image\+\_\+formats) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a0c6802e4673e39f9a802b2159367d210}\label{OpenCL_8c_a0c6802e4673e39f9a802b2159367d210}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Get\+Mem\+Object\+Info} (cl\+\_\+mem memobj, cl\+\_\+mem\+\_\+info param\+\_\+name, size\+\_\+t param\+\_\+value\+\_\+size, void $\ast$param\+\_\+value, size\+\_\+t $\ast$param\+\_\+value\+\_\+size\+\_\+ret) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a889f8cba625d329e77166c92a11c3209}\label{OpenCL_8c_a889f8cba625d329e77166c92a11c3209}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Get\+Image\+Info} (cl\+\_\+mem image, cl\+\_\+image\+\_\+info param\+\_\+name, size\+\_\+t param\+\_\+value\+\_\+size, void $\ast$param\+\_\+value, size\+\_\+t $\ast$param\+\_\+value\+\_\+size\+\_\+ret) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a6800ed8d157f1acee92667285b9c600b}\label{OpenCL_8c_a6800ed8d157f1acee92667285b9c600b}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Release\+Program} (cl\+\_\+program program) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a2812ad466040aa7d5f15a2c859c6c523}\label{OpenCL_8c_a2812ad466040aa7d5f15a2c859c6c523}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Release\+Kernel} (cl\+\_\+kernel kernel) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a75792c435f437e5d7e898000af33db19}\label{OpenCL_8c_a75792c435f437e5d7e898000af33db19}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Enqueue\+Read\+Buffer} (cl\+\_\+command\+\_\+queue command\+\_\+queue, cl\+\_\+mem buffer, cl\+\_\+bool blocking\+\_\+read, size\+\_\+t offset, size\+\_\+t size, void $\ast$ptr, cl\+\_\+uint num\+\_\+events\+\_\+in\+\_\+wait\+\_\+list, const cl\+\_\+event $\ast$event\+\_\+wait\+\_\+list, cl\+\_\+event $\ast$event) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a5609ab5c9a5106ae9af3dcfefbb53142}\label{OpenCL_8c_a5609ab5c9a5106ae9af3dcfefbb53142}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Enqueue\+N\+D\+Range\+Kernel} (cl\+\_\+command\+\_\+queue command\+\_\+queue, cl\+\_\+kernel kernel, cl\+\_\+uint work\+\_\+dim, const size\+\_\+t $\ast$global\+\_\+work\+\_\+offset, const size\+\_\+t $\ast$global\+\_\+work\+\_\+size, const size\+\_\+t $\ast$local\+\_\+work\+\_\+size, cl\+\_\+uint num\+\_\+events\+\_\+in\+\_\+wait\+\_\+list, const cl\+\_\+event $\ast$event\+\_\+wait\+\_\+list, cl\+\_\+event $\ast$event) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_ae136c0e8327dcddfa7d0cad59c1ec355}\label{OpenCL_8c_ae136c0e8327dcddfa7d0cad59c1ec355}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Set\+Kernel\+Arg} (cl\+\_\+kernel kernel, cl\+\_\+uint arg\+\_\+index, size\+\_\+t arg\+\_\+size, const void $\ast$arg\+\_\+value) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_adfa6321d5265fd6d9d0fd0b2c361934e}\label{OpenCL_8c_adfa6321d5265fd6d9d0fd0b2c361934e}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+kernel C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Create\+Kernel} (cl\+\_\+program program, const char $\ast$kernel\+\_\+name, cl\+\_\+int $\ast$errcode\+\_\+ret) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a2b71f734d816faa3449a365bb7c94ce6}\label{OpenCL_8c_a2b71f734d816faa3449a365bb7c94ce6}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+program C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Create\+Program\+With\+Source} (cl\+\_\+context context, cl\+\_\+uint count, const char $\ast$$\ast$strings, const size\+\_\+t $\ast$lengths, cl\+\_\+int $\ast$errcode\+\_\+ret) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a52b3d942c0baab0c791e56199b2b2b68}\label{OpenCL_8c_a52b3d942c0baab0c791e56199b2b2b68}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY C\+L\+\_\+\+E\+X\+T\+\_\+\+P\+R\+E\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+2\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED cl\+\_\+command\+\_\+queue C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Create\+Command\+Queue} (cl\+\_\+context context, cl\+\_\+device\+\_\+id device, cl\+\_\+command\+\_\+queue\+\_\+properties properties, cl\+\_\+int $\ast$errcode\+\_\+ret) C\+L\+\_\+\+E\+X\+T\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+2\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED
+\item 
+\mbox{\Hypertarget{OpenCL_8c_ab84e258cbd68dd32d7a4aeec3f089680}\label{OpenCL_8c_ab84e258cbd68dd32d7a4aeec3f089680}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Get\+Program\+Build\+Info} (cl\+\_\+program program, cl\+\_\+device\+\_\+id device, cl\+\_\+program\+\_\+build\+\_\+info param\+\_\+name, size\+\_\+t param\+\_\+value\+\_\+size, void $\ast$param\+\_\+value, size\+\_\+t $\ast$param\+\_\+value\+\_\+size\+\_\+ret) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a50123f8713b00aa63f3b3056ab93e163}\label{OpenCL_8c_a50123f8713b00aa63f3b3056ab93e163}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Build\+Program} (cl\+\_\+program program, cl\+\_\+uint num\+\_\+devices, const cl\+\_\+device\+\_\+id $\ast$device\+\_\+list, const char $\ast$options, void(C\+L\+\_\+\+C\+A\+L\+L\+B\+A\+CK $\ast$pfn\+\_\+notify)(cl\+\_\+program program, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_ae0ad78e1e126b75382fdb0d98e2eff00}\label{OpenCL_8c_ae0ad78e1e126b75382fdb0d98e2eff00}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Enqueue\+Write\+Buffer} (cl\+\_\+command\+\_\+queue command\+\_\+queue, cl\+\_\+mem buffer, cl\+\_\+bool blocking\+\_\+write, size\+\_\+t offset, size\+\_\+t size, const void $\ast$ptr, cl\+\_\+uint num\+\_\+events\+\_\+in\+\_\+wait\+\_\+list, const cl\+\_\+event $\ast$event\+\_\+wait\+\_\+list, cl\+\_\+event $\ast$event) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+\mbox{\Hypertarget{OpenCL_8c_a580322b829e12817d02a4c6652189fa3}\label{OpenCL_8c_a580322b829e12817d02a4c6652189fa3}} 
+C\+L\+\_\+\+A\+P\+I\+\_\+\+E\+N\+T\+RY cl\+\_\+int C\+L\+\_\+\+A\+P\+I\+\_\+\+C\+A\+LL {\bfseries cl\+Finish} (cl\+\_\+command\+\_\+queue command\+\_\+queue) C\+L\+\_\+\+A\+P\+I\+\_\+\+S\+U\+F\+F\+I\+X\+\_\+\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+1\+\_\+0
+\item 
+int \mbox{\hyperlink{OpenCL_8c_a27b6acfc838d9876eebe28d42bfbd40d}{load\+Open\+CL}} (const char $\ast$p)
+\begin{DoxyCompactList}\small\item\em Loads the Open\+CL library of the Android device dynamically. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{OpenCL_8c_a01db4342407f6e4abfcca3cbdc089ac5}{unload\+Open\+CL}} ()
+\begin{DoxyCompactList}\small\item\em Unloads the Open\+CL library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{OpenCL_8c_adab429f07774a2a2d93ba79d119da229}{dlcall}} = N\+U\+LL
+\begin{DoxyCompactList}\small\item\em Holds the reference to the loaded native library {\itshape lib\+Open\+C\+L.\+so} \end{DoxyCompactList}\item 
+pthread\+\_\+mutex\+\_\+t \mbox{\hyperlink{OpenCL_8c_a6862642576558f9565eaea8be8b48c58}{dllock}} = P\+T\+H\+R\+E\+A\+D\+\_\+\+M\+U\+T\+E\+X\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ER
+\begin{DoxyCompactList}\small\item\em A mutex for the mechanism that loads the library. \end{DoxyCompactList}\item 
+pthread\+\_\+rwlock\+\_\+t \mbox{\hyperlink{OpenCL_8c_aa0246195b64447ad0ba3510f410604f4}{lock}} = P\+T\+H\+R\+E\+A\+D\+\_\+\+R\+W\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ER
+\begin{DoxyCompactList}\small\item\em A R/W lock for the mutual exclusion of the library load/unload mechanism. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{OpenCL_8c_a4426606463de0d8607bac696fd6d901d}\label{OpenCL_8c_a4426606463de0d8607bac696fd6d901d}} 
+const cl\+\_\+icd\+\_\+dispatch \mbox{\hyperlink{OpenCL_8c_a4426606463de0d8607bac696fd6d901d}{C\+L\+\_\+\+W\+R\+A\+P\+\_\+\+C\+A\+L\+L\+\_\+\+Z\+E\+RO}}
+\begin{DoxyCompactList}\small\item\em A constant with all pointers set to zero. \end{DoxyCompactList}\item 
+cl\+\_\+icd\+\_\+dispatch \mbox{\hyperlink{OpenCL_8c_a1285915a31dccb44d7e55e4d7e1d7549}{cl\+\_\+wrap\+\_\+call}}
+\begin{DoxyCompactList}\small\item\em holds the function pointers to the native Open\+CL library \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A this Open\+CL wrapper for the lib\+Open\+C\+L.\+so shared library on the Android device. 
+
+This library acts as a small wrapper (glue) for the native Open\+CL library on an Android device. The library on the device usually is not present at compile time and if it would, it would be added to the apk file at compile time. The app would run O\+N\+LY on this type of device (e.\+g., a Mali G\+PU) but could not be ported to other Android devices. Therefore this wrapper loads the Open\+CL library and all necessary symbols at runtime. This library supports Open\+CL 3.\+0. If your device does not support this version, either rebuild this library with the version appropriate for your device or simply do not call methods not supported on your device. If you do so, a runtime error will occur as the necessary symbol will not be found in the library. \begin{DoxyCopyright}{Copyright}
+Copyright Robert Fritze 2021 
+\end{DoxyCopyright}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Robert Fritze 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11.\+9.\+2021 
+\end{DoxyDate}
+\begin{DoxyParagraph}{License\+:}
+This program is released under the M\+IT License. 
+\end{DoxyParagraph}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{OpenCL_8c_a709c98084a7b1aea8c4377c18ad6819d}\label{OpenCL_8c_a709c98084a7b1aea8c4377c18ad6819d}} 
+\index{Open\+C\+L.\+c@{Open\+C\+L.\+c}!S\+A\+V\+E\+C\+H\+E\+C\+K\+ER@{S\+A\+V\+E\+C\+H\+E\+C\+K\+ER}}
+\index{S\+A\+V\+E\+C\+H\+E\+C\+K\+ER@{S\+A\+V\+E\+C\+H\+E\+C\+K\+ER}!Open\+C\+L.\+c@{Open\+C\+L.\+c}}
+\subsubsection{\texorpdfstring{S\+A\+V\+E\+C\+H\+E\+C\+K\+ER}{SAVECHECKER}}
+{\footnotesize\ttfamily \#define S\+A\+V\+E\+C\+H\+E\+C\+K\+ER(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+pthread\_mutex\_lock( &\mbox{\hyperlink{OpenCL_8c_a6862642576558f9565eaea8be8b48c58}{dllock}} );            \(\backslash\)
+                                                \(\backslash\)
+      if (\mbox{\hyperlink{OpenCL_8c_adab429f07774a2a2d93ba79d119da229}{dlcall}} == NULL)\{                      \(\backslash\)
+        weiter = 1;                             \(\backslash\)
+      \}                                         \(\backslash\)
+                                                \(\backslash\)
+      if ((weiter == 0) && (\mbox{\hyperlink{OpenCL_8c_a1285915a31dccb44d7e55e4d7e1d7549}{cl\_wrap\_call}}.a==NULL)) \{   \(\backslash\)
+        cl\_wrap\_call.a = (cl\_api\_##a) dlsym(\mbox{\hyperlink{OpenCL_8c_adab429f07774a2a2d93ba79d119da229}{dlcall}}, #a ); \(\backslash\)
+                                                \(\backslash\)
+        if (\mbox{\hyperlink{OpenCL_8c_a1285915a31dccb44d7e55e4d7e1d7549}{cl\_wrap\_call}}.a == NULL) \{           \(\backslash\)
+          weiter = 1;                           \(\backslash\)
+        \}                                       \(\backslash\)
+      \}                                         \(\backslash\)
+                                                \(\backslash\)
+      pthread\_mutex\_unlock( &\mbox{\hyperlink{OpenCL_8c_a6862642576558f9565eaea8be8b48c58}{dllock}} );          \(\backslash\)
+\end{DoxyCode}
+
+
+Macro that checks if prerequists for calling a native Open\+CL function are met. 
+
+This macro checks if the native library has been loaded and if the necessary symbol for the method call has been resolved. If the library has been loaded, but the symbol has not yet been resolved, the symbol will be resolved. Sets the \char`\"{}weiter\char`\"{} variable accordingly. Uses a lock to get exclusive access. 
+\begin{DoxyParams}{Parameters}
+{\em a} & the method name of the native library \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The lock {\bfseries lock} must have been acquired before 
+\end{DoxyWarning}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{OpenCL_8c_aea2af9767e8a0154179e5332dd5553e0}\label{OpenCL_8c_aea2af9767e8a0154179e5332dd5553e0}} 
+\index{Open\+C\+L.\+c@{Open\+C\+L.\+c}!W\+R\+A\+P\+P\+E\+R\+C\+L\+F\+U\+N\+CT@{W\+R\+A\+P\+P\+E\+R\+C\+L\+F\+U\+N\+CT}}
+\index{W\+R\+A\+P\+P\+E\+R\+C\+L\+F\+U\+N\+CT@{W\+R\+A\+P\+P\+E\+R\+C\+L\+F\+U\+N\+CT}!Open\+C\+L.\+c@{Open\+C\+L.\+c}}
+\subsubsection{\texorpdfstring{W\+R\+A\+P\+P\+E\+R\+C\+L\+F\+U\+N\+CT}{WRAPPERCLFUNCT}}
+{\footnotesize\ttfamily \#define W\+R\+A\+P\+P\+E\+R\+C\+L\+F\+U\+N\+CT(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{c }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\(\backslash\)
+    pthread\_rwlock\_rdlock( &\mbox{\hyperlink{OpenCL_8c_aa0246195b64447ad0ba3510f410604f4}{lock}} );             \(\backslash\)
+                                                \(\backslash\)
+    int weiter = 0;                             \mbox{\hyperlink{OpenCL_8c_a709c98084a7b1aea8c4377c18ad6819d}{\(\backslash\)}}
+\mbox{\hyperlink{OpenCL_8c_a709c98084a7b1aea8c4377c18ad6819d}{                                                \(\backslash\)}}
+\mbox{\hyperlink{OpenCL_8c_a709c98084a7b1aea8c4377c18ad6819d}{    SAVECHECKER}}( a )                            \(\backslash\)
+                                                \(\backslash\)
+    if (weiter == 0) \{                          \(\backslash\)
+      ret = \mbox{\hyperlink{OpenCL_8c_a1285915a31dccb44d7e55e4d7e1d7549}{cl\_wrap\_call}}.a b;                   \(\backslash\)
+    \}                                           \(\backslash\)
+    else \{                                      \(\backslash\)
+      ret = c;                                  \(\backslash\)
+    \}                                           \(\backslash\)
+                                                \(\backslash\)
+    pthread\_rwlock\_unlock( &\mbox{\hyperlink{OpenCL_8c_aa0246195b64447ad0ba3510f410604f4}{lock}} );             \(\backslash\)
+                                                \(\backslash\)
+    return( ret );                              \(\backslash\)
+\end{DoxyCode}
+
+
+Macro that simplifys the definition of the wrapper methods. 
+
+This macro checks the native library is ready and calls the method of the native library. 
+\begin{DoxyParams}{Parameters}
+{\em a} & Open\+CL method name \\
+\hline
+{\em b} & a list with all parameters of the native function \\
+\hline
+{\em c} & the error code that should be returned if the library function can not be called \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{OpenCL_8c_a27b6acfc838d9876eebe28d42bfbd40d}\label{OpenCL_8c_a27b6acfc838d9876eebe28d42bfbd40d}} 
+\index{Open\+C\+L.\+c@{Open\+C\+L.\+c}!load\+Open\+CL@{load\+Open\+CL}}
+\index{load\+Open\+CL@{load\+Open\+CL}!Open\+C\+L.\+c@{Open\+C\+L.\+c}}
+\subsubsection{\texorpdfstring{load\+Open\+C\+L()}{loadOpenCL()}}
+{\footnotesize\ttfamily int load\+Open\+CL (\begin{DoxyParamCaption}\item[{const char $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Loads the Open\+CL library of the Android device dynamically. 
+
+Loads the Open\+CL library dynamically. This function {\bfseries M\+U\+ST} be called exactly once before any other call to an Open\+CL function. The function stores the path of the library. If the library has already been loaded, a call to this method will have no effect. Any call to an Open\+CL function without prior call to this method will result in an error. 
+\begin{DoxyParams}{Parameters}
+{\em c} & (in) Pointer to the path and name of the Open\+C\+L-\/library on the device (can be reused after the call) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK\+: 0, library has already been loaded\+: -\/1, unable to load library\+: -\/2 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{OpenCL_8c_a01db4342407f6e4abfcca3cbdc089ac5}\label{OpenCL_8c_a01db4342407f6e4abfcca3cbdc089ac5}} 
+\index{Open\+C\+L.\+c@{Open\+C\+L.\+c}!unload\+Open\+CL@{unload\+Open\+CL}}
+\index{unload\+Open\+CL@{unload\+Open\+CL}!Open\+C\+L.\+c@{Open\+C\+L.\+c}}
+\subsubsection{\texorpdfstring{unload\+Open\+C\+L()}{unloadOpenCL()}}
+{\footnotesize\ttfamily void unload\+Open\+CL (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Unloads the Open\+CL library. 
+
+This function unloads the library. \begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{OpenCL_8c_a1285915a31dccb44d7e55e4d7e1d7549}\label{OpenCL_8c_a1285915a31dccb44d7e55e4d7e1d7549}} 
+\index{Open\+C\+L.\+c@{Open\+C\+L.\+c}!cl\+\_\+wrap\+\_\+call@{cl\+\_\+wrap\+\_\+call}}
+\index{cl\+\_\+wrap\+\_\+call@{cl\+\_\+wrap\+\_\+call}!Open\+C\+L.\+c@{Open\+C\+L.\+c}}
+\subsubsection{\texorpdfstring{cl\+\_\+wrap\+\_\+call}{cl\_wrap\_call}}
+{\footnotesize\ttfamily cl\+\_\+icd\+\_\+dispatch cl\+\_\+wrap\+\_\+call}
+
+
+
+holds the function pointers to the native Open\+CL library 
+
+This variable is a struct that holds the function pointers to the native functions of the native Open\+C\+L-\/libraray. The function symbols are resolved only just before they are actually needed. As long as they are not needed, they hold the value N\+U\+LL. This avoids a long initialization overhead once the library is loaded. \begin{DoxyWarning}{Warning}
+Access only with the lock {\itshape lock} (read-\/only access) and the lock {\itshape dllock} (write access) 
+\end{DoxyWarning}
+\mbox{\Hypertarget{OpenCL_8c_adab429f07774a2a2d93ba79d119da229}\label{OpenCL_8c_adab429f07774a2a2d93ba79d119da229}} 
+\index{Open\+C\+L.\+c@{Open\+C\+L.\+c}!dlcall@{dlcall}}
+\index{dlcall@{dlcall}!Open\+C\+L.\+c@{Open\+C\+L.\+c}}
+\subsubsection{\texorpdfstring{dlcall}{dlcall}}
+{\footnotesize\ttfamily void$\ast$ dlcall = N\+U\+LL}
+
+
+
+Holds the reference to the loaded native library {\itshape lib\+Open\+C\+L.\+so} 
+
+\begin{DoxyWarning}{Warning}
+Use {\bfseries dllock} for read+write access 
+\end{DoxyWarning}
+\mbox{\Hypertarget{OpenCL_8c_a6862642576558f9565eaea8be8b48c58}\label{OpenCL_8c_a6862642576558f9565eaea8be8b48c58}} 
+\index{Open\+C\+L.\+c@{Open\+C\+L.\+c}!dllock@{dllock}}
+\index{dllock@{dllock}!Open\+C\+L.\+c@{Open\+C\+L.\+c}}
+\subsubsection{\texorpdfstring{dllock}{dllock}}
+{\footnotesize\ttfamily pthread\+\_\+mutex\+\_\+t dllock = P\+T\+H\+R\+E\+A\+D\+\_\+\+M\+U\+T\+E\+X\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ER}
+
+
+
+A mutex for the mechanism that loads the library. 
+
+This mutex guarantees exclusive access to the attributes {\itshape dlcall} and {\itshape cl\+\_\+wrap\+\_\+call} \begin{DoxyWarning}{Warning}
+For cascade lock use together with lock, acqurire first {\itshape lock} 
+\end{DoxyWarning}
+\mbox{\Hypertarget{OpenCL_8c_aa0246195b64447ad0ba3510f410604f4}\label{OpenCL_8c_aa0246195b64447ad0ba3510f410604f4}} 
+\index{Open\+C\+L.\+c@{Open\+C\+L.\+c}!lock@{lock}}
+\index{lock@{lock}!Open\+C\+L.\+c@{Open\+C\+L.\+c}}
+\subsubsection{\texorpdfstring{lock}{lock}}
+{\footnotesize\ttfamily pthread\+\_\+rwlock\+\_\+t lock = P\+T\+H\+R\+E\+A\+D\+\_\+\+R\+W\+L\+O\+C\+K\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ER}
+
+
+
+A R/W lock for the mutual exclusion of the library load/unload mechanism. 
+
+This lock provides the mechanism to exclude to Open\+CL library unload mechanism while the library is beeing loaded or some Open\+CL function is executed. Arbitrary many methods can acquire the reader lock (including load\+Open\+CL) but only {\itshape unload\+Open\+CL} acquires the writer lock (resulting in an exclusive access to the entire library). \begin{DoxyWarning}{Warning}
+For cascade lock use together with dllock, acqurire first {\bfseries lock} 
+\end{DoxyWarning}

@@ -1,0 +1,136 @@
+\hypertarget{dbscan__c_8h}{}\section{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/dbscan\+\_\+c.h File Reference}
+\label{dbscan__c_8h}\index{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/dbscan\+\_\+c.\+h@{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/dbscan\+\_\+c.\+h}}
+
+
+Header file for the C/\+C+\+G\+PU implementations of the D\+B\+S\+C\+AN algorithm.  
+
+
+{\ttfamily \#include $<$jni.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL \mbox{\hyperlink{dbscan__c_8h_ac96946a3590e41c2ba686a783d2c59c5}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c}} (J\+N\+I\+Env $\ast$env, jclass jc, jshort\+Array b, jfloat\+Array rf, jfloat eps, jint kk, jint features)
+\item 
+J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL \mbox{\hyperlink{dbscan__c_8h_a279dd21557bcbe8fcb980459a9e46131}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1gpu}} (J\+N\+I\+Env $\ast$env, jclass jc, jshort\+Array b, jfloat\+Array rf, jfloat eps, jint kk, jint features, jlong\+Array e)
+\item 
+J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL \mbox{\hyperlink{dbscan__c_8h_a5e0b673d019dfe5d8dbc901adab3f34a}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1phtreads}} (J\+N\+I\+Env $\ast$env, jclass jc, jshort\+Array b, jfloat\+Array rf, jfloat eps, jint kk, jint features, jint cores, jlong\+Array e)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file for the C/\+C+\+G\+PU implementations of the D\+B\+S\+C\+AN algorithm. 
+
+This header file contains three method prototypes, that allow to perform single-\/ or multithreaded C\+PU or G\+PU based D\+B\+S\+C\+AN cluster searches. \begin{DoxyCopyright}{Copyright}
+Copyright Robert Fritze 2021 
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License\+:}
+M\+IT 
+\end{DoxyParagraph}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Robert Fritze 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+This file is machine generated 
+\end{DoxyWarning}
+\begin{DoxyDate}{Date}
+11.\+9.\+2021 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{dbscan__c_8h_ac96946a3590e41c2ba686a783d2c59c5}\label{dbscan__c_8h_ac96946a3590e41c2ba686a783d2c59c5}} 
+\index{dbscan\+\_\+c.\+h@{dbscan\+\_\+c.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c}!dbscan\+\_\+c.\+h@{dbscan\+\_\+c.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c()}{Java\_com\_example\_dmocl\_dbscan\_dbscan\_1c()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{jc,  }\item[{jshort\+Array}]{b,  }\item[{jfloat\+Array}]{rf,  }\item[{jfloat}]{eps,  }\item[{jint}]{kk,  }\item[{jint}]{features }\end{DoxyParamCaption})}
+
+Performs a D\+B\+S\+C\+AN cluster search on the input data with one thread. 
+\begin{DoxyParams}{Parameters}
+{\em env} & J\+NI environment variable \\
+\hline
+{\em jc} & J\+NI class variable \\
+\hline
+{\em b} & (out) Array of cluster numbers (0=noise point) \\
+\hline
+{\em rf} & (in) Array of data points \\
+\hline
+{\em eps} & search radius \\
+\hline
+{\em kk} & number of neighbours \\
+\hline
+{\em features} & number of features per data item contained in the data array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of clusters found (can be zero if only noise points have been detected) or -\/ if negative -\/ an error code 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{dbscan__c_8h_a279dd21557bcbe8fcb980459a9e46131}\label{dbscan__c_8h_a279dd21557bcbe8fcb980459a9e46131}} 
+\index{dbscan\+\_\+c.\+h@{dbscan\+\_\+c.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1gpu@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1gpu}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1gpu@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1gpu}!dbscan\+\_\+c.\+h@{dbscan\+\_\+c.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1gpu()}{Java\_com\_example\_dmocl\_dbscan\_dbscan\_1c\_1gpu()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1gpu (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{jc,  }\item[{jshort\+Array}]{b,  }\item[{jfloat\+Array}]{rf,  }\item[{jfloat}]{eps,  }\item[{jint}]{kk,  }\item[{jint}]{features,  }\item[{jlong\+Array}]{e }\end{DoxyParamCaption})}
+
+Performs a D\+B\+S\+C\+AN cluster search on the G\+PU. 
+\begin{DoxyParams}{Parameters}
+{\em env} & J\+NI environment variable \\
+\hline
+{\em jc} & J\+NI class variable \\
+\hline
+{\em b} & (out) Array of cluster numbers (0=noise point) \\
+\hline
+{\em rf} & (in) Array of data points \\
+\hline
+{\em eps} & search radius \\
+\hline
+{\em kk} & number of neighbours \\
+\hline
+{\em features} & number of features per data item contained in the data array \\
+\hline
+{\em e} & (out) Array of exactly one long value, contains the exclusive time needed (in ns) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of clusters found (can be zero if only noise points have been detected) or -\/ if negative -\/ an error code 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{dbscan__c_8h_a5e0b673d019dfe5d8dbc901adab3f34a}\label{dbscan__c_8h_a5e0b673d019dfe5d8dbc901adab3f34a}} 
+\index{dbscan\+\_\+c.\+h@{dbscan\+\_\+c.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1phtreads@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1phtreads}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1phtreads@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1phtreads}!dbscan\+\_\+c.\+h@{dbscan\+\_\+c.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1phtreads()}{Java\_com\_example\_dmocl\_dbscan\_dbscan\_1c\_1phtreads()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1phtreads (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{jc,  }\item[{jshort\+Array}]{b,  }\item[{jfloat\+Array}]{rf,  }\item[{jfloat}]{eps,  }\item[{jint}]{kk,  }\item[{jint}]{features,  }\item[{jint}]{cores,  }\item[{jlong\+Array}]{e }\end{DoxyParamCaption})}
+
+Performs a D\+B\+S\+C\+AN cluster search on the input data with multiple threads. 
+\begin{DoxyParams}{Parameters}
+{\em env} & J\+NI environment variable \\
+\hline
+{\em jc} & J\+NI class variable \\
+\hline
+{\em b} & (out) Array of cluster numbers (0=noise point) \\
+\hline
+{\em rf} & (in) Array of data points \\
+\hline
+{\em eps} & search radius \\
+\hline
+{\em kk} & number of neighbours \\
+\hline
+{\em features} & number of features per data item contained in the data array \\
+\hline
+{\em cores} & number of cores that should be used \\
+\hline
+{\em e} & (out) Array of exactly one long value, contains the exclusive time needed (in ns) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of clusters found (can be zero if only noise points have been detected) or -\/ if negative -\/ an error code 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}

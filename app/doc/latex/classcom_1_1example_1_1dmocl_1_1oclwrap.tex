@@ -1,0 +1,110 @@
+\hypertarget{classcom_1_1example_1_1dmocl_1_1oclwrap}{}\section{com.\+example.\+dmocl.\+oclwrap Class Reference}
+\label{classcom_1_1example_1_1dmocl_1_1oclwrap}\index{com.\+example.\+dmocl.\+oclwrap@{com.\+example.\+dmocl.\+oclwrap}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1oclwrap_1_1oclinforet}{oclinforet}}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+native int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1oclwrap_ac410aa241e771d4b1962636fa9f04e24}{load\+Open\+CL}} (String ocllibpath)
+\item 
+native void \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1oclwrap_aa98cb05829d56c9bdc773eeda8911d2c}{unload\+Open\+CL}} ()
+\item 
+native int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1oclwrap_ae24bb606cc482ba27e0dbdca97b377ea}{Andr\+C\+L\+Get\+Platform\+Cnt}} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1oclwrap_a32be75820f34934e226d5ab0db569aa7}\label{classcom_1_1example_1_1dmocl_1_1oclwrap_a32be75820f34934e226d5ab0db569aa7}} 
+native int {\bfseries Andr\+C\+L\+Get\+Device\+Cnt} (int platf)
+\item 
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1oclwrap_aa4f6d9eb5e580ebc687ccd3a518abb2c}\label{classcom_1_1example_1_1dmocl_1_1oclwrap_aa4f6d9eb5e580ebc687ccd3a518abb2c}} 
+native \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1oclwrap_1_1oclinforet}{oclinforet}} {\bfseries Andr\+C\+Lget\+Device\+Name} (int platf, int dev)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1oclwrap_a3af03274f6d65e914c0f61ecc4541392}\label{classcom_1_1example_1_1dmocl_1_1oclwrap_a3af03274f6d65e914c0f61ecc4541392}} 
+static native int {\bfseries is\+C\+Lang} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1oclwrap_a8d3b11bda003fad87ae98abd2dc20217}\label{classcom_1_1example_1_1dmocl_1_1oclwrap_a8d3b11bda003fad87ae98abd2dc20217}} 
+static native int {\bfseries get\+C\+Lmaj} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1oclwrap_ab21e9c2f0e53aba97cbe3a9937c9e7bf}\label{classcom_1_1example_1_1dmocl_1_1oclwrap_ab21e9c2f0e53aba97cbe3a9937c9e7bf}} 
+static native int {\bfseries get\+C\+Lmin} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1oclwrap_ab693cebf65c86567189ea1f71bff0250}\label{classcom_1_1example_1_1dmocl_1_1oclwrap_ab693cebf65c86567189ea1f71bff0250}} 
+static native int {\bfseries get\+C\+Lpatch} ()
+\item 
+static native int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1oclwrap_afd9731ebb0d18315fe3762fc329fcec4}{get\+Architecture}} ()
+\item 
+static \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1oclwrap}{oclwrap}} \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1oclwrap_a8c8c9a75d3d834cb71725d92ddeb4af7}{get\+Ocl\+Wrapper}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A singleton class for the Open\+CL wrapper.
+
+Each class (or activity) that needs the use Open\+CL can get a reference to the Open\+CL runtime invoking the method {\itshape get\+Ocl\+Wrapper}
+
+The Open\+CL runtime implemented has two abstraction layers\+: The first abstraction layer is the link between Java (Android) and a C-\/\+Wrapper. The communication between Java and C is done using J\+NI. This wrapper has to be written by the user. It can expose the entire set of Open\+CL calls or implement an own A\+PI that exposes the functionality of more complex tasks that are carried out in C/\+Open\+CL.
+
+The second abstraction layer is the link between C and Open\+CL. It is a thin wrapper that loads dynamically at runtime the local Open\+CL library (lib\+Open\+C\+L.\+so) and exposes its functionality to the user. This layer must not be modified by the user. The user has to call once (before the very first call to an Open\+CL function the function {\itshape load\+Open\+CL} that loads the lib\+Open\+C\+L.\+so library on the device. This library does not have to be present at compile time. After the last call to an Open\+CL function, the function {\itshape unload\+Open\+CL} should be called. If the user wishes, on Android on\+Stop-\/\+Event the Open\+CL library can be unloaded (saving some memory). If one tries to call an Open\+CL function W\+I\+T\+H\+O\+UT having called \textquotesingle{}load\+Open\+CL\textquotesingle{} a runtime error will occur. The best place to call \textquotesingle{}load\+Open\+CL\textquotesingle{} would be Androids \textquotesingle{}on\+Create\textquotesingle{} method.
+
+All methods of this class are fully thread-\/safe if the underlying J\+NI methods are thread-\/safe. The Open\+CL library cannot be unloaded while there is still some calculation in progress. If one tries to call an Open\+CL function A\+F\+T\+ER the Open\+CL library has been unloaded, the library will be reloaded automatically. The Java-\/ and J\+NI part do not have to matter about synchronization issues. Synchronization is provided by the Open\+CL wrapper library.
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1oclwrap_ae24bb606cc482ba27e0dbdca97b377ea}\label{classcom_1_1example_1_1dmocl_1_1oclwrap_ae24bb606cc482ba27e0dbdca97b377ea}} 
+\index{com\+::example\+::dmocl\+::oclwrap@{com\+::example\+::dmocl\+::oclwrap}!Andr\+C\+L\+Get\+Platform\+Cnt@{Andr\+C\+L\+Get\+Platform\+Cnt}}
+\index{Andr\+C\+L\+Get\+Platform\+Cnt@{Andr\+C\+L\+Get\+Platform\+Cnt}!com\+::example\+::dmocl\+::oclwrap@{com\+::example\+::dmocl\+::oclwrap}}
+\subsubsection{\texorpdfstring{Andr\+C\+L\+Get\+Platform\+Cnt()}{AndrCLGetPlatformCnt()}}
+{\footnotesize\ttfamily native int com.\+example.\+dmocl.\+oclwrap.\+Andr\+C\+L\+Get\+Platform\+Cnt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the number of platforms available. \begin{DoxyRemark}{Remarks}
+If only number of platforms is relevant, this method is much faster than {\itshape Andr\+C\+L\+Get\+Platform\+I\+Ds} 
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+O\+C\+L\+A\+N\+D\+R\+O\+I\+D\+\_\+\+E\+R\+R\+OR or number of platforms found  fully threadsafe 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1oclwrap_afd9731ebb0d18315fe3762fc329fcec4}\label{classcom_1_1example_1_1dmocl_1_1oclwrap_afd9731ebb0d18315fe3762fc329fcec4}} 
+\index{com\+::example\+::dmocl\+::oclwrap@{com\+::example\+::dmocl\+::oclwrap}!get\+Architecture@{get\+Architecture}}
+\index{get\+Architecture@{get\+Architecture}!com\+::example\+::dmocl\+::oclwrap@{com\+::example\+::dmocl\+::oclwrap}}
+\subsubsection{\texorpdfstring{get\+Architecture()}{getArchitecture()}}
+{\footnotesize\ttfamily static native int com.\+example.\+dmocl.\+oclwrap.\+get\+Architecture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the type of architecture. \begin{DoxyReturn}{Returns}
+The the architecture used (0=arm-\/v7, 1=arm-\/v8, 2=x86, 3=x86\+\_\+64, -\/1=unknown)  fully 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1oclwrap_a8c8c9a75d3d834cb71725d92ddeb4af7}\label{classcom_1_1example_1_1dmocl_1_1oclwrap_a8c8c9a75d3d834cb71725d92ddeb4af7}} 
+\index{com\+::example\+::dmocl\+::oclwrap@{com\+::example\+::dmocl\+::oclwrap}!get\+Ocl\+Wrapper@{get\+Ocl\+Wrapper}}
+\index{get\+Ocl\+Wrapper@{get\+Ocl\+Wrapper}!com\+::example\+::dmocl\+::oclwrap@{com\+::example\+::dmocl\+::oclwrap}}
+\subsubsection{\texorpdfstring{get\+Ocl\+Wrapper()}{getOclWrapper()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1oclwrap}{oclwrap}} com.\+example.\+dmocl.\+oclwrap.\+get\+Ocl\+Wrapper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Returns a reference to the singleton. \begin{DoxyReturn}{Returns}
+The (single) instance of the Open\+CL wrapper.  Fully threadsafe. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1oclwrap_ac410aa241e771d4b1962636fa9f04e24}\label{classcom_1_1example_1_1dmocl_1_1oclwrap_ac410aa241e771d4b1962636fa9f04e24}} 
+\index{com\+::example\+::dmocl\+::oclwrap@{com\+::example\+::dmocl\+::oclwrap}!load\+Open\+CL@{load\+Open\+CL}}
+\index{load\+Open\+CL@{load\+Open\+CL}!com\+::example\+::dmocl\+::oclwrap@{com\+::example\+::dmocl\+::oclwrap}}
+\subsubsection{\texorpdfstring{load\+Open\+C\+L()}{loadOpenCL()}}
+{\footnotesize\ttfamily native int com.\+example.\+dmocl.\+oclwrap.\+load\+Open\+CL (\begin{DoxyParamCaption}\item[{String}]{ocllibpath }\end{DoxyParamCaption})}
+
+Loads the Open\+CL library on the device. The library does not have to be present at compile time. Must be called once before any other call to an Open\+CL function. Subsequent calls to this method have no effect (even if the library is currently not loaded). The path to the library can be set only at the call to this function and is immutable afterwards (you have to restart the app to change the path). 
+\begin{DoxyParams}{Parameters}
+{\em ocllibpath} & The path and name of the Open\+C\+L-\/library on the device (e.\+g. \char`\"{}/system/vendor/lib/lib\+Open\+C\+L.\+so\char`\"{} for Mali graphics cards. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 = if the library could not be loaded, 1 = this method has already been called, 0 else; if the return value is greater or equal to zero, the library can be used. If the return value is negative, most probably the path to the Open\+CL library on the device was wrong or there is no Open\+CL shared library on the device.  fully thread safe as long as underlying J\+NI function is thread-\/safe (synchronization is provided in library function). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1oclwrap_aa98cb05829d56c9bdc773eeda8911d2c}\label{classcom_1_1example_1_1dmocl_1_1oclwrap_aa98cb05829d56c9bdc773eeda8911d2c}} 
+\index{com\+::example\+::dmocl\+::oclwrap@{com\+::example\+::dmocl\+::oclwrap}!unload\+Open\+CL@{unload\+Open\+CL}}
+\index{unload\+Open\+CL@{unload\+Open\+CL}!com\+::example\+::dmocl\+::oclwrap@{com\+::example\+::dmocl\+::oclwrap}}
+\subsubsection{\texorpdfstring{unload\+Open\+C\+L()}{unloadOpenCL()}}
+{\footnotesize\ttfamily native void com.\+example.\+dmocl.\+oclwrap.\+unload\+Open\+CL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Unloads the Open\+CL library. This method can be called also if Android\textquotesingle{}s \textquotesingle{}on\+Stop\textquotesingle{} event occurs.  Fully thread-\/safe as long as the underlying J\+NI implementation is thread save. The underlying library function provides synchronization methods. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/main/java/com/example/dmocl/oclwrap.\+java\end{DoxyCompactItemize}

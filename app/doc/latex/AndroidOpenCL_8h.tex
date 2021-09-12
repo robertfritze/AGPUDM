@@ -1,0 +1,71 @@
+\hypertarget{AndroidOpenCL_8h}{}\section{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/\+Android\+Open\+CL.h File Reference}
+\label{AndroidOpenCL_8h}\index{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/\+Android\+Open\+C\+L.\+h@{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/\+Android\+Open\+C\+L.\+h}}
+
+
+Load/\+Unload method prototypes.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{AndroidOpenCL_8h_ab6b28f57b7a3dbe0c36d66e0a664579d}{load\+Open\+CL}} (const char $\ast$c)
+\begin{DoxyCompactList}\small\item\em Loads the Open\+CL library of the Android device dynamically. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{AndroidOpenCL_8h_aca6b9e2ffc2c41c354d0d1663a6725c8}{unload\+Open\+CL}} (void)
+\begin{DoxyCompactList}\small\item\em Unloads the Open\+CL library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Load/\+Unload method prototypes. 
+
+This headerfile contains two method definitions for loading and unloading the Open\+CL shared library.. \begin{DoxyCopyright}{Copyright}
+Copyright Robert Fritze 2021 
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License\+:}
+M\+IT 
+\end{DoxyParagraph}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Robert Fritze 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11.\+9.\+2021 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{AndroidOpenCL_8h_ab6b28f57b7a3dbe0c36d66e0a664579d}\label{AndroidOpenCL_8h_ab6b28f57b7a3dbe0c36d66e0a664579d}} 
+\index{Android\+Open\+C\+L.\+h@{Android\+Open\+C\+L.\+h}!load\+Open\+CL@{load\+Open\+CL}}
+\index{load\+Open\+CL@{load\+Open\+CL}!Android\+Open\+C\+L.\+h@{Android\+Open\+C\+L.\+h}}
+\subsubsection{\texorpdfstring{load\+Open\+C\+L()}{loadOpenCL()}}
+{\footnotesize\ttfamily int load\+Open\+CL (\begin{DoxyParamCaption}\item[{const char $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Loads the Open\+CL library of the Android device dynamically. 
+
+Loads the Open\+CL library dynamically. This function {\bfseries M\+U\+ST} be called exactly once before any other call to an Open\+CL function. The function stores the path of the library. If the library has already been loaded, a call to this method will have no effect. Any call to an Open\+CL function without prior call to this method will result in an error. 
+\begin{DoxyParams}{Parameters}
+{\em c} & (in) Pointer to the path and name of the Open\+C\+L-\/library on the device (can be reused after the call) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK\+: 0, library has already been loaded\+: -\/1, unable to load library\+: -\/2 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{AndroidOpenCL_8h_aca6b9e2ffc2c41c354d0d1663a6725c8}\label{AndroidOpenCL_8h_aca6b9e2ffc2c41c354d0d1663a6725c8}} 
+\index{Android\+Open\+C\+L.\+h@{Android\+Open\+C\+L.\+h}!unload\+Open\+CL@{unload\+Open\+CL}}
+\index{unload\+Open\+CL@{unload\+Open\+CL}!Android\+Open\+C\+L.\+h@{Android\+Open\+C\+L.\+h}}
+\subsubsection{\texorpdfstring{unload\+Open\+C\+L()}{unloadOpenCL()}}
+{\footnotesize\ttfamily void unload\+Open\+CL (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Unloads the Open\+CL library. 
+
+This function unloads the library. \begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}

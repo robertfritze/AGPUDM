@@ -68,7 +68,29 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p>This project allows to address the GPU on Android devices using the OpenCL framework. In contrast to other projects the OpenCL library of the device is loaded only at runtime. There is no need to include it during the build process.</p>
 <p>Two data mining algorithms (DBSCAN and Kmeans) have been implemented with two different programming languages and different programming paradigms (single-threaded, multi-threaded, task/data parallelism (GPU)).</p>
-<p>There is a doxygen documentation available for this project (see app/doc/html/index.html). As of 9/11/2021 only the C-header files and a part of the C-source files have been included in this documentation. Additional documentation will be available soon. </p>
+<p>There is a <a href="app/doc/html/index.html">doxygen documentation</a> available for this project (see app/doc/html/index.html). As of 9/12/2021 only the C part (except dbscan_c.c and kmeans_c.c) has been included in this documentation. Additional documentation will be available soon.</p>
+<p>The parameters for the data mining jobs have to be set in the file app/src/main/res/values/values.xml. The following attributes can be set:</p>
+<ul>
+<li><b>mode</b> (string):<ul>
+<li>"dynamic" multiple test are made with built in values. The attributes 'clusterno', 'clustersize' and 'features' must be set correctly but will not be used.</li>
+<li>"fixed" tests are made with the attributes specified in this file</li>
+</ul>
+</li>
+<li><b>passes</b> (integer) Number of passes that should be made</li>
+<li><b>threads</b> (integer) Number of threads that should be used for multithreaded implementations. Zero means the maximum number of available cores.</li>
+<li><b>export</b> (boolean) "true" export results, "false" do not export results</li>
+<li><b>append</b> (boolean) "true" append to old results if available, "false" delete old results</li>
+<li><b>resultfilename</b> (string) Name of the csv-file in which to store the results. <b>DO NOT PREPEND A PATH!</b> The correct path will be prepended automatically. In the version for larger screen sizes the full path and name are shown in the info box.</li>
+<li><b>log</b> (boolean) "true" log information, "false" do not log information (there is just one log-level)</li>
+<li><b>logfilename</b> (string) Name of the text-file in which to store the results. <b>DO NOT PREPEND A PATH!</b> The correct path will be prepended automatically. In the version for larger screen sizes the full path and name are shown in the info box.</li>
+<li><b>kmeanseps</b> Maximum cluster center displacement. If the sum of the absolute values of the cluster displacements drops below this threshold, the algorithm terminates.</li>
+<li><b>dbscaneps</b> Search radius for DBSCAN (0=sqrt(features))</li>
+<li><b>dbscanneigh</b> Minimum number of neighbours within the serach radius (0=10*features)</li>
+<li><b>clusterno</b> Number of clusters to generate randomly. For Kmeans also the number of clusters to search for.</li>
+<li><b>clustersize</b> Size of the clusters (equal size for all clusters).</li>
+<li><b>features</b> Number of features for each data item.</li>
+</ul>
+<p>In a future version an additional activity, that will allow to set the attributes on the device during runtime, will be added to this project. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

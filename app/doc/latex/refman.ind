@@ -1,0 +1,233 @@
+\begin{theindex}
+
+  \item {/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/\+Android\+Open\+C\+L.\+h}, 
+		\hyperpage{19}
+  \item {/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/dbscan\+\_\+c.\+h}, 
+		\hyperpage{20}
+  \item {/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/kmeans\+\_\+c.\+h}, 
+		\hyperpage{23}
+  \item {/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/oclwrapper.\+h}, 
+		\hyperpage{26}
+  \item {/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/rwlock\+\_\+wp.\+h}, 
+		\hyperpage{33}
+  \item {/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/source/\+Open\+C\+L.\+c}, 
+		\hyperpage{41}
+  \item {/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/source/oclwrapper.\+c}, 
+		\hyperpage{35}
+  \item {/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/source/rwlock\+\_\+wp.\+c}, 
+		\hyperpage{48}
+
+  \indexspace
+
+  \item {Andr\+C\+L\+Get\+Platform\+Cnt}
+    \subitem {com\+::example\+::dmocl\+::oclwrap}, \hyperpage{14}
+  \item {Android\+Open\+C\+L.\+h}
+    \subitem {load\+Open\+CL}, \hyperpage{20}
+    \subitem {unload\+Open\+CL}, \hyperpage{20}
+
+  \indexspace
+
+  \item {cl\+\_\+wrap\+\_\+call}
+    \subitem {Open\+C\+L.\+c}, \hyperpage{46}
+  \item {com.\+example.\+dmocl.\+canceljobs}, \hyperpage{9}
+  \item {com.\+example.\+dmocl.\+dataminingtask}, \hyperpage{9}
+  \item {com.\+example.\+dmocl.\+dbscan}, \hyperpage{10}
+  \item {com.\+example.\+dmocl.\+immediatejobs}, \hyperpage{11}
+  \item {com.\+example.\+dmocl.\+kmeans}, \hyperpage{12}
+  \item {com.\+example.\+dmocl.\+Link\+To\+File}, \hyperpage{13}
+  \item {com.\+example.\+dmocl.\+Main\+Activity}, \hyperpage{13}
+  \item {com.\+example.\+dmocl.\+oclwrap}, \hyperpage{13}
+  \item {com.\+example.\+dmocl.\+oclwrap.\+oclinforet}, \hyperpage{13}
+  \item {com.\+example.\+dmocl.\+submitjobs}, \hyperpage{17}
+  \item {com\+::example\+::dmocl\+::oclwrap}
+    \subitem {Andr\+C\+L\+Get\+Platform\+Cnt}, \hyperpage{14}
+    \subitem {get\+Architecture}, \hyperpage{15}
+    \subitem {get\+Ocl\+Wrapper}, \hyperpage{15}
+    \subitem {load\+Open\+CL}, \hyperpage{15}
+    \subitem {unload\+Open\+CL}, \hyperpage{16}
+
+  \indexspace
+
+  \item {dbscan\+\_\+c.\+h}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c}, 
+		\hyperpage{21}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1gpu}, 
+		\hyperpage{22}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1phtreads}, 
+		\hyperpage{23}
+  \item {dbscan\+\_\+pt}, \hyperpage{11}
+  \item {dlcall}
+    \subitem {Open\+C\+L.\+c}, \hyperpage{47}
+  \item {dllock}
+    \subitem {Open\+C\+L.\+c}, \hyperpage{47}
+
+  \indexspace
+
+  \item {get\+Architecture}
+    \subitem {com\+::example\+::dmocl\+::oclwrap}, \hyperpage{15}
+  \item {get\+Ocl\+Wrapper}
+    \subitem {com\+::example\+::dmocl\+::oclwrap}, \hyperpage{15}
+
+  \indexspace
+
+  \item {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c}
+    \subitem {dbscan\+\_\+c.\+h}, \hyperpage{21}
+  \item {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1gpu}
+    \subitem {dbscan\+\_\+c.\+h}, \hyperpage{22}
+  \item {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1phtreads}
+    \subitem {dbscan\+\_\+c.\+h}, \hyperpage{23}
+  \item {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c}
+    \subitem {kmeans\+\_\+c.\+h}, \hyperpage{24}
+  \item {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1gpu}
+    \subitem {kmeans\+\_\+c.\+h}, \hyperpage{25}
+  \item {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1phtreads}
+    \subitem {kmeans\+\_\+c.\+h}, \hyperpage{26}
+  \item {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Device\+Cnt}
+    \subitem {oclwrapper.\+c}, \hyperpage{37}
+    \subitem {oclwrapper.\+h}, \hyperpage{28}
+  \item {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Platform\+Cnt}
+    \subitem {oclwrapper.\+c}, \hyperpage{38}
+    \subitem {oclwrapper.\+h}, \hyperpage{29}
+  \item {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+Lget\+Device\+Name}
+    \subitem {oclwrapper.\+c}, \hyperpage{37}
+    \subitem {oclwrapper.\+h}, \hyperpage{28}
+  \item {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+Architecture}
+    \subitem {oclwrapper.\+c}, \hyperpage{38}
+    \subitem {oclwrapper.\+h}, \hyperpage{29}
+  \item {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmaj}
+    \subitem {oclwrapper.\+c}, \hyperpage{38}
+    \subitem {oclwrapper.\+h}, \hyperpage{30}
+  \item {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmin}
+    \subitem {oclwrapper.\+c}, \hyperpage{39}
+    \subitem {oclwrapper.\+h}, \hyperpage{30}
+  \item {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lpatch}
+    \subitem {oclwrapper.\+c}, \hyperpage{39}
+    \subitem {oclwrapper.\+h}, \hyperpage{31}
+  \item {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+is\+C\+Lang}
+    \subitem {oclwrapper.\+c}, \hyperpage{40}
+    \subitem {oclwrapper.\+h}, \hyperpage{31}
+  \item {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+load\+Open\+CL}
+    \subitem {oclwrapper.\+c}, \hyperpage{40}
+    \subitem {oclwrapper.\+h}, \hyperpage{32}
+  \item {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+unload\+Open\+CL}
+    \subitem {oclwrapper.\+c}, \hyperpage{41}
+    \subitem {oclwrapper.\+h}, \hyperpage{32}
+
+  \indexspace
+
+  \item {kmeans\+\_\+c.\+h}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c}, 
+		\hyperpage{24}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1gpu}, 
+		\hyperpage{25}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1phtreads}, 
+		\hyperpage{26}
+  \item {kmeans\+\_\+pt}, \hyperpage{12}
+
+  \indexspace
+
+  \item {load\+Open\+CL}
+    \subitem {Android\+Open\+C\+L.\+h}, \hyperpage{20}
+    \subitem {com\+::example\+::dmocl\+::oclwrap}, \hyperpage{15}
+    \subitem {Open\+C\+L.\+c}, \hyperpage{46}
+  \item {lock}
+    \subitem {Open\+C\+L.\+c}, \hyperpage{47}
+
+  \indexspace
+
+  \item {oclwrapper.\+c}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Device\+Cnt}, 
+		\hyperpage{37}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Platform\+Cnt}, 
+		\hyperpage{38}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+Lget\+Device\+Name}, 
+		\hyperpage{37}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+Architecture}, 
+		\hyperpage{38}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmaj}, 
+		\hyperpage{38}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmin}, 
+		\hyperpage{39}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lpatch}, 
+		\hyperpage{39}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+is\+C\+Lang}, 
+		\hyperpage{40}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+load\+Open\+CL}, 
+		\hyperpage{40}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+unload\+Open\+CL}, 
+		\hyperpage{41}
+  \item {oclwrapper.\+h}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Device\+Cnt}, 
+		\hyperpage{28}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+L\+Get\+Platform\+Cnt}, 
+		\hyperpage{29}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+\+Andr\+C\+Lget\+Device\+Name}, 
+		\hyperpage{28}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+Architecture}, 
+		\hyperpage{29}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmaj}, 
+		\hyperpage{30}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lmin}, 
+		\hyperpage{30}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+get\+C\+Lpatch}, 
+		\hyperpage{31}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+is\+C\+Lang}, 
+		\hyperpage{31}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+load\+Open\+CL}, 
+		\hyperpage{32}
+    \subitem {Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+oclwrap\+\_\+unload\+Open\+CL}, 
+		\hyperpage{32}
+  \item {Open\+C\+L.\+c}
+    \subitem {cl\+\_\+wrap\+\_\+call}, \hyperpage{46}
+    \subitem {dlcall}, \hyperpage{47}
+    \subitem {dllock}, \hyperpage{47}
+    \subitem {load\+Open\+CL}, \hyperpage{46}
+    \subitem {lock}, \hyperpage{47}
+    \subitem {S\+A\+V\+E\+C\+H\+E\+C\+K\+ER}, \hyperpage{44}
+    \subitem {unload\+Open\+CL}, \hyperpage{46}
+    \subitem {W\+R\+A\+P\+P\+E\+R\+C\+L\+F\+U\+N\+CT}, \hyperpage{45}
+
+  \indexspace
+
+  \item {rwlock\+\_\+wp.\+c}
+    \subitem {rwlockwp\+\_\+reader\+\_\+acquire}, \hyperpage{48}
+    \subitem {rwlockwp\+\_\+reader\+\_\+release}, \hyperpage{49}
+    \subitem {rwlockwp\+\_\+writer\+\_\+acquire}, \hyperpage{49}
+    \subitem {rwlockwp\+\_\+writer\+\_\+release}, \hyperpage{49}
+  \item {rwlock\+\_\+wp.\+h}
+    \subitem {rwlockwp\+\_\+reader\+\_\+acquire}, \hyperpage{34}
+    \subitem {rwlockwp\+\_\+reader\+\_\+release}, \hyperpage{34}
+    \subitem {rwlockwp\+\_\+writer\+\_\+acquire}, \hyperpage{34}
+    \subitem {rwlockwp\+\_\+writer\+\_\+release}, \hyperpage{35}
+  \item {rwlockwp}, \hyperpage{16}
+  \item {rwlockwp\+\_\+reader\+\_\+acquire}
+    \subitem {rwlock\+\_\+wp.\+c}, \hyperpage{48}
+    \subitem {rwlock\+\_\+wp.\+h}, \hyperpage{34}
+  \item {rwlockwp\+\_\+reader\+\_\+release}
+    \subitem {rwlock\+\_\+wp.\+c}, \hyperpage{49}
+    \subitem {rwlock\+\_\+wp.\+h}, \hyperpage{34}
+  \item {rwlockwp\+\_\+writer\+\_\+acquire}
+    \subitem {rwlock\+\_\+wp.\+c}, \hyperpage{49}
+    \subitem {rwlock\+\_\+wp.\+h}, \hyperpage{34}
+  \item {rwlockwp\+\_\+writer\+\_\+release}
+    \subitem {rwlock\+\_\+wp.\+c}, \hyperpage{49}
+    \subitem {rwlock\+\_\+wp.\+h}, \hyperpage{35}
+
+  \indexspace
+
+  \item {S\+A\+V\+E\+C\+H\+E\+C\+K\+ER}
+    \subitem {Open\+C\+L.\+c}, \hyperpage{44}
+
+  \indexspace
+
+  \item {unload\+Open\+CL}
+    \subitem {Android\+Open\+C\+L.\+h}, \hyperpage{20}
+    \subitem {com\+::example\+::dmocl\+::oclwrap}, \hyperpage{16}
+    \subitem {Open\+C\+L.\+c}, \hyperpage{46}
+
+  \indexspace
+
+  \item {W\+R\+A\+P\+P\+E\+R\+C\+L\+F\+U\+N\+CT}
+    \subitem {Open\+C\+L.\+c}, \hyperpage{45}
+
+\end{theindex}

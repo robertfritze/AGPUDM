@@ -1,0 +1,37 @@
+\hypertarget{structrwlockwp}{}\section{rwlockwp Struct Reference}
+\label{structrwlockwp}\index{rwlockwp@{rwlockwp}}
+
+
+A struct thats holds all necessary components for the lock.  
+
+
+
+
+{\ttfamily \#include $<$rwlock\+\_\+wp.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structrwlockwp_aadde32e3b40cb009fe22e7971c612d40}\label{structrwlockwp_aadde32e3b40cb009fe22e7971c612d40}} 
+pthread\+\_\+mutex\+\_\+t \mbox{\hyperlink{structrwlockwp_aadde32e3b40cb009fe22e7971c612d40}{g}}
+\begin{DoxyCompactList}\small\item\em A mutex for the reader/writer lock. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrwlockwp_acc2d2410bf5f9e811503673564745037}\label{structrwlockwp_acc2d2410bf5f9e811503673564745037}} 
+pthread\+\_\+cond\+\_\+t \mbox{\hyperlink{structrwlockwp_acc2d2410bf5f9e811503673564745037}{c}}
+\begin{DoxyCompactList}\small\item\em A condition variable for the reader/writer lock. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrwlockwp_a6142e0315230df07be53a757b1341ea0}\label{structrwlockwp_a6142e0315230df07be53a757b1341ea0}} 
+int \mbox{\hyperlink{structrwlockwp_a6142e0315230df07be53a757b1341ea0}{num\+\_\+writers\+\_\+waiting}}
+\begin{DoxyCompactList}\small\item\em Number of writers waiting. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrwlockwp_a3de1a0126b2eb5687577561e23c9f153}\label{structrwlockwp_a3de1a0126b2eb5687577561e23c9f153}} 
+int \mbox{\hyperlink{structrwlockwp_a3de1a0126b2eb5687577561e23c9f153}{num\+\_\+reader\+\_\+active}}
+\begin{DoxyCompactList}\small\item\em Number of readers active. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrwlockwp_a729763a8ff541dbe85d809e01fbaf5ad}\label{structrwlockwp_a729763a8ff541dbe85d809e01fbaf5ad}} 
+int \mbox{\hyperlink{structrwlockwp_a729763a8ff541dbe85d809e01fbaf5ad}{writer\+\_\+active}}
+\begin{DoxyCompactList}\small\item\em Number of writers active. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A struct thats holds all necessary components for the lock. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/include/\mbox{\hyperlink{rwlock__wp_8h}{rwlock\+\_\+wp.\+h}}\end{DoxyCompactItemize}
