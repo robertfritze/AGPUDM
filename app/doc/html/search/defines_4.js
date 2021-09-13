@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['savechecker',['SAVECHECKER',['../OpenCL_8c.html#a709c98084a7b1aea8c4377c18ad6819d',1,'OpenCL.c']]]
+  ['maxcycles',['MAXCYCLES',['../kmeans__c_8c.html#a2aac62b7fa9bc0d2047b1767ec764ec5',1,'kmeans_c.c']]]
 ];

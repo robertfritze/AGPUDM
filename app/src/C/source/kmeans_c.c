@@ -1,15 +1,25 @@
-//
-// Created by robert on 09.08.21.
-//
+/*!
+ \file kmeans_c.c
+ \brief Source file for the C/C+GPU implementations of the Kmeans algorithm
+ \details
+ This header file contains three method prototypes, that allow to perform single- or multithreaded CPU or
+ GPU based Kmeans cluster searches.
+ \copyright Copyright Robert Fritze 2021
+ \license MIT
+ \version 1.0
+ \author Robert Fritze
+ \warning This file is machine generated
+ \date 11.9.2021
+ */
 
+#include <jni.h>
 #include "kmeans_c.h"
-
-#include <jni.h>        // JNI header provided by JDK
-#include "kmeans_c.h"   // Generated
 #include <stdlib.h>
 #include <math.h>
 #include <stdio.h>
 #include "oclwrapper.h"
+
+                                //! use older OpenCL APIS
 #define CL_USE_DEPRECATED_OPENCL_1_2_APIS
 
 #include <CL/opencl.h>
@@ -20,13 +30,65 @@
 #include <string.h>
 #include <rwlock_wp.h>
 
+                               //! Define if detailed timing for the GPU should be made
 #define GPUTIMING
 
+                               //! A reader writer lock for premature abort
 volatile struct rwlockwp abortcalckm = RWLOCK_STATIC_INITIALIZER;
+                               //! 1=abort, access with *abortcalckm*
 volatile int doabort = 0;
 
+/*!
+ \brief Kmeans OpenCL kernel
+ \details
+ <h3>__kernel void testdistance</h3>
+ (<br>
+ &emsp;  global const float* data, <br>
+ &emsp;  global unsigned short* b, <br>
+ &emsp;  constant const float* clucent, <br>
+ &emsp;  const int features, <br>
+ &emsp;  const int cluno  <br>
+ ) <br><br>
 
-const char *clsource = \
+ calculates for each data item
+ the eucledean distance to all cluster centers
+ and saves the number of the cluster center with the smallest distance. <br>
+
+ <table>
+  <tr>
+    <th>parameter</th>
+    <th>in/out</th>
+    <th>description</th>
+  </tr>
+  <tr>
+    <td><em>global const float* data</em></td>
+    <td>in</td>
+    <td>input data</td>
+  </tr>
+  <tr>
+    <td><em>global unsigned short* b</em></td>
+    <td>out</td>
+    <td>cluster number for each data item</td>
+  </tr>
+  <tr>
+    <td><em>constant const float* clucent</em></td>
+    <td>in</td>
+    <td>cluster centers</td>
+  </tr>
+  <tr>
+    <td><em>features</em> </td>
+    <td>in</td>
+    <td>the number of features per data item</td>
+  </tr>
+  <tr>
+    <td><em>cluno</em> </td>
+    <td>in</td>
+    <td>the number of clusters to search for</td>
+  </tr>
+</table>
+
+ */
+const char* clsource = \
 "                                                                         \n" \
 "                                                                         \n" \
 "  __kernel void testdistance(                                            \n" \
@@ -60,10 +122,11 @@ const char *clsource = \
 "                                                                         \n";
 
 
-/* return a random number between 0 and limit inclusive.
- */
 
+                                   //! maximum numbers of cycles for kmeans (to avoid endless cycling)
 #define MAXCYCLES 100000
+
+
 
 int rand_lim(int limit) {
 

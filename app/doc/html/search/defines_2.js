@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['intel32',['INTEL32',['../oclwrapper_8h.html#ab45f50b8e38b9c733084c4557b34b760',1,'oclwrapper.h']]],
-  ['intel64',['INTEL64',['../oclwrapper_8h.html#a274cff70a8ceaa329d01cd651abcf663',1,'oclwrapper.h']]]
+  ['gputiming',['GPUTIMING',['../kmeans__c_8c.html#ab26f3be5ae4af394f940d3ff5c996d84',1,'kmeans_c.c']]]
 ];

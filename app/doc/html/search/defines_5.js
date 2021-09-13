@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['targetarch',['TARGETARCH',['../oclwrapper_8c.html#a73f01a073612b53c84823f2dbfe2210e',1,'oclwrapper.c']]]
+  ['rwlock_5fstatic_5finitializer',['RWLOCK_STATIC_INITIALIZER',['../rwlock__wp_8h.html#a0e5677072fd09de2ad07b5ac633bde51',1,'rwlock_wp.h']]]
 ];
