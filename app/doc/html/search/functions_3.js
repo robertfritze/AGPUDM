@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['loadopencl',['loadOpenCL',['../classcom_1_1example_1_1dmocl_1_1oclwrap.html#ac410aa241e771d4b1962636fa9f04e24',1,'com.example.dmocl.oclwrap.loadOpenCL()'],['../AndroidOpenCL_8h.html#ab6b28f57b7a3dbe0c36d66e0a664579d',1,'loadOpenCL(const char *c):&#160;OpenCL.c'],['../OpenCL_8c.html#a27b6acfc838d9876eebe28d42bfbd40d',1,'loadOpenCL(const char *p):&#160;OpenCL.c']]]
+  ['kmeans',['kmeans',['../kmeans__c_8c.html#ab925d2d53c31ff66c5ff098d29c38f72',1,'kmeans_c.c']]],
+  ['kmeans_5fgpu',['kmeans_gpu',['../kmeans__c_8c.html#a3c0eb3a6f38e27f3907feb805aa14d88',1,'kmeans_c.c']]]
 ];

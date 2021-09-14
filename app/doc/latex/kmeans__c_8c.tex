@@ -38,17 +38,14 @@ struct \mbox{\hyperlink{structkmeans__pt}{kmeans\+\_\+pt}}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{kmeans__c_8c_a3dfe821465890ef86a560d1ac1c7240f}\label{kmeans__c_8c_a3dfe821465890ef86a560d1ac1c7240f}} 
-int {\bfseries rand\+\_\+lim} (int limit)
-\item 
-\mbox{\Hypertarget{kmeans__c_8c_ab925d2d53c31ff66c5ff098d29c38f72}\label{kmeans__c_8c_ab925d2d53c31ff66c5ff098d29c38f72}} 
-short {\bfseries kmeans} (unsigned short $\ast$b, const float $\ast$data, const int blen, const float eps, const int cluno, const int features)
-\item 
+int \mbox{\hyperlink{kmeans__c_8c_a3dfe821465890ef86a560d1ac1c7240f}{rand\+\_\+lim}} (int limit)
+\begin{DoxyCompactList}\small\item\em Random number generator. \end{DoxyCompactList}\item 
+short \mbox{\hyperlink{kmeans__c_8c_ab925d2d53c31ff66c5ff098d29c38f72}{kmeans}} (unsigned short $\ast$b, const float $\ast$data, const int blen, const float eps, const int cluno, const int features)
+\begin{DoxyCompactList}\small\item\em Kmeans cluster search. \end{DoxyCompactList}\item 
 J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL \mbox{\hyperlink{kmeans__c_8c_a8d358801f2beeb2c15237e2a1a98500f}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c}} (J\+N\+I\+Env $\ast$env, jclass jc, jshort\+Array b, jfloat\+Array rf, jfloat eps, jint kk, jint features)
 \item 
-\mbox{\Hypertarget{kmeans__c_8c_a3c0eb3a6f38e27f3907feb805aa14d88}\label{kmeans__c_8c_a3c0eb3a6f38e27f3907feb805aa14d88}} 
-short {\bfseries kmeans\+\_\+gpu} (cl\+\_\+ushort $\ast$b, const cl\+\_\+float $\ast$data, const int blen, const float eps, const int cluno, const int features, cl\+\_\+command\+\_\+queue commands, cl\+\_\+program program, cl\+\_\+device\+\_\+id device, cl\+\_\+kernel kernel\+\_\+testdistance, cl\+\_\+mem data\+\_\+g, cl\+\_\+mem b\+\_\+g, cl\+\_\+mem clucent\+\_\+g)
-\item 
+short \mbox{\hyperlink{kmeans__c_8c_a3c0eb3a6f38e27f3907feb805aa14d88}{kmeans\+\_\+gpu}} (cl\+\_\+ushort $\ast$b, const cl\+\_\+float $\ast$data, const int blen, const float eps, const int cluno, const int features, cl\+\_\+command\+\_\+queue commands, cl\+\_\+program program, cl\+\_\+device\+\_\+id device, cl\+\_\+kernel kernel\+\_\+testdistance, cl\+\_\+mem data\+\_\+g, cl\+\_\+mem b\+\_\+g, cl\+\_\+mem clucent\+\_\+g)
+\begin{DoxyCompactList}\small\item\em kmeans cluster search on the G\+PU \end{DoxyCompactList}\item 
 J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL \mbox{\hyperlink{kmeans__c_8c_adcd1210c788d0762e4f4362dc32dba4e}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1gpu}} (J\+N\+I\+Env $\ast$env, jclass jc, jshort\+Array b, jfloat\+Array rf, jfloat eps, jint cluno, jint features, jlong\+Array e)
 \item 
 \mbox{\Hypertarget{kmeans__c_8c_a69fc79ffbdf225187782f8107aac900e}\label{kmeans__c_8c_a69fc79ffbdf225187782f8107aac900e}} 
@@ -191,6 +188,103 @@ Performs a Kmeans cluster search on the C\+PU (multiple threads).
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 0 = no error, $<$0 = error number 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{kmeans__c_8c_ab925d2d53c31ff66c5ff098d29c38f72}\label{kmeans__c_8c_ab925d2d53c31ff66c5ff098d29c38f72}} 
+\index{kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}!kmeans@{kmeans}}
+\index{kmeans@{kmeans}!kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}}
+\subsubsection{\texorpdfstring{kmeans()}{kmeans()}}
+{\footnotesize\ttfamily short kmeans (\begin{DoxyParamCaption}\item[{unsigned short $\ast$}]{b,  }\item[{const float $\ast$}]{data,  }\item[{const int}]{blen,  }\item[{const float}]{eps,  }\item[{const int}]{cluno,  }\item[{const int}]{features }\end{DoxyParamCaption})}
+
+
+
+Kmeans cluster search. 
+
+Performs a Kmeans cluster search on the C\+PU (one thread). 
+\begin{DoxyParams}{Parameters}
+{\em b} & (out) Array of cluster numbers \\
+\hline
+{\em data} & (in) Array of data points \\
+\hline
+{\em blen} & number of data items in data \\
+\hline
+{\em eps} & maximum cluster center displacement \\
+\hline
+{\em cluno} & number of clusters to search for \\
+\hline
+{\em features} & number of features per data item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 = no error, $<$0 = error number 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{kmeans__c_8c_a3c0eb3a6f38e27f3907feb805aa14d88}\label{kmeans__c_8c_a3c0eb3a6f38e27f3907feb805aa14d88}} 
+\index{kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}!kmeans\+\_\+gpu@{kmeans\+\_\+gpu}}
+\index{kmeans\+\_\+gpu@{kmeans\+\_\+gpu}!kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}}
+\subsubsection{\texorpdfstring{kmeans\+\_\+gpu()}{kmeans\_gpu()}}
+{\footnotesize\ttfamily short kmeans\+\_\+gpu (\begin{DoxyParamCaption}\item[{cl\+\_\+ushort $\ast$}]{b,  }\item[{const cl\+\_\+float $\ast$}]{data,  }\item[{const int}]{blen,  }\item[{const float}]{eps,  }\item[{const int}]{cluno,  }\item[{const int}]{features,  }\item[{cl\+\_\+command\+\_\+queue}]{commands,  }\item[{cl\+\_\+program}]{program,  }\item[{cl\+\_\+device\+\_\+id}]{device,  }\item[{cl\+\_\+kernel}]{kernel\+\_\+testdistance,  }\item[{cl\+\_\+mem}]{data\+\_\+g,  }\item[{cl\+\_\+mem}]{b\+\_\+g,  }\item[{cl\+\_\+mem}]{clucent\+\_\+g }\end{DoxyParamCaption})}
+
+
+
+kmeans cluster search on the G\+PU 
+
+Performs a Kmeans cluster search on the G\+PU 
+\begin{DoxyParams}{Parameters}
+{\em b} & (out) Array of cluster numbers \\
+\hline
+{\em data} & (in) Array of data points \\
+\hline
+{\em blen} & number of data items in data \\
+\hline
+{\em eps} & maximum cluster center displacement \\
+\hline
+{\em cluno} & number of clusters to search for \\
+\hline
+{\em features} & number of features per data item \\
+\hline
+{\em commands} & the Open\+CL command queue \\
+\hline
+{\em program} & the Open\+CL program \\
+\hline
+{\em device} & the Open\+CL device \\
+\hline
+{\em kernel\+\_\+testdistance} & the Open\+CL kernel \\
+\hline
+{\em data\+\_\+g} & Open\+CL data buffer \\
+\hline
+{\em b\+\_\+g} & Open\+CL cluster number buffer \\
+\hline
+{\em clucent\+\_\+g} & Open\+CL cluster center buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 = no error, $<$0 = error number 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{kmeans__c_8c_a3dfe821465890ef86a560d1ac1c7240f}\label{kmeans__c_8c_a3dfe821465890ef86a560d1ac1c7240f}} 
+\index{kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}!rand\+\_\+lim@{rand\+\_\+lim}}
+\index{rand\+\_\+lim@{rand\+\_\+lim}!kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}}
+\subsubsection{\texorpdfstring{rand\+\_\+lim()}{rand\_lim()}}
+{\footnotesize\ttfamily int rand\+\_\+lim (\begin{DoxyParamCaption}\item[{int}]{limit }\end{DoxyParamCaption})}
+
+
+
+Random number generator. 
+
+Generates uniformly distributed random numbers \mbox{[}0,limit\mbox{]} 
+\begin{DoxyParams}{Parameters}
+{\em limit} & the maximum random number desired \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a random number form a uniform distribution over \mbox{[}0,limit\mbox{]} 
 \end{DoxyReturn}
 \begin{DoxyParagraph}{Multithreading\+:}
 fully threadsafe 

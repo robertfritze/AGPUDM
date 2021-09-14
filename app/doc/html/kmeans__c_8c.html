@@ -114,16 +114,16 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3dfe821465890ef86a560d1ac1c7240f"><td class="memItemLeft" align="right" valign="top"><a id="a3dfe821465890ef86a560d1ac1c7240f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>rand_lim</b> (int limit)</td></tr>
+<tr class="memitem:a3dfe821465890ef86a560d1ac1c7240f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kmeans__c_8c.html#a3dfe821465890ef86a560d1ac1c7240f">rand_lim</a> (int limit)</td></tr>
+<tr class="memdesc:a3dfe821465890ef86a560d1ac1c7240f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random number generator.  <a href="#a3dfe821465890ef86a560d1ac1c7240f">More...</a><br /></td></tr>
 <tr class="separator:a3dfe821465890ef86a560d1ac1c7240f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab925d2d53c31ff66c5ff098d29c38f72"><td class="memItemLeft" align="right" valign="top"><a id="ab925d2d53c31ff66c5ff098d29c38f72"></a>
-short&#160;</td><td class="memItemRight" valign="bottom"><b>kmeans</b> (unsigned short *b, const float *data, const int blen, const float eps, const int cluno, const int features)</td></tr>
+<tr class="memitem:ab925d2d53c31ff66c5ff098d29c38f72"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kmeans__c_8c.html#ab925d2d53c31ff66c5ff098d29c38f72">kmeans</a> (unsigned short *b, const float *data, const int blen, const float eps, const int cluno, const int features)</td></tr>
+<tr class="memdesc:ab925d2d53c31ff66c5ff098d29c38f72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kmeans cluster search.  <a href="#ab925d2d53c31ff66c5ff098d29c38f72">More...</a><br /></td></tr>
 <tr class="separator:ab925d2d53c31ff66c5ff098d29c38f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d358801f2beeb2c15237e2a1a98500f"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jshort JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kmeans__c_8c.html#a8d358801f2beeb2c15237e2a1a98500f">Java_com_example_dmocl_kmeans_kmeans_1c</a> (JNIEnv *env, jclass jc, jshortArray b, jfloatArray rf, jfloat eps, jint kk, jint features)</td></tr>
 <tr class="separator:a8d358801f2beeb2c15237e2a1a98500f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c0eb3a6f38e27f3907feb805aa14d88"><td class="memItemLeft" align="right" valign="top"><a id="a3c0eb3a6f38e27f3907feb805aa14d88"></a>
-short&#160;</td><td class="memItemRight" valign="bottom"><b>kmeans_gpu</b> (cl_ushort *b, const cl_float *data, const int blen, const float eps, const int cluno, const int features, cl_command_queue commands, cl_program program, cl_device_id device, cl_kernel kernel_testdistance, cl_mem data_g, cl_mem b_g, cl_mem clucent_g)</td></tr>
+<tr class="memitem:a3c0eb3a6f38e27f3907feb805aa14d88"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kmeans__c_8c.html#a3c0eb3a6f38e27f3907feb805aa14d88">kmeans_gpu</a> (cl_ushort *b, const cl_float *data, const int blen, const float eps, const int cluno, const int features, cl_command_queue commands, cl_program program, cl_device_id device, cl_kernel kernel_testdistance, cl_mem data_g, cl_mem b_g, cl_mem clucent_g)</td></tr>
+<tr class="memdesc:a3c0eb3a6f38e27f3907feb805aa14d88"><td class="mdescLeft">&#160;</td><td class="mdescRight">kmeans cluster search on the GPU  <a href="#a3c0eb3a6f38e27f3907feb805aa14d88">More...</a><br /></td></tr>
 <tr class="separator:a3c0eb3a6f38e27f3907feb805aa14d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcd1210c788d0762e4f4362dc32dba4e"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jshort JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kmeans__c_8c.html#adcd1210c788d0762e4f4362dc32dba4e">Java_com_example_dmocl_kmeans_kmeans_1c_1gpu</a> (JNIEnv *env, jclass jc, jshortArray b, jfloatArray rf, jfloat eps, jint cluno, jint features, jlongArray e)</td></tr>
 <tr class="separator:adcd1210c788d0762e4f4362dc32dba4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -398,6 +398,217 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 = no error, &lt;0 = error number </dd></dl>
+<dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
+
+</div>
+</div>
+<a id="ab925d2d53c31ff66c5ff098d29c38f72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab925d2d53c31ff66c5ff098d29c38f72">&#9670;&nbsp;</a></span>kmeans()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short kmeans </td>
+          <td>(</td>
+          <td class="paramtype">unsigned short *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>blen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>eps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>cluno</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>features</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Kmeans cluster search. </p>
+<p>Performs a Kmeans cluster search on the CPU (one thread). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>(out) Array of cluster numbers </td></tr>
+    <tr><td class="paramname">data</td><td>(in) Array of data points </td></tr>
+    <tr><td class="paramname">blen</td><td>number of data items in data </td></tr>
+    <tr><td class="paramname">eps</td><td>maximum cluster center displacement </td></tr>
+    <tr><td class="paramname">cluno</td><td>number of clusters to search for </td></tr>
+    <tr><td class="paramname">features</td><td>number of features per data item </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 = no error, &lt;0 = error number </dd></dl>
+<dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
+
+</div>
+</div>
+<a id="a3c0eb3a6f38e27f3907feb805aa14d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c0eb3a6f38e27f3907feb805aa14d88">&#9670;&nbsp;</a></span>kmeans_gpu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short kmeans_gpu </td>
+          <td>(</td>
+          <td class="paramtype">cl_ushort *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cl_float *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>blen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>eps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>cluno</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>features</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl_command_queue&#160;</td>
+          <td class="paramname"><em>commands</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl_program&#160;</td>
+          <td class="paramname"><em>program</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl_device_id&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl_kernel&#160;</td>
+          <td class="paramname"><em>kernel_testdistance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl_mem&#160;</td>
+          <td class="paramname"><em>data_g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl_mem&#160;</td>
+          <td class="paramname"><em>b_g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl_mem&#160;</td>
+          <td class="paramname"><em>clucent_g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>kmeans cluster search on the GPU </p>
+<p>Performs a Kmeans cluster search on the GPU </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>(out) Array of cluster numbers </td></tr>
+    <tr><td class="paramname">data</td><td>(in) Array of data points </td></tr>
+    <tr><td class="paramname">blen</td><td>number of data items in data </td></tr>
+    <tr><td class="paramname">eps</td><td>maximum cluster center displacement </td></tr>
+    <tr><td class="paramname">cluno</td><td>number of clusters to search for </td></tr>
+    <tr><td class="paramname">features</td><td>number of features per data item </td></tr>
+    <tr><td class="paramname">commands</td><td>the OpenCL command queue </td></tr>
+    <tr><td class="paramname">program</td><td>the OpenCL program </td></tr>
+    <tr><td class="paramname">device</td><td>the OpenCL device </td></tr>
+    <tr><td class="paramname">kernel_testdistance</td><td>the OpenCL kernel </td></tr>
+    <tr><td class="paramname">data_g</td><td>OpenCL data buffer </td></tr>
+    <tr><td class="paramname">b_g</td><td>OpenCL cluster number buffer </td></tr>
+    <tr><td class="paramname">clucent_g</td><td>OpenCL cluster center buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 = no error, &lt;0 = error number </dd></dl>
+<dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
+
+</div>
+</div>
+<a id="a3dfe821465890ef86a560d1ac1c7240f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dfe821465890ef86a560d1ac1c7240f">&#9670;&nbsp;</a></span>rand_lim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rand_lim </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>limit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Random number generator. </p>
+<p>Generates uniformly distributed random numbers [0,limit] </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">limit</td><td>the maximum random number desired </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a random number form a uniform distribution over [0,limit] </dd></dl>
 <dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
 
 </div>
