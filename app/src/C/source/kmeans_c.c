@@ -8,7 +8,6 @@
  \license MIT
  \version 1.0
  \author Robert Fritze
- \warning This file is machine generated
  \date 11.9.2021
  */
 
@@ -785,70 +784,94 @@ JNIEXPORT jshort JNICALL Java_com_example_dmocl_kmeans_kmeans_1c_1gpu
 } // Java_com_example_dmocl_kmeans_kmeans_1c_1gpu
 
 
-//---------------------------------------------------------
 
-
+/*!
+ \brief Parameters for the kmeans thread
+ \details
+This struct holds the parameters for each kmeans thread. (in) means parameters that are NOT changed
+by the thread but may be changed by the method that submits the job. (const) means that the value is
+never changed after setup. (out) attributes are changed by the thread. 
+The submitting method must not write access any (in) or (out) field while the calculations are running.
+The submitting method may read access all (in) while the calculations are running.
+ */
 struct kmeans_pt {
 
-  unsigned short int status;
-  int num;
-  unsigned short *b;
-  float *data;
-  volatile float *clucent;
-  int blen;
-  int cluno;
-  int features;
-  int start;
-  int len;
-  volatile unsigned char fertig;
+  unsigned short int status;          // status (needed only for setup and destruction)
+  int num;                            //!< (const) number of thread      
+  unsigned short *b;                  //!< (out) number of closest cluster center
+  float *data;                        //!< (const) input data
+  volatile float *clucent;            //!< (in) cluster centers
+  int blen;                           //!< (const) number of data items 
+  int cluno;                          //!< (const) number of clusters  
+  int features;                       //!< (const) number of features per data item
+  int start;                          //!< (const) first data item
+  int len;                            //!< (const) last data item
+  volatile unsigned char fertig;      //!< (in) 1=quit loop
 
-  pthread_t thread;
-  sem_t sem;
-  sem_t semret;
+  pthread_t thread;                   //!< (const) reference to the thread
+  sem_t sem;                          //!< (const) semaphore used for start
+  sem_t semret;                       //!< (const) semaphore for notification that results are ready
 
-};
+};  // struct kmeans_pt
 
 
-void *kmthread(void *arg) {
+/*!
+ \brief thread for calculating kmeans in parallel
+ \details
+ One or more threads perform a kmeans search in parallel. The thread calculates the distances
+to the cluster centers and saves the number of the cluster center with the smallest distance.
+Two semaphores are used. The first is acquired by this thread and released by the method that
+submits the calculations. The second semaphore is acquired by the method that submits the job
+and released by this thread 
+ \param arg (in) A pointer to the struct with the parameters
+ \returns NULL
+ */
+void* kmthread(void *arg) {
 
-  struct kmeans_pt *f = (struct kmeans_pt *) arg;
+  struct kmeans_pt *f = (struct kmeans_pt *) arg;   // access parameters
 
-  int weiter = 0;
+  int weiter =  0;                                  // loop abort condition
 
-  while (weiter == 0) {
+  while (weiter == 0) {                             // continue?
 
-    sem_wait(&f->sem);
+    sem_wait(&f->sem);                               // wait on semaphore
 
-    if (f->fertig == 0) {
+    if (f->fertig == 0) {                            // exit loop?
 
-      for (int i1 = f->start; i1 < f->start + f->len; i1++) {
+      for (int i1 = f->start; i1 < f->start + f->len; i1++) { // iterate over lines assigned
 
-        float noxi = INFINITY;
+        float noxi = INFINITY;                        // initial smallest distance
 
-        for (short i2 = 0; i2 < f->cluno; i2++) {
+        for (short i2 = 0; i2 < f->cluno; i2++) {    // iterate over cluster centers
 
-          float noxi2 = 0;
-
+          float noxi2 = 0;                         // for distance
+   
+                     // iterate over features and calculate euclidean distance  
           for (int i3 = 0; i3 < f->features; i3++) {
             noxi2 += powf(f->clucent[i2 * f->features + i3] - f->data[i1 * f->features + i3], 2);
           }
 
-          if (noxi2 < noxi) {
-            noxi = noxi2;
+          if (noxi2 < noxi) {          // new distance smaller?
+            noxi = noxi2;            // yes save distance and cluster center number
             f->b[i1] = i2;
           }
         }
       }
 
-      sem_post(&f->semret);
+      sem_post(&f->semret);                 // notify that results are ready
+
     } else {
-      weiter = 1;
-    }
+      weiter = 1;                          // quit loop and thread
+    }    
   }
 
   return (NULL);
 
-}
+}  // kmthread
+
+
+
+
 
 
 short kmeans_pthreads(unsigned short *b, const float *data, float *clucent,
