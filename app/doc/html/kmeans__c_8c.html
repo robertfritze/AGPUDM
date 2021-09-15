@@ -95,6 +95,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkmeans__pt.html">kmeans_pt</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters for the kmeans thread.  <a href="structkmeans__pt.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -127,19 +128,17 @@ Functions</h2></td></tr>
 <tr class="separator:a3c0eb3a6f38e27f3907feb805aa14d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcd1210c788d0762e4f4362dc32dba4e"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jshort JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kmeans__c_8c.html#adcd1210c788d0762e4f4362dc32dba4e">Java_com_example_dmocl_kmeans_kmeans_1c_1gpu</a> (JNIEnv *env, jclass jc, jshortArray b, jfloatArray rf, jfloat eps, jint cluno, jint features, jlongArray e)</td></tr>
 <tr class="separator:adcd1210c788d0762e4f4362dc32dba4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69fc79ffbdf225187782f8107aac900e"><td class="memItemLeft" align="right" valign="top"><a id="a69fc79ffbdf225187782f8107aac900e"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><b>kmthread</b> (void *arg)</td></tr>
+<tr class="memitem:a69fc79ffbdf225187782f8107aac900e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kmeans__c_8c.html#a69fc79ffbdf225187782f8107aac900e">kmthread</a> (void *arg)</td></tr>
+<tr class="memdesc:a69fc79ffbdf225187782f8107aac900e"><td class="mdescLeft">&#160;</td><td class="mdescRight">thread for calculating kmeans in parallel  <a href="#a69fc79ffbdf225187782f8107aac900e">More...</a><br /></td></tr>
 <tr class="separator:a69fc79ffbdf225187782f8107aac900e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae00ea32365286bfa1bb7d084cfe51b31"><td class="memItemLeft" align="right" valign="top"><a id="ae00ea32365286bfa1bb7d084cfe51b31"></a>
-short&#160;</td><td class="memItemRight" valign="bottom"><b>kmeans_pthreads</b> (unsigned short *b, const float *data, float *clucent, const int blen, const int cluno, const int features, const int cores, struct <a class="el" href="structkmeans__pt.html">kmeans_pt</a> *kmthreads, const float eps)</td></tr>
+<tr class="memitem:ae00ea32365286bfa1bb7d084cfe51b31"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kmeans__c_8c.html#ae00ea32365286bfa1bb7d084cfe51b31">kmeans_pthreads</a> (unsigned short *b, const float *data, float *clucent, const int blen, const int cluno, const int features, const int cores, struct <a class="el" href="structkmeans__pt.html">kmeans_pt</a> *kmthreads, const float eps)</td></tr>
+<tr class="memdesc:ae00ea32365286bfa1bb7d084cfe51b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform multithreaded Kmeans cluster search.  <a href="#ae00ea32365286bfa1bb7d084cfe51b31">More...</a><br /></td></tr>
 <tr class="separator:ae00ea32365286bfa1bb7d084cfe51b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a226636af0647863759dce78b63c717f1"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jshort JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kmeans__c_8c.html#a226636af0647863759dce78b63c717f1">Java_com_example_dmocl_kmeans_kmeans_1c_1phtreads</a> (JNIEnv *env, jclass jc, jshortArray b, jfloatArray rf, jfloat eps, jint cluno, jint features, jint cores, jlongArray e)</td></tr>
 <tr class="separator:a226636af0647863759dce78b63c717f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a158e27ece530f3be8289b75fdd47257f"><td class="memItemLeft" align="right" valign="top"><a id="a158e27ece530f3be8289b75fdd47257f"></a>
-JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><b>Java_com_example_dmocl_kmeans_kmabort_1c</b> (JNIEnv *env, jclass clazz)</td></tr>
+<tr class="memitem:a158e27ece530f3be8289b75fdd47257f"><td class="memItemLeft" align="right" valign="top">JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kmeans__c_8c.html#a158e27ece530f3be8289b75fdd47257f">Java_com_example_dmocl_kmeans_kmabort_1c</a> (JNIEnv *env, jclass clazz)</td></tr>
 <tr class="separator:a158e27ece530f3be8289b75fdd47257f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e491512385eeb5b60e98a0922ccb23a"><td class="memItemLeft" align="right" valign="top"><a id="a2e491512385eeb5b60e98a0922ccb23a"></a>
-JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><b>Java_com_example_dmocl_kmeans_kmresume_1c</b> (JNIEnv *env, jclass clazz)</td></tr>
+<tr class="memitem:a2e491512385eeb5b60e98a0922ccb23a"><td class="memItemLeft" align="right" valign="top">JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kmeans__c_8c.html#a2e491512385eeb5b60e98a0922ccb23a">Java_com_example_dmocl_kmeans_kmresume_1c</a> (JNIEnv *env, jclass clazz)</td></tr>
 <tr class="separator:a2e491512385eeb5b60e98a0922ccb23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -162,9 +161,45 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <dl class="section user"><dt>License:</dt><dd>MIT </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Robert Fritze </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>This file is machine generated </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>11.9.2021 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a158e27ece530f3be8289b75fdd47257f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a158e27ece530f3be8289b75fdd47257f">&#9670;&nbsp;</a></span>Java_com_example_dmocl_kmeans_kmabort_1c()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT void JNICALL Java_com_example_dmocl_kmeans_kmabort_1c </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jclass&#160;</td>
+          <td class="paramname"><em>clazz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Signals all running Kmeans algorithms to abort immediately. Any new Kmeans cluster search will be aborted imediately. </p><dl class="section warning"><dt>Warning</dt><dd>This function acts on a 'global' scale: All callers that use this library will not be any more able to make calls to the library functions of this library. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">env</td><td>JNI environment variable </td></tr>
+    <tr><td class="paramname">clazz</td><td>JNI class variable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
+
+</div>
+</div>
 <a id="a8d358801f2beeb2c15237e2a1a98500f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8d358801f2beeb2c15237e2a1a98500f">&#9670;&nbsp;</a></span>Java_com_example_dmocl_kmeans_kmeans_1c()</h2>
 
@@ -402,6 +437,43 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
+<a id="a2e491512385eeb5b60e98a0922ccb23a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e491512385eeb5b60e98a0922ccb23a">&#9670;&nbsp;</a></span>Java_com_example_dmocl_kmeans_kmresume_1c()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT void JNICALL Java_com_example_dmocl_kmeans_kmresume_1c </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jclass&#160;</td>
+          <td class="paramname"><em>clazz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Allows to make new Kmeans cluster searches. </p><dl class="section warning"><dt>Warning</dt><dd>This function acts on a 'global' scale. It reverts the effect of Java_com_example_dmocl_kmeans_kmabort_1c. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">env</td><td>JNI environment variable </td></tr>
+    <tr><td class="paramname">clazz</td><td>JNI class variable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
+
+</div>
+</div>
 <a id="ab925d2d53c31ff66c5ff098d29c38f72"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab925d2d53c31ff66c5ff098d29c38f72">&#9670;&nbsp;</a></span>kmeans()</h2>
 
@@ -582,6 +654,120 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 = no error, &lt;0 = error number </dd></dl>
 <dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
+
+</div>
+</div>
+<a id="ae00ea32365286bfa1bb7d084cfe51b31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae00ea32365286bfa1bb7d084cfe51b31">&#9670;&nbsp;</a></span>kmeans_pthreads()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short kmeans_pthreads </td>
+          <td>(</td>
+          <td class="paramtype">unsigned short *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>clucent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>blen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>cluno</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>features</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>cores</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structkmeans__pt.html">kmeans_pt</a> *&#160;</td>
+          <td class="paramname"><em>kmthreads</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>eps</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Perform multithreaded Kmeans cluster search. </p>
+<p>Performs a multithreaded Kmeans cluster search on the CPU </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>(out) Array of cluster numbers </td></tr>
+    <tr><td class="paramname">data</td><td>(in) Array of data points </td></tr>
+    <tr><td class="paramname">clucent</td><td>(out) Array of cluster centers </td></tr>
+    <tr><td class="paramname">blen</td><td>number of data items in data </td></tr>
+    <tr><td class="paramname">cluno</td><td>number of clusters to search for </td></tr>
+    <tr><td class="paramname">features</td><td>number of features per data item </td></tr>
+    <tr><td class="paramname">cores</td><td>number of threads to be used (CPU can be oversubscribed) </td></tr>
+    <tr><td class="paramname">kmthreads</td><td>pointer to the threads (array must contain 'cores' elements) </td></tr>
+    <tr><td class="paramname">eps</td><td>maximum cluster center displacement </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0=algorithm finished correctly, &lt;0 error occurred </dd></dl>
+
+</div>
+</div>
+<a id="a69fc79ffbdf225187782f8107aac900e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69fc79ffbdf225187782f8107aac900e">&#9670;&nbsp;</a></span>kmthread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* kmthread </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>thread for calculating kmeans in parallel </p>
+<p>One or more threads perform a kmeans search in parallel. The thread calculates the distances to the cluster centers and saves the number of the cluster center with the smallest distance. Two semaphores are used. The first is acquired by this thread and released by the method that submits the calculations. The second semaphore is acquired by the method that submits the job and released by this thread </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg</td><td>(in) A pointer to the struct with the parameters </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NULL </dd></dl>
 
 </div>
 </div>

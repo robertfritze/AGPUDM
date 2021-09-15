@@ -87,6 +87,10 @@ Functions</h2></td></tr>
 <tr class="separator:adcd1210c788d0762e4f4362dc32dba4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a226636af0647863759dce78b63c717f1"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jshort JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kmeans__c_8h.html#a226636af0647863759dce78b63c717f1">Java_com_example_dmocl_kmeans_kmeans_1c_1phtreads</a> (JNIEnv *env, jclass jc, jshortArray b, jfloatArray rf, jfloat eps, jint cluno, jint features, jint cores, jlongArray e)</td></tr>
 <tr class="separator:a226636af0647863759dce78b63c717f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a158e27ece530f3be8289b75fdd47257f"><td class="memItemLeft" align="right" valign="top">JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kmeans__c_8h.html#a158e27ece530f3be8289b75fdd47257f">Java_com_example_dmocl_kmeans_kmabort_1c</a> (JNIEnv *env, jclass clazz)</td></tr>
+<tr class="separator:a158e27ece530f3be8289b75fdd47257f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e491512385eeb5b60e98a0922ccb23a"><td class="memItemLeft" align="right" valign="top">JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kmeans__c_8h.html#a2e491512385eeb5b60e98a0922ccb23a">Java_com_example_dmocl_kmeans_kmresume_1c</a> (JNIEnv *env, jclass clazz)</td></tr>
+<tr class="separator:a2e491512385eeb5b60e98a0922ccb23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header file for the C/C+GPU implementations of the Kmeans algorithm. </p>
@@ -97,6 +101,43 @@ Functions</h2></td></tr>
 <dl class="section warning"><dt>Warning</dt><dd>This file is machine generated </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>11.9.2021 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a158e27ece530f3be8289b75fdd47257f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a158e27ece530f3be8289b75fdd47257f">&#9670;&nbsp;</a></span>Java_com_example_dmocl_kmeans_kmabort_1c()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT void JNICALL Java_com_example_dmocl_kmeans_kmabort_1c </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jclass&#160;</td>
+          <td class="paramname"><em>clazz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Signals all running Kmeans algorithms to abort immediately. Any new Kmeans cluster search will be aborted imediately. </p><dl class="section warning"><dt>Warning</dt><dd>This function acts on a 'global' scale: All callers that use this library will not be any more able to make calls to the library functions of this library. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">env</td><td>JNI environment variable </td></tr>
+    <tr><td class="paramname">clazz</td><td>JNI class variable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
+
+</div>
+</div>
 <a id="a8d358801f2beeb2c15237e2a1a98500f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8d358801f2beeb2c15237e2a1a98500f">&#9670;&nbsp;</a></span>Java_com_example_dmocl_kmeans_kmeans_1c()</h2>
 
@@ -330,6 +371,43 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 = no error, &lt;0 = error number </dd></dl>
+<dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
+
+</div>
+</div>
+<a id="a2e491512385eeb5b60e98a0922ccb23a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e491512385eeb5b60e98a0922ccb23a">&#9670;&nbsp;</a></span>Java_com_example_dmocl_kmeans_kmresume_1c()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT void JNICALL Java_com_example_dmocl_kmeans_kmresume_1c </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jclass&#160;</td>
+          <td class="paramname"><em>clazz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Allows to make new Kmeans cluster searches. </p><dl class="section warning"><dt>Warning</dt><dd>This function acts on a 'global' scale. It reverts the effect of Java_com_example_dmocl_kmeans_kmabort_1c. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">env</td><td>JNI environment variable </td></tr>
+    <tr><td class="paramname">clazz</td><td>JNI class variable </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
 
 </div>

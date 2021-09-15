@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['oclinforet',['oclinforet',['../classcom_1_1example_1_1dmocl_1_1oclwrap_1_1oclinforet.html',1,'com::example::dmocl::oclwrap']]],
-  ['oclwrap',['oclwrap',['../classcom_1_1example_1_1dmocl_1_1oclwrap.html',1,'com::example::dmocl']]],
-  ['oclwrapper_2ec',['oclwrapper.c',['../oclwrapper_8c.html',1,'']]],
-  ['oclwrapper_2eh',['oclwrapper.h',['../oclwrapper_8h.html',1,'']]],
-  ['opencl_2ec',['OpenCL.c',['../OpenCL_8c.html',1,'']]]
+  ['mainactivity',['MainActivity',['../classcom_1_1example_1_1dmocl_1_1MainActivity.html',1,'com::example::dmocl']]],
+  ['maxcycles',['MAXCYCLES',['../kmeans__c_8c.html#a2aac62b7fa9bc0d2047b1767ec764ec5',1,'kmeans_c.c']]]
 ];

@@ -77,6 +77,35 @@ JNIEXPORT jshort JNICALL Java_com_example_dmocl_kmeans_kmeans_1c_1phtreads
    jint cores, jlongArray e );
 
 
+
+
+/*!
+ \details
+ Signals all running Kmeans algorithms to abort immediately.
+ Any new Kmeans cluster search will be aborted imediately.
+ \warning This function acts on a 'global' scale: All callers that use this library will
+ not be any more able to make calls to the library functions of this library.
+ \param env JNI environment variable
+ \param clazz JNI class variable
+ \mt fully threadsafe
+ */
+JNIEXPORT void JNICALL
+Java_com_example_dmocl_kmeans_kmabort_1c(JNIEnv *env, jclass clazz);
+
+
+/*!
+ \details
+ Allows to make new Kmeans cluster searches.
+ \warning This function acts on a 'global' scale. It reverts the effect of
+ Java_com_example_dmocl_kmeans_kmabort_1c.
+ \param env JNI environment variable
+ \param clazz JNI class variable
+ \mt fully threadsafe
+ */
+JNIEXPORT void JNICALL
+Java_com_example_dmocl_kmeans_kmresume_1c(JNIEnv *env, jclass clazz);
+
+
 #ifdef __cplusplus
 }
 #endif

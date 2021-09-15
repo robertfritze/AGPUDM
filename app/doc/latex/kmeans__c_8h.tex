@@ -14,6 +14,10 @@ J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL \mbox{\hyperlink{kmeans__c_8h_a
 J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL \mbox{\hyperlink{kmeans__c_8h_adcd1210c788d0762e4f4362dc32dba4e}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1gpu}} (J\+N\+I\+Env $\ast$env, jclass jc, jshort\+Array b, jfloat\+Array rf, jfloat eps, jint cluno, jint features, jlong\+Array e)
 \item 
 J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL \mbox{\hyperlink{kmeans__c_8h_a226636af0647863759dce78b63c717f1}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c\+\_\+1phtreads}} (J\+N\+I\+Env $\ast$env, jclass jc, jshort\+Array b, jfloat\+Array rf, jfloat eps, jint cluno, jint features, jint cores, jlong\+Array e)
+\item 
+J\+N\+I\+E\+X\+P\+O\+RT void J\+N\+I\+C\+A\+LL \mbox{\hyperlink{kmeans__c_8h_a158e27ece530f3be8289b75fdd47257f}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmabort\+\_\+1c}} (J\+N\+I\+Env $\ast$env, jclass clazz)
+\item 
+J\+N\+I\+E\+X\+P\+O\+RT void J\+N\+I\+C\+A\+LL \mbox{\hyperlink{kmeans__c_8h_a2e491512385eeb5b60e98a0922ccb23a}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmresume\+\_\+1c}} (J\+N\+I\+Env $\ast$env, jclass clazz)
 \end{DoxyCompactItemize}
 
 
@@ -41,6 +45,25 @@ This file is machine generated
 
 
 \subsection{Function Documentation}
+\mbox{\Hypertarget{kmeans__c_8h_a158e27ece530f3be8289b75fdd47257f}\label{kmeans__c_8h_a158e27ece530f3be8289b75fdd47257f}} 
+\index{kmeans\+\_\+c.\+h@{kmeans\+\_\+c.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmabort\+\_\+1c@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmabort\+\_\+1c}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmabort\+\_\+1c@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmabort\+\_\+1c}!kmeans\+\_\+c.\+h@{kmeans\+\_\+c.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmabort\+\_\+1c()}{Java\_com\_example\_dmocl\_kmeans\_kmabort\_1c()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT void J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmabort\+\_\+1c (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+
+Signals all running Kmeans algorithms to abort immediately. Any new Kmeans cluster search will be aborted imediately. \begin{DoxyWarning}{Warning}
+This function acts on a \textquotesingle{}global\textquotesingle{} scale\+: All callers that use this library will not be any more able to make calls to the library functions of this library. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em env} & J\+NI environment variable \\
+\hline
+{\em clazz} & J\+NI class variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
 \mbox{\Hypertarget{kmeans__c_8h_a8d358801f2beeb2c15237e2a1a98500f}\label{kmeans__c_8h_a8d358801f2beeb2c15237e2a1a98500f}} 
 \index{kmeans\+\_\+c.\+h@{kmeans\+\_\+c.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c}}
 \index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmeans\+\_\+1c}!kmeans\+\_\+c.\+h@{kmeans\+\_\+c.\+h}}
@@ -131,6 +154,25 @@ Performs a Kmeans cluster search on the C\+PU (multiple threads).
 \begin{DoxyReturn}{Returns}
 0 = no error, $<$0 = error number 
 \end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{kmeans__c_8h_a2e491512385eeb5b60e98a0922ccb23a}\label{kmeans__c_8h_a2e491512385eeb5b60e98a0922ccb23a}} 
+\index{kmeans\+\_\+c.\+h@{kmeans\+\_\+c.\+h}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmresume\+\_\+1c@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmresume\+\_\+1c}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmresume\+\_\+1c@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmresume\+\_\+1c}!kmeans\+\_\+c.\+h@{kmeans\+\_\+c.\+h}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmresume\+\_\+1c()}{Java\_com\_example\_dmocl\_kmeans\_kmresume\_1c()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT void J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmresume\+\_\+1c (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+
+Allows to make new Kmeans cluster searches. \begin{DoxyWarning}{Warning}
+This function acts on a \textquotesingle{}global\textquotesingle{} scale. It reverts the effect of Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+kmeans\+\_\+kmabort\+\_\+1c. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em env} & J\+NI environment variable \\
+\hline
+{\em clazz} & J\+NI class variable \\
+\hline
+\end{DoxyParams}
 \begin{DoxyParagraph}{Multithreading\+:}
 fully threadsafe 
 \end{DoxyParagraph}

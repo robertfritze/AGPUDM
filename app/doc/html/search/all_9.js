@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['num_5freader_5factive',['num_reader_active',['../structrwlockwp.html#a3de1a0126b2eb5687577561e23c9f153',1,'rwlockwp']]],
-  ['num_5fwriters_5fwaiting',['num_writers_waiting',['../structrwlockwp.html#a6142e0315230df07be53a757b1341ea0',1,'rwlockwp']]]
+  ['len',['len',['../structkmeans__pt.html#af49609aa1989feab464cfc85a25c3ec4',1,'kmeans_pt']]],
+  ['linktofile',['LinkToFile',['../classcom_1_1example_1_1dmocl_1_1LinkToFile.html',1,'com::example::dmocl']]],
+  ['loadopencl',['loadOpenCL',['../classcom_1_1example_1_1dmocl_1_1oclwrap.html#ac410aa241e771d4b1962636fa9f04e24',1,'com.example.dmocl.oclwrap.loadOpenCL()'],['../AndroidOpenCL_8h.html#ab6b28f57b7a3dbe0c36d66e0a664579d',1,'loadOpenCL(const char *c):&#160;OpenCL.c'],['../OpenCL_8c.html#a27b6acfc838d9876eebe28d42bfbd40d',1,'loadOpenCL(const char *p):&#160;OpenCL.c']]],
+  ['lock',['lock',['../OpenCL_8c.html#aa0246195b64447ad0ba3510f410604f4',1,'OpenCL.c']]]
 ];

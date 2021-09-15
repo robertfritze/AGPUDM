@@ -796,7 +796,7 @@ The submitting method may read access all (in) while the calculations are runnin
  */
 struct kmeans_pt {
 
-  unsigned short int status;          // status (needed only for setup and destruction)
+  unsigned short int status;          //!< (const) status (needed only for setup and destruction)
   int num;                            //!< (const) number of thread      
   unsigned short *b;                  //!< (out) number of closest cluster center
   float *data;                        //!< (const) input data
@@ -873,71 +873,97 @@ void* kmthread(void *arg) {
 
 
 
-
-short kmeans_pthreads(unsigned short *b, const float *data, float *clucent,
+/*!
+ \brief Perform multithreaded Kmeans cluster search
+ \details
+   Performs a multithreaded Kmeans cluster search on the CPU
+ \param b (out) Array of cluster numbers
+ \param data (in) Array of data points
+ \param clucent (out) Array of cluster centers
+ \param blen number of data items in data
+ \param cluno number of clusters to search for
+ \param features number of features per data item
+ \param cores number of threads to be used (CPU can be oversubscribed)
+ \param kmthreads pointer to the threads (array must contain 'cores' elements)
+ \param eps maximum cluster center displacement
+ \returns 0=algorithm finished correctly, <0 error occurred
+ */
+short kmeans_pthreads(unsigned short* b, const float* data, float* clucent,
                       const int blen, const int cluno, const int features,
-                      const int cores, struct kmeans_pt *kmthreads, const float eps) {
-  short ret = 0;
+                      const int cores, struct kmeans_pt* kmthreads, const float eps) {
 
-  float *newclucent = (float *) malloc(sizeof(float) * features * cluno);
+  short ret = 0;                      // return value
 
-  if (newclucent != NULL) {
+                                  // allocate memory for cluster centers
+  float* newclucent = (float*) malloc(sizeof(float) * features * cluno);
 
-    int *clusize = (int *) malloc(sizeof(int) * cluno);
+  if (newclucent != NULL) {       // malloc error?
 
-    if (clusize != NULL) {
+                            // allocate memory for the cluster member counts
+    int* clusize = (int*) malloc(sizeof(int) * cluno);
 
+    if (clusize != NULL) {            // malloc error?
+
+                             // iterate over cluster centers
       for (int i1 = 0; i1 < cluno; i1++) {
 
+                             // create random number
         int cluxi = rand_lim(blen - 1);
 
+                              // copy cluster center
         for (int i2 = 0; i2 < features; i2++) {
           clucent[features * i1 + i2] = data[cluxi * features + i2];
         }
       }
 
-      int weiter = 0;
-      int cycles = 0;
+      int weiter = 0;              // loop break condition
+      int cycles = 0;              // cycle counter
 
-      while (weiter >= 0) {
+      while (weiter >= 0) {        // loop until cluster centers do not move any more
 
+                                  // iterate over cores
         for (int i1 = 0; i1 < cores; i1++) {
-          sem_post(&kmthreads[i1].sem);
+          sem_post(&kmthreads[i1].sem);    // wake up all threads
         }
 
+                          // while threads are calculating -> reset cluster centers
         for (int i1 = 0; i1 < cluno; i1++) {
 
           for (int i2 = 0; i2 < features; i2++) {
             newclucent[i1 * features + i2] = 0;
           }
 
-          clusize[i1] = 0;
+          clusize[i1] = 0;         // ... and cluster size
         }
 
+                          // wait until threads have finished
         for (int i1 = 0; i1 < cores; i1++) {
           sem_wait(&kmthreads[i1].semret);
         }
 
-
+                         // calculate new cluster centers
         for (int i1 = 0; i1 < blen; i1++) {
           for (int i2 = 0; i2 < features; i2++) {
             newclucent[b[i1] * features + i2] += data[i1 * features + i2];
           }
-          clusize[b[i1]]++;
+          clusize[b[i1]]++;    // count cluster members
         }
 
+               // iterate of cluster centers and features and divide by number of cluster members
         for (int i1 = 0; i1 < cluno; i1++) {
           for (int i2 = 0; i2 < features; i2++) {
             newclucent[i1 * features + i2] /= (float) clusize[i1];
           }
         }
 
-        float newdist = 0;
+        float newdist = 0;              // distance
 
+                     // iterate over cluster centers
         for (int i1 = 0; i1 < cluno; i1++) {
 
-          float newdist2 = 0;
+          float newdist2 = 0;          // for cluster center displacement
 
+                           // iterate over features and build euclidean distance
           for (int i2 = 0; i2 < features; i2++) {
             newdist2 += powf(clucent[i1 * features + i2] - newclucent[i1 * features + i2], 2);
           }
@@ -945,18 +971,19 @@ short kmeans_pthreads(unsigned short *b, const float *data, float *clucent,
           newdist += sqrt(newdist2);
         }
 
+                        // check abort conditions
         if ((newdist <= eps) || (cycles > MAXCYCLES)){
           weiter = -1;
         }
 
-
+                       // copy cluster centers
         memcpy(clucent, newclucent, sizeof(float) * features * cluno);
 
-        cycles++;
+        cycles++;         // increment cycle counter
 
       }
 
-      free(clusize);
+      free(clusize);            // free and clean up
     } else {
       ret = -3;
     }
@@ -968,114 +995,131 @@ short kmeans_pthreads(unsigned short *b, const float *data, float *clucent,
 
   return (ret);
 
-}
+}  // kmeans_pthreads
 
 
+
+// see header file
 JNIEXPORT jshort JNICALL Java_com_example_dmocl_kmeans_kmeans_1c_1phtreads
   (JNIEnv *env, jclass jc, jshortArray b, jfloatArray rf, jfloat eps, jint cluno, jint features,
    jint cores, jlongArray e ) {
 
-  short ret = 0;
+  short ret = 0;                              // return value
 
-  struct timespec start2, finish2;
+  struct timespec start2, finish2;       // two timepoints
 
 
+                              // check architecture
   if ((sizeof(jshort) == sizeof(unsigned short)) && (sizeof(jfloat) == sizeof(float))) {
 
+                               // get the number of data array entries
     jsize datalen = (*env)->GetArrayLength(env, rf);
-    jsize blen = (*env)->GetArrayLength(env, b);
+    jsize blen = (*env)->GetArrayLength(env, b);  // get the number of data elements
 
-    if (features * blen == datalen) {
+    if (features * blen == datalen) {   // ...these must match
 
+                                   // get float array elements and pin array
       jfloat* condata = (*env)->GetFloatArrayElements(env, rf, NULL);
 
-      if (condata != NULL) {
+      if (condata != NULL) {     // error?
 
+                          // allocate memory for the cluster center numbers
         unsigned short *conb = (unsigned short *) malloc(sizeof(unsigned short) * blen);
 
-        if (conb != NULL) {
+        if (conb != NULL) {                // malloc error?
 
+                                 // allocate memory for the cluster centers
           float *clucent = (float *) malloc(sizeof(float) * features * cluno);
 
-          if (clucent != NULL) {
+          if (clucent != NULL) {               // malloc error?
 
+                             // allocate memory for the threads
             struct kmeans_pt *kmthreads = (struct kmeans_pt *) malloc(
               sizeof(struct kmeans_pt) * cores);
 
-            if (kmthreads != NULL) {
+            if (kmthreads != NULL) {            // malloc error?
 
-              int initsucc = 0;
+              int initsucc = 0;           // 1 = thread initialization was not successfull
 
-              int stepper = (blen / cores) + 1;
-              int starter = 0;
-              int reminder = blen;
+              int stepper = (blen / cores) + 1;        // caluclate data items per thread
+              int starter = 0;                    // start with item #0
+              int reminder = blen;               // data items left
 
+                                      // iterate over cores
               for (int i1 = 0; i1 < cores; i1++) {
 
-                kmthreads[i1].status = 0;
+                kmthreads[i1].status = 0;          // init status
 
-                if (reminder < stepper) {
-                  stepper = reminder;
+                if (reminder < stepper) {          // only few left?
+                  stepper = reminder;          // assign the remaining ones to the thread
                 }
 
-                if (initsucc == 0) {
+                if (initsucc == 0) {                // successfully so far?
 
-                  kmthreads[i1].num = i1;
-                  kmthreads[i1].b = conb;
-                  kmthreads[i1].data = condata;
-                  kmthreads[i1].blen = blen;
-                  kmthreads[i1].cluno = cluno;
-                  kmthreads[i1].features = features;
-                  kmthreads[i1].start = starter;
-                  kmthreads[i1].len = stepper;
-                  kmthreads[i1].clucent = clucent;
-                  kmthreads[i1].fertig = 0;
+                                            // initialize the thread arguments
+                  kmthreads[i1].num = i1;         // thread number
+                  kmthreads[i1].b = conb;       // reference to cluster number array
+                  kmthreads[i1].data = condata;   // reference to data items
+                  kmthreads[i1].blen = blen;     // number of data items
+                  kmthreads[i1].cluno = cluno;    // number of clusters to search for
+                  kmthreads[i1].features = features;    // number of features
+                  kmthreads[i1].start = starter;     // start data element
+                  kmthreads[i1].len = stepper;      // number of elements for the thread
+                  kmthreads[i1].clucent = clucent;    // reference to cluster center
+                  kmthreads[i1].fertig = 0;        // stop condition
 
 
+                                              // initialize first semaphore
                   if (sem_init(&kmthreads[i1].sem, 0, 0) == 0) {
-                    kmthreads[i1].status |= 1;
+                    kmthreads[i1].status |= 1;     // OK -> set status
                   } else {
-                    initsucc = 1;
+                    initsucc = 1;                    // abort
                   }
 
+                                             // initialize second semaphore
                   if ((kmthreads[i1].status & 1) == 1) {
                     if (sem_init(&kmthreads[i1].semret, 0, 0) == 0) {
-                      kmthreads[i1].status |= 2;
+                      kmthreads[i1].status |= 2;     // OK -> set status
                     } else {
-                      initsucc = 1;
+                      initsucc = 1;                 // abort
                     }
                   }
 
-
+                                // both semaphores initialized?
                   if ((kmthreads[i1].status & 3) == 3) {
 
+                                  // yes -> create thread
                     if (
                       pthread_create(&(kmthreads[i1].thread), NULL, &kmthread, &kmthreads[i1]) ==
                       0) {
-                      kmthreads[i1].status |= 4;
+                      kmthreads[i1].status |= 4;   // OK -> set status
                     } else {
-                      initsucc = 1;
+                      initsucc = 1;                 // error -> abort
                     }
                   }
 
                 }
 
-                starter += stepper;
+                starter += stepper;               // step data elements
                 reminder -= stepper;
               }
 
+                                      // threads created successfully?
               if (initsucc == 0) {
 
 #ifdef GPUTIMING
+                                       // get time
                 clock_gettime(CLOCK_REALTIME, &start2);
 #endif
-
+                                 // perform calculations
                 ret = kmeans_pthreads(conb, condata, clucent, blen, cluno, features, cores,
                                       kmthreads, eps);
 
+                                // copy results
                 (*env)->SetShortArrayRegion(env, b, 0, blen, (jshort *) conb);
 
 #ifdef GPUTIMING
+                                 // get time
                 clock_gettime(CLOCK_REALTIME, &finish2);
 #endif
 
@@ -1083,27 +1127,33 @@ JNIEXPORT jshort JNICALL Java_com_example_dmocl_kmeans_kmeans_1c_1phtreads
                 ret = -8;
               }
 
+                            // iterate over cores
               for (int i1 = 0; i1 < cores; i1++) {
 
+                                  // first semaphore initialized?
                 if ((kmthreads[i1].status & 4) > 0) {
 
+                               // yes -> signal abort
                   kmthreads[i1].fertig = 1;
-                  sem_post(&kmthreads[i1].sem);
+                  sem_post(&kmthreads[i1].sem);    // weak up
 
+                                   // wait until finished
                   pthread_join(kmthreads[i1].thread, NULL);
 
                 }
 
+                             // second semaphore initialized
                 if ((kmthreads[i1].status & 2) > 0) {
-                  sem_destroy(&kmthreads[i1].semret);
+                  sem_destroy(&kmthreads[i1].semret);   // yes -> destroy
                 }
 
+                              // first semaphore initialized
                 if ((kmthreads[i1].status & 1) > 0) {
-                  sem_destroy(&kmthreads[i1].sem);
+                  sem_destroy(&kmthreads[i1].sem);    // yes -> destroy
                 }
               }
 
-              free(kmthreads);
+              free(kmthreads);            // free and clean up
 
             } else {
               ret = -7;
@@ -1121,6 +1171,7 @@ JNIEXPORT jshort JNICALL Java_com_example_dmocl_kmeans_kmeans_1c_1phtreads
           ret = -6;
         }
 
+                            // unpin data elements
         (*env)->ReleaseFloatArrayElements( env, rf, condata, JNI_ABORT );
 
       } else {
@@ -1135,29 +1186,36 @@ JNIEXPORT jshort JNICALL Java_com_example_dmocl_kmeans_kmeans_1c_1phtreads
   }
 
 #ifdef GPUTIMING
+                  // calculate elapsed time
   long long int elapsed2 = ((long long int) (finish2.tv_sec - start2.tv_sec)) * 1000000000L;
   elapsed2 += (finish2.tv_nsec - start2.tv_nsec);
 
+            // lock array
   jlong *edata = (*env)->GetLongArrayElements(env, e, NULL);
-  edata[0] = elapsed2;
+  edata[0] = elapsed2;            // set first (and single) array element
+                     // unlock array
   (*env)->ReleaseLongArrayElements(env, e, edata, 0);
 #endif
 
   return (ret);
-}
+}  // Java_com_example_dmocl_kmeans_kmeans_1c_1phtreads
 
 
+
+
+// see header file
 JNIEXPORT void JNICALL
 Java_com_example_dmocl_kmeans_kmabort_1c(JNIEnv *env, jclass clazz) {
-  rwlockwp_writer_acquire(&abortcalckm);
-  doabort = 1;
-  rwlockwp_writer_release(&abortcalckm);
+  rwlockwp_writer_acquire(&abortcalckm);   // acquire writer lock
+  doabort = 1;                              // signal to abort
+  rwlockwp_writer_release(&abortcalckm);   // release writer lock
 }
 
+// see header file
 JNIEXPORT void JNICALL
 Java_com_example_dmocl_kmeans_kmresume_1c(JNIEnv *env, jclass clazz) {
-  rwlockwp_writer_acquire(&abortcalckm);
-  doabort = 0;
-  rwlockwp_writer_release(&abortcalckm);
+  rwlockwp_writer_acquire(&abortcalckm);  // acquire writer lock
+  doabort = 0;                            // signal to resume
+  rwlockwp_writer_release(&abortcalckm);  // relese writer lock
 }
 
