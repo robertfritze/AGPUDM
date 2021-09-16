@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['kmeans',['kmeans',['../kmeans__c_8c.html#ab925d2d53c31ff66c5ff098d29c38f72',1,'kmeans_c.c']]],
-  ['kmeans_5fgpu',['kmeans_gpu',['../kmeans__c_8c.html#a3c0eb3a6f38e27f3907feb805aa14d88',1,'kmeans_c.c']]],
-  ['kmeans_5fpthreads',['kmeans_pthreads',['../kmeans__c_8c.html#ae00ea32365286bfa1bb7d084cfe51b31',1,'kmeans_c.c']]],
-  ['kmthread',['kmthread',['../kmeans__c_8c.html#a69fc79ffbdf225187782f8107aac900e',1,'kmeans_c.c']]]
+  ['getarchitecture',['getArchitecture',['../classcom_1_1example_1_1dmocl_1_1oclwrap.html#afd9731ebb0d18315fe3762fc329fcec4',1,'com::example::dmocl::oclwrap']]],
+  ['getoclwrapper',['getOclWrapper',['../classcom_1_1example_1_1dmocl_1_1oclwrap.html#a8c8c9a75d3d834cb71725d92ddeb4af7',1,'com::example::dmocl::oclwrap']]]
 ];

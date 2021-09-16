@@ -1,6 +1,15 @@
-//
-// Created by robert on 11.08.21.
-//
+/*!
+ \file dbscan_c.c
+ \brief Source file for the C/C+GPU implementations of the DBSCAN algorithm
+ \details
+ This C source file contains three methods, that allow to perform single- or multithreaded CPU or
+ GPU based DBSCAN cluster searches.
+ \copyright Copyright Robert Fritze 2021
+ \license MIT
+ \version 1.0
+ \author Robert Fritze
+ \date 11.9.2021
+ */
 
 #include <jni.h>
 #include "dbscan_c.h"
@@ -10,6 +19,7 @@
 #include <rwlock_wp.h>
 
 #include "oclwrapper.h"
+                              //! User older APIs
 #define CL_USE_DEPRECATED_OPENCL_1_2_APIS
 
 #include <CL/opencl.h>
@@ -17,13 +27,119 @@
 #include <semaphore.h>
 #include <stdint.h>
 
-#define MAXVALUE ((short) 0xFFFF)
-#define GPUTIMING
+#define MAXVALUE ((short) 0xFFFF)       //!< Maximum value for 16 Bit short
+#define GPUTIMING                       //!< Define if exclusive GPU time should be measured
 
+                          //! a lock for premature abort of algorithms
 volatile struct rwlockwp abortcalc = RWLOCK_STATIC_INITIALIZER;
-volatile int doabort = 0;
+volatile int doabort = 0;           //!< flag for premature abort of algorithms
 
-const char *clsource = \
+
+
+
+/*!
+ \brief DBSCAN OpenCL kernel
+ \details
+
+ <h3>__kernel void testdistance1</h3>
+ (<br>
+ &emsp;  global const float* data, <br>
+ &emsp;  global unsigned short* b, <br>
+ &emsp;  const int features, <br>
+ &emsp;  const int cmpto, <br>
+ &emsp;  const float epseps <br>
+ ) <br><br>
+
+ Calculates the euclidean distance of each data item to a specific given data item.
+ This method is called from the main loop.<br>
+
+ <table>
+  <tr>
+    <th>parameter</th>
+    <th>in/out</th>
+    <th>description</th>
+  </tr>
+  <tr>
+    <td><em>global const float* data</em></td>
+    <td>in</td>
+    <td>input data</td>
+  </tr>
+  <tr>
+    <td><em>global unsigned short* b</em></td>
+    <td>out</td>
+    <td>Bit 0: Point has been clustered (1) or not (0)<br>
+        Bit 1: Point is distance reachable (main loop)<br>
+        Bit 2: Point is distance reachable (cluster expansion loop)<br>
+        Bit 3-15: Cluster number for each data item</td>
+  </tr>
+  <tr>
+    <td><em>const int features</em> </td>
+    <td>in</td>
+    <td>the number of features per data item</td>
+  </tr>
+  <tr>
+    <td><em>const int cmpto</em> </td>
+    <td>in</td>
+    <td>the number of the data point the other data item should be compared to</td>
+  </tr>
+  <tr>
+    <td><em>const float epseps</em></td>
+    <td>in</td>
+    <td>square of the search radius</td>
+  </tr>
+</table>
+
+
+ <h3>__kernel void testdistance2</h3>
+ (<br>
+ &emsp;  global const float* data, <br>
+ &emsp;  global unsigned short* b, <br>
+ &emsp;  const int features, <br>
+ &emsp;  const int cmpto, <br>
+ &emsp;  const float epseps <br>
+ ) <br><br>
+
+ Calculates the euclidean distance of each data item to a specific given data item.
+ This method is used during the expansion of the clusters.<br>
+
+ <table>
+  <tr>
+    <th>parameter</th>
+    <th>in/out</th>
+    <th>description</th>
+  </tr>
+  <tr>
+    <td><em>global const float* data</em></td>
+    <td>in</td>
+    <td>input data</td>
+  </tr>
+  <tr>
+    <td><em>global unsigned short* b</em></td>
+    <td>out</td>
+    <td>Bit 0: Point has been clustered (1) or not (0)<br>
+        Bit 1: Point is distance reachable (main loop)<br>
+        Bit 2: Point is distance reachable (cluster expansion loop)<br>
+        Bit 3-15: Cluster number for each data item</td>
+  </tr>
+  <tr>
+    <td><em>const int features</em> </td>
+    <td>in</td>
+    <td>the number of features per data item</td>
+  </tr>
+  <tr>
+    <td><em>const int cmpto</em> </td>
+    <td>in</td>
+    <td>the number of the data point the other data item should be compared to</td>
+  </tr>
+  <tr>
+    <td><em>const float epseps</em></td>
+    <td>in</td>
+    <td>square of the search radius</td>
+  </tr>
+</table>
+
+ */
+const char* clsource = \
 "                                                                         \n" \
 "                                                                         \n" \
 "  __kernel void testdistance1(                                           \n" \
@@ -84,23 +200,39 @@ const char *clsource = \
 " ";
 
 
+
+
+/*!
+ \brief Expands a cluster found
+ \details
+ This method expands a cluster found to the largest size possible.
+ \param key (in) data item number of the new cluster seed
+ \param clusternumber (in) cluster number to assign to all members of the cluster
+ \param b (out) Cluster number + status bits (Bit 0: data item classified, Bit 1: distance
+ reachable from main loop, Bit 2: distance reachable from cluster expansion
+ \param data (in) input data
+ \param epseps (in) square of search radius
+ \param kk (in) number of neighbours
+ \param datalen (in) number of data items (datalen*features = number of floats in 'data')
+ \param features (in) number of features
+ \returns 0 = OK, <0 interrupt by flag
+ */
 int expandCluster(int key, const short clusternumber,
                   unsigned short *b, const float *data, const float epseps, const int kk,
                   const int datalen, const int features) {
 
 
-  b[key] &= 7;            // Bits 3-15 löschen
-  b[key] |= (clusternumber << 3);
-  // Clusternummer abspeichern
+  b[key] &= 7;            // clear bits 3-15
+  b[key] |= (clusternumber << 3);     // save cluster number
 
+  int weiter = 0;              // loop break condition
+  int ret = 0;                // return value
 
-  int weiter = 0;
-  int ret = 0;
+  while (weiter == 0) {    // loop until no more new data items can be appended to the cluster
 
-  while (weiter == 0) {
+    weiter = 1;               // suppose to quit loop
 
-    weiter = 1;
-
+                                // check if calculations should be aborted
     rwlockwp_reader_acquire(&abortcalc);
     if (doabort > 0) {
       weiter = 2;
@@ -108,53 +240,62 @@ int expandCluster(int key, const short clusternumber,
     }
     rwlockwp_reader_release(&abortcalc);
 
-    if (weiter == 1) {
+    if (weiter == 1) {        // abort?
 
+                       // iterate over all data items
       for (int i1 = 0; i1 < datalen; i1++) {
 
-        if ((b[i1] & 3) == 2) {
+        if ((b[i1] & 3) == 2) {    // is distance reachable?
 
-          b[i1] |= 1;
+          b[i1] |= 1;             // set visited
 
-          int itemcounter2 = 0;
+          int itemcounter2 = 0;      // count the data items inside radius
 
-
+                                      // iterate over data items
           for (int i2 = 0; i2 < datalen; i2++) {
 
-            b[i2] &= MAXVALUE - 4;     // Bit 3 löschen
+            b[i2] &= MAXVALUE - 4;     // clear bit 3
 
-            float s = 0;
+            float s = 0;                   // holds distance
 
+                                 // iterate over features
+                                 // and calculate euclidean distance
             for (int i3 = 0; i3 < features; i3++) {
               s += powf(data[i2 * features + i3] - data[i1 * features + i3], 2);
             }
 
-            if (s <= epseps) {
+            if (s <= epseps) {           // inside radius?
 
-              b[i2] |= 4;   // Distanzbit (3) setzen
-              itemcounter2++;
+              b[i2] |= 4;               // yes->set reachable bit
+              itemcounter2++;           // increment counter of new reachable data items
             }
           }
 
+                                      // enough data items in radius?
           if (itemcounter2 >= kk) {
 
+                          // yes -> expand cluster
+                           // iterate again over all data items
             for (int i2 = 0; i2 < datalen; i2++) {
 
+                                 // inside radius?
               if ((b[i2] & 6) == 4) {
 
-                b[i2] |= 2;         // Bit 2 setzen
-                weiter = 0;
+                b[i2] |= 2;         // set bit 2 (expand cluster)
+                weiter = 0;        // restart loop because cluster has been expanded
               }
             }
           }
 
-          if ((b[i1] >> 3) == 0) {
+                             // data item has not yet been classified (or is noise)?
+          if ((b[i1] >> 3) == 0) {    // yes -> store new custer number
             b[i1] |= (clusternumber << 3);
           }
 
         }
       }
 
+                          // interrupt -> exit
       if (ret < 0) {
         break;
       }
@@ -162,72 +303,92 @@ int expandCluster(int key, const short clusternumber,
   }
 
   return (ret);
-}
+}  // expandCluster
 
 
-short dbscan(unsigned short *b, const float *data, const int blen, const float eps, const int kk,
+
+
+/*!
+ \brief Performs a DBSCAN search on the GPU (one thread)
+ \details
+ This method searches clusters with the DBSCAN method on the GPU with a single thread
+ \param b (out) Cluster number + status bits (Bit 0: data item classified, Bit 1: distance
+ \param data (in) input data
+ reachable from main loop, Bit 2: distance reachable from cluster expansion
+ \param blen (in) number of data items (blen*features = number of floats in 'data')
+ \param eps (in) search radius
+ \param kk (in) number of neighbours
+ \param features (in) number of features
+ \returns >0 number of clusters found (0=only noise points), -1=permature abort,
+ -256=too many clusters (number can not be stored with 12 bits)
+ \mt fully threadsafe
+ */
+short dbscan(unsigned short* b, const float* data, const int blen, const float eps, const int kk,
              const int features) {
 
-  short clusternumber = 0;
+  short clusternumber = 0;    // initial cluster number (0=noise)
 
-  const float epseps = eps * eps;
+  const float epseps = eps * eps;      // caluclate square radius
 
-  for (int i1 = 0; i1 < blen; i1++) {
+  for (int i1 = 0; i1 < blen; i1++) {        // reset cluster number array
     b[i1] = 0;
   }
 
-
+                         // iterate over data points
   for (int i1 = 0; i1 < blen; i1++) {
 
-    if ((b[i1] & 1) == 0) {   // visited (1) ?
+    if ((b[i1] & 1) == 0) {                         // visited?
 
+                                      // check if algorithm should abort?
       rwlockwp_reader_acquire(&abortcalc);
       if (doabort > 0) {
-        clusternumber = -1;
+        clusternumber = -1;            // result
       }
       rwlockwp_reader_release(&abortcalc);
 
-      if (clusternumber < 0) {
+      if (clusternumber < 0) {              // abort?
         break;
       }
 
-      b[i1] |= 1;       // visited (1) setzen
+      b[i1] |= 1;                              // set visited bit
 
-      int itemcounter = 0;
+      int itemcounter = 0;                     // counts the number of items
 
-      for (int i2 = 0; i2 < blen; i2++) {
+      for (int i2 = 0; i2 < blen; i2++) {             // iterate over all data points
 
-        b[i2] &= MAXVALUE - 6;      // Bits 2 und 3 löschen
-        float s = 0;
+        b[i2] &= MAXVALUE - 6;                  // clear bits 2+3
+        float s = 0;                             // holds the distance
 
+                                          // calculate eucleadean distance
         for (int i3 = 0; i3 < features; i3++) {
           s += powf(data[i2 * features + i3] - data[i1 * features + i3], 2);
         }
 
-        if (s <= epseps) {
+        if (s <= epseps) {                   // inside radius
 
-          b[i2] |= 2;   // Distanzbit (3) setzen
-          itemcounter++;
+          b[i2] |= 2;                            // set distance bit
+          itemcounter++;                        // increment counter
         }
       }
 
-      if (itemcounter < kk) {
+      if (itemcounter < kk) {                   // not enough neighbours?
 
-        b[i1] &= 7;  // Cluster Nr. 0 = Noise
+        b[i1] &= 7;                      // set noise (clear bits 3-15)
 
       } else {
-
-        if (clusternumber == 4095) {
-          clusternumber = -256;
+                                          // enough neighbours ->
+        if (clusternumber == 4095) {          // free cluster number available?
+          clusternumber = -256;                // no signal error and quit
           break;
         }
 
-        clusternumber += 1;
+        clusternumber += 1;                // increment number
 
+                                    // increase cluster to maximum size possible
         int ret2 = expandCluster(i1, clusternumber, b, data, epseps, kk, blen, features);
 
-        if (ret2 < 0) {
-          clusternumber = -1;
+        if (ret2 < 0) {                  // error during cluster expansion?
+          clusternumber = -1;              // signal error and exit
           break;
         }
       }
@@ -235,41 +396,52 @@ short dbscan(unsigned short *b, const float *data, const int blen, const float e
   }
 
   return (clusternumber);
-}
+} // dbscan
 
 
+
+//see header file
 JNIEXPORT jshort JNICALL
 Java_com_example_dmocl_dbscan_dbscan_1c
   (JNIEnv *env, jclass jc, jshortArray b, jfloatArray rf, jfloat eps, jint kk, jint features) {
 
-  short ret = -1;
+  short ret = -1;                   // return value
 
+                              // check architecture
   if ((sizeof(jshort) == sizeof(unsigned short)) && (sizeof(jfloat) == sizeof(float))) {
 
+                                // get length of data array
     jsize datalen = (*env)->GetArrayLength(env, rf);
-    jsize blen = (*env)->GetArrayLength(env, b);
+    jsize blen = (*env)->GetArrayLength(env, b);   // get number of data items
 
-    if (features * blen == datalen) {
+    if (features * blen == datalen) {   // these must match
 
+                                      // get and pin data items
       jfloat *condata = (*env)->GetFloatArrayElements(env, rf, NULL);
 
-      if (condata != NULL) {
+      if (condata != NULL) {              // error?
 
+                                   // allocate memory for cluster number array
         unsigned short *conb = (unsigned short *) malloc(sizeof(unsigned short) * blen);
 
-        if (conb != NULL) {
+        if (conb != NULL) {            // malloc error
 
-          ret = dbscan(conb, (float *) condata, blen, eps, kk, features);
+                               // call dbscan
+          ret = dbscan(conb, (float*) condata, blen, eps, kk, features);
 
-          if (ret >= 0) {
+          if (ret >= 0) {      // correct result?
+
+                        // shift left 3 bits (delete status bits)
             for (int i1 = 0; i1 < blen; i1++) {
               conb[i1] = (short) (((unsigned short) conb[i1]) >> 3);
             }
 
+                                // store cluster numbers
             (*env)->SetShortArrayRegion(env, b, 0, blen, (jshort *) conb);
           }
 
-          free(conb);
+          free(conb);                  // free and clean up
+
         } else {
           ret = -105;
         }
@@ -287,7 +459,14 @@ Java_com_example_dmocl_dbscan_dbscan_1c
   }
 
   return (ret);
-}
+
+}  // Java_com_example_dmocl_dbscan_dbscan_1c
+
+
+
+//--------------------------------------------------------------------------
+
+
 
 
 short expandCluster_gpu(int key, const short clusternumber,
@@ -1313,19 +1492,25 @@ Java_com_example_dmocl_dbscan_dbscan_1c_1phtreads
 }
 
 
+
+//--------------------------------------------------------------------------
+
+
+// see header file
 JNIEXPORT void JNICALL
 Java_com_example_dmocl_dbscan_dbscanabort_1c(JNIEnv *env, jclass clazz) {
 
   rwlockwp_writer_acquire(&abortcalc);
-  doabort = 1;
+  doabort = 1;                      // signal abort
   rwlockwp_writer_release(&abortcalc);
 
 }
 
+// see header file
 JNIEXPORT void JNICALL
 Java_com_example_dmocl_dbscan_dbscanresume_1c(JNIEnv *env, jclass clazz) {
   rwlockwp_writer_acquire(&abortcalc);
-  doabort = 0;
+  doabort = 0;                      // allow calculations
   rwlockwp_writer_release(&abortcalc);
 }
 

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['num',['num',['../structkmeans__pt.html#a72c17b986e5cc7bbdcc92d59ef05e8f0',1,'kmeans_pt']]],
-  ['num_5freader_5factive',['num_reader_active',['../structrwlockwp.html#a3de1a0126b2eb5687577561e23c9f153',1,'rwlockwp']]],
-  ['num_5fwriters_5fwaiting',['num_writers_waiting',['../structrwlockwp.html#a6142e0315230df07be53a757b1341ea0',1,'rwlockwp']]]
+  ['mainactivity',['MainActivity',['../classcom_1_1example_1_1dmocl_1_1MainActivity.html',1,'com::example::dmocl']]],
+  ['maxcycles',['MAXCYCLES',['../kmeans__c_8c.html#a2aac62b7fa9bc0d2047b1767ec764ec5',1,'kmeans_c.c']]],
+  ['maxvalue',['MAXVALUE',['../dbscan__c_8c.html#a28c7f4454d27d9a294ebe7eb12a54e8c',1,'dbscan_c.c']]]
 ];

@@ -75,12 +75,12 @@ volatile int doabort = 0;
     <td>cluster centers</td>
   </tr>
   <tr>
-    <td><em>features</em> </td>
+    <td><em>const int features</em> </td>
     <td>in</td>
     <td>the number of features per data item</td>
   </tr>
   <tr>
-    <td><em>cluno</em> </td>
+    <td><em>const int cluno</em> </td>
     <td>in</td>
     <td>the number of clusters to search for</td>
   </tr>

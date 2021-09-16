@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['immediatejobs',['immediatejobs',['../classcom_1_1example_1_1dmocl_1_1immediatejobs.html',1,'com::example::dmocl']]],
-  ['intel32',['INTEL32',['../oclwrapper_8h.html#ab45f50b8e38b9c733084c4557b34b760',1,'oclwrapper.h']]],
-  ['intel64',['INTEL64',['../oclwrapper_8h.html#a274cff70a8ceaa329d01cd651abcf663',1,'oclwrapper.h']]],
-  ['isclang',['isclang',['../oclwrapper_8c.html#abd496cd73a0c34ff2bd1466da34d98a6',1,'oclwrapper.c']]]
+  ['g',['g',['../structrwlockwp.html#aadde32e3b40cb009fe22e7971c612d40',1,'rwlockwp']]],
+  ['getarchitecture',['getArchitecture',['../classcom_1_1example_1_1dmocl_1_1oclwrap.html#afd9731ebb0d18315fe3762fc329fcec4',1,'com::example::dmocl::oclwrap']]],
+  ['getoclwrapper',['getOclWrapper',['../classcom_1_1example_1_1dmocl_1_1oclwrap.html#a8c8c9a75d3d834cb71725d92ddeb4af7',1,'com::example::dmocl::oclwrap']]],
+  ['gputiming',['GPUTIMING',['../dbscan__c_8c.html#ab26f3be5ae4af394f940d3ff5c996d84',1,'GPUTIMING():&#160;dbscan_c.c'],['../kmeans__c_8c.html#ab26f3be5ae4af394f940d3ff5c996d84',1,'GPUTIMING():&#160;kmeans_c.c']]]
 ];

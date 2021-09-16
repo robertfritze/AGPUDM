@@ -87,6 +87,10 @@ Functions</h2></td></tr>
 <tr class="separator:a279dd21557bcbe8fcb980459a9e46131"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e0b673d019dfe5d8dbc901adab3f34a"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jshort JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dbscan__c_8h.html#a5e0b673d019dfe5d8dbc901adab3f34a">Java_com_example_dmocl_dbscan_dbscan_1c_1phtreads</a> (JNIEnv *env, jclass jc, jshortArray b, jfloatArray rf, jfloat eps, jint kk, jint features, jint cores, jlongArray e)</td></tr>
 <tr class="separator:a5e0b673d019dfe5d8dbc901adab3f34a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a595b90967377c5f6daa9c2a110fd671b"><td class="memItemLeft" align="right" valign="top">JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dbscan__c_8h.html#a595b90967377c5f6daa9c2a110fd671b">Java_com_example_dmocl_dbscan_dbscanabort_1c</a> (JNIEnv *env, jclass clazz)</td></tr>
+<tr class="separator:a595b90967377c5f6daa9c2a110fd671b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22a2e59f0b9aa8900bec7fa6f164ca79"><td class="memItemLeft" align="right" valign="top">JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dbscan__c_8h.html#a22a2e59f0b9aa8900bec7fa6f164ca79">Java_com_example_dmocl_dbscan_dbscanresume_1c</a> (JNIEnv *env, jclass clazz)</td></tr>
+<tr class="separator:a22a2e59f0b9aa8900bec7fa6f164ca79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header file for the C/C+GPU implementations of the DBSCAN algorithm. </p>
@@ -330,6 +334,78 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>number of clusters found (can be zero if only noise points have been detected) or - if negative - an error code </dd></dl>
+<dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
+
+</div>
+</div>
+<a id="a595b90967377c5f6daa9c2a110fd671b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a595b90967377c5f6daa9c2a110fd671b">&#9670;&nbsp;</a></span>Java_com_example_dmocl_dbscan_dbscanabort_1c()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT void JNICALL Java_com_example_dmocl_dbscan_dbscanabort_1c </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jclass&#160;</td>
+          <td class="paramname"><em>clazz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Aborts and inhibits all new calls to the DBSCAN algorithms. This method acts on a 'global' scale and will effect all methods that use this library. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">env</td><td>JNI environment variable </td></tr>
+    <tr><td class="paramname">clazz</td><td>JNI class variable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
+
+</div>
+</div>
+<a id="a22a2e59f0b9aa8900bec7fa6f164ca79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22a2e59f0b9aa8900bec7fa6f164ca79">&#9670;&nbsp;</a></span>Java_com_example_dmocl_dbscan_dbscanresume_1c()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT void JNICALL Java_com_example_dmocl_dbscan_dbscanresume_1c </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jclass&#160;</td>
+          <td class="paramname"><em>clazz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Allows to start DBSCAN searches. This method inverts the effect of Java_com_example_dmocl_dbscan_dbscanabort_1c. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">env</td><td>JNI environment variable </td></tr>
+    <tr><td class="paramname">clazz</td><td>JNI class variable </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
 
 </div>

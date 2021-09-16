@@ -79,6 +79,33 @@ Java_com_example_dmocl_dbscan_dbscan_1c_1phtreads
   (JNIEnv *env, jclass jc, jshortArray b, jfloatArray rf, jfloat eps, jint kk, jint features,
    jint cores, jlongArray e);
 
+
+
+/*!
+ \details
+ Aborts and inhibits all new calls to the DBSCAN algorithms. This method acts on a
+ 'global' scale and will effect all methods that use this library.
+ \param env JNI environment variable
+ \param clazz JNI class variable
+ \mt fully threadsafe
+ */
+JNIEXPORT void JNICALL
+Java_com_example_dmocl_dbscan_dbscanabort_1c(JNIEnv *env, jclass clazz);
+
+
+
+/*!
+ \details
+ Allows to start DBSCAN searches. This method inverts the effect of
+ Java_com_example_dmocl_dbscan_dbscanabort_1c.
+ \param env JNI environment variable
+ \param clazz JNI class variable
+ \mt fully threadsafe
+ */
+JNIEXPORT void JNICALL
+Java_com_example_dmocl_dbscan_dbscanresume_1c(JNIEnv *env, jclass clazz);
+
+
 #ifdef __cplusplus
 }
 #endif

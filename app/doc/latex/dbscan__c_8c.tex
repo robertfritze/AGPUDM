@@ -1,0 +1,375 @@
+\hypertarget{dbscan__c_8c}{}\section{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/source/dbscan\+\_\+c.c File Reference}
+\label{dbscan__c_8c}\index{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/source/dbscan\+\_\+c.\+c@{/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/\+C/source/dbscan\+\_\+c.\+c}}
+
+
+Source file for the C/\+C+\+G\+PU implementations of the D\+B\+S\+C\+AN algorithm.  
+
+
+{\ttfamily \#include $<$jni.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}dbscan\+\_\+c.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$rwlock\+\_\+wp.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}oclwrapper.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$C\+L/opencl.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$semaphore.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdbscan__pt}{dbscan\+\_\+pt}}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{dbscan__c_8c_a16605039b395344c0b68b435e197b8bd}\label{dbscan__c_8c_a16605039b395344c0b68b435e197b8bd}} 
+\#define \mbox{\hyperlink{dbscan__c_8c_a16605039b395344c0b68b435e197b8bd}{C\+L\+\_\+\+U\+S\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+O\+P\+E\+N\+C\+L\+\_\+1\+\_\+2\+\_\+\+A\+P\+IS}}
+\begin{DoxyCompactList}\small\item\em User older A\+P\+Is. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{dbscan__c_8c_a28c7f4454d27d9a294ebe7eb12a54e8c}\label{dbscan__c_8c_a28c7f4454d27d9a294ebe7eb12a54e8c}} 
+\#define \mbox{\hyperlink{dbscan__c_8c_a28c7f4454d27d9a294ebe7eb12a54e8c}{M\+A\+X\+V\+A\+L\+UE}}~((short) 0x\+F\+F\+F\+F)
+\begin{DoxyCompactList}\small\item\em Maximum value for 16 Bit short. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{dbscan__c_8c_ab26f3be5ae4af394f940d3ff5c996d84}\label{dbscan__c_8c_ab26f3be5ae4af394f940d3ff5c996d84}} 
+\#define \mbox{\hyperlink{dbscan__c_8c_ab26f3be5ae4af394f940d3ff5c996d84}{G\+P\+U\+T\+I\+M\+I\+NG}}
+\begin{DoxyCompactList}\small\item\em Define if exclusive G\+PU time should be measured. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{dbscan__c_8c_a92c90fc7d2ecd9ef66e569aed82e3273}{expand\+Cluster}} (int key, const short clusternumber, unsigned short $\ast$b, const float $\ast$data, const float epseps, const int kk, const int datalen, const int features)
+\begin{DoxyCompactList}\small\item\em Expands a cluster found. \end{DoxyCompactList}\item 
+short \mbox{\hyperlink{dbscan__c_8c_a994c7f688041080441d904aaabd542e8}{dbscan}} (unsigned short $\ast$b, const float $\ast$data, const int blen, const float eps, const int kk, const int features)
+\begin{DoxyCompactList}\small\item\em Performs a D\+B\+S\+C\+AN search on the G\+PU (one thread) \end{DoxyCompactList}\item 
+J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL \mbox{\hyperlink{dbscan__c_8c_ac96946a3590e41c2ba686a783d2c59c5}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c}} (J\+N\+I\+Env $\ast$env, jclass jc, jshort\+Array b, jfloat\+Array rf, jfloat eps, jint kk, jint features)
+\item 
+\mbox{\Hypertarget{dbscan__c_8c_a1fcfc6e4577a65d95444ddb408c698a4}\label{dbscan__c_8c_a1fcfc6e4577a65d95444ddb408c698a4}} 
+short {\bfseries expand\+Cluster\+\_\+gpu} (int key, const short clusternumber, unsigned short $\ast$b, const float $\ast$data, const float epseps, const int kk, const int datalen, const int features, cl\+\_\+command\+\_\+queue commands, cl\+\_\+kernel kernel\+\_\+testdistance2, cl\+\_\+mem b\+\_\+g, const size\+\_\+t $\ast$global\+\_\+size)
+\item 
+\mbox{\Hypertarget{dbscan__c_8c_acf13a06373a664bdef41491940cf733d}\label{dbscan__c_8c_acf13a06373a664bdef41491940cf733d}} 
+short {\bfseries dbscan\+\_\+gpu} (cl\+\_\+ushort $\ast$b, const cl\+\_\+float $\ast$data, const int blen, const float eps, const int kk, const int features, cl\+\_\+command\+\_\+queue commands, cl\+\_\+program program, cl\+\_\+device\+\_\+id device, cl\+\_\+kernel kernel\+\_\+testdistance1, cl\+\_\+kernel kernel\+\_\+testdistance2, cl\+\_\+mem data\+\_\+g, cl\+\_\+mem b\+\_\+g, struct timespec $\ast$start2, struct timespec $\ast$finish2)
+\item 
+J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL \mbox{\hyperlink{dbscan__c_8c_a279dd21557bcbe8fcb980459a9e46131}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1gpu}} (J\+N\+I\+Env $\ast$env, jclass jc, jshort\+Array b, jfloat\+Array rf, jfloat eps, jint kk, jint features, jlong\+Array e)
+\item 
+\mbox{\Hypertarget{dbscan__c_8c_a328958ce0311bbd3b136b0ba70a53eff}\label{dbscan__c_8c_a328958ce0311bbd3b136b0ba70a53eff}} 
+void $\ast$ {\bfseries dbscanthread1} (void $\ast$arg)
+\item 
+\mbox{\Hypertarget{dbscan__c_8c_a136c019aa135e830b210dfbfb84bc63b}\label{dbscan__c_8c_a136c019aa135e830b210dfbfb84bc63b}} 
+void $\ast$ {\bfseries dbscanthread2} (void $\ast$arg)
+\item 
+\mbox{\Hypertarget{dbscan__c_8c_a742298819c3bf0b8817d5c984567af6b}\label{dbscan__c_8c_a742298819c3bf0b8817d5c984567af6b}} 
+short {\bfseries expand\+Cluster\+\_\+pthreads} (int key, const short clusternumber, unsigned short $\ast$b, const float $\ast$data, const float epseps, const int kk, const int datalen, const int features, const int cores, struct \mbox{\hyperlink{structdbscan__pt}{dbscan\+\_\+pt}} $\ast$dbthreads)
+\item 
+\mbox{\Hypertarget{dbscan__c_8c_ada61fc5ccb8ba860c103bbd106545e67}\label{dbscan__c_8c_ada61fc5ccb8ba860c103bbd106545e67}} 
+short {\bfseries dbscan\+\_\+pthreads} (unsigned short $\ast$b, const float $\ast$data, const int blen, const float eps, const int kk, const int features, const int cores, struct \mbox{\hyperlink{structdbscan__pt}{dbscan\+\_\+pt}} $\ast$dbthreads)
+\item 
+J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL \mbox{\hyperlink{dbscan__c_8c_a5e0b673d019dfe5d8dbc901adab3f34a}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1phtreads}} (J\+N\+I\+Env $\ast$env, jclass jc, jshort\+Array b, jfloat\+Array rf, jfloat eps, jint kk, jint features, jint cores, jlong\+Array e)
+\item 
+J\+N\+I\+E\+X\+P\+O\+RT void J\+N\+I\+C\+A\+LL \mbox{\hyperlink{dbscan__c_8c_a595b90967377c5f6daa9c2a110fd671b}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscanabort\+\_\+1c}} (J\+N\+I\+Env $\ast$env, jclass clazz)
+\item 
+J\+N\+I\+E\+X\+P\+O\+RT void J\+N\+I\+C\+A\+LL \mbox{\hyperlink{dbscan__c_8c_a22a2e59f0b9aa8900bec7fa6f164ca79}{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscanresume\+\_\+1c}} (J\+N\+I\+Env $\ast$env, jclass clazz)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{dbscan__c_8c_ad5440e2ade153ebd99a84e1cf921ce09}\label{dbscan__c_8c_ad5440e2ade153ebd99a84e1cf921ce09}} 
+volatile struct \mbox{\hyperlink{structrwlockwp}{rwlockwp}} \mbox{\hyperlink{dbscan__c_8c_ad5440e2ade153ebd99a84e1cf921ce09}{abortcalc}} = \mbox{\hyperlink{rwlock__wp_8h_a0e5677072fd09de2ad07b5ac633bde51}{R\+W\+L\+O\+C\+K\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ER}}
+\begin{DoxyCompactList}\small\item\em a lock for premature abort of algorithms \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{dbscan__c_8c_ab9867da3bf6e8f1129209c6583fb662f}\label{dbscan__c_8c_ab9867da3bf6e8f1129209c6583fb662f}} 
+volatile int \mbox{\hyperlink{dbscan__c_8c_ab9867da3bf6e8f1129209c6583fb662f}{doabort}} = 0
+\begin{DoxyCompactList}\small\item\em flag for premature abort of algorithms \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{dbscan__c_8c_a7062ae36933564b236d16828738f830a}{clsource}}
+\begin{DoxyCompactList}\small\item\em D\+B\+S\+C\+AN Open\+CL kernel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Source file for the C/\+C+\+G\+PU implementations of the D\+B\+S\+C\+AN algorithm. 
+
+This C source file contains three methods, that allow to perform single-\/ or multithreaded C\+PU or G\+PU based D\+B\+S\+C\+AN cluster searches. \begin{DoxyCopyright}{Copyright}
+Copyright Robert Fritze 2021 
+\end{DoxyCopyright}
+\begin{DoxyParagraph}{License\+:}
+M\+IT 
+\end{DoxyParagraph}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Robert Fritze 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11.\+9.\+2021 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{dbscan__c_8c_a994c7f688041080441d904aaabd542e8}\label{dbscan__c_8c_a994c7f688041080441d904aaabd542e8}} 
+\index{dbscan\+\_\+c.\+c@{dbscan\+\_\+c.\+c}!dbscan@{dbscan}}
+\index{dbscan@{dbscan}!dbscan\+\_\+c.\+c@{dbscan\+\_\+c.\+c}}
+\subsubsection{\texorpdfstring{dbscan()}{dbscan()}}
+{\footnotesize\ttfamily short dbscan (\begin{DoxyParamCaption}\item[{unsigned short $\ast$}]{b,  }\item[{const float $\ast$}]{data,  }\item[{const int}]{blen,  }\item[{const float}]{eps,  }\item[{const int}]{kk,  }\item[{const int}]{features }\end{DoxyParamCaption})}
+
+
+
+Performs a D\+B\+S\+C\+AN search on the G\+PU (one thread) 
+
+This method searches clusters with the D\+B\+S\+C\+AN method on the G\+PU with a single thread 
+\begin{DoxyParams}{Parameters}
+{\em b} & (out) Cluster number + status bits (Bit 0\+: data item classified, Bit 1\+: distance \\
+\hline
+{\em data} & (in) input data reachable from main loop, Bit 2\+: distance reachable from cluster expansion \\
+\hline
+{\em blen} & (in) number of data items (blen$\ast$features = number of floats in \textquotesingle{}data\textquotesingle{}) \\
+\hline
+{\em eps} & (in) search radius \\
+\hline
+{\em kk} & (in) number of neighbours \\
+\hline
+{\em features} & (in) number of features \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$>$0 number of clusters found (0=only noise points), -\/1=permature abort, -\/256=too many clusters (number can not be stored with 12 bits) 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{dbscan__c_8c_a92c90fc7d2ecd9ef66e569aed82e3273}\label{dbscan__c_8c_a92c90fc7d2ecd9ef66e569aed82e3273}} 
+\index{dbscan\+\_\+c.\+c@{dbscan\+\_\+c.\+c}!expand\+Cluster@{expand\+Cluster}}
+\index{expand\+Cluster@{expand\+Cluster}!dbscan\+\_\+c.\+c@{dbscan\+\_\+c.\+c}}
+\subsubsection{\texorpdfstring{expand\+Cluster()}{expandCluster()}}
+{\footnotesize\ttfamily int expand\+Cluster (\begin{DoxyParamCaption}\item[{int}]{key,  }\item[{const short}]{clusternumber,  }\item[{unsigned short $\ast$}]{b,  }\item[{const float $\ast$}]{data,  }\item[{const float}]{epseps,  }\item[{const int}]{kk,  }\item[{const int}]{datalen,  }\item[{const int}]{features }\end{DoxyParamCaption})}
+
+
+
+Expands a cluster found. 
+
+This method expands a cluster found to the largest size possible. 
+\begin{DoxyParams}{Parameters}
+{\em key} & (in) data item number of the new cluster seed \\
+\hline
+{\em clusternumber} & (in) cluster number to assign to all members of the cluster \\
+\hline
+{\em b} & (out) Cluster number + status bits (Bit 0\+: data item classified, Bit 1\+: distance reachable from main loop, Bit 2\+: distance reachable from cluster expansion \\
+\hline
+{\em data} & (in) input data \\
+\hline
+{\em epseps} & (in) square of search radius \\
+\hline
+{\em kk} & (in) number of neighbours \\
+\hline
+{\em datalen} & (in) number of data items (datalen$\ast$features = number of floats in \textquotesingle{}data\textquotesingle{}) \\
+\hline
+{\em features} & (in) number of features \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 = OK, $<$0 interrupt by flag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{dbscan__c_8c_ac96946a3590e41c2ba686a783d2c59c5}\label{dbscan__c_8c_ac96946a3590e41c2ba686a783d2c59c5}} 
+\index{dbscan\+\_\+c.\+c@{dbscan\+\_\+c.\+c}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c}!dbscan\+\_\+c.\+c@{dbscan\+\_\+c.\+c}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c()}{Java\_com\_example\_dmocl\_dbscan\_dbscan\_1c()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{jc,  }\item[{jshort\+Array}]{b,  }\item[{jfloat\+Array}]{rf,  }\item[{jfloat}]{eps,  }\item[{jint}]{kk,  }\item[{jint}]{features }\end{DoxyParamCaption})}
+
+Performs a D\+B\+S\+C\+AN cluster search on the input data with one thread. 
+\begin{DoxyParams}{Parameters}
+{\em env} & J\+NI environment variable \\
+\hline
+{\em jc} & J\+NI class variable \\
+\hline
+{\em b} & (out) Array of cluster numbers (0=noise point) \\
+\hline
+{\em rf} & (in) Array of data points \\
+\hline
+{\em eps} & search radius \\
+\hline
+{\em kk} & number of neighbours \\
+\hline
+{\em features} & number of features per data item contained in the data array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of clusters found (can be zero if only noise points have been detected) or -\/ if negative -\/ an error code 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{dbscan__c_8c_a279dd21557bcbe8fcb980459a9e46131}\label{dbscan__c_8c_a279dd21557bcbe8fcb980459a9e46131}} 
+\index{dbscan\+\_\+c.\+c@{dbscan\+\_\+c.\+c}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1gpu@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1gpu}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1gpu@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1gpu}!dbscan\+\_\+c.\+c@{dbscan\+\_\+c.\+c}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1gpu()}{Java\_com\_example\_dmocl\_dbscan\_dbscan\_1c\_1gpu()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1gpu (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{jc,  }\item[{jshort\+Array}]{b,  }\item[{jfloat\+Array}]{rf,  }\item[{jfloat}]{eps,  }\item[{jint}]{kk,  }\item[{jint}]{features,  }\item[{jlong\+Array}]{e }\end{DoxyParamCaption})}
+
+Performs a D\+B\+S\+C\+AN cluster search on the G\+PU. 
+\begin{DoxyParams}{Parameters}
+{\em env} & J\+NI environment variable \\
+\hline
+{\em jc} & J\+NI class variable \\
+\hline
+{\em b} & (out) Array of cluster numbers (0=noise point) \\
+\hline
+{\em rf} & (in) Array of data points \\
+\hline
+{\em eps} & search radius \\
+\hline
+{\em kk} & number of neighbours \\
+\hline
+{\em features} & number of features per data item contained in the data array \\
+\hline
+{\em e} & (out) Array of exactly one long value, contains the exclusive time needed (in ns) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of clusters found (can be zero if only noise points have been detected) or -\/ if negative -\/ an error code 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{dbscan__c_8c_a5e0b673d019dfe5d8dbc901adab3f34a}\label{dbscan__c_8c_a5e0b673d019dfe5d8dbc901adab3f34a}} 
+\index{dbscan\+\_\+c.\+c@{dbscan\+\_\+c.\+c}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1phtreads@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1phtreads}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1phtreads@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1phtreads}!dbscan\+\_\+c.\+c@{dbscan\+\_\+c.\+c}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1phtreads()}{Java\_com\_example\_dmocl\_dbscan\_dbscan\_1c\_1phtreads()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT jshort J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscan\+\_\+1c\+\_\+1phtreads (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{jc,  }\item[{jshort\+Array}]{b,  }\item[{jfloat\+Array}]{rf,  }\item[{jfloat}]{eps,  }\item[{jint}]{kk,  }\item[{jint}]{features,  }\item[{jint}]{cores,  }\item[{jlong\+Array}]{e }\end{DoxyParamCaption})}
+
+Performs a D\+B\+S\+C\+AN cluster search on the input data with multiple threads. 
+\begin{DoxyParams}{Parameters}
+{\em env} & J\+NI environment variable \\
+\hline
+{\em jc} & J\+NI class variable \\
+\hline
+{\em b} & (out) Array of cluster numbers (0=noise point) \\
+\hline
+{\em rf} & (in) Array of data points \\
+\hline
+{\em eps} & search radius \\
+\hline
+{\em kk} & number of neighbours \\
+\hline
+{\em features} & number of features per data item contained in the data array \\
+\hline
+{\em cores} & number of cores that should be used \\
+\hline
+{\em e} & (out) Array of exactly one long value, contains the exclusive time needed (in ns) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of clusters found (can be zero if only noise points have been detected) or -\/ if negative -\/ an error code 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{dbscan__c_8c_a595b90967377c5f6daa9c2a110fd671b}\label{dbscan__c_8c_a595b90967377c5f6daa9c2a110fd671b}} 
+\index{dbscan\+\_\+c.\+c@{dbscan\+\_\+c.\+c}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscanabort\+\_\+1c@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscanabort\+\_\+1c}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscanabort\+\_\+1c@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscanabort\+\_\+1c}!dbscan\+\_\+c.\+c@{dbscan\+\_\+c.\+c}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscanabort\+\_\+1c()}{Java\_com\_example\_dmocl\_dbscan\_dbscanabort\_1c()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT void J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscanabort\+\_\+1c (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+
+Aborts and inhibits all new calls to the D\+B\+S\+C\+AN algorithms. This method acts on a \textquotesingle{}global\textquotesingle{} scale and will effect all methods that use this library. 
+\begin{DoxyParams}{Parameters}
+{\em env} & J\+NI environment variable \\
+\hline
+{\em clazz} & J\+NI class variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{dbscan__c_8c_a22a2e59f0b9aa8900bec7fa6f164ca79}\label{dbscan__c_8c_a22a2e59f0b9aa8900bec7fa6f164ca79}} 
+\index{dbscan\+\_\+c.\+c@{dbscan\+\_\+c.\+c}!Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscanresume\+\_\+1c@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscanresume\+\_\+1c}}
+\index{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscanresume\+\_\+1c@{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscanresume\+\_\+1c}!dbscan\+\_\+c.\+c@{dbscan\+\_\+c.\+c}}
+\subsubsection{\texorpdfstring{Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscanresume\+\_\+1c()}{Java\_com\_example\_dmocl\_dbscan\_dbscanresume\_1c()}}
+{\footnotesize\ttfamily J\+N\+I\+E\+X\+P\+O\+RT void J\+N\+I\+C\+A\+LL Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscanresume\+\_\+1c (\begin{DoxyParamCaption}\item[{J\+N\+I\+Env $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+
+Allows to start D\+B\+S\+C\+AN searches. This method inverts the effect of Java\+\_\+com\+\_\+example\+\_\+dmocl\+\_\+dbscan\+\_\+dbscanabort\+\_\+1c. 
+\begin{DoxyParams}{Parameters}
+{\em env} & J\+NI environment variable \\
+\hline
+{\em clazz} & J\+NI class variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully threadsafe 
+\end{DoxyParagraph}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{dbscan__c_8c_a7062ae36933564b236d16828738f830a}\label{dbscan__c_8c_a7062ae36933564b236d16828738f830a}} 
+\index{dbscan\+\_\+c.\+c@{dbscan\+\_\+c.\+c}!clsource@{clsource}}
+\index{clsource@{clsource}!dbscan\+\_\+c.\+c@{dbscan\+\_\+c.\+c}}
+\subsubsection{\texorpdfstring{clsource}{clsource}}
+{\footnotesize\ttfamily const char$\ast$ clsource}
+
+
+
+D\+B\+S\+C\+AN Open\+CL kernel. 
+
+\paragraph*{\+\_\+\+\_\+kernel void testdistance1}
+
+(~\newline
+ \quad{} global const float$\ast$ data, ~\newline
+ \quad{} global unsigned short$\ast$ b, ~\newline
+ \quad{} const int features, ~\newline
+ \quad{} const int cmpto, ~\newline
+ \quad{} const float epseps ~\newline
+ ) ~\newline
+~\newline
+
+
+Calculates the euclidean distance of each data item to a specific given data item. This method is called from the main loop.~\newline
+
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ parameter }&\textbf{ in/out }&\textbf{ description  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ parameter }&\textbf{ in/out }&\textbf{ description  }\\\cline{1-3}
+\endhead
+{\itshape global const float$\ast$ data} &in &input data  \\\cline{1-3}
+{\itshape global unsigned short$\ast$ b} &out &Bit 0\+: Point has been clustered (1) or not (0)~\newline
+ Bit 1\+: Point is distance reachable (main loop)~\newline
+ Bit 2\+: Point is distance reachable (cluster expansion loop)~\newline
+ Bit 3-\/15\+: Cluster number for each data item  \\\cline{1-3}
+{\itshape const int features}  &in &the number of features per data item  \\\cline{1-3}
+{\itshape const int cmpto}  &in &the number of the data point the other data item should be compared to  \\\cline{1-3}
+{\itshape const float epseps} &in &square of the search radius  \\\cline{1-3}
+\end{longtabu}
+
+
+\paragraph*{\+\_\+\+\_\+kernel void testdistance2}
+
+(~\newline
+ \quad{} global const float$\ast$ data, ~\newline
+ \quad{} global unsigned short$\ast$ b, ~\newline
+ \quad{} const int features, ~\newline
+ \quad{} const int cmpto, ~\newline
+ \quad{} const float epseps ~\newline
+ ) ~\newline
+~\newline
+
+
+Calculates the euclidean distance of each data item to a specific given data item. This method is used during the expansion of the clusters.~\newline
+
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ parameter }&\textbf{ in/out }&\textbf{ description  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ parameter }&\textbf{ in/out }&\textbf{ description  }\\\cline{1-3}
+\endhead
+{\itshape global const float$\ast$ data} &in &input data  \\\cline{1-3}
+{\itshape global unsigned short$\ast$ b} &out &Bit 0\+: Point has been clustered (1) or not (0)~\newline
+ Bit 1\+: Point is distance reachable (main loop)~\newline
+ Bit 2\+: Point is distance reachable (cluster expansion loop)~\newline
+ Bit 3-\/15\+: Cluster number for each data item  \\\cline{1-3}
+{\itshape const int features}  &in &the number of features per data item  \\\cline{1-3}
+{\itshape const int cmpto}  &in &the number of the data point the other data item should be compared to  \\\cline{1-3}
+{\itshape const float epseps} &in &square of the search radius  \\\cline{1-3}
+\end{longtabu}
