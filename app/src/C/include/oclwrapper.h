@@ -80,7 +80,7 @@ Java_com_example_dmocl_oclwrap_getCLpatch(JNIEnv *env, jclass clazz);
  \brief Java wrapper function to load the native OpenCL library
  \param env pointer to JNI environment
  \param thiz reference to JNI class
- \param s path and name of the OpenCL library on the device
+ \param s (in) path and name of the OpenCL library on the device
  \return OK: 0, library has already been loaded: -1, unable to load library: -2
  \mt fully threadsafe
  */
@@ -113,7 +113,7 @@ Java_com_example_dmocl_oclwrap_AndrCLGetPlatformCnt(JNIEnv *env, jobject thiz);
 \brief Returns the number of OpenCL devices for a given platform
 \param env pointer to JNI environment
 \param thiz reference to JNI class
-\param i platform number
+\param i (in) platform number
 \return >=0 number of devices, <0 error occurred
 \mt fully threadsafe (if native OpenCL function is threadsafe)
 */
@@ -125,8 +125,8 @@ Java_com_example_dmocl_oclwrap_AndrCLGetDeviceCnt(JNIEnv *env, jobject thiz, jin
 \brief Returns some info for a given OpenCL device (and platform number)
 \param env pointer to JNI environment
 \param thiz reference to JNI class
-\param platf platform number
-\param dev device number
+\param platf (in) platform number
+\param dev (in) device number
 \return an instance of the class *oclinforet* with the information filled in
 \mt fully threadsafe (if native OpenCL function is threadsafe)
 */

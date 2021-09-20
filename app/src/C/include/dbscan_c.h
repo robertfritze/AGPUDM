@@ -30,9 +30,9 @@ extern "C" {
  \param jc JNI class variable
  \param b (out) Array of cluster numbers (0=noise point)
  \param rf (in) Array of data points
- \param eps search radius
- \param kk number of neighbours
- \param features number of features per data item contained in the data array
+ \param eps (in) search radius
+ \param kk (in) number of neighbours
+ \param features (in) number of features per data item contained in the data array
  \returns number of clusters found (can be zero if only noise points have been detected) or - if negative - an error code
  \mt fully threadsafe
  */
@@ -46,9 +46,9 @@ JNIEXPORT jshort JNICALL Java_com_example_dmocl_dbscan_dbscan_1c
  \param jc JNI class variable
  \param b (out) Array of cluster numbers (0=noise point)
  \param rf (in) Array of data points
- \param eps search radius
- \param kk number of neighbours
- \param features number of features per data item contained in the data array
+ \param eps (in) search radius
+ \param kk (in) number of neighbours
+ \param features (in) number of features per data item contained in the data array
  \param e (out) Array of exactly one long value, contains the exclusive time needed (in ns)
  \returns number of clusters found (can be zero if only noise points have been detected) or - if negative - an error code
  \mt fully threadsafe
@@ -66,10 +66,10 @@ Java_com_example_dmocl_dbscan_dbscan_1c_1gpu
  \param jc JNI class variable
  \param b (out) Array of cluster numbers (0=noise point)
  \param rf (in) Array of data points
- \param eps search radius
- \param kk number of neighbours
- \param features number of features per data item contained in the data array
- \param cores number of cores that should be used
+ \param eps (in) search radius
+ \param kk (in) number of neighbours
+ \param features (in) number of features per data item contained in the data array
+ \param cores (in) number of cores that should be used
  \param e (out) Array of exactly one long value, contains the exclusive time needed (in ns)
  \returns number of clusters found (can be zero if only noise points have been detected) or - if negative - an error code
  \mt fully threadsafe

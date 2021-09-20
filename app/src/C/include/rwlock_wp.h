@@ -41,7 +41,7 @@ struct rwlockwp {
  Acquires the reader lock. Multiple readers can acquire the lock at the same time.
  If a writer has acquired the writer lock, all new readers are blocked until the writer has
  finished.
- \param rwlockwp Pointer to the reader/writer lock
+ \param rwlockwp (in) Pointer to the reader/writer lock
  \mt fully threadsafe
  */
 void rwlockwp_reader_acquire( volatile struct rwlockwp* );
@@ -51,7 +51,7 @@ void rwlockwp_reader_acquire( volatile struct rwlockwp* );
  \details
  Releases the reader lock. If no more other readers are holding a reader lock and a writer is
  waiting, the writer will get exclusive access.
- \param rwlockwp Pointer to the reader/writer lock
+ \param rwlockwp (in) Pointer to the reader/writer lock
  \mt fully threadsafe
  */
 void rwlockwp_reader_release( volatile struct rwlockwp* );
@@ -61,7 +61,7 @@ void rwlockwp_reader_release( volatile struct rwlockwp* );
  \details
  Acquires the writer lock. All new readers have to queue up. The writer is blocked until all
  reader that already hold a reader lock have finished.
- \param rwlockwp Pointer to the reader/writer lock
+ \param (in) rwlockwp Pointer to the reader/writer lock
  \mt fully threadsafe
  */
 void rwlockwp_writer_acquire( volatile struct rwlockwp* );
@@ -70,7 +70,7 @@ void rwlockwp_writer_acquire( volatile struct rwlockwp* );
  \brief Releases the writer lock
  \details
  Releases the writer lock. All waiting readers will wake up.
- \param rwlockwp Pointer to the reader/writer lock
+ \param (in) rwlockwp Pointer to the reader/writer lock
  \mt fully threadsafe
  */
 void rwlockwp_writer_release( volatile struct rwlockwp* );

@@ -13,10 +13,9 @@ paradigms (single-threaded, multi-threaded, task/data parallelism (GPU)).
 ## Docs
 
 There is a [html](app/doc/html/index.html) and [pdf](app/doc/latex/refman.pdf) doxygen documentation available for this project. 
-As of 9/16/2021 only the 
-C part has been included in this documentation. Some parts of the documentation of the 
-file dbscan_c.c are still missing. For all other C source and header files full documentation is
-provided. 
+Clone the repository to see the HTML documentation.
+As of 9/20/2021 only the 
+C part has been included in this documentation. 
 For the Java part, only the automatically generated doxygen documentation is available. 
 Additional documentation will be available soon.
 

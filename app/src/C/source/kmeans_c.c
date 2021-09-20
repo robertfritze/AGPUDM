@@ -130,7 +130,7 @@ const char* clsource = \
  \brief Random number generator
  \details
  Generates uniformly distributed random numbers [0,limit]
- \param limit the maximum random number desired
+ \param limit (in) the maximum random number desired
  \returns a random number form a uniform distribution over [0,limit]
  \mt fully threadsafe
  */
@@ -153,10 +153,10 @@ int rand_lim(int limit) {
  Performs a Kmeans cluster search on the CPU (one thread).
  \param b (out) Array of cluster numbers
  \param data (in) Array of data points
- \param blen number of data items in data
- \param eps maximum cluster center displacement
- \param cluno number of clusters to search for
- \param features number of features per data item
+ \param blen (in) number of data items in data
+ \param eps (in) maximum cluster center displacement
+ \param cluno (in) number of clusters to search for
+ \param features (in) number of features per data item
  \returns 0 = no error, <0 = error number
  \mt fully threadsafe
  */
@@ -358,17 +358,17 @@ JNIEXPORT jshort JNICALL Java_com_example_dmocl_kmeans_kmeans_1c
  Performs a Kmeans cluster search on the GPU
  \param b (out) Array of cluster numbers
  \param data (in) Array of data points
- \param blen number of data items in data
- \param eps maximum cluster center displacement
- \param cluno number of clusters to search for
- \param features number of features per data item
- \param commands the OpenCL command queue
- \param program the OpenCL program
- \param device the OpenCL device
- \param kernel_testdistance the OpenCL kernel
- \param data_g OpenCL data buffer
- \param b_g OpenCL cluster number buffer
- \param clucent_g OpenCL cluster center buffer
+ \param blen (in) number of data items in data
+ \param eps (in) maximum cluster center displacement
+ \param cluno (in) number of clusters to search for
+ \param features (in) number of features per data item
+ \param commands (in) the OpenCL command queue
+ \param program (in) the OpenCL program
+ \param device (in) the OpenCL device
+ \param kernel_testdistance (in) the OpenCL kernel
+ \param data_g (in) OpenCL data buffer
+ \param b_g (in) OpenCL cluster number buffer
+ \param clucent_g (in) OpenCL cluster center buffer
  \returns 0 = no error, <0 = error number
  \mt fully threadsafe
  */
@@ -823,7 +823,7 @@ to the cluster centers and saves the number of the cluster center with the small
 Two semaphores are used. The first is acquired by this thread and released by the method that
 submits the calculations. The second semaphore is acquired by the method that submits the job
 and released by this thread 
- \param arg (in) A pointer to the struct with the parameters
+ \param arg (in+out) A pointer to the struct with the parameters
  \returns NULL
  */
 void* kmthread(void *arg) {
@@ -880,12 +880,12 @@ void* kmthread(void *arg) {
  \param b (out) Array of cluster numbers
  \param data (in) Array of data points
  \param clucent (out) Array of cluster centers
- \param blen number of data items in data
- \param cluno number of clusters to search for
- \param features number of features per data item
- \param cores number of threads to be used (CPU can be oversubscribed)
- \param kmthreads pointer to the threads (array must contain 'cores' elements)
- \param eps maximum cluster center displacement
+ \param blen (in) number of data items in data
+ \param cluno (in) number of clusters to search for
+ \param features (in) number of features per data item
+ \param cores (in) number of threads to be used (CPU can be oversubscribed)
+ \param kmthreads (in) pointer to the threads (array must contain 'cores' elements)
+ \param eps (in) maximum cluster center displacement
  \returns 0=algorithm finished correctly, <0 error occurred
  */
 short kmeans_pthreads(unsigned short* b, const float* data, float* clucent,
