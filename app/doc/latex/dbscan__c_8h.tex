@@ -61,11 +61,11 @@ Performs a D\+B\+S\+C\+AN cluster search on the input data with one thread.
 \hline
 {\em rf} & (in) Array of data points \\
 \hline
-{\em eps} & search radius \\
+{\em eps} & (in) search radius \\
 \hline
-{\em kk} & number of neighbours \\
+{\em kk} & (in) number of neighbours \\
 \hline
-{\em features} & number of features per data item contained in the data array \\
+{\em features} & (in) number of features per data item contained in the data array \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -90,11 +90,11 @@ Performs a D\+B\+S\+C\+AN cluster search on the G\+PU.
 \hline
 {\em rf} & (in) Array of data points \\
 \hline
-{\em eps} & search radius \\
+{\em eps} & (in) search radius \\
 \hline
-{\em kk} & number of neighbours \\
+{\em kk} & (in) number of neighbours \\
 \hline
-{\em features} & number of features per data item contained in the data array \\
+{\em features} & (in) number of features per data item contained in the data array \\
 \hline
 {\em e} & (out) Array of exactly one long value, contains the exclusive time needed (in ns) \\
 \hline
@@ -121,13 +121,13 @@ Performs a D\+B\+S\+C\+AN cluster search on the input data with multiple threads
 \hline
 {\em rf} & (in) Array of data points \\
 \hline
-{\em eps} & search radius \\
+{\em eps} & (in) search radius \\
 \hline
-{\em kk} & number of neighbours \\
+{\em kk} & (in) number of neighbours \\
 \hline
-{\em features} & number of features per data item contained in the data array \\
+{\em features} & (in) number of features per data item contained in the data array \\
 \hline
-{\em cores} & number of cores that should be used \\
+{\em cores} & (in) number of cores that should be used \\
 \hline
 {\em e} & (out) Array of exactly one long value, contains the exclusive time needed (in ns) \\
 \hline

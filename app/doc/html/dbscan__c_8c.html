@@ -93,6 +93,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdbscan__pt.html">dbscan_pt</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters for the DBSCAN thread.  <a href="structdbscan__pt.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -116,29 +117,29 @@ Functions</h2></td></tr>
 <tr class="memdesc:a92c90fc7d2ecd9ef66e569aed82e3273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expands a cluster found.  <a href="#a92c90fc7d2ecd9ef66e569aed82e3273">More...</a><br /></td></tr>
 <tr class="separator:a92c90fc7d2ecd9ef66e569aed82e3273"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a994c7f688041080441d904aaabd542e8"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dbscan__c_8c.html#a994c7f688041080441d904aaabd542e8">dbscan</a> (unsigned short *b, const float *data, const int blen, const float eps, const int kk, const int features)</td></tr>
-<tr class="memdesc:a994c7f688041080441d904aaabd542e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a DBSCAN search on the GPU (one thread)  <a href="#a994c7f688041080441d904aaabd542e8">More...</a><br /></td></tr>
+<tr class="memdesc:a994c7f688041080441d904aaabd542e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a DBSCAN search on the CPU (one thread)  <a href="#a994c7f688041080441d904aaabd542e8">More...</a><br /></td></tr>
 <tr class="separator:a994c7f688041080441d904aaabd542e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac96946a3590e41c2ba686a783d2c59c5"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jshort JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dbscan__c_8c.html#ac96946a3590e41c2ba686a783d2c59c5">Java_com_example_dmocl_dbscan_dbscan_1c</a> (JNIEnv *env, jclass jc, jshortArray b, jfloatArray rf, jfloat eps, jint kk, jint features)</td></tr>
 <tr class="separator:ac96946a3590e41c2ba686a783d2c59c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fcfc6e4577a65d95444ddb408c698a4"><td class="memItemLeft" align="right" valign="top"><a id="a1fcfc6e4577a65d95444ddb408c698a4"></a>
-short&#160;</td><td class="memItemRight" valign="bottom"><b>expandCluster_gpu</b> (int key, const short clusternumber, unsigned short *b, const float *data, const float epseps, const int kk, const int datalen, const int features, cl_command_queue commands, cl_kernel kernel_testdistance2, cl_mem b_g, const size_t *global_size)</td></tr>
+<tr class="memitem:a1fcfc6e4577a65d95444ddb408c698a4"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dbscan__c_8c.html#a1fcfc6e4577a65d95444ddb408c698a4">expandCluster_gpu</a> (int key, const short clusternumber, unsigned short *b, const float *data, const float epseps, const int kk, const int datalen, const int features, cl_command_queue commands, cl_kernel kernel_testdistance2, cl_mem b_g, const size_t *global_size)</td></tr>
+<tr class="memdesc:a1fcfc6e4577a65d95444ddb408c698a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expands a cluster found on the GPU.  <a href="#a1fcfc6e4577a65d95444ddb408c698a4">More...</a><br /></td></tr>
 <tr class="separator:a1fcfc6e4577a65d95444ddb408c698a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf13a06373a664bdef41491940cf733d"><td class="memItemLeft" align="right" valign="top"><a id="acf13a06373a664bdef41491940cf733d"></a>
-short&#160;</td><td class="memItemRight" valign="bottom"><b>dbscan_gpu</b> (cl_ushort *b, const cl_float *data, const int blen, const float eps, const int kk, const int features, cl_command_queue commands, cl_program program, cl_device_id device, cl_kernel kernel_testdistance1, cl_kernel kernel_testdistance2, cl_mem data_g, cl_mem b_g, struct timespec *start2, struct timespec *finish2)</td></tr>
+<tr class="memitem:acf13a06373a664bdef41491940cf733d"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dbscan__c_8c.html#acf13a06373a664bdef41491940cf733d">dbscan_gpu</a> (cl_ushort *b, const cl_float *data, const int blen, const float eps, const int kk, const int features, cl_command_queue commands, cl_program program, cl_device_id device, cl_kernel kernel_testdistance1, cl_kernel kernel_testdistance2, cl_mem data_g, cl_mem b_g, struct timespec *start2, struct timespec *finish2)</td></tr>
+<tr class="memdesc:acf13a06373a664bdef41491940cf733d"><td class="mdescLeft">&#160;</td><td class="mdescRight">kmeans cluster search on the GPU  <a href="#acf13a06373a664bdef41491940cf733d">More...</a><br /></td></tr>
 <tr class="separator:acf13a06373a664bdef41491940cf733d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a279dd21557bcbe8fcb980459a9e46131"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jshort JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dbscan__c_8c.html#a279dd21557bcbe8fcb980459a9e46131">Java_com_example_dmocl_dbscan_dbscan_1c_1gpu</a> (JNIEnv *env, jclass jc, jshortArray b, jfloatArray rf, jfloat eps, jint kk, jint features, jlongArray e)</td></tr>
 <tr class="separator:a279dd21557bcbe8fcb980459a9e46131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a328958ce0311bbd3b136b0ba70a53eff"><td class="memItemLeft" align="right" valign="top"><a id="a328958ce0311bbd3b136b0ba70a53eff"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><b>dbscanthread1</b> (void *arg)</td></tr>
+<tr class="memitem:a328958ce0311bbd3b136b0ba70a53eff"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dbscan__c_8c.html#a328958ce0311bbd3b136b0ba70a53eff">dbscanthread1</a> (void *arg)</td></tr>
+<tr class="memdesc:a328958ce0311bbd3b136b0ba70a53eff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance test for cluster expansion.  <a href="#a328958ce0311bbd3b136b0ba70a53eff">More...</a><br /></td></tr>
 <tr class="separator:a328958ce0311bbd3b136b0ba70a53eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a136c019aa135e830b210dfbfb84bc63b"><td class="memItemLeft" align="right" valign="top"><a id="a136c019aa135e830b210dfbfb84bc63b"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><b>dbscanthread2</b> (void *arg)</td></tr>
+<tr class="memitem:a136c019aa135e830b210dfbfb84bc63b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dbscan__c_8c.html#a136c019aa135e830b210dfbfb84bc63b">dbscanthread2</a> (void *arg)</td></tr>
+<tr class="memdesc:a136c019aa135e830b210dfbfb84bc63b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance test for cluster expansion.  <a href="#a136c019aa135e830b210dfbfb84bc63b">More...</a><br /></td></tr>
 <tr class="separator:a136c019aa135e830b210dfbfb84bc63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a742298819c3bf0b8817d5c984567af6b"><td class="memItemLeft" align="right" valign="top"><a id="a742298819c3bf0b8817d5c984567af6b"></a>
-short&#160;</td><td class="memItemRight" valign="bottom"><b>expandCluster_pthreads</b> (int key, const short clusternumber, unsigned short *b, const float *data, const float epseps, const int kk, const int datalen, const int features, const int cores, struct <a class="el" href="structdbscan__pt.html">dbscan_pt</a> *dbthreads)</td></tr>
+<tr class="memitem:a742298819c3bf0b8817d5c984567af6b"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dbscan__c_8c.html#a742298819c3bf0b8817d5c984567af6b">expandCluster_pthreads</a> (int key, const short clusternumber, unsigned short *b, const float *data, const float epseps, const int kk, const int datalen, const int features, const int cores, struct <a class="el" href="structdbscan__pt.html">dbscan_pt</a> *dbthreads)</td></tr>
+<tr class="memdesc:a742298819c3bf0b8817d5c984567af6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expands a cluster found by the main loop of the DBSCAN algorithm (multithreaded)  <a href="#a742298819c3bf0b8817d5c984567af6b">More...</a><br /></td></tr>
 <tr class="separator:a742298819c3bf0b8817d5c984567af6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada61fc5ccb8ba860c103bbd106545e67"><td class="memItemLeft" align="right" valign="top"><a id="ada61fc5ccb8ba860c103bbd106545e67"></a>
-short&#160;</td><td class="memItemRight" valign="bottom"><b>dbscan_pthreads</b> (unsigned short *b, const float *data, const int blen, const float eps, const int kk, const int features, const int cores, struct <a class="el" href="structdbscan__pt.html">dbscan_pt</a> *dbthreads)</td></tr>
+<tr class="memitem:ada61fc5ccb8ba860c103bbd106545e67"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dbscan__c_8c.html#ada61fc5ccb8ba860c103bbd106545e67">dbscan_pthreads</a> (unsigned short *b, const float *data, const int blen, const float eps, const int kk, const int features, const int cores, struct <a class="el" href="structdbscan__pt.html">dbscan_pt</a> *dbthreads)</td></tr>
+<tr class="memdesc:ada61fc5ccb8ba860c103bbd106545e67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a DBSCAN search on the CPU (multithreaded)  <a href="#ada61fc5ccb8ba860c103bbd106545e67">More...</a><br /></td></tr>
 <tr class="separator:ada61fc5ccb8ba860c103bbd106545e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e0b673d019dfe5d8dbc901adab3f34a"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jshort JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dbscan__c_8c.html#a5e0b673d019dfe5d8dbc901adab3f34a">Java_com_example_dmocl_dbscan_dbscan_1c_1phtreads</a> (JNIEnv *env, jclass jc, jshortArray b, jfloatArray rf, jfloat eps, jint kk, jint features, jint cores, jlongArray e)</td></tr>
 <tr class="separator:a5e0b673d019dfe5d8dbc901adab3f34a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -219,11 +220,11 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
       </table>
 </div><div class="memdoc">
 
-<p>Performs a DBSCAN search on the GPU (one thread) </p>
-<p>This method searches clusters with the DBSCAN method on the GPU with a single thread </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Performs a DBSCAN search on the CPU (one thread) </p>
+<p>This method searches clusters with the DBSCAN method on the CPU with a single thread </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">b</td><td>(out) Cluster number + status bits (Bit 0: data item classified, Bit 1: distance </td></tr>
-    <tr><td class="paramname">data</td><td>(in) input data reachable from main loop, Bit 2: distance reachable from cluster expansion </td></tr>
+    <tr><td class="paramname">b</td><td>(out) Cluster number + status bits (Bit 0: data item classified, Bit 1: distance reachable from main loop, Bit 2: distance reachable from cluster expansion </td></tr>
+    <tr><td class="paramname">data</td><td>(in) input data </td></tr>
     <tr><td class="paramname">blen</td><td>(in) number of data items (blen*features = number of floats in 'data') </td></tr>
     <tr><td class="paramname">eps</td><td>(in) search radius </td></tr>
     <tr><td class="paramname">kk</td><td>(in) number of neighbours </td></tr>
@@ -233,6 +234,271 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>&gt;0 number of clusters found (0=only noise points), -1=permature abort, -256=too many clusters (number can not be stored with 12 bits) </dd></dl>
 <dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
+
+</div>
+</div>
+<a id="acf13a06373a664bdef41491940cf733d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf13a06373a664bdef41491940cf733d">&#9670;&nbsp;</a></span>dbscan_gpu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short dbscan_gpu </td>
+          <td>(</td>
+          <td class="paramtype">cl_ushort *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cl_float *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>blen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>eps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>kk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>features</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl_command_queue&#160;</td>
+          <td class="paramname"><em>commands</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl_program&#160;</td>
+          <td class="paramname"><em>program</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl_device_id&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl_kernel&#160;</td>
+          <td class="paramname"><em>kernel_testdistance1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl_kernel&#160;</td>
+          <td class="paramname"><em>kernel_testdistance2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl_mem&#160;</td>
+          <td class="paramname"><em>data_g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl_mem&#160;</td>
+          <td class="paramname"><em>b_g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct timespec *&#160;</td>
+          <td class="paramname"><em>start2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct timespec *&#160;</td>
+          <td class="paramname"><em>finish2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>kmeans cluster search on the GPU </p>
+<p>Performs a Kmeans cluster search on the GPU </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>(out) Array of cluster numbers </td></tr>
+    <tr><td class="paramname">data</td><td>(in) Array of data points </td></tr>
+    <tr><td class="paramname">blen</td><td>(in) number of data items in data </td></tr>
+    <tr><td class="paramname">eps</td><td>(in) search radius </td></tr>
+    <tr><td class="paramname">kk</td><td>(in) number of neighbours </td></tr>
+    <tr><td class="paramname">features</td><td>(in) number of features per data item </td></tr>
+    <tr><td class="paramname">commands</td><td>(in) the OpenCL command queue </td></tr>
+    <tr><td class="paramname">program</td><td>(in) the OpenCL program </td></tr>
+    <tr><td class="paramname">device</td><td>(in) the OpenCL device </td></tr>
+    <tr><td class="paramname">kernel_testdistance1</td><td>(in) the OpenCL kernel for the main loop </td></tr>
+    <tr><td class="paramname">kernel_testdistance2</td><td>(in) the OpenCL kernel for the cluster expand part </td></tr>
+    <tr><td class="paramname">data_g</td><td>(in) OpenCL data buffer </td></tr>
+    <tr><td class="paramname">b_g</td><td>(in) OpenCL cluster number buffer </td></tr>
+    <tr><td class="paramname">start2</td><td>(out) Start time point for exculsive GPU timing </td></tr>
+    <tr><td class="paramname">finish2</td><td>(out) End time point for exculsive GPU timing </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 = no error, &lt;0 = error number </dd></dl>
+<dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
+
+</div>
+</div>
+<a id="ada61fc5ccb8ba860c103bbd106545e67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada61fc5ccb8ba860c103bbd106545e67">&#9670;&nbsp;</a></span>dbscan_pthreads()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short dbscan_pthreads </td>
+          <td>(</td>
+          <td class="paramtype">unsigned short *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>blen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>eps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>kk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>features</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>cores</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structdbscan__pt.html">dbscan_pt</a> *&#160;</td>
+          <td class="paramname"><em>dbthreads</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Performs a DBSCAN search on the CPU (multithreaded) </p>
+<p>This method searches clusters with the DBSCAN method on the CPU with multiple threads </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>(out) Cluster number + status bits (Bit 0: data item classified, Bit 1: distance reachable from main loop, Bit 2: distance reachable from cluster expansion </td></tr>
+    <tr><td class="paramname">data</td><td>(in) input data </td></tr>
+    <tr><td class="paramname">blen</td><td>(in) number of data items (blen*features = number of floats in 'data') </td></tr>
+    <tr><td class="paramname">eps</td><td>(in) search radius </td></tr>
+    <tr><td class="paramname">kk</td><td>(in) number of neighbours </td></tr>
+    <tr><td class="paramname">features</td><td>(in) number of features </td></tr>
+    <tr><td class="paramname">cores</td><td>(in) number of threads to be used (CPU may be oversubscribed) </td></tr>
+    <tr><td class="paramname">dbthreads</td><td>(in) Array of structs (of length 'cores') that holds the thread infos </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>&gt;0 number of clusters found (0=only noise points), -1=permature abort, -256=too many clusters (number can not be stored with 12 bits) </dd></dl>
+<dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
+
+</div>
+</div>
+<a id="a328958ce0311bbd3b136b0ba70a53eff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a328958ce0311bbd3b136b0ba70a53eff">&#9670;&nbsp;</a></span>dbscanthread1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* dbscanthread1 </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Distance test for cluster expansion. </p>
+<p>This method is designed to test in parallel the distance to a given point and mark the data items that are within a defined radius. This method is called from the main DBSCAN loop. The workload is parallelized over the data items. The first and the last data item to used are defined in the struct passed as argument. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg</td><td>(in+out) a pointer to the parameter struct </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NULL </dd></dl>
+
+</div>
+</div>
+<a id="a136c019aa135e830b210dfbfb84bc63b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a136c019aa135e830b210dfbfb84bc63b">&#9670;&nbsp;</a></span>dbscanthread2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* dbscanthread2 </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Distance test for cluster expansion. </p>
+<p>This method is designed to test in parallel the distance to a given point and mark the data items that are within a defined radius. This method is called during the cluster expansion. The workload is parallelized over the data items. The first and the last data item to used are defined in the struct passed as argument. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg</td><td>(in+out) a pointer to the parameter struct </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NULL </dd></dl>
 
 </div>
 </div>
@@ -316,6 +582,209 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
+<a id="a1fcfc6e4577a65d95444ddb408c698a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fcfc6e4577a65d95444ddb408c698a4">&#9670;&nbsp;</a></span>expandCluster_gpu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short expandCluster_gpu </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const short&#160;</td>
+          <td class="paramname"><em>clusternumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned short *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>epseps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>kk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>datalen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>features</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl_command_queue&#160;</td>
+          <td class="paramname"><em>commands</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl_kernel&#160;</td>
+          <td class="paramname"><em>kernel_testdistance2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cl_mem&#160;</td>
+          <td class="paramname"><em>b_g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t *&#160;</td>
+          <td class="paramname"><em>global_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Expands a cluster found on the GPU. </p>
+<p>This method expands a cluster found to the largest size possible using the GPU. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>(in) data item number of the new cluster seed </td></tr>
+    <tr><td class="paramname">clusternumber</td><td>(in) cluster number to assign to all members of the cluster </td></tr>
+    <tr><td class="paramname">b</td><td>(out) Cluster number + status bits (Bit 0: data item classified, Bit 1: distance reachable from main loop, Bit 2: distance reachable from cluster expansion </td></tr>
+    <tr><td class="paramname">data</td><td>(in) input data </td></tr>
+    <tr><td class="paramname">epseps</td><td>(in) square of search radius </td></tr>
+    <tr><td class="paramname">kk</td><td>(in) number of neighbours </td></tr>
+    <tr><td class="paramname">datalen</td><td>(in) number of data items (datalen*features = number of floats in 'data') </td></tr>
+    <tr><td class="paramname">features</td><td>(in) number of features </td></tr>
+    <tr><td class="paramname">commands</td><td>(in) the OpenCL command queue </td></tr>
+    <tr><td class="paramname">kernel_testdistance2</td><td>(in) the OpenCL kernel for the cluster expand part </td></tr>
+    <tr><td class="paramname">b_g</td><td>(out) OpenCL cluster number buffer </td></tr>
+    <tr><td class="paramname">global_size</td><td>(in) Global work size on the GPU </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 = no error, &lt;0 = error number </dd></dl>
+<dl class="section user"><dt>Multithreading:</dt><dd>fully threadsafe </dd></dl>
+
+</div>
+</div>
+<a id="a742298819c3bf0b8817d5c984567af6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a742298819c3bf0b8817d5c984567af6b">&#9670;&nbsp;</a></span>expandCluster_pthreads()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short expandCluster_pthreads </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const short&#160;</td>
+          <td class="paramname"><em>clusternumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned short *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>epseps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>kk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>datalen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>features</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>cores</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structdbscan__pt.html">dbscan_pt</a> *&#160;</td>
+          <td class="paramname"><em>dbthreads</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Expands a cluster found by the main loop of the DBSCAN algorithm (multithreaded) </p>
+<p>Expands a cluster found by the main loop of the DBSCAN algorithm (multithreaded) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>(in) number of data item that is the current seed </td></tr>
+    <tr><td class="paramname">clusternumber</td><td>(in) number of current cluster </td></tr>
+    <tr><td class="paramname">b</td><td>(out) Cluster number + status bits (Bit 0: data item classified, Bit 1: distance reachable from main loop, Bit 2: distance reachable from cluster expansion </td></tr>
+    <tr><td class="paramname">data</td><td>(in) input data </td></tr>
+    <tr><td class="paramname">epseps</td><td>(in) square search radius </td></tr>
+    <tr><td class="paramname">kk</td><td>(in) number of neighbours </td></tr>
+    <tr><td class="paramname">datalen</td><td>(in) number of data items (blen*features = number of floats in 'data') </td></tr>
+    <tr><td class="paramname">features</td><td>(in) number of features </td></tr>
+    <tr><td class="paramname">cores</td><td>(in) number of threads to be used (CPU may be oversubscribed) </td></tr>
+    <tr><td class="paramname">dbthreads</td><td>(in) Array of structs (of length 'cores') that holds the thread infos </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0=OK, &lt;0 error (premature abort) </dd></dl>
+
+</div>
+</div>
 <a id="ac96946a3590e41c2ba686a783d2c59c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac96946a3590e41c2ba686a783d2c59c5">&#9670;&nbsp;</a></span>Java_com_example_dmocl_dbscan_dbscan_1c()</h2>
 
@@ -377,9 +846,9 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
     <tr><td class="paramname">jc</td><td>JNI class variable </td></tr>
     <tr><td class="paramname">b</td><td>(out) Array of cluster numbers (0=noise point) </td></tr>
     <tr><td class="paramname">rf</td><td>(in) Array of data points </td></tr>
-    <tr><td class="paramname">eps</td><td>search radius </td></tr>
-    <tr><td class="paramname">kk</td><td>number of neighbours </td></tr>
-    <tr><td class="paramname">features</td><td>number of features per data item contained in the data array </td></tr>
+    <tr><td class="paramname">eps</td><td>(in) search radius </td></tr>
+    <tr><td class="paramname">kk</td><td>(in) number of neighbours </td></tr>
+    <tr><td class="paramname">features</td><td>(in) number of features per data item contained in the data array </td></tr>
   </table>
   </dd>
 </dl>
@@ -455,9 +924,9 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
     <tr><td class="paramname">jc</td><td>JNI class variable </td></tr>
     <tr><td class="paramname">b</td><td>(out) Array of cluster numbers (0=noise point) </td></tr>
     <tr><td class="paramname">rf</td><td>(in) Array of data points </td></tr>
-    <tr><td class="paramname">eps</td><td>search radius </td></tr>
-    <tr><td class="paramname">kk</td><td>number of neighbours </td></tr>
-    <tr><td class="paramname">features</td><td>number of features per data item contained in the data array </td></tr>
+    <tr><td class="paramname">eps</td><td>(in) search radius </td></tr>
+    <tr><td class="paramname">kk</td><td>(in) number of neighbours </td></tr>
+    <tr><td class="paramname">features</td><td>(in) number of features per data item contained in the data array </td></tr>
     <tr><td class="paramname">e</td><td>(out) Array of exactly one long value, contains the exclusive time needed (in ns) </td></tr>
   </table>
   </dd>
@@ -540,10 +1009,10 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
     <tr><td class="paramname">jc</td><td>JNI class variable </td></tr>
     <tr><td class="paramname">b</td><td>(out) Array of cluster numbers (0=noise point) </td></tr>
     <tr><td class="paramname">rf</td><td>(in) Array of data points </td></tr>
-    <tr><td class="paramname">eps</td><td>search radius </td></tr>
-    <tr><td class="paramname">kk</td><td>number of neighbours </td></tr>
-    <tr><td class="paramname">features</td><td>number of features per data item contained in the data array </td></tr>
-    <tr><td class="paramname">cores</td><td>number of cores that should be used </td></tr>
+    <tr><td class="paramname">eps</td><td>(in) search radius </td></tr>
+    <tr><td class="paramname">kk</td><td>(in) number of neighbours </td></tr>
+    <tr><td class="paramname">features</td><td>(in) number of features per data item contained in the data array </td></tr>
+    <tr><td class="paramname">cores</td><td>(in) number of cores that should be used </td></tr>
     <tr><td class="paramname">e</td><td>(out) Array of exactly one long value, contains the exclusive time needed (in ns) </td></tr>
   </table>
   </dd>

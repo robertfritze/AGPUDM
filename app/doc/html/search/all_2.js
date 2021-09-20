@@ -8,5 +8,7 @@ var searchData=
   ['cl_5fwrap_5fcall_5fzero',['CL_WRAP_CALL_ZERO',['../OpenCL_8c.html#a4426606463de0d8607bac696fd6d901d',1,'OpenCL.c']]],
   ['clsource',['clsource',['../dbscan__c_8c.html#a7062ae36933564b236d16828738f830a',1,'clsource():&#160;dbscan_c.c'],['../kmeans__c_8c.html#a7062ae36933564b236d16828738f830a',1,'clsource():&#160;kmeans_c.c']]],
   ['clucent',['clucent',['../structkmeans__pt.html#aca0bb922070f8b7dd1f0e82a4b8ca607',1,'kmeans_pt']]],
-  ['cluno',['cluno',['../structkmeans__pt.html#a987049eea35a32b1d1ba469f37b4a862',1,'kmeans_pt']]]
+  ['cluno',['cluno',['../structkmeans__pt.html#a987049eea35a32b1d1ba469f37b4a862',1,'kmeans_pt']]],
+  ['cmpto1',['cmpto1',['../structdbscan__pt.html#a50b8b3c19e72c2496e04595da3466fc6',1,'dbscan_pt']]],
+  ['cmpto2',['cmpto2',['../structdbscan__pt.html#ae90fa8f34589191559422b8d49321675',1,'dbscan_pt']]]
 ];

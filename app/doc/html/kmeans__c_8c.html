@@ -261,9 +261,9 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
     <tr><td class="paramname">jc</td><td>JNI class variable </td></tr>
     <tr><td class="paramname">b</td><td>(out) Array of cluster numbers (0=noise point) </td></tr>
     <tr><td class="paramname">rf</td><td>(in) Array of data points </td></tr>
-    <tr><td class="paramname">eps</td><td>search radius </td></tr>
-    <tr><td class="paramname">kk</td><td>number of clusters to search for </td></tr>
-    <tr><td class="paramname">features</td><td>number of features per data item contained in the data array </td></tr>
+    <tr><td class="paramname">eps</td><td>(in) search radius </td></tr>
+    <tr><td class="paramname">kk</td><td>(in) number of clusters to search for </td></tr>
+    <tr><td class="paramname">features</td><td>(in) number of features per data item contained in the data array </td></tr>
   </table>
   </dd>
 </dl>
@@ -339,9 +339,9 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
     <tr><td class="paramname">jc</td><td>JNI class variable </td></tr>
     <tr><td class="paramname">b</td><td>(out) Array of cluster numbers (0=noise point) </td></tr>
     <tr><td class="paramname">rf</td><td>(in) Array of data points </td></tr>
-    <tr><td class="paramname">eps</td><td>search radius </td></tr>
-    <tr><td class="paramname">cluno</td><td>number of clusters to search for </td></tr>
-    <tr><td class="paramname">features</td><td>number of features per data item contained in the data array </td></tr>
+    <tr><td class="paramname">eps</td><td>(in) search radius </td></tr>
+    <tr><td class="paramname">cluno</td><td>(in) number of clusters to search for </td></tr>
+    <tr><td class="paramname">features</td><td>(in) number of features per data item contained in the data array </td></tr>
     <tr><td class="paramname">e</td><td>(out) Array of exactly one long value, contains the exclusive time needed (in ns) </td></tr>
   </table>
   </dd>
@@ -424,10 +424,10 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
     <tr><td class="paramname">jc</td><td>JNI class variable </td></tr>
     <tr><td class="paramname">b</td><td>(out) Array of cluster numbers </td></tr>
     <tr><td class="paramname">rf</td><td>(in) Array of data points </td></tr>
-    <tr><td class="paramname">eps</td><td>search radius </td></tr>
-    <tr><td class="paramname">cluno</td><td>numbers of clusters that should be found </td></tr>
-    <tr><td class="paramname">features</td><td>number of features per data item contained in the data array </td></tr>
-    <tr><td class="paramname">cores</td><td>number of cores that should be used </td></tr>
+    <tr><td class="paramname">eps</td><td>(in) search radius </td></tr>
+    <tr><td class="paramname">cluno</td><td>(in) numbers of clusters that should be found </td></tr>
+    <tr><td class="paramname">features</td><td>(in) number of features per data item contained in the data array </td></tr>
+    <tr><td class="paramname">cores</td><td>(in) number of cores that should be used </td></tr>
     <tr><td class="paramname">e</td><td>(out) Array of exactly one long value, contains the exclusive time needed (in ns) </td></tr>
   </table>
   </dd>
@@ -529,10 +529,10 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
   <table class="params">
     <tr><td class="paramname">b</td><td>(out) Array of cluster numbers </td></tr>
     <tr><td class="paramname">data</td><td>(in) Array of data points </td></tr>
-    <tr><td class="paramname">blen</td><td>number of data items in data </td></tr>
-    <tr><td class="paramname">eps</td><td>maximum cluster center displacement </td></tr>
-    <tr><td class="paramname">cluno</td><td>number of clusters to search for </td></tr>
-    <tr><td class="paramname">features</td><td>number of features per data item </td></tr>
+    <tr><td class="paramname">blen</td><td>(in) number of data items in data </td></tr>
+    <tr><td class="paramname">eps</td><td>(in) maximum cluster center displacement </td></tr>
+    <tr><td class="paramname">cluno</td><td>(in) number of clusters to search for </td></tr>
+    <tr><td class="paramname">features</td><td>(in) number of features per data item </td></tr>
   </table>
   </dd>
 </dl>
@@ -638,17 +638,17 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
   <table class="params">
     <tr><td class="paramname">b</td><td>(out) Array of cluster numbers </td></tr>
     <tr><td class="paramname">data</td><td>(in) Array of data points </td></tr>
-    <tr><td class="paramname">blen</td><td>number of data items in data </td></tr>
-    <tr><td class="paramname">eps</td><td>maximum cluster center displacement </td></tr>
-    <tr><td class="paramname">cluno</td><td>number of clusters to search for </td></tr>
-    <tr><td class="paramname">features</td><td>number of features per data item </td></tr>
-    <tr><td class="paramname">commands</td><td>the OpenCL command queue </td></tr>
-    <tr><td class="paramname">program</td><td>the OpenCL program </td></tr>
-    <tr><td class="paramname">device</td><td>the OpenCL device </td></tr>
-    <tr><td class="paramname">kernel_testdistance</td><td>the OpenCL kernel </td></tr>
-    <tr><td class="paramname">data_g</td><td>OpenCL data buffer </td></tr>
-    <tr><td class="paramname">b_g</td><td>OpenCL cluster number buffer </td></tr>
-    <tr><td class="paramname">clucent_g</td><td>OpenCL cluster center buffer </td></tr>
+    <tr><td class="paramname">blen</td><td>(in) number of data items in data </td></tr>
+    <tr><td class="paramname">eps</td><td>(in) maximum cluster center displacement </td></tr>
+    <tr><td class="paramname">cluno</td><td>(in) number of clusters to search for </td></tr>
+    <tr><td class="paramname">features</td><td>(in) number of features per data item </td></tr>
+    <tr><td class="paramname">commands</td><td>(in) the OpenCL command queue </td></tr>
+    <tr><td class="paramname">program</td><td>(in) the OpenCL program </td></tr>
+    <tr><td class="paramname">device</td><td>(in) the OpenCL device </td></tr>
+    <tr><td class="paramname">kernel_testdistance</td><td>(in) the OpenCL kernel </td></tr>
+    <tr><td class="paramname">data_g</td><td>(in) OpenCL data buffer </td></tr>
+    <tr><td class="paramname">b_g</td><td>(in) OpenCL cluster number buffer </td></tr>
+    <tr><td class="paramname">clucent_g</td><td>(in) OpenCL cluster center buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -731,12 +731,12 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
     <tr><td class="paramname">b</td><td>(out) Array of cluster numbers </td></tr>
     <tr><td class="paramname">data</td><td>(in) Array of data points </td></tr>
     <tr><td class="paramname">clucent</td><td>(out) Array of cluster centers </td></tr>
-    <tr><td class="paramname">blen</td><td>number of data items in data </td></tr>
-    <tr><td class="paramname">cluno</td><td>number of clusters to search for </td></tr>
-    <tr><td class="paramname">features</td><td>number of features per data item </td></tr>
-    <tr><td class="paramname">cores</td><td>number of threads to be used (CPU can be oversubscribed) </td></tr>
-    <tr><td class="paramname">kmthreads</td><td>pointer to the threads (array must contain 'cores' elements) </td></tr>
-    <tr><td class="paramname">eps</td><td>maximum cluster center displacement </td></tr>
+    <tr><td class="paramname">blen</td><td>(in) number of data items in data </td></tr>
+    <tr><td class="paramname">cluno</td><td>(in) number of clusters to search for </td></tr>
+    <tr><td class="paramname">features</td><td>(in) number of features per data item </td></tr>
+    <tr><td class="paramname">cores</td><td>(in) number of threads to be used (CPU can be oversubscribed) </td></tr>
+    <tr><td class="paramname">kmthreads</td><td>(in) pointer to the threads (array must contain 'cores' elements) </td></tr>
+    <tr><td class="paramname">eps</td><td>(in) maximum cluster center displacement </td></tr>
   </table>
   </dd>
 </dl>
@@ -763,7 +763,7 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>thread for calculating kmeans in parallel </p>
 <p>One or more threads perform a kmeans search in parallel. The thread calculates the distances to the cluster centers and saves the number of the cluster center with the smallest distance. Two semaphores are used. The first is acquired by this thread and released by the method that submits the calculations. The second semaphore is acquired by the method that submits the job and released by this thread </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arg</td><td>(in) A pointer to the struct with the parameters </td></tr>
+    <tr><td class="paramname">arg</td><td>(in+out) A pointer to the struct with the parameters </td></tr>
   </table>
   </dd>
 </dl>
@@ -790,7 +790,7 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>Random number generator. </p>
 <p>Generates uniformly distributed random numbers [0,limit] </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">limit</td><td>the maximum random number desired </td></tr>
+    <tr><td class="paramname">limit</td><td>(in) the maximum random number desired </td></tr>
   </table>
   </dd>
 </dl>

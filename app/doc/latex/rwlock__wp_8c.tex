@@ -52,7 +52,7 @@ Acquires the reader lock.
 
 Acquires the reader lock. Multiple readers can acquire the lock at the same time. If a writer has acquired the writer lock, all new readers are blocked until the writer has finished. 
 \begin{DoxyParams}{Parameters}
-{\em rwlockwp} & Pointer to the reader/writer lock \\
+{\em rwlockwp} & (in) Pointer to the reader/writer lock \\
 \hline
 \end{DoxyParams}
 \begin{DoxyParagraph}{Multithreading\+:}
@@ -70,7 +70,7 @@ Releases the reader lock.
 
 Releases the reader lock. If no more other readers are holding a reader lock and a writer is waiting, the writer will get exclusive access. 
 \begin{DoxyParams}{Parameters}
-{\em rwlockwp} & Pointer to the reader/writer lock \\
+{\em rwlockwp} & (in) Pointer to the reader/writer lock \\
 \hline
 \end{DoxyParams}
 \begin{DoxyParagraph}{Multithreading\+:}
@@ -88,7 +88,7 @@ Acquires the writer lock.
 
 Acquires the writer lock. All new readers have to queue up. The writer is blocked until all reader that already hold a reader lock have finished. 
 \begin{DoxyParams}{Parameters}
-{\em rwlockwp} & Pointer to the reader/writer lock \\
+{\em (in)} & rwlockwp Pointer to the reader/writer lock \\
 \hline
 \end{DoxyParams}
 \begin{DoxyParagraph}{Multithreading\+:}
@@ -106,7 +106,7 @@ Releases the writer lock.
 
 Releases the writer lock. All waiting readers will wake up. 
 \begin{DoxyParams}{Parameters}
-{\em rwlockwp} & Pointer to the reader/writer lock \\
+{\em (in)} & rwlockwp Pointer to the reader/writer lock \\
 \hline
 \end{DoxyParams}
 \begin{DoxyParagraph}{Multithreading\+:}

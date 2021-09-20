@@ -127,11 +127,11 @@ Performs a Kmeans cluster search on the C\+PU (one thread).
 \hline
 {\em rf} & (in) Array of data points \\
 \hline
-{\em eps} & search radius \\
+{\em eps} & (in) search radius \\
 \hline
-{\em kk} & number of clusters to search for \\
+{\em kk} & (in) number of clusters to search for \\
 \hline
-{\em features} & number of features per data item contained in the data array \\
+{\em features} & (in) number of features per data item contained in the data array \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -156,11 +156,11 @@ Performs a Kmeans cluster search on the G\+PU.
 \hline
 {\em rf} & (in) Array of data points \\
 \hline
-{\em eps} & search radius \\
+{\em eps} & (in) search radius \\
 \hline
-{\em cluno} & number of clusters to search for \\
+{\em cluno} & (in) number of clusters to search for \\
 \hline
-{\em features} & number of features per data item contained in the data array \\
+{\em features} & (in) number of features per data item contained in the data array \\
 \hline
 {\em e} & (out) Array of exactly one long value, contains the exclusive time needed (in ns) \\
 \hline
@@ -187,13 +187,13 @@ Performs a Kmeans cluster search on the C\+PU (multiple threads).
 \hline
 {\em rf} & (in) Array of data points \\
 \hline
-{\em eps} & search radius \\
+{\em eps} & (in) search radius \\
 \hline
-{\em cluno} & numbers of clusters that should be found \\
+{\em cluno} & (in) numbers of clusters that should be found \\
 \hline
-{\em features} & number of features per data item contained in the data array \\
+{\em features} & (in) number of features per data item contained in the data array \\
 \hline
-{\em cores} & number of cores that should be used \\
+{\em cores} & (in) number of cores that should be used \\
 \hline
 {\em e} & (out) Array of exactly one long value, contains the exclusive time needed (in ns) \\
 \hline
@@ -239,13 +239,13 @@ Performs a Kmeans cluster search on the C\+PU (one thread).
 \hline
 {\em data} & (in) Array of data points \\
 \hline
-{\em blen} & number of data items in data \\
+{\em blen} & (in) number of data items in data \\
 \hline
-{\em eps} & maximum cluster center displacement \\
+{\em eps} & (in) maximum cluster center displacement \\
 \hline
-{\em cluno} & number of clusters to search for \\
+{\em cluno} & (in) number of clusters to search for \\
 \hline
-{\em features} & number of features per data item \\
+{\em features} & (in) number of features per data item \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -270,27 +270,27 @@ Performs a Kmeans cluster search on the G\+PU
 \hline
 {\em data} & (in) Array of data points \\
 \hline
-{\em blen} & number of data items in data \\
+{\em blen} & (in) number of data items in data \\
 \hline
-{\em eps} & maximum cluster center displacement \\
+{\em eps} & (in) maximum cluster center displacement \\
 \hline
-{\em cluno} & number of clusters to search for \\
+{\em cluno} & (in) number of clusters to search for \\
 \hline
-{\em features} & number of features per data item \\
+{\em features} & (in) number of features per data item \\
 \hline
-{\em commands} & the Open\+CL command queue \\
+{\em commands} & (in) the Open\+CL command queue \\
 \hline
-{\em program} & the Open\+CL program \\
+{\em program} & (in) the Open\+CL program \\
 \hline
-{\em device} & the Open\+CL device \\
+{\em device} & (in) the Open\+CL device \\
 \hline
-{\em kernel\+\_\+testdistance} & the Open\+CL kernel \\
+{\em kernel\+\_\+testdistance} & (in) the Open\+CL kernel \\
 \hline
-{\em data\+\_\+g} & Open\+CL data buffer \\
+{\em data\+\_\+g} & (in) Open\+CL data buffer \\
 \hline
-{\em b\+\_\+g} & Open\+CL cluster number buffer \\
+{\em b\+\_\+g} & (in) Open\+CL cluster number buffer \\
 \hline
-{\em clucent\+\_\+g} & Open\+CL cluster center buffer \\
+{\em clucent\+\_\+g} & (in) Open\+CL cluster center buffer \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -317,17 +317,17 @@ Performs a multithreaded Kmeans cluster search on the C\+PU
 \hline
 {\em clucent} & (out) Array of cluster centers \\
 \hline
-{\em blen} & number of data items in data \\
+{\em blen} & (in) number of data items in data \\
 \hline
-{\em cluno} & number of clusters to search for \\
+{\em cluno} & (in) number of clusters to search for \\
 \hline
-{\em features} & number of features per data item \\
+{\em features} & (in) number of features per data item \\
 \hline
-{\em cores} & number of threads to be used (C\+PU can be oversubscribed) \\
+{\em cores} & (in) number of threads to be used (C\+PU can be oversubscribed) \\
 \hline
-{\em kmthreads} & pointer to the threads (array must contain \textquotesingle{}cores\textquotesingle{} elements) \\
+{\em kmthreads} & (in) pointer to the threads (array must contain \textquotesingle{}cores\textquotesingle{} elements) \\
 \hline
-{\em eps} & maximum cluster center displacement \\
+{\em eps} & (in) maximum cluster center displacement \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -345,7 +345,7 @@ thread for calculating kmeans in parallel
 
 One or more threads perform a kmeans search in parallel. The thread calculates the distances to the cluster centers and saves the number of the cluster center with the smallest distance. Two semaphores are used. The first is acquired by this thread and released by the method that submits the calculations. The second semaphore is acquired by the method that submits the job and released by this thread 
 \begin{DoxyParams}{Parameters}
-{\em arg} & (in) A pointer to the struct with the parameters \\
+{\em arg} & (in+out) A pointer to the struct with the parameters \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -363,7 +363,7 @@ Random number generator.
 
 Generates uniformly distributed random numbers \mbox{[}0,limit\mbox{]} 
 \begin{DoxyParams}{Parameters}
-{\em limit} & the maximum random number desired \\
+{\em limit} & (in) the maximum random number desired \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
