@@ -77,30 +77,106 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aadde32e3b40cb009fe22e7971c612d40"><td class="memItemLeft" align="right" valign="top"><a id="aadde32e3b40cb009fe22e7971c612d40"></a>
-pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrwlockwp.html#aadde32e3b40cb009fe22e7971c612d40">g</a></td></tr>
-<tr class="memdesc:aadde32e3b40cb009fe22e7971c612d40"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mutex for the reader/writer lock. <br /></td></tr>
+<tr class="memitem:aadde32e3b40cb009fe22e7971c612d40"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrwlockwp.html#aadde32e3b40cb009fe22e7971c612d40">g</a></td></tr>
+<tr class="memdesc:aadde32e3b40cb009fe22e7971c612d40"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mutex for the reader/writer lock.  <a href="#aadde32e3b40cb009fe22e7971c612d40">More...</a><br /></td></tr>
 <tr class="separator:aadde32e3b40cb009fe22e7971c612d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc2d2410bf5f9e811503673564745037"><td class="memItemLeft" align="right" valign="top"><a id="acc2d2410bf5f9e811503673564745037"></a>
-pthread_cond_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrwlockwp.html#acc2d2410bf5f9e811503673564745037">c</a></td></tr>
-<tr class="memdesc:acc2d2410bf5f9e811503673564745037"><td class="mdescLeft">&#160;</td><td class="mdescRight">A condition variable for the reader/writer lock. <br /></td></tr>
+<tr class="memitem:acc2d2410bf5f9e811503673564745037"><td class="memItemLeft" align="right" valign="top">pthread_cond_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrwlockwp.html#acc2d2410bf5f9e811503673564745037">c</a></td></tr>
+<tr class="memdesc:acc2d2410bf5f9e811503673564745037"><td class="mdescLeft">&#160;</td><td class="mdescRight">A condition variable for the reader/writer lock.  <a href="#acc2d2410bf5f9e811503673564745037">More...</a><br /></td></tr>
 <tr class="separator:acc2d2410bf5f9e811503673564745037"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6142e0315230df07be53a757b1341ea0"><td class="memItemLeft" align="right" valign="top"><a id="a6142e0315230df07be53a757b1341ea0"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrwlockwp.html#a6142e0315230df07be53a757b1341ea0">num_writers_waiting</a></td></tr>
-<tr class="memdesc:a6142e0315230df07be53a757b1341ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of writers waiting. <br /></td></tr>
+<tr class="memitem:a6142e0315230df07be53a757b1341ea0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrwlockwp.html#a6142e0315230df07be53a757b1341ea0">num_writers_waiting</a></td></tr>
+<tr class="memdesc:a6142e0315230df07be53a757b1341ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of writers waiting.  <a href="#a6142e0315230df07be53a757b1341ea0">More...</a><br /></td></tr>
 <tr class="separator:a6142e0315230df07be53a757b1341ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3de1a0126b2eb5687577561e23c9f153"><td class="memItemLeft" align="right" valign="top"><a id="a3de1a0126b2eb5687577561e23c9f153"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrwlockwp.html#a3de1a0126b2eb5687577561e23c9f153">num_reader_active</a></td></tr>
-<tr class="memdesc:a3de1a0126b2eb5687577561e23c9f153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of readers active. <br /></td></tr>
+<tr class="memitem:a3de1a0126b2eb5687577561e23c9f153"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrwlockwp.html#a3de1a0126b2eb5687577561e23c9f153">num_reader_active</a></td></tr>
+<tr class="memdesc:a3de1a0126b2eb5687577561e23c9f153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of readers active.  <a href="#a3de1a0126b2eb5687577561e23c9f153">More...</a><br /></td></tr>
 <tr class="separator:a3de1a0126b2eb5687577561e23c9f153"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a729763a8ff541dbe85d809e01fbaf5ad"><td class="memItemLeft" align="right" valign="top"><a id="a729763a8ff541dbe85d809e01fbaf5ad"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrwlockwp.html#a729763a8ff541dbe85d809e01fbaf5ad">writer_active</a></td></tr>
-<tr class="memdesc:a729763a8ff541dbe85d809e01fbaf5ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of writers active. <br /></td></tr>
+<tr class="memitem:a729763a8ff541dbe85d809e01fbaf5ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrwlockwp.html#a729763a8ff541dbe85d809e01fbaf5ad">writer_active</a></td></tr>
+<tr class="memdesc:a729763a8ff541dbe85d809e01fbaf5ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of writers active.  <a href="#a729763a8ff541dbe85d809e01fbaf5ad">More...</a><br /></td></tr>
 <tr class="separator:a729763a8ff541dbe85d809e01fbaf5ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A struct thats holds all necessary components for the lock. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="acc2d2410bf5f9e811503673564745037"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc2d2410bf5f9e811503673564745037">&#9670;&nbsp;</a></span>c</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_cond_t rwlockwp::c</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A condition variable for the reader/writer lock. </p>
+
+</div>
+</div>
+<a id="aadde32e3b40cb009fe22e7971c612d40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadde32e3b40cb009fe22e7971c612d40">&#9670;&nbsp;</a></span>g</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_mutex_t rwlockwp::g</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A mutex for the reader/writer lock. </p>
+
+</div>
+</div>
+<a id="a3de1a0126b2eb5687577561e23c9f153"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3de1a0126b2eb5687577561e23c9f153">&#9670;&nbsp;</a></span>num_reader_active</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rwlockwp::num_reader_active</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of readers active. </p>
+
+</div>
+</div>
+<a id="a6142e0315230df07be53a757b1341ea0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6142e0315230df07be53a757b1341ea0">&#9670;&nbsp;</a></span>num_writers_waiting</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rwlockwp::num_writers_waiting</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of writers waiting. </p>
+
+</div>
+</div>
+<a id="a729763a8ff541dbe85d809e01fbaf5ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a729763a8ff541dbe85d809e01fbaf5ad">&#9670;&nbsp;</a></span>writer_active</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rwlockwp::writer_active</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of writers active. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/robert/AndroidStudioProjects/DMGPU/app/src/C/include/<a class="el" href="rwlock__wp_8h_source.html">rwlock_wp.h</a></li>
 </ul>
 </div><!-- contents -->

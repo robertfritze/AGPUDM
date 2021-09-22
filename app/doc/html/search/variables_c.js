@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['sem',['sem',['../structkmeans__pt.html#af1c42a889c6180d899cb41066d2884c0',1,'kmeans_pt']]],
-  ['sem1',['sem1',['../structdbscan__pt.html#a716ce695e04d99f1e045fb9de1fb70f0',1,'dbscan_pt']]],
-  ['sem2',['sem2',['../structdbscan__pt.html#a5123f8b35d2933f40d493fe31dc062c5',1,'dbscan_pt']]],
-  ['semret',['semret',['../structkmeans__pt.html#aa959612fc7e6fa42798130bbf1c437a7',1,'kmeans_pt']]],
-  ['semret1',['semret1',['../structdbscan__pt.html#af4a16a1139b3ee7e1dfcec9d415a8855',1,'dbscan_pt']]],
-  ['semret2',['semret2',['../structdbscan__pt.html#a229860660f580c96e3f00820dedc314f',1,'dbscan_pt']]],
-  ['start',['start',['../structdbscan__pt.html#ab35e524b61208589ee28bbf4a79341ae',1,'dbscan_pt::start()'],['../structkmeans__pt.html#a7568dca47a635b63a775853ace1a231f',1,'kmeans_pt::start()']]],
-  ['status',['status',['../structdbscan__pt.html#a5a42d9fe57034198ed5250f6f0ddb2cb',1,'dbscan_pt::status()'],['../structkmeans__pt.html#adc9152bce7b95fd51d6185901169c52b',1,'kmeans_pt::status()']]]
+  ['notification',['notification',['../classcom_1_1example_1_1dmocl_1_1dataminingtask.html#ab464d8aecaa30a1a86dead20630500e0',1,'com::example::dmocl::dataminingtask']]],
+  ['notificationmanager',['notificationManager',['../classcom_1_1example_1_1dmocl_1_1dataminingtask.html#afb4f04a0d899dbec207f35e69f5569c9',1,'com::example::dmocl::dataminingtask']]],
+  ['num',['num',['../structdbscan__pt.html#aaa1b99005b0207af9c85a6fc73368eb3',1,'dbscan_pt::num()'],['../structkmeans__pt.html#a72c17b986e5cc7bbdcc92d59ef05e8f0',1,'kmeans_pt::num()'],['../classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread1.html#a95a0e173c6c23bd5d1416aa9d207742d',1,'com.example.dmocl.dbscan.dbscan_thread1.num()'],['../classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2.html#a8c3589585ee7d3dffb56f2815e4cfe5e',1,'com.example.dmocl.dbscan.dbscan_thread2.num()'],['../classcom_1_1example_1_1dmocl_1_1kmeans_1_1kmeans__thread.html#a7c5a94a9fe10aa2c30fdfa412dd063aa',1,'com.example.dmocl.kmeans.kmeans_thread.num()']]],
+  ['num_5freader_5factive',['num_reader_active',['../structrwlockwp.html#a3de1a0126b2eb5687577561e23c9f153',1,'rwlockwp']]],
+  ['num_5fwriters_5fwaiting',['num_writers_waiting',['../structrwlockwp.html#a6142e0315230df07be53a757b1341ea0',1,'rwlockwp']]]
 ];

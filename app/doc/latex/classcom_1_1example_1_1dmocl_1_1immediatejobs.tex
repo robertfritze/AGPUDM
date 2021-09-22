@@ -1,5 +1,10 @@
 \hypertarget{classcom_1_1example_1_1dmocl_1_1immediatejobs}{}\section{com.\+example.\+dmocl.\+immediatejobs Class Reference}
 \label{classcom_1_1example_1_1dmocl_1_1immediatejobs}\index{com.\+example.\+dmocl.\+immediatejobs@{com.\+example.\+dmocl.\+immediatejobs}}
+
+
+Prototype for result notification.  
+
+
 Inheritance diagram for com.\+example.\+dmocl.\+immediatejobs\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,16 +14,42 @@ Inheritance diagram for com.\+example.\+dmocl.\+immediatejobs\+:\begin{figure}[H
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class {\bfseries jobschedresponse}
-\end{DoxyCompactItemize}
+class \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1immediatejobs_1_1jobschedresponse}{jobschedresponse}}
+\begin{DoxyCompactList}\small\item\em A dummy class for the results. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1immediatejobs_a5b2d3120e14b08e5712a4bce8728b60d}{notify\+Result}} (final \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1Result}{Result}}$<$ canceljobs.\+jobschedresponse $>$ result, final \mbox{\hyperlink{interfacecom_1_1example_1_1dmocl_1_1RepositoryCallback}{Repository\+Callback}}$<$ canceljobs.\+jobschedresponse $>$ callback, final Handler result\+Handler)
+\begin{DoxyCompactList}\small\item\em forwards the results to the result callback \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Prototype for result notification. 
+
+A prototype for result notification. 
+
+\subsection{Member Function Documentation}
 \mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1immediatejobs_a5b2d3120e14b08e5712a4bce8728b60d}\label{classcom_1_1example_1_1dmocl_1_1immediatejobs_a5b2d3120e14b08e5712a4bce8728b60d}} 
-void {\bfseries notify\+Result} (final Result$<$ canceljobs.\+jobschedresponse $>$ result, final Repository\+Callback$<$ canceljobs.\+jobschedresponse $>$ callback, final Handler result\+Handler)
-\end{DoxyCompactItemize}
+\index{com\+::example\+::dmocl\+::immediatejobs@{com\+::example\+::dmocl\+::immediatejobs}!notify\+Result@{notify\+Result}}
+\index{notify\+Result@{notify\+Result}!com\+::example\+::dmocl\+::immediatejobs@{com\+::example\+::dmocl\+::immediatejobs}}
+\subsubsection{\texorpdfstring{notify\+Result()}{notifyResult()}}
+{\footnotesize\ttfamily void com.\+example.\+dmocl.\+immediatejobs.\+notify\+Result (\begin{DoxyParamCaption}\item[{final \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1Result}{Result}}$<$ canceljobs.\+jobschedresponse $>$}]{result,  }\item[{final \mbox{\hyperlink{interfacecom_1_1example_1_1dmocl_1_1RepositoryCallback}{Repository\+Callback}}$<$ canceljobs.\+jobschedresponse $>$}]{callback,  }\item[{final Handler}]{result\+Handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+forwards the results to the result callback 
+
+forwards the results to the result callback 
+\begin{DoxyParams}{Parameters}
+{\em result} & result to forward \\
+\hline
+{\em callback} & callback function for the results \\
+\hline
+{\em result\+Handler} & reference to the result handler \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/main/java/com/example/dmocl/immediatejobs.\+java\end{DoxyCompactItemize}
+/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/main/java/com/example/dmocl/\mbox{\hyperlink{immediatejobs_8java}{immediatejobs.\+java}}\end{DoxyCompactItemize}

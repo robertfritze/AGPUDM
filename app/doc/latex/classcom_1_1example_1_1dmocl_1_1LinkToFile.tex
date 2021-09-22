@@ -2,6 +2,162 @@
 \label{classcom_1_1example_1_1dmocl_1_1LinkToFile}\index{com.\+example.\+dmocl.\+Link\+To\+File@{com.\+example.\+dmocl.\+Link\+To\+File}}
 
 
+Save results and log to disk.  
+
+
+\subsection*{Static Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+static synchronized void \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1LinkToFile_a2ffa199a1de9e47644702409e25dd704}{D\+Mwrite\+To\+Fileheader}} (String fn)
+\begin{DoxyCompactList}\small\item\em Writes the header line to the file. \end{DoxyCompactList}\item 
+static synchronized void \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1LinkToFile_a8cbd37ee89ecd01dcd55022c6ce74795}{D\+Mwrite\+To\+Fileheader}} (String fn, boolean append)
+\begin{DoxyCompactList}\small\item\em Writes the header line to the file. \end{DoxyCompactList}\item 
+static synchronized void \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1LinkToFile_adb20b84275dde1b5b5808bfa80ec4969}{D\+Mwrite\+To\+File}} (String fn, String s)
+\begin{DoxyCompactList}\small\item\em Writes a line to the result file. \end{DoxyCompactList}\item 
+static synchronized void \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1LinkToFile_a718e692d3583958f315ebe75c6569e74}{D\+Mwrite\+To\+Filefooter}} (String fn)
+\begin{DoxyCompactList}\small\item\em Writes a footer line to the file. \end{DoxyCompactList}\item 
+static synchronized void \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1LinkToFile_a14393cd229c571ec80b236d1bd406e43}{D\+Mwrite\+To\+File}} (String fn, int cores, double\mbox{[}$\,$\mbox{]} wct, int size, int cluno, int features, int z)
+\begin{DoxyCompactList}\small\item\em Writes results result file. \end{DoxyCompactList}\item 
+static synchronized void \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1LinkToFile_abc3a0a1a9269b671e24b8943480ae8aa}{log\+To\+File}} (String fn, String s, boolean append)
+\begin{DoxyCompactList}\small\item\em Writes a line to the log file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Save results and log to disk. 
+
+Saves the results and log information to the hard disk (S\+D-\/\+Card) of the device. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1LinkToFile_adb20b84275dde1b5b5808bfa80ec4969}\label{classcom_1_1example_1_1dmocl_1_1LinkToFile_adb20b84275dde1b5b5808bfa80ec4969}} 
+\index{com\+::example\+::dmocl\+::\+Link\+To\+File@{com\+::example\+::dmocl\+::\+Link\+To\+File}!D\+Mwrite\+To\+File@{D\+Mwrite\+To\+File}}
+\index{D\+Mwrite\+To\+File@{D\+Mwrite\+To\+File}!com\+::example\+::dmocl\+::\+Link\+To\+File@{com\+::example\+::dmocl\+::\+Link\+To\+File}}
+\subsubsection{\texorpdfstring{D\+Mwrite\+To\+File()}{DMwriteToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static synchronized void com.\+example.\+dmocl.\+Link\+To\+File.\+D\+Mwrite\+To\+File (\begin{DoxyParamCaption}\item[{String}]{fn,  }\item[{String}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+Writes a line to the result file. 
+
+Write a single line to the result file. 
+\begin{DoxyParams}{Parameters}
+{\em fn} & file name in which to write the header \\
+\hline
+{\em s} & the string to be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully (methods are synchronized) 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1LinkToFile_a14393cd229c571ec80b236d1bd406e43}\label{classcom_1_1example_1_1dmocl_1_1LinkToFile_a14393cd229c571ec80b236d1bd406e43}} 
+\index{com\+::example\+::dmocl\+::\+Link\+To\+File@{com\+::example\+::dmocl\+::\+Link\+To\+File}!D\+Mwrite\+To\+File@{D\+Mwrite\+To\+File}}
+\index{D\+Mwrite\+To\+File@{D\+Mwrite\+To\+File}!com\+::example\+::dmocl\+::\+Link\+To\+File@{com\+::example\+::dmocl\+::\+Link\+To\+File}}
+\subsubsection{\texorpdfstring{D\+Mwrite\+To\+File()}{DMwriteToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static synchronized void com.\+example.\+dmocl.\+Link\+To\+File.\+D\+Mwrite\+To\+File (\begin{DoxyParamCaption}\item[{String}]{fn,  }\item[{int}]{cores,  }\item[{double \mbox{[}$\,$\mbox{]}}]{wct,  }\item[{int}]{size,  }\item[{int}]{cluno,  }\item[{int}]{features,  }\item[{int}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+Writes results result file. 
+
+Write a single line of results to the result file. 
+\begin{DoxyParams}{Parameters}
+{\em fn} & file name in which to write the header \\
+\hline
+{\em cores} & number of cores used \\
+\hline
+{\em wct} & array with the wall clock times used \\
+\hline
+{\em size} & size of the cluster \\
+\hline
+{\em cluno} & number of clusters used \\
+\hline
+{\em features} & number of features used \\
+\hline
+{\em z} & 0=D\+B\+S\+C\+AN results equal, 1=D\+B\+S\+C\+AN results different \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully (methods are synchronized) 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1LinkToFile_a718e692d3583958f315ebe75c6569e74}\label{classcom_1_1example_1_1dmocl_1_1LinkToFile_a718e692d3583958f315ebe75c6569e74}} 
+\index{com\+::example\+::dmocl\+::\+Link\+To\+File@{com\+::example\+::dmocl\+::\+Link\+To\+File}!D\+Mwrite\+To\+Filefooter@{D\+Mwrite\+To\+Filefooter}}
+\index{D\+Mwrite\+To\+Filefooter@{D\+Mwrite\+To\+Filefooter}!com\+::example\+::dmocl\+::\+Link\+To\+File@{com\+::example\+::dmocl\+::\+Link\+To\+File}}
+\subsubsection{\texorpdfstring{D\+Mwrite\+To\+Filefooter()}{DMwriteToFilefooter()}}
+{\footnotesize\ttfamily static synchronized void com.\+example.\+dmocl.\+Link\+To\+File.\+D\+Mwrite\+To\+Filefooter (\begin{DoxyParamCaption}\item[{String}]{fn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+Writes a footer line to the file. 
+
+Write a footer line to the result file. 
+\begin{DoxyParams}{Parameters}
+{\em fn} & file name in which to write the header \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully (methods are synchronized) 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1LinkToFile_a2ffa199a1de9e47644702409e25dd704}\label{classcom_1_1example_1_1dmocl_1_1LinkToFile_a2ffa199a1de9e47644702409e25dd704}} 
+\index{com\+::example\+::dmocl\+::\+Link\+To\+File@{com\+::example\+::dmocl\+::\+Link\+To\+File}!D\+Mwrite\+To\+Fileheader@{D\+Mwrite\+To\+Fileheader}}
+\index{D\+Mwrite\+To\+Fileheader@{D\+Mwrite\+To\+Fileheader}!com\+::example\+::dmocl\+::\+Link\+To\+File@{com\+::example\+::dmocl\+::\+Link\+To\+File}}
+\subsubsection{\texorpdfstring{D\+Mwrite\+To\+Fileheader()}{DMwriteToFileheader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static synchronized void com.\+example.\+dmocl.\+Link\+To\+File.\+D\+Mwrite\+To\+Fileheader (\begin{DoxyParamCaption}\item[{String}]{fn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+Writes the header line to the file. 
+
+Write the header line to the result file. Existing results are overwritten. 
+\begin{DoxyParams}{Parameters}
+{\em fn} & file name in which to write the header \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully (methods are synchronized) 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1LinkToFile_a8cbd37ee89ecd01dcd55022c6ce74795}\label{classcom_1_1example_1_1dmocl_1_1LinkToFile_a8cbd37ee89ecd01dcd55022c6ce74795}} 
+\index{com\+::example\+::dmocl\+::\+Link\+To\+File@{com\+::example\+::dmocl\+::\+Link\+To\+File}!D\+Mwrite\+To\+Fileheader@{D\+Mwrite\+To\+Fileheader}}
+\index{D\+Mwrite\+To\+Fileheader@{D\+Mwrite\+To\+Fileheader}!com\+::example\+::dmocl\+::\+Link\+To\+File@{com\+::example\+::dmocl\+::\+Link\+To\+File}}
+\subsubsection{\texorpdfstring{D\+Mwrite\+To\+Fileheader()}{DMwriteToFileheader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static synchronized void com.\+example.\+dmocl.\+Link\+To\+File.\+D\+Mwrite\+To\+Fileheader (\begin{DoxyParamCaption}\item[{String}]{fn,  }\item[{boolean}]{append }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+Writes the header line to the file. 
+
+Write the header line to the result file. The header line may be appended to existing results. 
+\begin{DoxyParams}{Parameters}
+{\em fn} & file name in which to write the header \\
+\hline
+{\em append} & true=append, false=overwrite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully (methods are synchronized) 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1LinkToFile_abc3a0a1a9269b671e24b8943480ae8aa}\label{classcom_1_1example_1_1dmocl_1_1LinkToFile_abc3a0a1a9269b671e24b8943480ae8aa}} 
+\index{com\+::example\+::dmocl\+::\+Link\+To\+File@{com\+::example\+::dmocl\+::\+Link\+To\+File}!log\+To\+File@{log\+To\+File}}
+\index{log\+To\+File@{log\+To\+File}!com\+::example\+::dmocl\+::\+Link\+To\+File@{com\+::example\+::dmocl\+::\+Link\+To\+File}}
+\subsubsection{\texorpdfstring{log\+To\+File()}{logToFile()}}
+{\footnotesize\ttfamily static synchronized void com.\+example.\+dmocl.\+Link\+To\+File.\+log\+To\+File (\begin{DoxyParamCaption}\item[{String}]{fn,  }\item[{String}]{s,  }\item[{boolean}]{append }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+Writes a line to the log file. 
+
+Write a single line to the log file. 
+\begin{DoxyParams}{Parameters}
+{\em fn} & file name in which to write the header \\
+\hline
+{\em s} & string to write \\
+\hline
+{\em append} & true=append to log file, false=overwrite log file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Multithreading\+:}
+fully (methods are synchronized) 
+\end{DoxyParagraph}
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/main/java/com/example/dmocl/Link\+To\+File.\+java\end{DoxyCompactItemize}
+/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/main/java/com/example/dmocl/\mbox{\hyperlink{LinkToFile_8java}{Link\+To\+File.\+java}}\end{DoxyCompactItemize}

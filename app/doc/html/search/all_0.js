@@ -1,10 +1,4 @@
 var searchData=
 [
-  ['abortcalc',['abortcalc',['../dbscan__c_8c.html#ad5440e2ade153ebd99a84e1cf921ce09',1,'dbscan_c.c']]],
-  ['abortcalckm',['abortcalckm',['../kmeans__c_8c.html#a506f3508105fc1055b36d6a4c13c86af',1,'kmeans_c.c']]],
-  ['andrclgetplatformcnt',['AndrCLGetPlatformCnt',['../classcom_1_1example_1_1dmocl_1_1oclwrap.html#ae24bb606cc482ba27e0dbdca97b377ea',1,'com::example::dmocl::oclwrap']]],
-  ['androidopencl_2eh',['AndroidOpenCL.h',['../AndroidOpenCL_8h.html',1,'']]],
-  ['arm32',['ARM32',['../oclwrapper_8h.html#ab026c2caefe5237d3ff08d64bc44f031',1,'oclwrapper.h']]],
-  ['arm64',['ARM64',['../oclwrapper_8h.html#ad60f4509a26d03acf44e10243332242d',1,'oclwrapper.h']]],
-  ['agpudm',['AGPUDM',['../index.html',1,'']]]
+  ['_5bstatic_20initializer_5d',['[static initializer]',['../classcom_1_1example_1_1dmocl_1_1dbscan.html#aa4b840bbdc7c3cfb22a09e3dc521a4e1',1,'com.example.dmocl.dbscan.[static initializer]()'],['../classcom_1_1example_1_1dmocl_1_1kmeans.html#a7fc606187903f49e8337e25de361bb32',1,'com.example.dmocl.kmeans.[static initializer]()'],['../classcom_1_1example_1_1dmocl_1_1oclwrap.html#ae22983442bc86659fcfb0a5711af7efc',1,'com.example.dmocl.oclwrap.[static initializer]()']]]
 ];

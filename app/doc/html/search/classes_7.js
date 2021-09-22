@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rwlockwp',['rwlockwp',['../structrwlockwp.html',1,'']]]
+  ['notifyuserresults',['notifyuserresults',['../classcom_1_1example_1_1dmocl_1_1notifyuserresults.html',1,'com::example::dmocl']]]
 ];

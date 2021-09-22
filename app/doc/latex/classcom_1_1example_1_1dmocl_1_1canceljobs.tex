@@ -1,5 +1,10 @@
 \hypertarget{classcom_1_1example_1_1dmocl_1_1canceljobs}{}\section{com.\+example.\+dmocl.\+canceljobs Class Reference}
 \label{classcom_1_1example_1_1dmocl_1_1canceljobs}\index{com.\+example.\+dmocl.\+canceljobs@{com.\+example.\+dmocl.\+canceljobs}}
+
+
+cancel submitted jobs  
+
+
 Inheritance diagram for com.\+example.\+dmocl.\+canceljobs\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,15 +14,128 @@ Inheritance diagram for com.\+example.\+dmocl.\+canceljobs\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1canceljobs_a8a62b3a1ddf01cafbad4e709d9f7b1ea}\label{classcom_1_1example_1_1dmocl_1_1canceljobs_a8a62b3a1ddf01cafbad4e709d9f7b1ea}} 
-{\bfseries canceljobs} (Handler result\+Handler, Executor executor, Context context, Text\+View jobinfo, Button startbutton)
+\mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1canceljobs_a8a62b3a1ddf01cafbad4e709d9f7b1ea}{canceljobs}} (Handler \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1canceljobs_abce3d6cea34caf939e064b0b81ccd9f1}{result\+Handler}}, Executor \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1canceljobs_abc0e279999a684fd756e8d4241250daa}{executor}}, Context \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1canceljobs_af7ab7e8cec6d942a27672c51a2334d42}{context}}, Text\+View \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1canceljobs_a2d2bb74bc844f812fd4f941cfe73e6e0}{jobinfo}}, Button \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1canceljobs_a16903bbf6b7cadae2db338457e1f7057}{startbutton}})
+\begin{DoxyCompactList}\small\item\em default class constructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1canceljobs_a1b44f0619185399f3b6a4d16f244f1ef}{startcanceljobs}} (final \mbox{\hyperlink{interfacecom_1_1example_1_1dmocl_1_1RepositoryCallback}{Repository\+Callback}}$<$ \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1immediatejobs_1_1jobschedresponse}{jobschedresponse}} $>$ callback)
+\begin{DoxyCompactList}\small\item\em cancel jobs \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1canceljobs_a1b44f0619185399f3b6a4d16f244f1ef}\label{classcom_1_1example_1_1dmocl_1_1canceljobs_a1b44f0619185399f3b6a4d16f244f1ef}} 
-void {\bfseries startcanceljobs} (final Repository\+Callback$<$ jobschedresponse $>$ callback)
-\end{DoxyCompactItemize}
+Executor \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1canceljobs_abc0e279999a684fd756e8d4241250daa}{executor}}
+\begin{DoxyCompactList}\small\item\em for submitting background immediate tasks \end{DoxyCompactList}\item 
+final Handler \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1canceljobs_abce3d6cea34caf939e064b0b81ccd9f1}{result\+Handler}}
+\begin{DoxyCompactList}\small\item\em reference to result handler \end{DoxyCompactList}\item 
+Context \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1canceljobs_af7ab7e8cec6d942a27672c51a2334d42}{context}}
+\begin{DoxyCompactList}\small\item\em the context of the app \end{DoxyCompactList}\item 
+Text\+View \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1canceljobs_a2d2bb74bc844f812fd4f941cfe73e6e0}{jobinfo}}
+\begin{DoxyCompactList}\small\item\em reference to line in app \end{DoxyCompactList}\item 
+Button \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1canceljobs_a16903bbf6b7cadae2db338457e1f7057}{startbutton}}
+\begin{DoxyCompactList}\small\item\em reference to start button \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+cancel submitted jobs 
+
+The class is used to cancel submitted jobs 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1canceljobs_a8a62b3a1ddf01cafbad4e709d9f7b1ea}\label{classcom_1_1example_1_1dmocl_1_1canceljobs_a8a62b3a1ddf01cafbad4e709d9f7b1ea}} 
+\index{com\+::example\+::dmocl\+::canceljobs@{com\+::example\+::dmocl\+::canceljobs}!canceljobs@{canceljobs}}
+\index{canceljobs@{canceljobs}!com\+::example\+::dmocl\+::canceljobs@{com\+::example\+::dmocl\+::canceljobs}}
+\subsubsection{\texorpdfstring{canceljobs()}{canceljobs()}}
+{\footnotesize\ttfamily com.\+example.\+dmocl.\+canceljobs.\+canceljobs (\begin{DoxyParamCaption}\item[{Handler}]{result\+Handler,  }\item[{Executor}]{executor,  }\item[{Context}]{context,  }\item[{Text\+View}]{jobinfo,  }\item[{Button}]{startbutton }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+default class constructor 
+
+Constructor that copies the variables. 
+\begin{DoxyParams}{Parameters}
+{\em result\+Handler} & handler for the results \\
+\hline
+{\em executor} & \\
+\hline
+{\em context} & context of the app \\
+\hline
+{\em jobinfo} & reference to line on screen \\
+\hline
+{\em startbutton} & reference to start button \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1canceljobs_a1b44f0619185399f3b6a4d16f244f1ef}\label{classcom_1_1example_1_1dmocl_1_1canceljobs_a1b44f0619185399f3b6a4d16f244f1ef}} 
+\index{com\+::example\+::dmocl\+::canceljobs@{com\+::example\+::dmocl\+::canceljobs}!startcanceljobs@{startcanceljobs}}
+\index{startcanceljobs@{startcanceljobs}!com\+::example\+::dmocl\+::canceljobs@{com\+::example\+::dmocl\+::canceljobs}}
+\subsubsection{\texorpdfstring{startcanceljobs()}{startcanceljobs()}}
+{\footnotesize\ttfamily void com.\+example.\+dmocl.\+canceljobs.\+startcanceljobs (\begin{DoxyParamCaption}\item[{final \mbox{\hyperlink{interfacecom_1_1example_1_1dmocl_1_1RepositoryCallback}{Repository\+Callback}}$<$ \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1immediatejobs_1_1jobschedresponse}{jobschedresponse}} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+cancel jobs 
+
+Cancel jobs as immediate background task 
+\begin{DoxyParams}{Parameters}
+{\em callback} & a reference for the result callback \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1canceljobs_af7ab7e8cec6d942a27672c51a2334d42}\label{classcom_1_1example_1_1dmocl_1_1canceljobs_af7ab7e8cec6d942a27672c51a2334d42}} 
+\index{com\+::example\+::dmocl\+::canceljobs@{com\+::example\+::dmocl\+::canceljobs}!context@{context}}
+\index{context@{context}!com\+::example\+::dmocl\+::canceljobs@{com\+::example\+::dmocl\+::canceljobs}}
+\subsubsection{\texorpdfstring{context}{context}}
+{\footnotesize\ttfamily Context com.\+example.\+dmocl.\+canceljobs.\+context\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the context of the app 
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1canceljobs_abc0e279999a684fd756e8d4241250daa}\label{classcom_1_1example_1_1dmocl_1_1canceljobs_abc0e279999a684fd756e8d4241250daa}} 
+\index{com\+::example\+::dmocl\+::canceljobs@{com\+::example\+::dmocl\+::canceljobs}!executor@{executor}}
+\index{executor@{executor}!com\+::example\+::dmocl\+::canceljobs@{com\+::example\+::dmocl\+::canceljobs}}
+\subsubsection{\texorpdfstring{executor}{executor}}
+{\footnotesize\ttfamily Executor com.\+example.\+dmocl.\+canceljobs.\+executor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+for submitting background immediate tasks 
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1canceljobs_a2d2bb74bc844f812fd4f941cfe73e6e0}\label{classcom_1_1example_1_1dmocl_1_1canceljobs_a2d2bb74bc844f812fd4f941cfe73e6e0}} 
+\index{com\+::example\+::dmocl\+::canceljobs@{com\+::example\+::dmocl\+::canceljobs}!jobinfo@{jobinfo}}
+\index{jobinfo@{jobinfo}!com\+::example\+::dmocl\+::canceljobs@{com\+::example\+::dmocl\+::canceljobs}}
+\subsubsection{\texorpdfstring{jobinfo}{jobinfo}}
+{\footnotesize\ttfamily Text\+View com.\+example.\+dmocl.\+canceljobs.\+jobinfo\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+reference to line in app 
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1canceljobs_abce3d6cea34caf939e064b0b81ccd9f1}\label{classcom_1_1example_1_1dmocl_1_1canceljobs_abce3d6cea34caf939e064b0b81ccd9f1}} 
+\index{com\+::example\+::dmocl\+::canceljobs@{com\+::example\+::dmocl\+::canceljobs}!result\+Handler@{result\+Handler}}
+\index{result\+Handler@{result\+Handler}!com\+::example\+::dmocl\+::canceljobs@{com\+::example\+::dmocl\+::canceljobs}}
+\subsubsection{\texorpdfstring{result\+Handler}{resultHandler}}
+{\footnotesize\ttfamily final Handler com.\+example.\+dmocl.\+canceljobs.\+result\+Handler\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+reference to result handler 
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1canceljobs_a16903bbf6b7cadae2db338457e1f7057}\label{classcom_1_1example_1_1dmocl_1_1canceljobs_a16903bbf6b7cadae2db338457e1f7057}} 
+\index{com\+::example\+::dmocl\+::canceljobs@{com\+::example\+::dmocl\+::canceljobs}!startbutton@{startbutton}}
+\index{startbutton@{startbutton}!com\+::example\+::dmocl\+::canceljobs@{com\+::example\+::dmocl\+::canceljobs}}
+\subsubsection{\texorpdfstring{startbutton}{startbutton}}
+{\footnotesize\ttfamily Button com.\+example.\+dmocl.\+canceljobs.\+startbutton\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+reference to start button 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/main/java/com/example/dmocl/canceljobs.\+java\end{DoxyCompactItemize}
+/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/main/java/com/example/dmocl/\mbox{\hyperlink{canceljobs_8java}{canceljobs.\+java}}\end{DoxyCompactItemize}

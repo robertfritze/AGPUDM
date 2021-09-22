@@ -1,0 +1,212 @@
+\hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2}{}\section{com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2 Class Reference}
+\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2}\index{com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2@{com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2}}
+Inheritance diagram for com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_af96c235862b0e2ff6a364af572ddba8a}{Wake\+Up}} ()
+\item 
+int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a0098eeeb00ce1933c110b233c62e4ac9}{Wait\+Finished}} ()
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a1d63761be9c1404a20230e85831ebc98}{set\+Cmp\+To}} (int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_ad857c20706749d220416cf6d5bfa8925}{cmpto}})
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a6ef50cfd061325ea4eb638313f5ab61f}{terminate}} ()
+\item 
+boolean \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a55252f5d50a53fef18f680bd06cd2fa6}{is\+Terminated}} ()
+\item 
+int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_abebcc9863856e96bdf53b8102284ce99}{get\+Item\+Counter}} ()
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a9d1bee8d6d7cbddff2344f16462ca465}{run}} ()
+\item 
+int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a19acf9510dcb9e5f5f4be8cc61dcc39f}{get\+Num}} ()
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a8b5b4be896a0e7efb9f9f7fe0c8ccfeb}{dbscan\+\_\+thread2}} (int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a8c3589585ee7d3dffb56f2815e4cfe5e}{num}}, short\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a1eb51ad414e8ce37f6fc7a366a9631f9}{b}}, float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a1e074f4d486050d2cdd34f11340163d9}{data}}, float \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a925553795864906a7e2b06f30d377e6a}{epseps}}, int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a20cf1118178a289fb4f6a4cf0ae79781}{kk}}, int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_af7a32b720e9757e7ea87de852cb928fa}{features}}, int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a069afa516eb9cd0c10e2bd860a97475c}{start}}, int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a3f37b04b0d50bc1a313285cc42c97b52}{len}})
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+volatile Atomic\+Boolean \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_af5d85cbd68b1063d67e118eb4d99f00d}{status}} = new Atomic\+Boolean(false)
+\item 
+int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a8c3589585ee7d3dffb56f2815e4cfe5e}{num}} = -\/1
+\item 
+short \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a1eb51ad414e8ce37f6fc7a366a9631f9}{b}}
+\item 
+float \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a1e074f4d486050d2cdd34f11340163d9}{data}}
+\item 
+float \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a925553795864906a7e2b06f30d377e6a}{epseps}} = -\/1
+\item 
+int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a20cf1118178a289fb4f6a4cf0ae79781}{kk}} = -\/1
+\item 
+int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_af7a32b720e9757e7ea87de852cb928fa}{features}} = -\/1
+\item 
+int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a069afa516eb9cd0c10e2bd860a97475c}{start}} = 0
+\item 
+int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a3f37b04b0d50bc1a313285cc42c97b52}{len}} = 0
+\item 
+Semaphore \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_acfcf87a7da9d4f495f7d886b7ef16bf0}{sem}} = new Semaphore( 0 )
+\item 
+Semaphore \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a84386ee69872fc108454e9feda715f1a}{semret}} = new Semaphore( 0 )
+\item 
+final Object \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a2baeae9915a08e8feb9be52e169afef5}{L\+O\+C\+K2}} = new Object()
+\item 
+volatile int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_ad857c20706749d220416cf6d5bfa8925}{cmpto}} = -\/1
+\item 
+volatile int \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a1e79239cd7b2996f27715f91743a1078}{itemcounter}} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a8b5b4be896a0e7efb9f9f7fe0c8ccfeb}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a8b5b4be896a0e7efb9f9f7fe0c8ccfeb}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!dbscan\+\_\+thread2@{dbscan\+\_\+thread2}}
+\index{dbscan\+\_\+thread2@{dbscan\+\_\+thread2}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{dbscan\+\_\+thread2()}{dbscan\_thread2()}}
+{\footnotesize\ttfamily com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+dbscan\+\_\+thread2 (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{short \mbox{[}$\,$\mbox{]}}]{b,  }\item[{float \mbox{[}$\,$\mbox{]}}]{data,  }\item[{float}]{epseps,  }\item[{int}]{kk,  }\item[{int}]{features,  }\item[{int}]{start,  }\item[{int}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_abebcc9863856e96bdf53b8102284ce99}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_abebcc9863856e96bdf53b8102284ce99}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!get\+Item\+Counter@{get\+Item\+Counter}}
+\index{get\+Item\+Counter@{get\+Item\+Counter}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{get\+Item\+Counter()}{getItemCounter()}}
+{\footnotesize\ttfamily int com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+get\+Item\+Counter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a19acf9510dcb9e5f5f4be8cc61dcc39f}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a19acf9510dcb9e5f5f4be8cc61dcc39f}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!get\+Num@{get\+Num}}
+\index{get\+Num@{get\+Num}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{get\+Num()}{getNum()}}
+{\footnotesize\ttfamily int com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+get\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a55252f5d50a53fef18f680bd06cd2fa6}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a55252f5d50a53fef18f680bd06cd2fa6}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!is\+Terminated@{is\+Terminated}}
+\index{is\+Terminated@{is\+Terminated}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{is\+Terminated()}{isTerminated()}}
+{\footnotesize\ttfamily boolean com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+is\+Terminated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a9d1bee8d6d7cbddff2344f16462ca465}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a9d1bee8d6d7cbddff2344f16462ca465}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!run@{run}}
+\index{run@{run}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a1d63761be9c1404a20230e85831ebc98}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a1d63761be9c1404a20230e85831ebc98}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!set\+Cmp\+To@{set\+Cmp\+To}}
+\index{set\+Cmp\+To@{set\+Cmp\+To}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{set\+Cmp\+To()}{setCmpTo()}}
+{\footnotesize\ttfamily void com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+set\+Cmp\+To (\begin{DoxyParamCaption}\item[{int}]{cmpto }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a6ef50cfd061325ea4eb638313f5ab61f}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a6ef50cfd061325ea4eb638313f5ab61f}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!terminate@{terminate}}
+\index{terminate@{terminate}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{terminate()}{terminate()}}
+{\footnotesize\ttfamily void com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+terminate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a0098eeeb00ce1933c110b233c62e4ac9}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a0098eeeb00ce1933c110b233c62e4ac9}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!Wait\+Finished@{Wait\+Finished}}
+\index{Wait\+Finished@{Wait\+Finished}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{Wait\+Finished()}{WaitFinished()}}
+{\footnotesize\ttfamily int com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+Wait\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_af96c235862b0e2ff6a364af572ddba8a}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_af96c235862b0e2ff6a364af572ddba8a}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!Wake\+Up@{Wake\+Up}}
+\index{Wake\+Up@{Wake\+Up}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{Wake\+Up()}{WakeUp()}}
+{\footnotesize\ttfamily void com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+Wake\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a1eb51ad414e8ce37f6fc7a366a9631f9}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a1eb51ad414e8ce37f6fc7a366a9631f9}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!b@{b}}
+\index{b@{b}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily short \mbox{[}$\,$\mbox{]} com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+b\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_ad857c20706749d220416cf6d5bfa8925}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_ad857c20706749d220416cf6d5bfa8925}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!cmpto@{cmpto}}
+\index{cmpto@{cmpto}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{cmpto}{cmpto}}
+{\footnotesize\ttfamily volatile int com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+cmpto = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a1e074f4d486050d2cdd34f11340163d9}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a1e074f4d486050d2cdd34f11340163d9}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!data@{data}}
+\index{data@{data}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily float \mbox{[}$\,$\mbox{]} com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a925553795864906a7e2b06f30d377e6a}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a925553795864906a7e2b06f30d377e6a}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!epseps@{epseps}}
+\index{epseps@{epseps}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{epseps}{epseps}}
+{\footnotesize\ttfamily float com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+epseps = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_af7a32b720e9757e7ea87de852cb928fa}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_af7a32b720e9757e7ea87de852cb928fa}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!features@{features}}
+\index{features@{features}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{features}{features}}
+{\footnotesize\ttfamily int com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+features = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a1e79239cd7b2996f27715f91743a1078}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a1e79239cd7b2996f27715f91743a1078}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!itemcounter@{itemcounter}}
+\index{itemcounter@{itemcounter}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{itemcounter}{itemcounter}}
+{\footnotesize\ttfamily volatile int com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+itemcounter = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a20cf1118178a289fb4f6a4cf0ae79781}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a20cf1118178a289fb4f6a4cf0ae79781}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!kk@{kk}}
+\index{kk@{kk}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{kk}{kk}}
+{\footnotesize\ttfamily int com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+kk = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a3f37b04b0d50bc1a313285cc42c97b52}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a3f37b04b0d50bc1a313285cc42c97b52}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!len@{len}}
+\index{len@{len}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{len}{len}}
+{\footnotesize\ttfamily int com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+len = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a2baeae9915a08e8feb9be52e169afef5}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a2baeae9915a08e8feb9be52e169afef5}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!L\+O\+C\+K2@{L\+O\+C\+K2}}
+\index{L\+O\+C\+K2@{L\+O\+C\+K2}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{L\+O\+C\+K2}{LOCK2}}
+{\footnotesize\ttfamily final Object com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+L\+O\+C\+K2 = new Object()\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a8c3589585ee7d3dffb56f2815e4cfe5e}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a8c3589585ee7d3dffb56f2815e4cfe5e}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!num@{num}}
+\index{num@{num}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{num}{num}}
+{\footnotesize\ttfamily int com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+num = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_acfcf87a7da9d4f495f7d886b7ef16bf0}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_acfcf87a7da9d4f495f7d886b7ef16bf0}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!sem@{sem}}
+\index{sem@{sem}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{sem}{sem}}
+{\footnotesize\ttfamily Semaphore com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+sem = new Semaphore( 0 )\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a84386ee69872fc108454e9feda715f1a}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a84386ee69872fc108454e9feda715f1a}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!semret@{semret}}
+\index{semret@{semret}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{semret}{semret}}
+{\footnotesize\ttfamily Semaphore com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+semret = new Semaphore( 0 )\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a069afa516eb9cd0c10e2bd860a97475c}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_a069afa516eb9cd0c10e2bd860a97475c}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!start@{start}}
+\index{start@{start}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily int com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+start = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_af5d85cbd68b1063d67e118eb4d99f00d}\label{classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2_af5d85cbd68b1063d67e118eb4d99f00d}} 
+\index{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}!status@{status}}
+\index{status@{status}!com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2@{com\+::example\+::dmocl\+::dbscan\+::dbscan\+\_\+thread2}}
+\subsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily volatile Atomic\+Boolean com.\+example.\+dmocl.\+dbscan.\+dbscan\+\_\+thread2.\+status = new Atomic\+Boolean(false)\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/main/java/com/example/dmocl/\mbox{\hyperlink{dbscan_8java}{dbscan.\+java}}\end{DoxyCompactItemize}

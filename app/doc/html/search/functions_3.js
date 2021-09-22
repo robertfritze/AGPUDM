@@ -1,5 +1,25 @@
 var searchData=
 [
-  ['getarchitecture',['getArchitecture',['../classcom_1_1example_1_1dmocl_1_1oclwrap.html#afd9731ebb0d18315fe3762fc329fcec4',1,'com::example::dmocl::oclwrap']]],
-  ['getoclwrapper',['getOclWrapper',['../classcom_1_1example_1_1dmocl_1_1oclwrap.html#a8c8c9a75d3d834cb71725d92ddeb4af7',1,'com::example::dmocl::oclwrap']]]
+  ['dataminingtask',['dataminingtask',['../classcom_1_1example_1_1dmocl_1_1dataminingtask.html#adeb6d5795db66ea5aa050d442ad17959',1,'com::example::dmocl::dataminingtask']]],
+  ['dbscan',['dbscan',['../dbscan__c_8c.html#a994c7f688041080441d904aaabd542e8',1,'dbscan_c.c']]],
+  ['dbscan_5fc',['dbscan_c',['../classcom_1_1example_1_1dmocl_1_1dbscan.html#abdf678cb2bc1751842e632910df91ef2',1,'com::example::dmocl::dbscan']]],
+  ['dbscan_5fc_5fgpu',['dbscan_c_gpu',['../classcom_1_1example_1_1dmocl_1_1dbscan.html#aff87d111fa96f0cefa39304a0ac02dff',1,'com::example::dmocl::dbscan']]],
+  ['dbscan_5fc_5fphtreads',['dbscan_c_phtreads',['../classcom_1_1example_1_1dmocl_1_1dbscan.html#ae91b2a29faf3f05081f4163e27cd571a',1,'com::example::dmocl::dbscan']]],
+  ['dbscan_5fgpu',['dbscan_gpu',['../dbscan__c_8c.html#acf13a06373a664bdef41491940cf733d',1,'dbscan_c.c']]],
+  ['dbscan_5fpthreads',['dbscan_pthreads',['../dbscan__c_8c.html#ada61fc5ccb8ba860c103bbd106545e67',1,'dbscan_c.c']]],
+  ['dbscan_5fst',['dbscan_st',['../classcom_1_1example_1_1dmocl_1_1dbscan.html#ae775963e50e6c01388ab1b1d7e604f57',1,'com::example::dmocl::dbscan']]],
+  ['dbscan_5fthread1',['dbscan_thread1',['../classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread1.html#aea80418400fcb567ddc0b3691398baa3',1,'com::example::dmocl::dbscan::dbscan_thread1']]],
+  ['dbscan_5fthread2',['dbscan_thread2',['../classcom_1_1example_1_1dmocl_1_1dbscan_1_1dbscan__thread2.html#a8b5b4be896a0e7efb9f9f7fe0c8ccfeb',1,'com::example::dmocl::dbscan::dbscan_thread2']]],
+  ['dbscan_5fthreads',['dbscan_threads',['../classcom_1_1example_1_1dmocl_1_1dbscan.html#a966ad9839294c6c28b7e43f974592345',1,'com::example::dmocl::dbscan']]],
+  ['dbscanabort',['dbscanabort',['../classcom_1_1example_1_1dmocl_1_1dbscan.html#ac0a5610d6eb5ea04f0ac297bf2fc9465',1,'com::example::dmocl::dbscan']]],
+  ['dbscanabort_5fc',['dbscanabort_c',['../classcom_1_1example_1_1dmocl_1_1dbscan.html#a9046c500df8074b1f4f57d4cb0c274a8',1,'com::example::dmocl::dbscan']]],
+  ['dbscanresume',['dbscanresume',['../classcom_1_1example_1_1dmocl_1_1dbscan.html#ae930532d5261bca83fff8c032c57460e',1,'com::example::dmocl::dbscan']]],
+  ['dbscanresume_5fc',['dbscanresume_c',['../classcom_1_1example_1_1dmocl_1_1dbscan.html#af20fc5d6d88472f6af230198246c9fe5',1,'com::example::dmocl::dbscan']]],
+  ['dbscanthread1',['dbscanthread1',['../dbscan__c_8c.html#a328958ce0311bbd3b136b0ba70a53eff',1,'dbscan_c.c']]],
+  ['dbscanthread2',['dbscanthread2',['../dbscan__c_8c.html#a136c019aa135e830b210dfbfb84bc63b',1,'dbscan_c.c']]],
+  ['dmitem',['dmitem',['../classcom_1_1example_1_1dmocl_1_1dataminingtask_1_1dmitem.html#aa5f9d03e960cac870be4e466440da584',1,'com::example::dmocl::dataminingtask::dmitem']]],
+  ['dmwritetofile',['DMwriteToFile',['../classcom_1_1example_1_1dmocl_1_1LinkToFile.html#adb20b84275dde1b5b5808bfa80ec4969',1,'com.example.dmocl.LinkToFile.DMwriteToFile(String fn, String s)'],['../classcom_1_1example_1_1dmocl_1_1LinkToFile.html#a14393cd229c571ec80b236d1bd406e43',1,'com.example.dmocl.LinkToFile.DMwriteToFile(String fn, int cores, double[] wct, int size, int cluno, int features, int z)']]],
+  ['dmwritetofilefooter',['DMwriteToFilefooter',['../classcom_1_1example_1_1dmocl_1_1LinkToFile.html#a718e692d3583958f315ebe75c6569e74',1,'com::example::dmocl::LinkToFile']]],
+  ['dmwritetofileheader',['DMwriteToFileheader',['../classcom_1_1example_1_1dmocl_1_1LinkToFile.html#a2ffa199a1de9e47644702409e25dd704',1,'com.example.dmocl.LinkToFile.DMwriteToFileheader(String fn)'],['../classcom_1_1example_1_1dmocl_1_1LinkToFile.html#a8cbd37ee89ecd01dcd55022c6ce74795',1,'com.example.dmocl.LinkToFile.DMwriteToFileheader(String fn, boolean append)']]],
+  ['dowork',['doWork',['../classcom_1_1example_1_1dmocl_1_1dataminingtask.html#a39b5d15f90cab9ac6ce6f0d4d4797261',1,'com::example::dmocl::dataminingtask']]]
 ];

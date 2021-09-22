@@ -1,12 +1,17 @@
 var searchData=
 [
-  ['rand_5flim',['rand_lim',['../kmeans__c_8c.html#a3dfe821465890ef86a560d1ac1c7240f',1,'kmeans_c.c']]],
-  ['rwlock_5fstatic_5finitializer',['RWLOCK_STATIC_INITIALIZER',['../rwlock__wp_8h.html#a0e5677072fd09de2ad07b5ac633bde51',1,'rwlock_wp.h']]],
-  ['rwlock_5fwp_2ec',['rwlock_wp.c',['../rwlock__wp_8c.html',1,'']]],
-  ['rwlock_5fwp_2eh',['rwlock_wp.h',['../rwlock__wp_8h.html',1,'']]],
-  ['rwlockwp',['rwlockwp',['../structrwlockwp.html',1,'']]],
-  ['rwlockwp_5freader_5facquire',['rwlockwp_reader_acquire',['../rwlock__wp_8h.html#a99b91af728c26817e2718be982be4d45',1,'rwlockwp_reader_acquire(volatile struct rwlockwp *):&#160;rwlock_wp.c'],['../rwlock__wp_8c.html#a71043ddab2b277f2d1ecc7a154162c1a',1,'rwlockwp_reader_acquire(volatile struct rwlockwp *rwl):&#160;rwlock_wp.c']]],
-  ['rwlockwp_5freader_5frelease',['rwlockwp_reader_release',['../rwlock__wp_8h.html#a4110ba89aee14fe850ca118f85063c89',1,'rwlockwp_reader_release(volatile struct rwlockwp *):&#160;rwlock_wp.c'],['../rwlock__wp_8c.html#ac49f80e4cbc20cd463a57564a19f0b8b',1,'rwlockwp_reader_release(volatile struct rwlockwp *rwl):&#160;rwlock_wp.c']]],
-  ['rwlockwp_5fwriter_5facquire',['rwlockwp_writer_acquire',['../rwlock__wp_8h.html#a715bfee74545c30c340e5fac4169554e',1,'rwlockwp_writer_acquire(volatile struct rwlockwp *):&#160;rwlock_wp.c'],['../rwlock__wp_8c.html#aa705d03f6bd3b884c25acebcd16a6ef6',1,'rwlockwp_writer_acquire(volatile struct rwlockwp *rwl):&#160;rwlock_wp.c']]],
-  ['rwlockwp_5fwriter_5frelease',['rwlockwp_writer_release',['../rwlock__wp_8h.html#a8037f8c56902b7b4b45e6bbaf6997fde',1,'rwlockwp_writer_release(volatile struct rwlockwp *):&#160;rwlock_wp.c'],['../rwlock__wp_8c.html#a679cee391cae858a53210f2099b60a24',1,'rwlockwp_writer_release(volatile struct rwlockwp *rwl):&#160;rwlock_wp.c']]]
+  ['oclinforet',['oclinforet',['../classcom_1_1example_1_1dmocl_1_1oclwrap_1_1oclinforet.html',1,'com::example::dmocl::oclwrap']]],
+  ['oclversion',['oclversion',['../classcom_1_1example_1_1dmocl_1_1oclwrap_1_1oclinforet.html#ab46a021c29f8d24e0c6a29a999672968',1,'com::example::dmocl::oclwrap::oclinforet']]],
+  ['oclwrap',['oclwrap',['../classcom_1_1example_1_1dmocl_1_1oclwrap.html',1,'com.example.dmocl.oclwrap'],['../classcom_1_1example_1_1dmocl_1_1oclwrap.html#a1fbb83793ed7801f73e2a0ca2cf0f114',1,'com.example.dmocl.oclwrap.oclwrap()']]],
+  ['oclwrap_2ejava',['oclwrap.java',['../oclwrap_8java.html',1,'']]],
+  ['oclwrap_5finstance',['oclwrap_instance',['../classcom_1_1example_1_1dmocl_1_1oclwrap.html#a3d8e0d80008bcd1d88fdf3f42cd1e653',1,'com::example::dmocl::oclwrap']]],
+  ['oclwrapper_2ec',['oclwrapper.c',['../oclwrapper_8c.html',1,'']]],
+  ['oclwrapper_2eh',['oclwrapper.h',['../oclwrapper_8h.html',1,'']]],
+  ['oncomplete',['onComplete',['../interfacecom_1_1example_1_1dmocl_1_1RepositoryCallback.html#ab1adc69141713cb67641c25e11fec0eb',1,'com.example.dmocl.RepositoryCallback.onComplete()'],['../classcom_1_1example_1_1dmocl_1_1notifyuserresults.html#a30745572df65714feeeeec318f7f953c',1,'com.example.dmocl.notifyuserresults.onComplete()']]],
+  ['oncreate',['onCreate',['../classcom_1_1example_1_1dmocl_1_1MainActivity.html#a10f895ac3f6343c7b6c3b946ceadbf32',1,'com::example::dmocl::MainActivity']]],
+  ['ondestroy',['onDestroy',['../classcom_1_1example_1_1dmocl_1_1MainActivity.html#a0ba841e058a14398a5a6766e0618bd59',1,'com::example::dmocl::MainActivity']]],
+  ['onresume',['onResume',['../classcom_1_1example_1_1dmocl_1_1MainActivity.html#a59609da2fb62ee158da1d4efc6d26f63',1,'com::example::dmocl::MainActivity']]],
+  ['onstopped',['onStopped',['../classcom_1_1example_1_1dmocl_1_1dataminingtask.html#a3ae06bc9b4443444284c6339c81252c4',1,'com::example::dmocl::dataminingtask']]],
+  ['opencl_2ec',['OpenCL.c',['../OpenCL_8c.html',1,'']]],
+  ['owrp',['owrp',['../classcom_1_1example_1_1dmocl_1_1MainActivity.html#ac96a1197ded8a7cf0cb4ea39d37af6a6',1,'com::example::dmocl::MainActivity']]]
 ];

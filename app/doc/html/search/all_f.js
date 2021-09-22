@@ -1,13 +1,5 @@
 var searchData=
 [
-  ['savechecker',['SAVECHECKER',['../OpenCL_8c.html#a709c98084a7b1aea8c4377c18ad6819d',1,'OpenCL.c']]],
-  ['sem',['sem',['../structkmeans__pt.html#af1c42a889c6180d899cb41066d2884c0',1,'kmeans_pt']]],
-  ['sem1',['sem1',['../structdbscan__pt.html#a716ce695e04d99f1e045fb9de1fb70f0',1,'dbscan_pt']]],
-  ['sem2',['sem2',['../structdbscan__pt.html#a5123f8b35d2933f40d493fe31dc062c5',1,'dbscan_pt']]],
-  ['semret',['semret',['../structkmeans__pt.html#aa959612fc7e6fa42798130bbf1c437a7',1,'kmeans_pt']]],
-  ['semret1',['semret1',['../structdbscan__pt.html#af4a16a1139b3ee7e1dfcec9d415a8855',1,'dbscan_pt']]],
-  ['semret2',['semret2',['../structdbscan__pt.html#a229860660f580c96e3f00820dedc314f',1,'dbscan_pt']]],
-  ['start',['start',['../structdbscan__pt.html#ab35e524b61208589ee28bbf4a79341ae',1,'dbscan_pt::start()'],['../structkmeans__pt.html#a7568dca47a635b63a775853ace1a231f',1,'kmeans_pt::start()']]],
-  ['status',['status',['../structdbscan__pt.html#a5a42d9fe57034198ed5250f6f0ddb2cb',1,'dbscan_pt::status()'],['../structkmeans__pt.html#adc9152bce7b95fd51d6185901169c52b',1,'kmeans_pt::status()']]],
-  ['submitjobs',['submitjobs',['../classcom_1_1example_1_1dmocl_1_1submitjobs.html',1,'com::example::dmocl']]]
+  ['passes',['passes',['../classcom_1_1example_1_1dmocl_1_1submitjobs.html#ac4b45c2a1fa35ae2e471f6d720d2f16c',1,'com::example::dmocl::submitjobs']]],
+  ['prependnames',['prependnames',['../classcom_1_1example_1_1dmocl_1_1dataminingtask.html#a27dbb6b1fb48631844198bfc5ceea344',1,'com::example::dmocl::dataminingtask']]]
 ];

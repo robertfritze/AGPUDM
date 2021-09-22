@@ -1,3 +1,14 @@
+/*!
+ @file canceljobs.java
+ @brief cancel submitted jobs
+ @details
+ The class in this file is used to cancel submitted jobs
+ @copyright Copyright Robert Fritze 2021
+ @license MIT
+ @version 1.0
+ @author Robert Fritze
+ @date 11.9.2021
+ */
 package com.example.dmocl;
 
 import android.content.Context;
@@ -14,17 +25,30 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 
-
+/*!
+@brief cancel submitted jobs
+@details
+ The class is used to cancel submitted jobs
+*/
 public class canceljobs extends immediatejobs {
 
 
-  private Executor executor;
-  private final Handler resultHandler;
-  private Context context;
-  private TextView jobinfo;
-  private Button startbutton;
+  private Executor executor;                  //!< for submitting background immediate tasks
+  private final Handler resultHandler;        //!< reference to result handler
+  private Context context;                    //!< the context of the app
+  private TextView jobinfo;                   //!< reference to line in app
+  private Button startbutton;                 //!< reference to start button
 
-
+  /*!
+  @brief default class constructor
+  @details
+  Constructor that copies the variables.
+  @param resultHandler handler for the results
+  @param executor
+  @param context context of the app
+  @param jobinfo reference to line on screen
+  @param startbutton reference to start button
+  */
   public canceljobs(
     Handler resultHandler,
     Executor executor,
@@ -37,28 +61,38 @@ public class canceljobs extends immediatejobs {
     this.context = context;
     this.jobinfo = jobinfo;
     this.startbutton = startbutton;
-  }
+  } // canceljobs
 
+
+  /*!
+  @brief cancel jobs
+  @details
+  Cancel jobs as immediate background task
+  @param callback a reference for the result callback
+  */
   public void startcanceljobs(
     final RepositoryCallback<jobschedresponse> callback
   ) {
 
+                 // execute background immediate task
     executor.execute(new Runnable() {
       @Override
       public void run() {
 
+                // subit cancel job to WorkManager
         Operation opstate = WorkManager.getInstance(context).cancelUniqueWork("AndroidDMOCL");
-        ListenableFuture<Operation.State.SUCCESS> lfos = null;
-        int item=0;
+        ListenableFuture<Operation.State.SUCCESS> lfos = null;      // variable for successfull jobs
+        int item=0;             // error flag
 
         try {
-          lfos = opstate.getResult();
+          lfos = opstate.getResult();           // get operation state
           lfos.get();
         }
         catch( CancellationException | ExecutionException | InterruptedException e ) {
-          item=1;
+          item=1;                // error
         }
 
+                     // clear text of job info
         jobinfo.post(new Runnable(){
           @Override
           public void run(){
@@ -66,123 +100,53 @@ public class canceljobs extends immediatejobs {
           }
         });
 
+                      // job cancellation successfull?
         if (lfos != null) {
-          //if (!lfos.isCancelled()) {
-            if (item==0) {
-              startbutton.post(new Runnable(){
-                @Override
-                public void run(){
-                  startbutton.setTextColor( context.getResources().getColor(R.color.colorBlack));
-                  startbutton.setText( context.getResources().getString( R.string.startbuttonsubmit ) );
-                  startbutton.setFocusable(true);
-                  startbutton.setEnabled(true);
-                }
-              });
 
-            }
-            else {
-              item = 1;
-            }
-          //}
-          //else{
-          //  item = 1;
-          //}
+          if (item==0) {          // no error
+
+                    // change startbutton test to submit
+            startbutton.post(new Runnable(){
+              @Override
+              public void run(){
+                startbutton.setTextColor( context.getResources().getColor(R.color.colorBlack));
+                startbutton.setText( context.getResources().getString( R.string.startbuttonsubmit ) );
+                startbutton.setFocusable(true);
+                startbutton.setEnabled(true);
+              }
+            });
+          }
+          else {
+            item = 1;           // error
+          }
         }
         else {
-          item = 1;
+          item = 1;             // error
         }
 
-        if (item==1) {
+        if (item==1) {           // if error?
 
-          startbutton.post(new Runnable(){
+          // disable start button
+          startbutton.post(new Runnable() {
             @Override
-            public void run(){
-              startbutton.setTextColor( context.getResources().getColor(R.color.colorRed));
-              startbutton.setText( context.getResources().getString( R.string.startbuttonfail ) );
+            public void run() {
+              startbutton.setTextColor(context.getResources().getColor(R.color.colorRed));
+              startbutton.setText(context.getResources().getString(R.string.startbuttonfail));
               startbutton.setFocusable(false);
               startbutton.setEnabled(false);
             }
           });
 
         }
-
-
-//          Handler handler = new Handler(Looper.getMainLooper());
-//          handler.post( new Runnable() {
-//            public void run() {
-
-
-/*
-                WorkManager instance = WorkManager.getInstance();
-                WorkManager.getInstance(context).pruneWork();
-                ListenableFuture<List<WorkInfo>> statuses = instance.getWorkInfosForUniqueWork("AndroidDMOCL");
-                int running = 0;
-                int waiting = 0;
-                try {
-                  List<WorkInfo> workInfoLi = statuses.get();
-                  for (WorkInfo workInfo : workInfoLi) {
-                    WorkInfo.State state2 = workInfo.getState();
-                    running += (state2 == WorkInfo.State.RUNNING) ? 1 : 0;
-                    waiting += (state2 == WorkInfo.State.ENQUEUED | state2 == WorkInfo.State.BLOCKED) ? 1 : 0;
-                  }
-                } catch (Exception e) {
-                  throw new MainActivity.WorkManagerNoInformationException();
-                }
-
-                if ((running + waiting) > 0) {
-                  startbutton.setText(context.getResources().getString(R.string.startbuttoncancel));
-                  jobinfo.setText(context.getResources().getString(R.string.jobinfobanner, running, waiting));
-                } else {
-                  startbutton.setText(context.getResources().getString(R.string.startbuttonsubmit));
-                  jobinfo.setText(context.getResources().getString(R.string.nocalcsubm));
-                }
-
-                startbutton.setEnabled(true);
-                startbutton.setFocusable(true);
-                startbutton.setTextColor(context.getResources().getColor(R.color.colorBlack));
-
-
-//          }
-
-//          });
-        } catch (Exception e) {
-          e.printStackTrace();
-        }
-
-
-        LiveData<Operation.State> ldos = opstate.getState();
-
-        Handler handler = new Handler(Looper.getMainLooper());
-        handler.post( new Runnable() {
-          public void run() {
-
-            ldos.observeForever( new Observer<Operation.State>(){
-
-              @Override
-              public void onChanged(@Nullable Operation.State state){
-
-                jobinfo.setText( "" );
-                startbutton.setText( context.getResources().getString( R.string.startbuttonsubmit) );                startbutton.setEnabled(true);
-                startbutton.setFocusable(true);
-                startbutton.setEnabled(true);
-
-                ldos.removeObserver( this );
-              }
-            }
-          );
-          }
-        });
-*/
-        //WorkManager.getInstance(context).pruneWork();
-
+                     // generate class for results done
         Result.CancelDone<jobschedresponse> result = new Result.CancelDone<>();
-        notifyResult( result, callback, resultHandler );
+        notifyResult( result, callback, resultHandler );   // notify results
 
       }
     });
-  }
+  }  // startcanceljobs
 
 
-}
+} // canceljobs
 
 

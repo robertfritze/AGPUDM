@@ -8,82 +8,56 @@ Parameters for the D\+B\+S\+C\+AN thread.
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structdbscan__pt_a5a42d9fe57034198ed5250f6f0ddb2cb}\label{structdbscan__pt_a5a42d9fe57034198ed5250f6f0ddb2cb}} 
 unsigned short int \mbox{\hyperlink{structdbscan__pt_a5a42d9fe57034198ed5250f6f0ddb2cb}{status}}
 \begin{DoxyCompactList}\small\item\em (const) status (needed only for setup and destruction) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_aaa1b99005b0207af9c85a6fc73368eb3}\label{structdbscan__pt_aaa1b99005b0207af9c85a6fc73368eb3}} 
 int \mbox{\hyperlink{structdbscan__pt_aaa1b99005b0207af9c85a6fc73368eb3}{num}}
 \begin{DoxyCompactList}\small\item\em (const) number of thread \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_aab10762fb46be396c06f36c7b8f84f64}\label{structdbscan__pt_aab10762fb46be396c06f36c7b8f84f64}} 
 unsigned short $\ast$ \mbox{\hyperlink{structdbscan__pt_aab10762fb46be396c06f36c7b8f84f64}{b}}
 \begin{DoxyCompactList}\small\item\em (out) number of closest cluster center \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_a1da0197a70e570bd30de1872fe60cd6b}\label{structdbscan__pt_a1da0197a70e570bd30de1872fe60cd6b}} 
 float $\ast$ \mbox{\hyperlink{structdbscan__pt_a1da0197a70e570bd30de1872fe60cd6b}{data}}
 \begin{DoxyCompactList}\small\item\em (const) input data \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_ac172b388c85db693e07e954f7d29e681}\label{structdbscan__pt_ac172b388c85db693e07e954f7d29e681}} 
 int \mbox{\hyperlink{structdbscan__pt_ac172b388c85db693e07e954f7d29e681}{blen}}
 \begin{DoxyCompactList}\small\item\em (const) number of data items \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_ae73ddeeaca04d08756b022115639d607}\label{structdbscan__pt_ae73ddeeaca04d08756b022115639d607}} 
 float \mbox{\hyperlink{structdbscan__pt_ae73ddeeaca04d08756b022115639d607}{eps}}
 \begin{DoxyCompactList}\small\item\em (const) radius \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_a07b73afdc253e16524b7eae0f6ec26b4}\label{structdbscan__pt_a07b73afdc253e16524b7eae0f6ec26b4}} 
 int \mbox{\hyperlink{structdbscan__pt_a07b73afdc253e16524b7eae0f6ec26b4}{kk}}
 \begin{DoxyCompactList}\small\item\em (const) number of neighbours \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_a22b641c18fac3731d31e9ded8c0c93eb}\label{structdbscan__pt_a22b641c18fac3731d31e9ded8c0c93eb}} 
 int \mbox{\hyperlink{structdbscan__pt_a22b641c18fac3731d31e9ded8c0c93eb}{features}}
 \begin{DoxyCompactList}\small\item\em (const) number of features per data item \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_ab35e524b61208589ee28bbf4a79341ae}\label{structdbscan__pt_ab35e524b61208589ee28bbf4a79341ae}} 
 int \mbox{\hyperlink{structdbscan__pt_ab35e524b61208589ee28bbf4a79341ae}{start}}
 \begin{DoxyCompactList}\small\item\em (const) first data item \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_a75fa5f27f7e41e5472087a847388daaf}\label{structdbscan__pt_a75fa5f27f7e41e5472087a847388daaf}} 
 int \mbox{\hyperlink{structdbscan__pt_a75fa5f27f7e41e5472087a847388daaf}{len}}
 \begin{DoxyCompactList}\small\item\em (const) last data item \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_a2535cf2a4899d30b008b26dfa92bd44c}\label{structdbscan__pt_a2535cf2a4899d30b008b26dfa92bd44c}} 
 pthread\+\_\+t \mbox{\hyperlink{structdbscan__pt_a2535cf2a4899d30b008b26dfa92bd44c}{thread1}}
 \begin{DoxyCompactList}\small\item\em (const) holds the thread reference for the main loop thread \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_a4c0ec8c2730f9a56a4b186692de79c47}\label{structdbscan__pt_a4c0ec8c2730f9a56a4b186692de79c47}} 
 pthread\+\_\+t \mbox{\hyperlink{structdbscan__pt_a4c0ec8c2730f9a56a4b186692de79c47}{thread2}}
 \begin{DoxyCompactList}\small\item\em (const) holds the thread reference for the cluster expand thread \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_a716ce695e04d99f1e045fb9de1fb70f0}\label{structdbscan__pt_a716ce695e04d99f1e045fb9de1fb70f0}} 
 sem\+\_\+t \mbox{\hyperlink{structdbscan__pt_a716ce695e04d99f1e045fb9de1fb70f0}{sem1}}
 \begin{DoxyCompactList}\small\item\em (in) semaphore to wait on (main loop thread) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_af4a16a1139b3ee7e1dfcec9d415a8855}\label{structdbscan__pt_af4a16a1139b3ee7e1dfcec9d415a8855}} 
 sem\+\_\+t \mbox{\hyperlink{structdbscan__pt_af4a16a1139b3ee7e1dfcec9d415a8855}{semret1}}
 \begin{DoxyCompactList}\small\item\em (in) results ready sempahore (main loop thread) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_a5123f8b35d2933f40d493fe31dc062c5}\label{structdbscan__pt_a5123f8b35d2933f40d493fe31dc062c5}} 
 sem\+\_\+t \mbox{\hyperlink{structdbscan__pt_a5123f8b35d2933f40d493fe31dc062c5}{sem2}}
 \begin{DoxyCompactList}\small\item\em (in) semaphore to wait on (cluster expand thread) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_a229860660f580c96e3f00820dedc314f}\label{structdbscan__pt_a229860660f580c96e3f00820dedc314f}} 
 sem\+\_\+t \mbox{\hyperlink{structdbscan__pt_a229860660f580c96e3f00820dedc314f}{semret2}}
 \begin{DoxyCompactList}\small\item\em (in) results ready sempahore (cluster expand thread) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_aecd4ee021a0d72191163f578644813b4}\label{structdbscan__pt_aecd4ee021a0d72191163f578644813b4}} 
 pthread\+\_\+mutex\+\_\+t \mbox{\hyperlink{structdbscan__pt_aecd4ee021a0d72191163f578644813b4}{M\+U\+T\+E\+X\+\_\+var1}}
 \begin{DoxyCompactList}\small\item\em (in) lock the access to cmpto1 and itemcounter1 \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_a50b8b3c19e72c2496e04595da3466fc6}\label{structdbscan__pt_a50b8b3c19e72c2496e04595da3466fc6}} 
 volatile int \mbox{\hyperlink{structdbscan__pt_a50b8b3c19e72c2496e04595da3466fc6}{cmpto1}}
 \begin{DoxyCompactList}\small\item\em (in) data item number to which to compare all others \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_af71b0c6290be59f918f5fded65ca5aa0}\label{structdbscan__pt_af71b0c6290be59f918f5fded65ca5aa0}} 
 volatile int \mbox{\hyperlink{structdbscan__pt_af71b0c6290be59f918f5fded65ca5aa0}{itemcounter1}}
 \begin{DoxyCompactList}\small\item\em (out) number of itmes within radius \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_ad60703d4e4e49b5676c314ffacdd3cc6}\label{structdbscan__pt_ad60703d4e4e49b5676c314ffacdd3cc6}} 
 pthread\+\_\+mutex\+\_\+t \mbox{\hyperlink{structdbscan__pt_ad60703d4e4e49b5676c314ffacdd3cc6}{M\+U\+T\+E\+X\+\_\+var2}}
 \begin{DoxyCompactList}\small\item\em (in) lock the access to cmpto2 and itemcounter2 \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_ae90fa8f34589191559422b8d49321675}\label{structdbscan__pt_ae90fa8f34589191559422b8d49321675}} 
 volatile int \mbox{\hyperlink{structdbscan__pt_ae90fa8f34589191559422b8d49321675}{cmpto2}}
 \begin{DoxyCompactList}\small\item\em (in) data item number to which to compare all others \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_a7282c5e97e591646a31c5762bf39bd3f}\label{structdbscan__pt_a7282c5e97e591646a31c5762bf39bd3f}} 
 volatile int \mbox{\hyperlink{structdbscan__pt_a7282c5e97e591646a31c5762bf39bd3f}{itemcounter2}}
 \begin{DoxyCompactList}\small\item\em (out) number of itmes within radius \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_a9b4bcd3f61e899809341451edb698520}\label{structdbscan__pt_a9b4bcd3f61e899809341451edb698520}} 
 pthread\+\_\+mutex\+\_\+t \mbox{\hyperlink{structdbscan__pt_a9b4bcd3f61e899809341451edb698520}{M\+U\+T\+E\+X\+\_\+fertig1}}
 \begin{DoxyCompactList}\small\item\em (in) locks the access to fertig1 \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_a8ce1ed79a8f30b769dbae5a3725d0bec}\label{structdbscan__pt_a8ce1ed79a8f30b769dbae5a3725d0bec}} 
 volatile unsigned char \mbox{\hyperlink{structdbscan__pt_a8ce1ed79a8f30b769dbae5a3725d0bec}{fertig1}}
 \begin{DoxyCompactList}\small\item\em (in) 1=terminate thread \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_ade6e5b96f996f1d367a2595f7c237978}\label{structdbscan__pt_ade6e5b96f996f1d367a2595f7c237978}} 
 pthread\+\_\+mutex\+\_\+t \mbox{\hyperlink{structdbscan__pt_ade6e5b96f996f1d367a2595f7c237978}{M\+U\+T\+E\+X\+\_\+fertig2}}
 \begin{DoxyCompactList}\small\item\em (in) locks the access to fertig2 \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdbscan__pt_a6e02721843281f1f83499d2e7c3ffd32}\label{structdbscan__pt_a6e02721843281f1f83499d2e7c3ffd32}} 
 volatile unsigned char \mbox{\hyperlink{structdbscan__pt_a6e02721843281f1f83499d2e7c3ffd32}{fertig2}}
 \begin{DoxyCompactList}\small\item\em (in) 1=terminate thread \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -92,6 +66,269 @@ volatile unsigned char \mbox{\hyperlink{structdbscan__pt_a6e02721843281f1f83499d
 Parameters for the D\+B\+S\+C\+AN thread. 
 
 This struct holds the parameters for each D\+B\+S\+C\+AN thread. (in) means parameters that are N\+OT changed by the thread but may be changed by the method that submits the job. (const) means that the value is never changed after setup. (out) attributes are changed by the threads. This struct is used by two threads (dbscanthread1 and dbscanthread2). This struct may be used only by one of these two threads. The caller has to take care that this struct is not used by both threads at the same time. Nevertheless, all (const) attributes are readonly after initialization and may be read at any time. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structdbscan__pt_aab10762fb46be396c06f36c7b8f84f64}\label{structdbscan__pt_aab10762fb46be396c06f36c7b8f84f64}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!b@{b}}
+\index{b@{b}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily unsigned short$\ast$ dbscan\+\_\+pt\+::b}
+
+
+
+(out) number of closest cluster center 
+
+\mbox{\Hypertarget{structdbscan__pt_ac172b388c85db693e07e954f7d29e681}\label{structdbscan__pt_ac172b388c85db693e07e954f7d29e681}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!blen@{blen}}
+\index{blen@{blen}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{blen}{blen}}
+{\footnotesize\ttfamily int dbscan\+\_\+pt\+::blen}
+
+
+
+(const) number of data items 
+
+\mbox{\Hypertarget{structdbscan__pt_a50b8b3c19e72c2496e04595da3466fc6}\label{structdbscan__pt_a50b8b3c19e72c2496e04595da3466fc6}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!cmpto1@{cmpto1}}
+\index{cmpto1@{cmpto1}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{cmpto1}{cmpto1}}
+{\footnotesize\ttfamily volatile int dbscan\+\_\+pt\+::cmpto1}
+
+
+
+(in) data item number to which to compare all others 
+
+\mbox{\Hypertarget{structdbscan__pt_ae90fa8f34589191559422b8d49321675}\label{structdbscan__pt_ae90fa8f34589191559422b8d49321675}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!cmpto2@{cmpto2}}
+\index{cmpto2@{cmpto2}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{cmpto2}{cmpto2}}
+{\footnotesize\ttfamily volatile int dbscan\+\_\+pt\+::cmpto2}
+
+
+
+(in) data item number to which to compare all others 
+
+\mbox{\Hypertarget{structdbscan__pt_a1da0197a70e570bd30de1872fe60cd6b}\label{structdbscan__pt_a1da0197a70e570bd30de1872fe60cd6b}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!data@{data}}
+\index{data@{data}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily float$\ast$ dbscan\+\_\+pt\+::data}
+
+
+
+(const) input data 
+
+\mbox{\Hypertarget{structdbscan__pt_ae73ddeeaca04d08756b022115639d607}\label{structdbscan__pt_ae73ddeeaca04d08756b022115639d607}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!eps@{eps}}
+\index{eps@{eps}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{eps}{eps}}
+{\footnotesize\ttfamily float dbscan\+\_\+pt\+::eps}
+
+
+
+(const) radius 
+
+\mbox{\Hypertarget{structdbscan__pt_a22b641c18fac3731d31e9ded8c0c93eb}\label{structdbscan__pt_a22b641c18fac3731d31e9ded8c0c93eb}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!features@{features}}
+\index{features@{features}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{features}{features}}
+{\footnotesize\ttfamily int dbscan\+\_\+pt\+::features}
+
+
+
+(const) number of features per data item 
+
+\mbox{\Hypertarget{structdbscan__pt_a8ce1ed79a8f30b769dbae5a3725d0bec}\label{structdbscan__pt_a8ce1ed79a8f30b769dbae5a3725d0bec}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!fertig1@{fertig1}}
+\index{fertig1@{fertig1}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{fertig1}{fertig1}}
+{\footnotesize\ttfamily volatile unsigned char dbscan\+\_\+pt\+::fertig1}
+
+
+
+(in) 1=terminate thread 
+
+\mbox{\Hypertarget{structdbscan__pt_a6e02721843281f1f83499d2e7c3ffd32}\label{structdbscan__pt_a6e02721843281f1f83499d2e7c3ffd32}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!fertig2@{fertig2}}
+\index{fertig2@{fertig2}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{fertig2}{fertig2}}
+{\footnotesize\ttfamily volatile unsigned char dbscan\+\_\+pt\+::fertig2}
+
+
+
+(in) 1=terminate thread 
+
+\mbox{\Hypertarget{structdbscan__pt_af71b0c6290be59f918f5fded65ca5aa0}\label{structdbscan__pt_af71b0c6290be59f918f5fded65ca5aa0}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!itemcounter1@{itemcounter1}}
+\index{itemcounter1@{itemcounter1}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{itemcounter1}{itemcounter1}}
+{\footnotesize\ttfamily volatile int dbscan\+\_\+pt\+::itemcounter1}
+
+
+
+(out) number of itmes within radius 
+
+\mbox{\Hypertarget{structdbscan__pt_a7282c5e97e591646a31c5762bf39bd3f}\label{structdbscan__pt_a7282c5e97e591646a31c5762bf39bd3f}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!itemcounter2@{itemcounter2}}
+\index{itemcounter2@{itemcounter2}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{itemcounter2}{itemcounter2}}
+{\footnotesize\ttfamily volatile int dbscan\+\_\+pt\+::itemcounter2}
+
+
+
+(out) number of itmes within radius 
+
+\mbox{\Hypertarget{structdbscan__pt_a07b73afdc253e16524b7eae0f6ec26b4}\label{structdbscan__pt_a07b73afdc253e16524b7eae0f6ec26b4}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!kk@{kk}}
+\index{kk@{kk}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{kk}{kk}}
+{\footnotesize\ttfamily int dbscan\+\_\+pt\+::kk}
+
+
+
+(const) number of neighbours 
+
+\mbox{\Hypertarget{structdbscan__pt_a75fa5f27f7e41e5472087a847388daaf}\label{structdbscan__pt_a75fa5f27f7e41e5472087a847388daaf}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!len@{len}}
+\index{len@{len}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{len}{len}}
+{\footnotesize\ttfamily int dbscan\+\_\+pt\+::len}
+
+
+
+(const) last data item 
+
+\mbox{\Hypertarget{structdbscan__pt_a9b4bcd3f61e899809341451edb698520}\label{structdbscan__pt_a9b4bcd3f61e899809341451edb698520}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!M\+U\+T\+E\+X\+\_\+fertig1@{M\+U\+T\+E\+X\+\_\+fertig1}}
+\index{M\+U\+T\+E\+X\+\_\+fertig1@{M\+U\+T\+E\+X\+\_\+fertig1}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{M\+U\+T\+E\+X\+\_\+fertig1}{MUTEX\_fertig1}}
+{\footnotesize\ttfamily pthread\+\_\+mutex\+\_\+t dbscan\+\_\+pt\+::\+M\+U\+T\+E\+X\+\_\+fertig1}
+
+
+
+(in) locks the access to fertig1 
+
+\mbox{\Hypertarget{structdbscan__pt_ade6e5b96f996f1d367a2595f7c237978}\label{structdbscan__pt_ade6e5b96f996f1d367a2595f7c237978}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!M\+U\+T\+E\+X\+\_\+fertig2@{M\+U\+T\+E\+X\+\_\+fertig2}}
+\index{M\+U\+T\+E\+X\+\_\+fertig2@{M\+U\+T\+E\+X\+\_\+fertig2}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{M\+U\+T\+E\+X\+\_\+fertig2}{MUTEX\_fertig2}}
+{\footnotesize\ttfamily pthread\+\_\+mutex\+\_\+t dbscan\+\_\+pt\+::\+M\+U\+T\+E\+X\+\_\+fertig2}
+
+
+
+(in) locks the access to fertig2 
+
+\mbox{\Hypertarget{structdbscan__pt_aecd4ee021a0d72191163f578644813b4}\label{structdbscan__pt_aecd4ee021a0d72191163f578644813b4}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!M\+U\+T\+E\+X\+\_\+var1@{M\+U\+T\+E\+X\+\_\+var1}}
+\index{M\+U\+T\+E\+X\+\_\+var1@{M\+U\+T\+E\+X\+\_\+var1}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{M\+U\+T\+E\+X\+\_\+var1}{MUTEX\_var1}}
+{\footnotesize\ttfamily pthread\+\_\+mutex\+\_\+t dbscan\+\_\+pt\+::\+M\+U\+T\+E\+X\+\_\+var1}
+
+
+
+(in) lock the access to cmpto1 and itemcounter1 
+
+\mbox{\Hypertarget{structdbscan__pt_ad60703d4e4e49b5676c314ffacdd3cc6}\label{structdbscan__pt_ad60703d4e4e49b5676c314ffacdd3cc6}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!M\+U\+T\+E\+X\+\_\+var2@{M\+U\+T\+E\+X\+\_\+var2}}
+\index{M\+U\+T\+E\+X\+\_\+var2@{M\+U\+T\+E\+X\+\_\+var2}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{M\+U\+T\+E\+X\+\_\+var2}{MUTEX\_var2}}
+{\footnotesize\ttfamily pthread\+\_\+mutex\+\_\+t dbscan\+\_\+pt\+::\+M\+U\+T\+E\+X\+\_\+var2}
+
+
+
+(in) lock the access to cmpto2 and itemcounter2 
+
+\mbox{\Hypertarget{structdbscan__pt_aaa1b99005b0207af9c85a6fc73368eb3}\label{structdbscan__pt_aaa1b99005b0207af9c85a6fc73368eb3}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!num@{num}}
+\index{num@{num}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{num}{num}}
+{\footnotesize\ttfamily int dbscan\+\_\+pt\+::num}
+
+
+
+(const) number of thread 
+
+\mbox{\Hypertarget{structdbscan__pt_a716ce695e04d99f1e045fb9de1fb70f0}\label{structdbscan__pt_a716ce695e04d99f1e045fb9de1fb70f0}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!sem1@{sem1}}
+\index{sem1@{sem1}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{sem1}{sem1}}
+{\footnotesize\ttfamily sem\+\_\+t dbscan\+\_\+pt\+::sem1}
+
+
+
+(in) semaphore to wait on (main loop thread) 
+
+\mbox{\Hypertarget{structdbscan__pt_a5123f8b35d2933f40d493fe31dc062c5}\label{structdbscan__pt_a5123f8b35d2933f40d493fe31dc062c5}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!sem2@{sem2}}
+\index{sem2@{sem2}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{sem2}{sem2}}
+{\footnotesize\ttfamily sem\+\_\+t dbscan\+\_\+pt\+::sem2}
+
+
+
+(in) semaphore to wait on (cluster expand thread) 
+
+\mbox{\Hypertarget{structdbscan__pt_af4a16a1139b3ee7e1dfcec9d415a8855}\label{structdbscan__pt_af4a16a1139b3ee7e1dfcec9d415a8855}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!semret1@{semret1}}
+\index{semret1@{semret1}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{semret1}{semret1}}
+{\footnotesize\ttfamily sem\+\_\+t dbscan\+\_\+pt\+::semret1}
+
+
+
+(in) results ready sempahore (main loop thread) 
+
+\mbox{\Hypertarget{structdbscan__pt_a229860660f580c96e3f00820dedc314f}\label{structdbscan__pt_a229860660f580c96e3f00820dedc314f}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!semret2@{semret2}}
+\index{semret2@{semret2}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{semret2}{semret2}}
+{\footnotesize\ttfamily sem\+\_\+t dbscan\+\_\+pt\+::semret2}
+
+
+
+(in) results ready sempahore (cluster expand thread) 
+
+\mbox{\Hypertarget{structdbscan__pt_ab35e524b61208589ee28bbf4a79341ae}\label{structdbscan__pt_ab35e524b61208589ee28bbf4a79341ae}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!start@{start}}
+\index{start@{start}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily int dbscan\+\_\+pt\+::start}
+
+
+
+(const) first data item 
+
+\mbox{\Hypertarget{structdbscan__pt_a5a42d9fe57034198ed5250f6f0ddb2cb}\label{structdbscan__pt_a5a42d9fe57034198ed5250f6f0ddb2cb}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!status@{status}}
+\index{status@{status}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily unsigned short int dbscan\+\_\+pt\+::status}
+
+
+
+(const) status (needed only for setup and destruction) 
+
+\mbox{\Hypertarget{structdbscan__pt_a2535cf2a4899d30b008b26dfa92bd44c}\label{structdbscan__pt_a2535cf2a4899d30b008b26dfa92bd44c}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!thread1@{thread1}}
+\index{thread1@{thread1}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{thread1}{thread1}}
+{\footnotesize\ttfamily pthread\+\_\+t dbscan\+\_\+pt\+::thread1}
+
+
+
+(const) holds the thread reference for the main loop thread 
+
+\mbox{\Hypertarget{structdbscan__pt_a4c0ec8c2730f9a56a4b186692de79c47}\label{structdbscan__pt_a4c0ec8c2730f9a56a4b186692de79c47}} 
+\index{dbscan\+\_\+pt@{dbscan\+\_\+pt}!thread2@{thread2}}
+\index{thread2@{thread2}!dbscan\+\_\+pt@{dbscan\+\_\+pt}}
+\subsubsection{\texorpdfstring{thread2}{thread2}}
+{\footnotesize\ttfamily pthread\+\_\+t dbscan\+\_\+pt\+::thread2}
+
+
+
+(const) holds the thread reference for the cluster expand thread 
+
+
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

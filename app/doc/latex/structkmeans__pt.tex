@@ -8,46 +8,32 @@ Parameters for the kmeans thread.
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structkmeans__pt_adc9152bce7b95fd51d6185901169c52b}\label{structkmeans__pt_adc9152bce7b95fd51d6185901169c52b}} 
 unsigned short int \mbox{\hyperlink{structkmeans__pt_adc9152bce7b95fd51d6185901169c52b}{status}}
 \begin{DoxyCompactList}\small\item\em (const) status (needed only for setup and destruction) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structkmeans__pt_a72c17b986e5cc7bbdcc92d59ef05e8f0}\label{structkmeans__pt_a72c17b986e5cc7bbdcc92d59ef05e8f0}} 
 int \mbox{\hyperlink{structkmeans__pt_a72c17b986e5cc7bbdcc92d59ef05e8f0}{num}}
 \begin{DoxyCompactList}\small\item\em (const) number of thread \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structkmeans__pt_a00950024e02b55ade4be01f829f7f11d}\label{structkmeans__pt_a00950024e02b55ade4be01f829f7f11d}} 
 unsigned short $\ast$ \mbox{\hyperlink{structkmeans__pt_a00950024e02b55ade4be01f829f7f11d}{b}}
 \begin{DoxyCompactList}\small\item\em (out) number of closest cluster center \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structkmeans__pt_a6efb6f48fc6294152d77552f183704da}\label{structkmeans__pt_a6efb6f48fc6294152d77552f183704da}} 
 float $\ast$ \mbox{\hyperlink{structkmeans__pt_a6efb6f48fc6294152d77552f183704da}{data}}
 \begin{DoxyCompactList}\small\item\em (const) input data \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structkmeans__pt_aca0bb922070f8b7dd1f0e82a4b8ca607}\label{structkmeans__pt_aca0bb922070f8b7dd1f0e82a4b8ca607}} 
 volatile float $\ast$ \mbox{\hyperlink{structkmeans__pt_aca0bb922070f8b7dd1f0e82a4b8ca607}{clucent}}
 \begin{DoxyCompactList}\small\item\em (in) cluster centers \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structkmeans__pt_a4346d32e38a81feaf2799f25abf84a16}\label{structkmeans__pt_a4346d32e38a81feaf2799f25abf84a16}} 
 int \mbox{\hyperlink{structkmeans__pt_a4346d32e38a81feaf2799f25abf84a16}{blen}}
 \begin{DoxyCompactList}\small\item\em (const) number of data items \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structkmeans__pt_a987049eea35a32b1d1ba469f37b4a862}\label{structkmeans__pt_a987049eea35a32b1d1ba469f37b4a862}} 
 int \mbox{\hyperlink{structkmeans__pt_a987049eea35a32b1d1ba469f37b4a862}{cluno}}
 \begin{DoxyCompactList}\small\item\em (const) number of clusters \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structkmeans__pt_a0b7e9c2f96d55642a579c66c916dfbac}\label{structkmeans__pt_a0b7e9c2f96d55642a579c66c916dfbac}} 
 int \mbox{\hyperlink{structkmeans__pt_a0b7e9c2f96d55642a579c66c916dfbac}{features}}
 \begin{DoxyCompactList}\small\item\em (const) number of features per data item \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structkmeans__pt_a7568dca47a635b63a775853ace1a231f}\label{structkmeans__pt_a7568dca47a635b63a775853ace1a231f}} 
 int \mbox{\hyperlink{structkmeans__pt_a7568dca47a635b63a775853ace1a231f}{start}}
 \begin{DoxyCompactList}\small\item\em (const) first data item \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structkmeans__pt_af49609aa1989feab464cfc85a25c3ec4}\label{structkmeans__pt_af49609aa1989feab464cfc85a25c3ec4}} 
 int \mbox{\hyperlink{structkmeans__pt_af49609aa1989feab464cfc85a25c3ec4}{len}}
 \begin{DoxyCompactList}\small\item\em (const) last data item \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structkmeans__pt_ad2580bc7fb5eac708522af779db2d54c}\label{structkmeans__pt_ad2580bc7fb5eac708522af779db2d54c}} 
 volatile unsigned char \mbox{\hyperlink{structkmeans__pt_ad2580bc7fb5eac708522af779db2d54c}{fertig}}
 \begin{DoxyCompactList}\small\item\em (in) 1=quit loop \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structkmeans__pt_a2648d7c598e20fdf23e9d30f43b4b17c}\label{structkmeans__pt_a2648d7c598e20fdf23e9d30f43b4b17c}} 
 pthread\+\_\+t \mbox{\hyperlink{structkmeans__pt_a2648d7c598e20fdf23e9d30f43b4b17c}{thread}}
 \begin{DoxyCompactList}\small\item\em (const) reference to the thread \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structkmeans__pt_af1c42a889c6180d899cb41066d2884c0}\label{structkmeans__pt_af1c42a889c6180d899cb41066d2884c0}} 
 sem\+\_\+t \mbox{\hyperlink{structkmeans__pt_af1c42a889c6180d899cb41066d2884c0}{sem}}
 \begin{DoxyCompactList}\small\item\em (const) semaphore used for start \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structkmeans__pt_aa959612fc7e6fa42798130bbf1c437a7}\label{structkmeans__pt_aa959612fc7e6fa42798130bbf1c437a7}} 
 sem\+\_\+t \mbox{\hyperlink{structkmeans__pt_aa959612fc7e6fa42798130bbf1c437a7}{semret}}
 \begin{DoxyCompactList}\small\item\em (const) semaphore for notification that results are ready \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -56,6 +42,149 @@ sem\+\_\+t \mbox{\hyperlink{structkmeans__pt_aa959612fc7e6fa42798130bbf1c437a7}{
 Parameters for the kmeans thread. 
 
 This struct holds the parameters for each kmeans thread. (in) means parameters that are N\+OT changed by the thread but may be changed by the method that submits the job. (const) means that the value is never changed after setup. (out) attributes are changed by the thread. The submitting method must not write access any (in) or (out) field while the calculations are running. The submitting method may read access all (in) while the calculations are running. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structkmeans__pt_a00950024e02b55ade4be01f829f7f11d}\label{structkmeans__pt_a00950024e02b55ade4be01f829f7f11d}} 
+\index{kmeans\+\_\+pt@{kmeans\+\_\+pt}!b@{b}}
+\index{b@{b}!kmeans\+\_\+pt@{kmeans\+\_\+pt}}
+\subsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily unsigned short$\ast$ kmeans\+\_\+pt\+::b}
+
+
+
+(out) number of closest cluster center 
+
+\mbox{\Hypertarget{structkmeans__pt_a4346d32e38a81feaf2799f25abf84a16}\label{structkmeans__pt_a4346d32e38a81feaf2799f25abf84a16}} 
+\index{kmeans\+\_\+pt@{kmeans\+\_\+pt}!blen@{blen}}
+\index{blen@{blen}!kmeans\+\_\+pt@{kmeans\+\_\+pt}}
+\subsubsection{\texorpdfstring{blen}{blen}}
+{\footnotesize\ttfamily int kmeans\+\_\+pt\+::blen}
+
+
+
+(const) number of data items 
+
+\mbox{\Hypertarget{structkmeans__pt_aca0bb922070f8b7dd1f0e82a4b8ca607}\label{structkmeans__pt_aca0bb922070f8b7dd1f0e82a4b8ca607}} 
+\index{kmeans\+\_\+pt@{kmeans\+\_\+pt}!clucent@{clucent}}
+\index{clucent@{clucent}!kmeans\+\_\+pt@{kmeans\+\_\+pt}}
+\subsubsection{\texorpdfstring{clucent}{clucent}}
+{\footnotesize\ttfamily volatile float$\ast$ kmeans\+\_\+pt\+::clucent}
+
+
+
+(in) cluster centers 
+
+\mbox{\Hypertarget{structkmeans__pt_a987049eea35a32b1d1ba469f37b4a862}\label{structkmeans__pt_a987049eea35a32b1d1ba469f37b4a862}} 
+\index{kmeans\+\_\+pt@{kmeans\+\_\+pt}!cluno@{cluno}}
+\index{cluno@{cluno}!kmeans\+\_\+pt@{kmeans\+\_\+pt}}
+\subsubsection{\texorpdfstring{cluno}{cluno}}
+{\footnotesize\ttfamily int kmeans\+\_\+pt\+::cluno}
+
+
+
+(const) number of clusters 
+
+\mbox{\Hypertarget{structkmeans__pt_a6efb6f48fc6294152d77552f183704da}\label{structkmeans__pt_a6efb6f48fc6294152d77552f183704da}} 
+\index{kmeans\+\_\+pt@{kmeans\+\_\+pt}!data@{data}}
+\index{data@{data}!kmeans\+\_\+pt@{kmeans\+\_\+pt}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily float$\ast$ kmeans\+\_\+pt\+::data}
+
+
+
+(const) input data 
+
+\mbox{\Hypertarget{structkmeans__pt_a0b7e9c2f96d55642a579c66c916dfbac}\label{structkmeans__pt_a0b7e9c2f96d55642a579c66c916dfbac}} 
+\index{kmeans\+\_\+pt@{kmeans\+\_\+pt}!features@{features}}
+\index{features@{features}!kmeans\+\_\+pt@{kmeans\+\_\+pt}}
+\subsubsection{\texorpdfstring{features}{features}}
+{\footnotesize\ttfamily int kmeans\+\_\+pt\+::features}
+
+
+
+(const) number of features per data item 
+
+\mbox{\Hypertarget{structkmeans__pt_ad2580bc7fb5eac708522af779db2d54c}\label{structkmeans__pt_ad2580bc7fb5eac708522af779db2d54c}} 
+\index{kmeans\+\_\+pt@{kmeans\+\_\+pt}!fertig@{fertig}}
+\index{fertig@{fertig}!kmeans\+\_\+pt@{kmeans\+\_\+pt}}
+\subsubsection{\texorpdfstring{fertig}{fertig}}
+{\footnotesize\ttfamily volatile unsigned char kmeans\+\_\+pt\+::fertig}
+
+
+
+(in) 1=quit loop 
+
+\mbox{\Hypertarget{structkmeans__pt_af49609aa1989feab464cfc85a25c3ec4}\label{structkmeans__pt_af49609aa1989feab464cfc85a25c3ec4}} 
+\index{kmeans\+\_\+pt@{kmeans\+\_\+pt}!len@{len}}
+\index{len@{len}!kmeans\+\_\+pt@{kmeans\+\_\+pt}}
+\subsubsection{\texorpdfstring{len}{len}}
+{\footnotesize\ttfamily int kmeans\+\_\+pt\+::len}
+
+
+
+(const) last data item 
+
+\mbox{\Hypertarget{structkmeans__pt_a72c17b986e5cc7bbdcc92d59ef05e8f0}\label{structkmeans__pt_a72c17b986e5cc7bbdcc92d59ef05e8f0}} 
+\index{kmeans\+\_\+pt@{kmeans\+\_\+pt}!num@{num}}
+\index{num@{num}!kmeans\+\_\+pt@{kmeans\+\_\+pt}}
+\subsubsection{\texorpdfstring{num}{num}}
+{\footnotesize\ttfamily int kmeans\+\_\+pt\+::num}
+
+
+
+(const) number of thread 
+
+\mbox{\Hypertarget{structkmeans__pt_af1c42a889c6180d899cb41066d2884c0}\label{structkmeans__pt_af1c42a889c6180d899cb41066d2884c0}} 
+\index{kmeans\+\_\+pt@{kmeans\+\_\+pt}!sem@{sem}}
+\index{sem@{sem}!kmeans\+\_\+pt@{kmeans\+\_\+pt}}
+\subsubsection{\texorpdfstring{sem}{sem}}
+{\footnotesize\ttfamily sem\+\_\+t kmeans\+\_\+pt\+::sem}
+
+
+
+(const) semaphore used for start 
+
+\mbox{\Hypertarget{structkmeans__pt_aa959612fc7e6fa42798130bbf1c437a7}\label{structkmeans__pt_aa959612fc7e6fa42798130bbf1c437a7}} 
+\index{kmeans\+\_\+pt@{kmeans\+\_\+pt}!semret@{semret}}
+\index{semret@{semret}!kmeans\+\_\+pt@{kmeans\+\_\+pt}}
+\subsubsection{\texorpdfstring{semret}{semret}}
+{\footnotesize\ttfamily sem\+\_\+t kmeans\+\_\+pt\+::semret}
+
+
+
+(const) semaphore for notification that results are ready 
+
+\mbox{\Hypertarget{structkmeans__pt_a7568dca47a635b63a775853ace1a231f}\label{structkmeans__pt_a7568dca47a635b63a775853ace1a231f}} 
+\index{kmeans\+\_\+pt@{kmeans\+\_\+pt}!start@{start}}
+\index{start@{start}!kmeans\+\_\+pt@{kmeans\+\_\+pt}}
+\subsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily int kmeans\+\_\+pt\+::start}
+
+
+
+(const) first data item 
+
+\mbox{\Hypertarget{structkmeans__pt_adc9152bce7b95fd51d6185901169c52b}\label{structkmeans__pt_adc9152bce7b95fd51d6185901169c52b}} 
+\index{kmeans\+\_\+pt@{kmeans\+\_\+pt}!status@{status}}
+\index{status@{status}!kmeans\+\_\+pt@{kmeans\+\_\+pt}}
+\subsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily unsigned short int kmeans\+\_\+pt\+::status}
+
+
+
+(const) status (needed only for setup and destruction) 
+
+\mbox{\Hypertarget{structkmeans__pt_a2648d7c598e20fdf23e9d30f43b4b17c}\label{structkmeans__pt_a2648d7c598e20fdf23e9d30f43b4b17c}} 
+\index{kmeans\+\_\+pt@{kmeans\+\_\+pt}!thread@{thread}}
+\index{thread@{thread}!kmeans\+\_\+pt@{kmeans\+\_\+pt}}
+\subsubsection{\texorpdfstring{thread}{thread}}
+{\footnotesize\ttfamily pthread\+\_\+t kmeans\+\_\+pt\+::thread}
+
+
+
+(const) reference to the thread 
+
+
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

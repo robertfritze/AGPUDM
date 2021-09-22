@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['thread',['thread',['../structkmeans__pt.html#a2648d7c598e20fdf23e9d30f43b4b17c',1,'kmeans_pt']]],
-  ['thread1',['thread1',['../structdbscan__pt.html#a2535cf2a4899d30b008b26dfa92bd44c',1,'dbscan_pt']]],
-  ['thread2',['thread2',['../structdbscan__pt.html#a4c0ec8c2730f9a56a4b186692de79c47',1,'dbscan_pt']]]
+  ['oclversion',['oclversion',['../classcom_1_1example_1_1dmocl_1_1oclwrap_1_1oclinforet.html#ab46a021c29f8d24e0c6a29a999672968',1,'com::example::dmocl::oclwrap::oclinforet']]],
+  ['oclwrap_5finstance',['oclwrap_instance',['../classcom_1_1example_1_1dmocl_1_1oclwrap.html#a3d8e0d80008bcd1d88fdf3f42cd1e653',1,'com::example::dmocl::oclwrap']]],
+  ['owrp',['owrp',['../classcom_1_1example_1_1dmocl_1_1MainActivity.html#ac96a1197ded8a7cf0cb4ea39d37af6a6',1,'com::example::dmocl::MainActivity']]]
 ];

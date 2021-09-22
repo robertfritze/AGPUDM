@@ -9,25 +9,116 @@ Inheritance diagram for com.\+example.\+dmocl.\+Main\+Activity\+:\begin{figure}[
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class {\bfseries Work\+Manager\+No\+Information\+Exception}
+class \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1MainActivity_1_1WorkManagerNoInformationException}{Work\+Manager\+No\+Information\+Exception}}
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1MainActivity_a26973c08d4b74dcce01e294077211c2f}\label{classcom_1_1example_1_1dmocl_1_1MainActivity_a26973c08d4b74dcce01e294077211c2f}} 
-synchronized boolean {\bfseries try\+Load\+G\+PU} (String gpupath)
+synchronized boolean \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1MainActivity_a26973c08d4b74dcce01e294077211c2f}{try\+Load\+G\+PU}} (String gpupath)
 \item 
-\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1MainActivity_a59609da2fb62ee158da1d4efc6d26f63}\label{classcom_1_1example_1_1dmocl_1_1MainActivity_a59609da2fb62ee158da1d4efc6d26f63}} 
-void {\bfseries on\+Resume} ()
+void \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1MainActivity_a59609da2fb62ee158da1d4efc6d26f63}{on\+Resume}} ()
 \item 
-\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1MainActivity_a10f895ac3f6343c7b6c3b946ceadbf32}\label{classcom_1_1example_1_1dmocl_1_1MainActivity_a10f895ac3f6343c7b6c3b946ceadbf32}} 
-void {\bfseries on\+Create} (Bundle saved\+Instance\+State)
+void \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1MainActivity_a10f895ac3f6343c7b6c3b946ceadbf32}{on\+Create}} (Bundle saved\+Instance\+State)
 \item 
-\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1MainActivity_a0ba841e058a14398a5a6766e0618bd59}\label{classcom_1_1example_1_1dmocl_1_1MainActivity_a0ba841e058a14398a5a6766e0618bd59}} 
-void {\bfseries on\+Destroy} ()
+void \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1MainActivity_a0ba841e058a14398a5a6766e0618bd59}{on\+Destroy}} ()
 \end{DoxyCompactItemize}
+\subsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1MainActivity_aade6435b69c9fe19247a61b67a8bc6c4}{G\+P\+Upath}} = \char`\"{}\char`\"{}
+\item 
+Atomic\+Boolean \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1MainActivity_a202e63994768ec6b848cc5ea8d0bc7fa}{G\+P\+Ufound}} = new Atomic\+Boolean(false)
+\item 
+Executor\+Service \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1MainActivity_a3cb13ff3b6a5bb8274a82b5e5531babc}{executor\+Service}} = Executors.\+new\+Single\+Thread\+Executor()
+\item 
+Handler \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1MainActivity_a1ee4246708662ea604b9c5485f37daa6}{main\+Thread\+Handler}} = Handler\+Compat.\+create\+Async(Looper.\+get\+Main\+Looper())
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1MainActivity_a68c83a580a869fcaed554bee7fccfef4}{update\+Live\+Info}} (List$<$ Work\+Info $>$ statuses, Text\+View jobinfo, Button startbutton)  throws Work\+Manager\+No\+Information\+Exception 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final Object \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1MainActivity_aab1bd415da3d75e0223a77caa941333d}{syncobj}} = new Object()
+\item 
+final \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1oclwrap}{oclwrap}} \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1MainActivity_ac96a1197ded8a7cf0cb4ea39d37af6a6}{owrp}} = \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1oclwrap_a8c8c9a75d3d834cb71725d92ddeb4af7}{oclwrap.\+get\+Ocl\+Wrapper}}()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1MainActivity_a10f895ac3f6343c7b6c3b946ceadbf32}\label{classcom_1_1example_1_1dmocl_1_1MainActivity_a10f895ac3f6343c7b6c3b946ceadbf32}} 
+\index{com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}!on\+Create@{on\+Create}}
+\index{on\+Create@{on\+Create}!com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}}
+\subsubsection{\texorpdfstring{on\+Create()}{onCreate()}}
+{\footnotesize\ttfamily void com.\+example.\+dmocl.\+Main\+Activity.\+on\+Create (\begin{DoxyParamCaption}\item[{Bundle}]{saved\+Instance\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1MainActivity_a0ba841e058a14398a5a6766e0618bd59}\label{classcom_1_1example_1_1dmocl_1_1MainActivity_a0ba841e058a14398a5a6766e0618bd59}} 
+\index{com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}!on\+Destroy@{on\+Destroy}}
+\index{on\+Destroy@{on\+Destroy}!com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}}
+\subsubsection{\texorpdfstring{on\+Destroy()}{onDestroy()}}
+{\footnotesize\ttfamily void com.\+example.\+dmocl.\+Main\+Activity.\+on\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1MainActivity_a59609da2fb62ee158da1d4efc6d26f63}\label{classcom_1_1example_1_1dmocl_1_1MainActivity_a59609da2fb62ee158da1d4efc6d26f63}} 
+\index{com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}!on\+Resume@{on\+Resume}}
+\index{on\+Resume@{on\+Resume}!com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}}
+\subsubsection{\texorpdfstring{on\+Resume()}{onResume()}}
+{\footnotesize\ttfamily void com.\+example.\+dmocl.\+Main\+Activity.\+on\+Resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1MainActivity_a26973c08d4b74dcce01e294077211c2f}\label{classcom_1_1example_1_1dmocl_1_1MainActivity_a26973c08d4b74dcce01e294077211c2f}} 
+\index{com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}!try\+Load\+G\+PU@{try\+Load\+G\+PU}}
+\index{try\+Load\+G\+PU@{try\+Load\+G\+PU}!com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}}
+\subsubsection{\texorpdfstring{try\+Load\+G\+P\+U()}{tryLoadGPU()}}
+{\footnotesize\ttfamily synchronized boolean com.\+example.\+dmocl.\+Main\+Activity.\+try\+Load\+G\+PU (\begin{DoxyParamCaption}\item[{String}]{gpupath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1MainActivity_a68c83a580a869fcaed554bee7fccfef4}\label{classcom_1_1example_1_1dmocl_1_1MainActivity_a68c83a580a869fcaed554bee7fccfef4}} 
+\index{com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}!update\+Live\+Info@{update\+Live\+Info}}
+\index{update\+Live\+Info@{update\+Live\+Info}!com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}}
+\subsubsection{\texorpdfstring{update\+Live\+Info()}{updateLiveInfo()}}
+{\footnotesize\ttfamily void com.\+example.\+dmocl.\+Main\+Activity.\+update\+Live\+Info (\begin{DoxyParamCaption}\item[{List$<$ Work\+Info $>$}]{statuses,  }\item[{Text\+View}]{jobinfo,  }\item[{Button}]{startbutton }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1MainActivity_1_1WorkManagerNoInformationException}{Work\+Manager\+No\+Information\+Exception}}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1MainActivity_a3cb13ff3b6a5bb8274a82b5e5531babc}\label{classcom_1_1example_1_1dmocl_1_1MainActivity_a3cb13ff3b6a5bb8274a82b5e5531babc}} 
+\index{com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}!executor\+Service@{executor\+Service}}
+\index{executor\+Service@{executor\+Service}!com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}}
+\subsubsection{\texorpdfstring{executor\+Service}{executorService}}
+{\footnotesize\ttfamily Executor\+Service com.\+example.\+dmocl.\+Main\+Activity.\+executor\+Service = Executors.\+new\+Single\+Thread\+Executor()\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1MainActivity_a202e63994768ec6b848cc5ea8d0bc7fa}\label{classcom_1_1example_1_1dmocl_1_1MainActivity_a202e63994768ec6b848cc5ea8d0bc7fa}} 
+\index{com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}!G\+P\+Ufound@{G\+P\+Ufound}}
+\index{G\+P\+Ufound@{G\+P\+Ufound}!com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}}
+\subsubsection{\texorpdfstring{G\+P\+Ufound}{GPUfound}}
+{\footnotesize\ttfamily Atomic\+Boolean com.\+example.\+dmocl.\+Main\+Activity.\+G\+P\+Ufound = new Atomic\+Boolean(false)\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1MainActivity_aade6435b69c9fe19247a61b67a8bc6c4}\label{classcom_1_1example_1_1dmocl_1_1MainActivity_aade6435b69c9fe19247a61b67a8bc6c4}} 
+\index{com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}!G\+P\+Upath@{G\+P\+Upath}}
+\index{G\+P\+Upath@{G\+P\+Upath}!com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}}
+\subsubsection{\texorpdfstring{G\+P\+Upath}{GPUpath}}
+{\footnotesize\ttfamily String com.\+example.\+dmocl.\+Main\+Activity.\+G\+P\+Upath = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1MainActivity_a1ee4246708662ea604b9c5485f37daa6}\label{classcom_1_1example_1_1dmocl_1_1MainActivity_a1ee4246708662ea604b9c5485f37daa6}} 
+\index{com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}!main\+Thread\+Handler@{main\+Thread\+Handler}}
+\index{main\+Thread\+Handler@{main\+Thread\+Handler}!com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}}
+\subsubsection{\texorpdfstring{main\+Thread\+Handler}{mainThreadHandler}}
+{\footnotesize\ttfamily Handler com.\+example.\+dmocl.\+Main\+Activity.\+main\+Thread\+Handler = Handler\+Compat.\+create\+Async(Looper.\+get\+Main\+Looper())\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1MainActivity_ac96a1197ded8a7cf0cb4ea39d37af6a6}\label{classcom_1_1example_1_1dmocl_1_1MainActivity_ac96a1197ded8a7cf0cb4ea39d37af6a6}} 
+\index{com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}!owrp@{owrp}}
+\index{owrp@{owrp}!com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}}
+\subsubsection{\texorpdfstring{owrp}{owrp}}
+{\footnotesize\ttfamily final \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1oclwrap}{oclwrap}} com.\+example.\+dmocl.\+Main\+Activity.\+owrp = \mbox{\hyperlink{classcom_1_1example_1_1dmocl_1_1oclwrap_a8c8c9a75d3d834cb71725d92ddeb4af7}{oclwrap.\+get\+Ocl\+Wrapper}}()\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcom_1_1example_1_1dmocl_1_1MainActivity_aab1bd415da3d75e0223a77caa941333d}\label{classcom_1_1example_1_1dmocl_1_1MainActivity_aab1bd415da3d75e0223a77caa941333d}} 
+\index{com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}!syncobj@{syncobj}}
+\index{syncobj@{syncobj}!com\+::example\+::dmocl\+::\+Main\+Activity@{com\+::example\+::dmocl\+::\+Main\+Activity}}
+\subsubsection{\texorpdfstring{syncobj}{syncobj}}
+{\footnotesize\ttfamily final Object com.\+example.\+dmocl.\+Main\+Activity.\+syncobj = new Object()\hspace{0.3cm}{\ttfamily [private]}}
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/main/java/com/example/dmocl/Main\+Activity.\+java\end{DoxyCompactItemize}
+/home/robert/\+Android\+Studio\+Projects/\+D\+M\+G\+P\+U/app/src/main/java/com/example/dmocl/\mbox{\hyperlink{MainActivity_8java}{Main\+Activity.\+java}}\end{DoxyCompactItemize}

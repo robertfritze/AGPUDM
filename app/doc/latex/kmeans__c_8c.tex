@@ -26,13 +26,10 @@ struct \mbox{\hyperlink{structkmeans__pt}{kmeans\+\_\+pt}}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{kmeans__c_8c_a16605039b395344c0b68b435e197b8bd}\label{kmeans__c_8c_a16605039b395344c0b68b435e197b8bd}} 
 \#define \mbox{\hyperlink{kmeans__c_8c_a16605039b395344c0b68b435e197b8bd}{C\+L\+\_\+\+U\+S\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+O\+P\+E\+N\+C\+L\+\_\+1\+\_\+2\+\_\+\+A\+P\+IS}}
 \begin{DoxyCompactList}\small\item\em use older Open\+CL A\+P\+IS \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{kmeans__c_8c_ab26f3be5ae4af394f940d3ff5c996d84}\label{kmeans__c_8c_ab26f3be5ae4af394f940d3ff5c996d84}} 
 \#define \mbox{\hyperlink{kmeans__c_8c_ab26f3be5ae4af394f940d3ff5c996d84}{G\+P\+U\+T\+I\+M\+I\+NG}}
 \begin{DoxyCompactList}\small\item\em Define if detailed timing for the G\+PU should be made. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{kmeans__c_8c_a2aac62b7fa9bc0d2047b1767ec764ec5}\label{kmeans__c_8c_a2aac62b7fa9bc0d2047b1767ec764ec5}} 
 \#define \mbox{\hyperlink{kmeans__c_8c_a2aac62b7fa9bc0d2047b1767ec764ec5}{M\+A\+X\+C\+Y\+C\+L\+ES}}~100000
 \begin{DoxyCompactList}\small\item\em maximum numbers of cycles for kmeans (to avoid endless cycling) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
@@ -61,10 +58,8 @@ J\+N\+I\+E\+X\+P\+O\+RT void J\+N\+I\+C\+A\+LL \mbox{\hyperlink{kmeans__c_8c_a2e
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{kmeans__c_8c_a506f3508105fc1055b36d6a4c13c86af}\label{kmeans__c_8c_a506f3508105fc1055b36d6a4c13c86af}} 
 volatile struct \mbox{\hyperlink{structrwlockwp}{rwlockwp}} \mbox{\hyperlink{kmeans__c_8c_a506f3508105fc1055b36d6a4c13c86af}{abortcalckm}} = \mbox{\hyperlink{rwlock__wp_8h_a0e5677072fd09de2ad07b5ac633bde51}{R\+W\+L\+O\+C\+K\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ER}}
 \begin{DoxyCompactList}\small\item\em A reader writer lock for premature abort. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{kmeans__c_8c_ab9867da3bf6e8f1129209c6583fb662f}\label{kmeans__c_8c_ab9867da3bf6e8f1129209c6583fb662f}} 
 volatile int \mbox{\hyperlink{kmeans__c_8c_ab9867da3bf6e8f1129209c6583fb662f}{doabort}} = 0
 \begin{DoxyCompactList}\small\item\em 1=abort, access with {\itshape abortcalckm} \end{DoxyCompactList}\item 
 const char $\ast$ \mbox{\hyperlink{kmeans__c_8c_a7062ae36933564b236d16828738f830a}{clsource}}
@@ -89,6 +84,39 @@ Robert Fritze
 \begin{DoxyDate}{Date}
 11.\+9.\+2021 
 \end{DoxyDate}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{kmeans__c_8c_a16605039b395344c0b68b435e197b8bd}\label{kmeans__c_8c_a16605039b395344c0b68b435e197b8bd}} 
+\index{kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}!C\+L\+\_\+\+U\+S\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+O\+P\+E\+N\+C\+L\+\_\+1\+\_\+2\+\_\+\+A\+P\+IS@{C\+L\+\_\+\+U\+S\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+O\+P\+E\+N\+C\+L\+\_\+1\+\_\+2\+\_\+\+A\+P\+IS}}
+\index{C\+L\+\_\+\+U\+S\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+O\+P\+E\+N\+C\+L\+\_\+1\+\_\+2\+\_\+\+A\+P\+IS@{C\+L\+\_\+\+U\+S\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+O\+P\+E\+N\+C\+L\+\_\+1\+\_\+2\+\_\+\+A\+P\+IS}!kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}}
+\subsubsection{\texorpdfstring{C\+L\+\_\+\+U\+S\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+O\+P\+E\+N\+C\+L\+\_\+1\+\_\+2\+\_\+\+A\+P\+IS}{CL\_USE\_DEPRECATED\_OPENCL\_1\_2\_APIS}}
+{\footnotesize\ttfamily \#define C\+L\+\_\+\+U\+S\+E\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+\_\+\+O\+P\+E\+N\+C\+L\+\_\+1\+\_\+2\+\_\+\+A\+P\+IS}
+
+
+
+use older Open\+CL A\+P\+IS 
+
+\mbox{\Hypertarget{kmeans__c_8c_ab26f3be5ae4af394f940d3ff5c996d84}\label{kmeans__c_8c_ab26f3be5ae4af394f940d3ff5c996d84}} 
+\index{kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}!G\+P\+U\+T\+I\+M\+I\+NG@{G\+P\+U\+T\+I\+M\+I\+NG}}
+\index{G\+P\+U\+T\+I\+M\+I\+NG@{G\+P\+U\+T\+I\+M\+I\+NG}!kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}}
+\subsubsection{\texorpdfstring{G\+P\+U\+T\+I\+M\+I\+NG}{GPUTIMING}}
+{\footnotesize\ttfamily \#define G\+P\+U\+T\+I\+M\+I\+NG}
+
+
+
+Define if detailed timing for the G\+PU should be made. 
+
+\mbox{\Hypertarget{kmeans__c_8c_a2aac62b7fa9bc0d2047b1767ec764ec5}\label{kmeans__c_8c_a2aac62b7fa9bc0d2047b1767ec764ec5}} 
+\index{kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}!M\+A\+X\+C\+Y\+C\+L\+ES@{M\+A\+X\+C\+Y\+C\+L\+ES}}
+\index{M\+A\+X\+C\+Y\+C\+L\+ES@{M\+A\+X\+C\+Y\+C\+L\+ES}!kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}}
+\subsubsection{\texorpdfstring{M\+A\+X\+C\+Y\+C\+L\+ES}{MAXCYCLES}}
+{\footnotesize\ttfamily \#define M\+A\+X\+C\+Y\+C\+L\+ES~100000}
+
+
+
+maximum numbers of cycles for kmeans (to avoid endless cycling) 
+
 
 
 \subsection{Function Documentation}
@@ -375,6 +403,16 @@ fully threadsafe
 
 
 \subsection{Variable Documentation}
+\mbox{\Hypertarget{kmeans__c_8c_a506f3508105fc1055b36d6a4c13c86af}\label{kmeans__c_8c_a506f3508105fc1055b36d6a4c13c86af}} 
+\index{kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}!abortcalckm@{abortcalckm}}
+\index{abortcalckm@{abortcalckm}!kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}}
+\subsubsection{\texorpdfstring{abortcalckm}{abortcalckm}}
+{\footnotesize\ttfamily volatile struct \mbox{\hyperlink{structrwlockwp}{rwlockwp}} abortcalckm = \mbox{\hyperlink{rwlock__wp_8h_a0e5677072fd09de2ad07b5ac633bde51}{R\+W\+L\+O\+C\+K\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ER}}}
+
+
+
+A reader writer lock for premature abort. 
+
 \mbox{\Hypertarget{kmeans__c_8c_a7062ae36933564b236d16828738f830a}\label{kmeans__c_8c_a7062ae36933564b236d16828738f830a}} 
 \index{kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}!clsource@{clsource}}
 \index{clsource@{clsource}!kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}}
@@ -416,3 +454,13 @@ calculates for each data item the eucledean distance to all cluster centers and 
 {\itshape const int features}  &in &the number of features per data item  \\\cline{1-3}
 {\itshape const int cluno}  &in &the number of clusters to search for  \\\cline{1-3}
 \end{longtabu}
+\mbox{\Hypertarget{kmeans__c_8c_ab9867da3bf6e8f1129209c6583fb662f}\label{kmeans__c_8c_ab9867da3bf6e8f1129209c6583fb662f}} 
+\index{kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}!doabort@{doabort}}
+\index{doabort@{doabort}!kmeans\+\_\+c.\+c@{kmeans\+\_\+c.\+c}}
+\subsubsection{\texorpdfstring{doabort}{doabort}}
+{\footnotesize\ttfamily volatile int doabort = 0}
+
+
+
+1=abort, access with {\itshape abortcalckm} 
+
